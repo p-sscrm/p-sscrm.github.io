@@ -28,13 +28,13 @@ github_username:  p-sscrm
 
 
 # Build settings
-#theme: minima
-remote_theme: pages-themes/merlot@v0.2.0
+theme: minima
+#remote_theme: pages-themes/merlot@v0.2.0
 #remote_theme: pages-themes/modernist@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-remote-theme
+#  - jekyll-remote-theme
  # Collections for framework components
 collections:
   groups:
