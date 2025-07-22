@@ -38,5 +38,31 @@ layout: default
                 </ol>
             </div>
         </section>
+        <section class="references">
+            <h2>Reference sources</h2>
+            <div class="sources">
+                {% assign group = site.data.framework.groups | where: "id", page.group_id | first %}
+                {% assign practice = group.practices | where: "id", page.practice_id | first %}
+                {% assign task = practice.tasks | where: "id", page.task_id | first %}
+
+                <ol>
+                    {% for reference in task.references %}
+                        {% assign reflink = "https://arxiv.org/pdf/2404.12300" %}
+                        {% for fwk in site.data.framework.metadata %}
+                            {% if fwk.id == reference.source %}
+                                {% assign reflink = fwk.link %}
+                            {% endif %}
+                        {% endfor %}
+                        <li id="{{ reference.source }}" class="reference">
+                            <a href="{{reflink}}" target="_blank" rel="noreferrer nofollow" id="{{ section }}" class="section">
+                                {{ reference.source }}
+                            </a>
+                        {% for section in reference.sections %}
+                                {{ section }}
+                        {% endfor %}
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
     </div>
 </article> 
