@@ -21,7 +21,7 @@
 title: P-SSCRM Documentation
 email: pjmorris@ncsu.edu
 description: The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here  is designed to help you understand and plan a secure software supply chain risk management initiative.
-baseurl: "/docs" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  pmorrisonfl
