@@ -31,7 +31,7 @@ layout: default
                 
                 <ol>
                     {% for question in task.questions %}
-                        <li id="q{{ question.id }}" class="question">
+                        <li id="{{ question.id }}" class="question">
                             {{ question.text }}
                         </li>
                     {% endfor %}
