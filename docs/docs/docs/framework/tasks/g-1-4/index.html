@@ -11,15 +11,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
 <meta property="og:description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
-<link rel="canonical" href="http://localhost:4000/framework/tasks/g-1-4/" />
-<meta property="og:url" content="http://localhost:4000/framework/tasks/g-1-4/" />
+<link rel="canonical" href="/framework/tasks/g-1-4/" />
+<meta property="og:url" content="/framework/tasks/g-1-4/" />
 <meta property="og:site_name" content="P-SSCRM Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-23T14:11:22-04:00" />
+<meta property="article:published_time" content="2025-07-31T10:21:19-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Deliver provenance" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-23T14:11:22-04:00","datePublished":"2025-07-23T14:11:22-04:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"Deliver provenance","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/framework/tasks/g-1-4/"},"url":"http://localhost:4000/framework/tasks/g-1-4/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-31T10:21:19-04:00","datePublished":"2025-07-31T10:21:19-04:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"Deliver provenance","mainEntityOfPage":{"@type":"WebPage","@id":"/framework/tasks/g-1-4/"},"url":"/framework/tasks/g-1-4/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -111,12 +111,12 @@
             
             <div class="detail-item">
                 <h3>Definition</h3>
-                <p>Automatically collect and provide provenance data for generated products. For provenance data, including how the artifact was built, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data's authenticity and integrity can be verified and is generated automatically from the build service using a convention common in the package ecosystem.</p>
+                <p>Automatically collect and provide provenance data for generated products. For provenance data, including how the artifact was built, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data's authenticity and integrity can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations. Producers MUST publish attestations in at least one place, and SHOULD publish attestations in more than one place, such as in source repository release, the package registry, and/or a transparency log.  Attestations should be immutable.</p>
             </div>
         </section>
 
         <section class="assessment">
-            <h2>Assessment Questionz</h2>
+            <h2>Assessment Questions</h2>
             <div class="questions">
                 
                 
@@ -184,12 +184,27 @@
                     
                         
                         
+                        <li id="SSDF AI" class="reference">
+                            <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                SSDF AI
+                            </a>
+                        
+                                PS.3.2 R1
+                        
+                                PS.3.2 R2
+                        
+                                PS.3.2 C1
+                        
+                        </li>
+                    
+                        
+                        
                         <li id="SLSA" class="reference">
                             <a href="https://slsa.dev/spec/v1.1/" target="_blank" rel="noreferrer nofollow" id="" class="section">
                                 SLSA
                             </a>
                         
-                                Build L1 Distributing provenance
+                                Distributing provenance
                         
                         </li>
                     
@@ -211,7 +226,7 @@
                                 OWASP SCVS
                             </a>
                         
-                                6
+                                4.1
                         
                         </li>
                     
@@ -222,7 +237,15 @@
                                 CNCF SSC
                             </a>
                         
-                                V: Ensure clients can perform verification of artifacts and associated metadata
+                                BP-V: Enforcing policy
+                        
+                                A-A Distribute in-toto metadata with TUF
+                        
+                                D-V Ensure clients can perform Verification of Artifacts and associated metadata
+                        
+                                D-V Ensure clients can verify the freshness of files
+                        
+                                D-A Use The Update Framework
                         
                         </li>
                     
@@ -234,6 +257,34 @@
                             </a>
                         
                                 3
+                        
+                        </li>
+                    
+                        
+                        
+                        <li id="SAMM" class="reference">
+                            <a href="https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                SAMM
+                            </a>
+                        
+                                I-SB-2-B
+                        
+                        </li>
+                    
+                        
+                        
+                        <li id="OSPS" class="reference">
+                            <a href="https://baseline.openssf.org/versions/2025-02-25" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                OSPS
+                            </a>
+                        
+                                OSPS-BR-02
+                        
+                                OSPS-BR-04
+                        
+                                OSPS-DO-06
+                        
+                                OSPS-QA-02
                         
                         </li>
                     

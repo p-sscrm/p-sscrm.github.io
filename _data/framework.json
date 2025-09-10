@@ -1874,17 +1874,12 @@
               "questions": [
                 {
                   "id": "P.2.4.1",
-                  "text": "Can you tell me about your philosophy of whether it is better to use available security features or to \u0027roll your own,\u0027 for example, log management, identity management, access control, and vulnerability management?",
+                   "text": "Please tell me about your philosophy of whether it is better to use available security features or to \u0027roll your own,\u0027 for example, log management, identity management, access control, and vulnerability management?",
                   "answers": []
                 },
                 {
                   "id": "P.2.4.2",
-                  "text": "Or a combination of in-house/proprietary and standard features?",
-                  "answers": []
-                },
-                {
-                  "id": "P.2.4.2",
-                  "text": "What factors determine if you use in-house or standard features?",
+                  "text": "What factors determine whether you use in-house or standard features?",
                   "answers": []
                 }
               ],
@@ -2253,7 +2248,12 @@
               "questions": [
                 {
                   "id": "P.3.5.1",
-                  "text": "What mechanisms are in place, if any, to audit that developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
+                  "text": "In what ways could a developer bypass the component vetting process?",
+                  "answers": []
+                },
+                {
+                  "id": "P.3.5.2",
+                  "text": "What are the mechanisms in place to monitor whether developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
                   "answers": []
                 }
               ],

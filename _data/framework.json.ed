@@ -58,9 +58,22 @@
                 },
                 {
                   "sections": [
+                    "PO.1.1 R1", "PO.1.2 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "PO.1.1 R1", "PO.1.2 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                     "CP1.1",
                     "CP1.2",
                     "CP1.3",
+                    "SE3.9",
                     "SR1.1",
                     "SR2.2",
                     "SR3.3"
@@ -69,21 +82,35 @@
                 },
                 {
                   "sections": [
-                    "SA-15"
+                    "SC-CE: Establish and adhere to contribution policies"
                   ],
                   "source": "800-161"
                 },
                 {
                   "sections": [
-                    "C: Establish and adhere to contribution policies"
+                    "SC-CE: Establish and adhere to contribution policies"
                   ],
                   "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A",
+                    "G-PC-2-B"
+                  ],
+                  "source": "SAMM"
                 },
                 {
                   "sections": [
                     "2"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A",
+                    "G-PC-2-B"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -105,6 +132,8 @@
                 },
                 {
                   "id": "G.1.2.3",
+                    "2.14",
+                    "2.15",
                   "text": "Do you document and track users and uses of software licenses relative to access control policies and software usage restrictions?",
                   "answers": []
                 }
@@ -117,7 +146,17 @@
                   "source": "800-161"
                 },
                 {
+                    "AU: Scan software for license implications",
+                    "M-A: Managing software licenses"
+                    "2.14",
+                    "2.15",
+                },
+                {
                   "sections": [
+                    "OSPS-LE-02",
+                    "OSPS-LE-03"
+                  ],
+                  "source": "OSPS"
                     "5.12"
                   ],
                   "source": "OWASP SCVS"
@@ -130,9 +169,17 @@
                 },
                 {
                   "sections": [
-                    "AU: Scan software for license implications"
+                    "AU: Scan software for license implications",
+                    "M-A: Managing software licenses"
                   ],
                   "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "OSPS-LE-02",
+                    "OSPS-LE-03"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -172,6 +219,12 @@
                   "text": "Do you need to provide self-attestation for your product?",
                   "answers": []
                 },
+                    "PO.3.3 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                 {
                   "id": "G.1.3.7",
                   "text": "Is the attestation immutable and published in the source repository releases, in the package registry, or elsewhere with their existence in a transparency log?",
@@ -195,6 +248,32 @@
                 },
                 {
                   "sections": [
+                    "PO.3.3 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "BP-SA Sign Every Step in the Build Process",
+                    "A-A Use a store to manage metadata from in-toto"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "I-SB-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                    "OSPS-DO-03"
+                  ],
+                  "source": "OSPS"
+                },
+                {
+                  "sections": [
+                    "SE3.9",
                     "SM1.4",
                     "SR1.3"
                   ],
@@ -211,7 +290,7 @@
                 },
                 {
                   "sections": [
-                    "Distributing attestation"
+                    "Producing artifacts"
                   ],
                   "source": "SLSA"
                 },
@@ -220,11 +299,38 @@
                     "1f"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "BP-SA Sign Every Step in the Build Process",
+                    "A-A Use a store to manage metadata from in-toto"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "I-SB-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                    "OSPS-DO-03"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
             {
-              "definition": "Automatically collect and provide provenance data for generated products. For provenance data, including how the artifact was built, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data\u0027s authenticity and integrity can be verified and is generated automatically from the build service using a convention common in the package ecosystem.",
+                    "PS.3.2 R1",
+                    "PS.3.2 R2",
+                    "PS.3.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+              "definition": "Automatically collect and provide provenance data for generated products. For provenance data, including how the artifact was built, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data\u0027s authenticity and integrity can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations. Producers MUST publish attestations in at least one place, and SHOULD publish attestations in more than one place, such as in source repository release, the package registry, and/or a transparency log.  Attestations should be immutable.",
               "id": "G.1.4",
               "name": "Deliver provenance",
               "objective": "By providing provenance data, enable customers to analyze the integrity and verifiability of the actions performed while writing code, compiling, testing, and deploying software by making transparent the steps that were performed, by whom and in what order.",
@@ -236,13 +342,20 @@
                 },
                 {
                   "id": "G.1.4.2",
-                  "text": "What authentications take place relative to the production of provenance data?",
+                    "6.1",
+                    "6.2",
+                    "6.3",
+                    "6.4"
                   "answers": []
                 },
                 {
                   "id": "G.1.4.3",
                   "text": "Is provenance data automatically generated/verified by the build service, or does it involve a manual process or the ability for alteration, or is it read-only?",
-                  "answers": []
+                    "BP-V: Enforcing policy",
+                    "A-A Distribute in-toto metadata with TUF",
+                    "D-V Ensure clients can perform Verification of Artifacts and associated metadata",
+                    "D-V Ensure clients can verify the freshness of files",
+                    "D-A Use The Update Framework"
                 },
                 {
                   "id": "G.1.4.4",
@@ -251,6 +364,21 @@
                 },
                 {
                   "id": "G.1.4.5",
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-BR-02",  		
+                     "OSPS-BR-04",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                   "text": "Do provenance records include the initial state of the machine, VM, or container, and include all user-specified build steps?",
                   "answers": []
                 }
@@ -258,7 +386,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(vi)",
+              "objective": "By providing SBOM, enable internal and external customers to analyze the contents of the final software package, including the version of the dependencies.",
                     "4e(vii)",
                     "4e(x)"
                   ],
@@ -272,7 +400,15 @@
                 },
                 {
                   "sections": [
-                    "Build L1: Provenance exists"
+                    "PS.3.2 R1",
+                    "PS.3.2 R2",
+                    "PS.3.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "Distributing provenance"
                   ],
                   "source": "SLSA"
                 },
@@ -284,35 +420,77 @@
                 },
                 {
                   "sections": [
-                    "6"
+                    "6.1",
+                    "6.2",
+                    "6.3",
+                    "6.4"
                   ],
                   "source": "OWASP SCVS"
                 },
                 {
                   "sections": [
-                    "V: Ensure clients can perform verification of artifacts and associated metadata"
+                    "BP-V: Enforcing policy",
+                    "A-A Distribute in-toto metadata with TUF",
+                    "D-V Ensure clients can perform Verification of Artifacts and associated metadata",
+                    "D-V Ensure clients can verify the freshness of files",
+                    "D-A Use The Update Framework"
                   ],
                   "source": "CNCF SSC"
+                    "PS.3.2 R1",
+                    "PS.3.2 R2",
+                    "PS.3.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                 },
                 {
                   "sections": [
                     "3"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                    "2"
+                  "sections": [
+                     "OSPS-BR-02",  		
+                     "OSPS-BR-04",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
             {
               "definition": "Generate (preferably during build time) and provide a SBOM (in a machine-readable, NTIA-supported format) for generated products. SBOMs should be digitally signed using a verifiable and trusted key. VEX data for all components should also be considered.",
-              "id": "G.1.5",
+                    "M-V: Generate an immutable SBOM of code"
               "name": "Deliver SBOM",
-              "objective": "By providing SBOM, enable customers to analyze the contents of the final software package, including the version of the dependencies.",
+              "objective": "By providing SBOM, enable internal and external customers to analyze the contents of the final software package, including the version of the dependencies.",
               "questions": [
                 {
                   "id": "G.1.5.1",
                   "text": "Do you deliver an SBOM and provenance data that satisfy your contracts with software acquirers, such as in a standard-base format?",
                   "answers": []
                 },
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                 {
                   "id": "G.1.5.2",
                   "text": "How and when is the SBOM built?",
@@ -356,6 +534,26 @@
                 },
                 {
                   "sections": [
+                    "PS.3.2 R1",
+                    "PS.3.2 R2",
+                    "PS.3.2 C1"
+                  ],
+                    "PO.2.3 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                },
+                {
+                  "sections": [
+                    "G-SM-2-A"
+                  ],
+                  "source": "SAMM"
                     "SE3.6"
                   ],
                   "source": "BSIMM"
@@ -369,7 +567,7 @@
                 {
                   "sections": [
                     "1.4",
-                    "6"
+                    "2"
                   ],
                   "source": "OWASP SCVS"
                 },
@@ -382,7 +580,7 @@
                 },
                 {
                   "sections": [
-                    "SM: Generate immutable SBOM of code"
+                    "M-V: Generate an immutable SBOM of code"
                   ],
                   "source": "CNCF SSC"
                 },
@@ -391,6 +589,25 @@
                     "3"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                    "PO.4.1 R1",
+                    "PO.4.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                  "source": "OSPS"
                 }
               ]
             }
@@ -406,6 +623,20 @@
               "id": "G.2.1",
               "name": "Upper management support",
               "objective": "Upper management understands the business risks of insecure software and supports the resources necessary for secure software development.",
+                },
+                {
+                  "sections": [
+                    "G-SM-2-B",
+                    "G-PC-1-A",
+                    "G-PC-1-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-VM-04"
+                  ],
+                  "source": "OSPS"
               "questions": [
                 {
                   "id": "G.2.1.1",
@@ -436,12 +667,43 @@
                   ],
                   "source": "SSDF"
                 },
+                    "PO.2.1 R1",
+                    "PO.2.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                {
+                  "sections": [
+                    "PO.2.3 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
                 {
                   "sections": [
                     "SM1.3",
                     "CP2.5"
                   ],
+                },
+                {
+                  "sections": [
+                    "G-EG-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-GV-01"
+                  ],
+                  "source": "OSPS"
                   "source": "BSIMM"
+                },
+                {
+                  "sections": [
+                    "G-SM-2-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -470,6 +732,13 @@
                   "id": "G.2.2.4",
                   "text": "Are the checks automated or manual?",
                   "answers": []
+                    "PW.7.1 R1",
+                    "PW.7.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                 }
               ],
               "references": [
@@ -485,6 +754,27 @@
                     "PO.4.1"
                   ],
                   "source": "SSDF"
+                },
+                {
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-06", 
+                     "OSPS-GV-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
+                  "sections": [
+                    "PO.4.1 R1",
+                    "PO.4.1 C1"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
@@ -504,6 +794,20 @@
                     "4"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "G-SM-2-B",
+                    "G-PC-1-A",
+                    "G-PC-1-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-VM-04"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -526,11 +830,25 @@
                   ],
                   "source": "EO"
                 },
-                {
+                    "M-V Require SBOMs and VEX statements from third-party suppliers",
+                    "M-V Track dependencies between open source components"
                   "sections": [
                     "PO.2.1"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                   ],
                   "source": "SSDF"
+                },
+                {
+                  "sections": [
+                    "PO.2.1 R1",
+                    "PO.2.1 N1"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
@@ -545,6 +863,24 @@
                     "SA-3"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-01"
+                  ],
+                  "source": "OSPS"
+                    "G-EG-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-GV-01"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -580,8 +916,31 @@
                 },
                 {
                   "sections": [
+                    "PW.7.1 R1",
+                    "PW.7.1 C1"
+                  ],
+                    "PO.1.3 R1",
+                    "PW.3.1 R1",
+                    "PW.3.2",
+                    "PW.3.3"
+
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                     "CR1.4",
                     "CR1.5"
+                    "1.5"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
                   ],
                   "source": "BSIMM"
                 },
@@ -597,7 +956,26 @@
                     "4"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-06", 
+                     "OSPS-GV-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
                 }
+                },
+                {
+                  "sections": [
+                    "D-SR-3-B"
+                  ],
+                  "source": "SAMM"
               ]
             },
             {
@@ -657,9 +1035,16 @@
                 },
                 {
                   "sections": [
-                    "SM"
+                    "M-V Require SBOMs and VEX statements from third-party suppliers",
+                    "M-V Track dependencies between open source components"
                   ],
                   "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -686,6 +1071,12 @@
                     "SC-28"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-01"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             }
@@ -731,6 +1122,40 @@
                   ],
                   "source": "SSDF"
                 },
+                    "PO.2.2 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                {
+                  "sections": [
+                    "PO.1.3 R1",
+                    "PW.3.1 R1",
+                    "PW.3.2",
+                    "PW.3.3"
+
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "Verifying artifacts"
+                  ],
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
+                },
+                {
+                  "sections": [
+                    "G-EG-2-A"
+                  ],
+                  "source": "SAMM"
+                    "1.5"
+                  ],
+                  "source": "OWASP SCVS"
+                },
                 {
                   "sections": [
                     "ING-1"
@@ -751,7 +1176,6 @@
                     "SA-1",
                     "SA-4",
                     "SA-9",
-                    "SR-3",
                     "SR-4",
                     "SR-5",
                     "SR-6"
@@ -763,6 +1187,12 @@
                     "3"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "D-SR-3-B"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -781,6 +1211,14 @@
               "references": [
                 {
                   "sections": [
+                    "RV.1.1 R1",
+                    "RV.1.1 R2",
+                    "RV.1.1 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                     "AC-5"
                   ],
                   "source": "800-161"
@@ -789,7 +1227,8 @@
             },
             {
               "definition": "Unauthorized disclosure of information is a form of data leakage. Monitoring should be in place for contractor systems to detect the unauthorized disclosure of any data, and contract language should include a requirement that vendors notify of unauthorized disclosure of information.",
-              "id": "G.3.3",
+                    "SI-5",
+                    "RA-5"
               "name": "Information disclosure",
               "objective": "Contract language requires that a vendor monitors for information disclosure and notifies the enterprise of information disclosure.",
               "questions": [
@@ -798,6 +1237,20 @@
                   "text": "What kind of contract language is in place to stipulate that contractor systems conduct monitoring to detect unauthorized disclosure of any data?",
                   "answers": []
                 },
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B",
+                    "V-ST-2-A",
+                    "O-EM-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
                 {
                   "id": "G.3.3.2",
                   "text": "What kind of contract language is in place to require that vendors notify of unauthorized disclosure?",
@@ -832,6 +1285,13 @@
                   ],
                   "source": "800-161"
                 }
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-01",
+                     "OSPS-SA-01"
+                  ],
+                  "source": "OSPS"
               ]
             },
             {
@@ -871,6 +1331,12 @@
           "description": "Educating all personnel in role-specific information about the secure software development, including awareness, technical skills, and emergency response.",
           "id": "G.4",
           "name": "Training",
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
           "tasks": [
             {
               "definition": "Provide literacy and role-based training on software security and secure software supply chain. This training should include information about the firm\u0027s security culture, the secure software development lifecycle, containerization and security orchestration, common security mistakes, technology such as CI/CD and DevSecOps, and recognizing insider threat. Require this training as part of onboarding and periodically.",
@@ -898,6 +1364,12 @@
                 {
                   "sections": [
                     "4e(vi)"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03"
+                  ],
+                  "source": "OSPS"
                   ],
                   "source": "EO"
                 },
@@ -906,6 +1378,12 @@
                     "PO.2.2"
                   ],
                   "source": "SSDF"
+                },
+                {
+                  "sections": [
+                    "PO.2.2 R1"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
@@ -927,6 +1405,12 @@
                     "SA-16"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "G-EG-2-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -938,6 +1422,21 @@
               "questions": [
                 {
                   "id": "G.4.2.1",
+                },
+                {
+                  "sections": [
+                    "G-SM-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-04",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
                   "text": "Can you tell me about contingency training for preparing for emergency response, backup operations, and post-disaster recovery?",
                   "answers": []
                 }
@@ -986,6 +1485,22 @@
                 },
                 {
                   "sections": [
+                    "RV.1.1 R1",
+                    "RV.1.1 R2",
+                    "RV.1.1 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                    "PO.1.2 R1",
+                    "PO.1.2 C1",
+                    "PO.1.2 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                {
+                  "sections": [
                     "AM1.5",
                     "CMVM1.2"
                   ],
@@ -994,15 +1509,43 @@
                 {
                   "sections": [
                     "SI-4",
-                    "SI-5"
+                    "SI-5",
+                    "RA-5"
                   ],
                   "source": "800-161"
                 },
                 {
                   "sections": [
+                },
+                {
+                  "sections": [
+                    "D-SR-2-A",
+                    "D-SA-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-01"
+                  ],
+                  "source": "OSPS"
                     "2"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B",
+                    "V-ST-2-A",
+                    "O-EM-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             }
@@ -1036,27 +1579,63 @@
                   "sections": [
                     "RA-9"
                   ],
-                  "source": "800-161"
+                    "PS.2.1 R1",
+                    "PS.2.1 R2"
+                },
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "Distributing provenance"
+                  ],
+                {
+                  "sections": [
+                     "OSPS-DO-01",
+                     "OSPS-SA-01"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
             {
+                    "4.12",
               "definition": "Record when a design tradeoff, vulnerability decision/exception, or component choice has been made that incurs security risk and a mitigation plan to reduce that risk including with vendors. Periodically re-evaluate these exceptions and mitigation plans, potentially including a review board that can provide security guidance in design guidance, patterns, standards, features, and frameworks.",
               "id": "G.5.2",
               "name": "Track security risks and decisions",
               "objective": "Record and track the software’s security risk-based exceptions and mitigation plans.",
               "questions": [
                 {
-                  "id": "G.5.2.1",
+                    "signed-release", "licenses"
                   "text": "How are the responses to security risks and design decisions recorded, including how mitigations are to be achieved?",
                   "answers": []
                 },
                 {
                   "id": "G.5.2.2",
+                    "A-V Validate the Signatures Generated at Each Step",
+                    "A-A Use TUF to manage signing of artifacts"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
                   "text": "How are approved exceptions to the security requirements periodically evaluated?",
                   "answers": []
                 }
+                },
+                {
+                  "sections": [
+                    "I-SD-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-BR-06",
+                     "OSPS-DO-03"
+                  ],
+                  "source": "OSPS"
               ],
+
               "references": [
                 {
                   "sections": [
@@ -1076,6 +1655,12 @@
                     "SM3.5"
                   ],
                   "source": "BSIMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1101,8 +1686,28 @@
                   "sections": [
                     "SM2.1",
                     "SM3.3"
-                  ],
+                    "3.20", "3.21"
                   "source": "BSIMM"
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "PW.1.1", "PW.2.1"
+                  ],
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03"
+                    "PW.1.1 R1", 
+                    "PW.1.1 C1", 
+                    "PW.1.1 C2" 
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1110,6 +1715,23 @@
               "definition": "Implement processes and mechanisms, automated when possible, to gather and safeguard information in support of security decision-making at the product level. This information can be used to drive SDLC change at the product or organizational level and/or drive a security risk exception process.",
               "id": "G.5.4",
               "name": "Data-informed product decisions",
+                },
+                {
+                  "sections": [
+                    "D-TA-2-A",
+                    "D-TA-1-B",
+                    "V-AA-1-B",
+                    "V-AA-2-A",
+                    "V-RT-2-A",
+                    "V-RT-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
               "objective": "Make security decisions on software release based upon criteria for checking the security of the software.",
               "questions": [
                 {
@@ -1140,11 +1762,19 @@
                 {
                   "sections": [
                     "SM1.4",
-                    "SM2.2"
+                    "SM1.7"
                   ],
                   "source": "BSIMM"
                 },
                 {
+                    "PW.5.1 R1",
+                    "PW.5.1 R2",
+                    "PW.5.1 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   "sections": [
                     "SA-15"
                   ],
@@ -1154,7 +1784,34 @@
                   "sections": [
                     "4"
                   ],
+                },
+                {
+                  "sections": [
+                    "D-SA-1-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-GV-03"
+                  ],
+                  "source": "OSPS"
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "G-SM-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-04",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             }
@@ -1169,6 +1826,12 @@
       "practices": [
         {
           "description": "The development of software-related objectives and expectations to protect the service and data at the core of the application.",
+                    "PW.9.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
           "id": "P.1",
           "name": "Develop security requirements",
           "tasks": [
@@ -1184,6 +1847,22 @@
                   "answers": []
                 },
                 {
+                },
+                {
+                  "sections": [
+                    "D-SA-1-A",
+                    "V-AA-1-A",
+                    "I-SD-1-A",
+                    "O-EM-2-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-02",
+                     "OSPS-BR-01"
+                  ],
+                  "source": "OSPS"
                   "id": "P.1.1.2",
                   "text": "Which of the following strategies are considered: the use of memory-safe languages, secure frameworks, isolation and sandboxing?",
                   "answers": []
@@ -1195,17 +1874,30 @@
                 }
               ],
               "references": [
-                {
+                  "text": "Can you tell me about your philosophy of whether it is better to use available security features or to \u0027roll your own,\u0027 for example, log management, identity management, access control, and vulnerability management?",
                   "sections": [
                     "4e(iv)"
                   ],
-                  "source": "EO"
+                  "id": "P.2.4.2",
+                  "text": "Or a combination of in-house/proprietary and standard features?",
+                {
                 },
                 {
+                  "id": "P.2.4.2",
+                  "text": "What factors determine if you use in-house or standard features?",
+                  "answers": []
                   "sections": [
                     "PO.1.2"
                   ],
                   "source": "SSDF"
+                },
+                {
+                  "sections": [
+                    "PO.1.2 R1",
+                    "PO.1.2 C1",
+                    "PO.1.2 N1"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
@@ -1214,6 +1906,12 @@
                     "CP1.3",
                     "CP2.1",
                     "SE2.5",
+                },
+                {
+                  "sections": [
+                    "D-SA-2-A"
+                  ],
+                  "source": "SAMM"
                     "SFD1.1",
                     "SFD2.1",
                     "SDF3.2",
@@ -1226,6 +1924,19 @@
                     "SA-8"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "D-SR-2-A",
+                    "D-SA-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-01"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1244,6 +1955,19 @@
                   "id": "P.1.2.2",
                   "text": "Do you use a certificate authority for code/commit signing?",
                   "answers": []
+                },
+                {
+                  "sections": [
+                    "M-A Scan software for vulnerabilities"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "D-SA-2-B",
+                    "D-SA-2-A"
+                  ],
+                  "source": "SAMM"
                 },
                 {
                   "id": "P.1.2.3",
@@ -1276,28 +2000,72 @@
                 },
                 {
                   "sections": [
+                    "PS.2.1 R1",
+                    "PS.2.1 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "Distributing provenance"
+                  ],
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
                     "SE2.4"
                   ],
                   "source": "BSIMM"
                 },
                 {
                   "sections": [
+                    "4.12",
                     "6"
                   ],
                   "source": "OWASP SCVS"
                 },
                 {
                   "sections": [
-                    "signed-release, licenses"
+                    "signed-release", "licenses"
                   ],
                   "source": "OSSF Scorecard"
+                },
+                {
+                  "sections": [
+                    "A-V Validate the Signatures Generated at Each Step",
+                    "A-A Use TUF to manage signing of artifacts"
+                  ],
+                  "source": "CNCF SSC"
                 },
                 {
                   "sections": [
                     "REB-2"
                   ],
                   "source": "S2C2F"
+                },
+                {
+                  "sections": [
+                    "I-SD-3-A"
+                  ],
+                    "M: Second and third-party risk management"
+                },
+                {
+                },
+                {
+                  "sections": [
+                     "OSPS-BR-05",
+                     "OSPS-DO-03",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+                  "sections": [
+                     "OSPS-BR-06",
+                     "OSPS-DO-03"
+                  ],
+                  "source": "OSPS"
                 }
+
               ]
             }
           ]
@@ -1314,7 +2082,7 @@
               "objective": "Decrease the number of design flaws and security vulnerabilities introduced during the architecture and design phases.",
               "questions": [
                 {
-                  "id": "P.2.1.1",
+                    "1.2", "4.19"
                   "text": "For all critical software components and external services that your team operates and owns, has a qualified person not involved in the design reviewed the design and conducted an attack surface analysis and threat model?",
                   "answers": []
                 },
@@ -1326,9 +2094,22 @@
                 {
                   "id": "P.2.1.3",
                   "text": "What kind of tool or methodology (like STRIDE) do you use to structure your threat modeling?",
-                  "answers": []
+                    "M-V: Define trusted package managers, repositories, and libraries"
                 },
                 {
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-03",
+                     "OSPS-AC-04",
+                     "OSPS-BR-01",
+                     "OSPS-BR-06",
+                     "OSPS-DO-03",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+
+                  ],
+                  "source": "OSPS"
                   "id": "P.2.1.4",
                   "text": "Do you perform analysis such that only required modules are included in the product and unused modules are uninstalled and removed, decreasing the attack surface?",
                   "answers": []
@@ -1342,19 +2123,43 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iv), 4e(v), 4e(ix)"
+                    "4e(iv)", "4e(v)", "4e(ix)"
                   ],
                   "source": "EO"
                 },
                 {
                   "sections": [
-                    "PW.1.1, PW.2.1"
+                    "3.20", "3.21"
                   ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                    "BP-SA: Sign every step in the build process"
+                    "PW.1.1", "PW.2.1"
+                  ],
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-01",
+                     "OSPS-BR-06",
+                     "OSPS-DO-03",
+                     "OSPS-QA-07"
+
+                  ],
+                  "source": "OSPS"
                   "source": "SSDF"
                 },
                 {
                   "sections": [
-                    "AA1.1, AA1.2, AA2.1, AA3.1"
+                    "PW.1.1 R1", 
+                    "PW.1.1 C1", 
+                    "PW.1.1 C2" 
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "AA1.1", "AA1.2", "AA2.1", "AA3.1"
                   ],
                   "source": "BSIMM"
                 },
@@ -1363,6 +2168,29 @@
                     "4"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "D-TA-2-A",
+                    "D-TA-1-B",
+                    "V-AA-1-B",
+                    "V-AA-2-A",
+                    "V-RT-2-A",
+                    "V-RT-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                    "PW.4.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1379,34 +2207,74 @@
                 },
                 {
                   "id": "P.2.2.2",
-                  "text": "How are these practices communicated to developers and enforced?",
+                    "5"
                   "answers": []
                 }
               ],
               "references": [
                 {
-                  "sections": [
+                    "SCA-1", "SCA-4", "SCA-5", "ING-2", "ING-4", "ENF-2"
                     "4e(iv)"
                   ],
                   "source": "EO"
                 },
                 {
-                  "sections": [
+                    "M-V: Verify third party artifacts and open source libraries; SM", 
+                    "M-V Build libraries from source code",
+                    "M-A Run software composition analysis on ingested software"
                     "PW.5.1"
                   ],
                   "source": "SSDF"
                 },
                 {
-                  "sections": [
-                    "SR3.3, CR1.4, CR3.5"
-                  ],
-                  "source": "BSIMM"
+                    "2", "3"
+                    "PW.5.1 R1",
+                    "PW.5.1 R2",
                 },
                 {
                   "sections": [
-                    "4"
+                    "I-SB-3-B"
                   ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-06"
+                  ],
+                  "source": "OSPS"
+                    "PW.5.1 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "SR3.3", "CR1.4", "CR3.5"
+                  ],
+                  "source": "BSIMM"
                   "source": "Self-attestation"
+                  "id": "P.3.5.1",
+                  "text": "What mechanisms are in place, if any, to audit that developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
+                  "sections": [
+                    "D-SA-1-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-GV-03"
+                  ],
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-03",
+                     "OSPS-BR-01",
+                     "OSPS-BR-05",
+                     "OSPS-QA-01",
+                     "OSPS-QA-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1431,13 +2299,19 @@
                 },
                 {
                   "sections": [
-                    "PW.9.1, PW.9.2"
+                    "PW.9.1", "PW.9.2"
                   ],
                   "source": "SSDF"
                 },
                 {
                   "sections": [
-                    "SE2.2"
+                    "PW.9.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "SE1.4"
                   ],
                   "source": "BSIMM"
                 },
@@ -1447,11 +2321,50 @@
                   ],
                   "source": "800-161"
                 },
+                    "PW.7.2 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                 {
                   "sections": [
                     "4"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "D-SA-1-A",
+                    "V-AA-1-A",
+                    "I-SD-1-A",
+                    "O-EM-2-A"
+                    "C: Enforce independent 2-party review"
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-02",
+                     "OSPS-BR-01"
+                  ],
+                  "source": "OSPS"
+                },
+                {
+                  "sections": [
+                    "V-ST-3-B",
+                    "V-ST-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1492,9 +2405,15 @@
                 },
                 {
                   "sections": [
-                    "SFD1.1, SFD3.2"
+                    "SFD1.1", "SFD3.2"
                   ],
                   "source": "BSIMM"
+                },
+                {
+                  "sections": [
+                    "D-SA-2-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -1511,6 +2430,16 @@
                 },
                 {
                   "id": "P.2.5.2",
+                    "PO.3.1 R1", 
+                    "PO.3.1 N1", 
+                    "PO.3.1 N2", 
+                    "PO.3.2 R1",
+                    "PO.3.2 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   "text": "What causes a need for a new version?",
                   "answers": []
                 },
@@ -1523,13 +2452,19 @@
               "references": [
                 {
                   "sections": [
+                    "5.1", "5.4"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
                     "4e(ix)"
                   ],
                   "source": "EO"
                 },
                 {
                   "sections": [
-                    "PW.4.2"
+                    "SC-A: Prevent committing secrets to source code repository", "SC-A: Automate software security scanning", "M-A: Scan software for vulnerabilities", "A-V Perform additional checks on the artifact"
                   ],
                   "source": "SSDF"
                 },
@@ -1538,6 +2473,38 @@
                     "SFD2.1"
                   ],
                   "source": "BSIMM"
+                },
+                {
+                  "sections": [
+                    "I-SB-2-A",
+                    "I-SD-2-A",
+                    "I-SB-3-A"
+
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+
+                  ],
+                  "source": "OSPS"
+                },
+                {
+                  "sections": [
+                    "M-A Scan software for vulnerabilities"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "D-SA-2-B",
+                    "D-SA-2-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             }
@@ -1555,6 +2522,14 @@
               "objective": "Make informed third-party component and container choices.",
               "questions": [
                 {
+                    "RV.1.2 R1",
+                    "RV.1.2 R2",
+                    "RV.1.2 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   "id": "P.3.1.1",
                   "text": "What kind of approval process do you have, if any, for third-party libraries and containers included in a product?",
                   "answers": []
@@ -1567,15 +2542,31 @@
                 {
                   "id": "P.3.1.3",
                   "text": "Do you consider solutions with the least functionality to reduce the attack surface?",
-                  "answers": []
+                    "5.1",
+                    "5.2"
                 },
                 {
                   "id": "P.3.1.4",
                   "text": "How would the approval process handle dependencies that are no longer receiving updates?",
                   "answers": []
-                },
+                    "3", "4"
                 {
                   "id": "P.3.1.5",
+                },
+                {
+                  "sections": [
+                    "V-ST-3-B",
+                    "V-ST-2-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
                   "text": "Do you look at the OpenSSF Scorecard metrics for a component?",
                   "answers": []
                 },
@@ -1593,7 +2584,7 @@
               "references": [
                 {
                   "sections": [
-                    "SR2.4"
+                    "SR1.5"
                   ],
                   "source": "BSIMM"
                 },
@@ -1617,11 +2608,29 @@
                 },
                 {
                   "sections": [
-                    "SM: Second and third-party risk management"
+                    "M: Second and third-party risk management"
                   ],
                   "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                     "OSPS-BR-05",
+                     "OSPS-DO-03",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                 }
               ]
+                    "PW.8.1 R1", 
+                    "PW.8.1 C1", 
+                    "PW.8.2 R1",
+                    "PW.8.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
             },
             {
               "definition": "Trusted public repositories may require signed packages and provide the means to verify the signatures; the packages and containers from these ecosystems should still be scanned. Organizations should host scanned repositories for high-assurance software and restrict build machines to only those sources.",
@@ -1643,7 +2652,25 @@
               "references": [
                 {
                   "sections": [
-                    "1.2"
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A",
+                    "V-RT-2-A",
+                    "V-RT-2-B",
+                    "V-ST-3-A",
+                    "V-ST-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
+                    "1.2", "4.19"
                   ],
                   "source": "OWASP SCVS"
                 },
@@ -1655,9 +2682,22 @@
                 },
                 {
                   "sections": [
-                    "V: Define and prioritize trusted package managers"
+                    "M-V: Define trusted package managers, repositories, and libraries"
                   ],
                   "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-03",
+                     "OSPS-AC-04",
+                     "OSPS-BR-01",
+                     "OSPS-BR-06",
+                     "OSPS-DO-03",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1670,21 +2710,51 @@
                 {
                   "id": "P.3.3.1",
                   "text": "Do you require the software producers to sign code commits of the components and tools you bring into your product?",
+                    "PW.4.4 R1",
+                    "PW.4.4 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   "answers": []
                 }
               ],
               "references": [
                 {
                   "sections": [
-                    "SE2.4"
+                    "5", "5.8"
                   ],
                   "source": "BSIMM"
                 },
                 {
                   "sections": [
-                    "V: Require signed commits"
+                    "BP-SA: Sign every step in the build process"
                   ],
                   "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-01",
+                     "OSPS-BR-06",
+                     "OSPS-DO-03",
+                },
+                {
+                  "sections": [
+                    "I-SB-3-B",
+                    "D-SR-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"                  ],
+                  "source": "OSPS"
+                     "OSPS-QA-07"
+
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1708,7 +2778,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iii), 4e(vi), 4e(x)"
+                    "4e(iii)", "4e(vi)", "4e(x)"
                   ],
                   "source": "EO"
                 },
@@ -1720,45 +2790,78 @@
                 },
                 {
                   "sections": [
-                    "SFD2.1, SFD3.2, SR2.4, SR2.7"
+                    "PW.4.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "SFD2.1", "SFD3.2", "SR2.4", "SR2.7"
                   ],
                   "source": "BSIMM"
                 },
                 {
                   "sections": [
-                    "Build L1: Prevenance exists"
+                    "Verifying artifacts",
+                    "Build L1: Provenance exists"
                   ],
                   "source": "SLSA"
                 },
                 {
                   "sections": [
-                    "SR-3, SR-4, SR-11"
+                    "SR-3", "SR-4", "SR-11"
                   ],
                   "source": "800-161"
+                    "5.4"
+                {
+                  "source": "OWASP SCVS"
                 },
                 {
                   "sections": [
-                    "4.1, 5"
+                    "M-V: Require SBOMs and VEX statements from third-party suppliers", "M-V Track dependencies between open source components"
+                  ],
+                  "sections": [
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+                    "5"
                   ],
                   "source": "OWASP SCVS"
                 },
                 {
                   "sections": [
-                    "SCA-1, SCA-4, SCA-5, ING-2, ING-4, ENF-2"
+                    "SCA-1", "SCA-4", "SCA-5", "ING-2", "ING-4", "ENF-2"
                   ],
                   "source": "S2C2F"
                 },
                 {
                   "sections": [
-                    "SM: Verify 3rd party artifacts and opensource libraries; SM: Build libraries based upon source code"
+                    "M-V: Verify third party artifacts and open source libraries; SM", 
+                    "M-V Build libraries from source code",
+                    "M-A Run software composition analysis on ingested software"
                   ],
                   "source": "CNCF SSC"
                 },
                 {
                   "sections": [
-                    "2, 3"
+                    "2", "3"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "I-SB-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-06"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1768,6 +2871,12 @@
               "name": "Prevent component vetting bypass",
               "objective": "Ensure developers are not bypassing the component vetting process",
               "questions": [
+                    "5.8"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
                 {
                   "id": "P.3.5.1",
                   "text": "What mechanisms are in place, if any, to audit that developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
@@ -1780,6 +2889,23 @@
                     "AUD-2"
                   ],
                   "source": "S2C2F"
+                },
+                {
+                  "sections": [
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+                     "OSPS-AC-03",
+                     "OSPS-BR-01",
+                     "OSPS-BR-05",
+                     "OSPS-QA-01",
+                     "OSPS-QA-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             }
@@ -1815,10 +2941,31 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iv), 4e(v)"
+                    "4e(iv)", "4e(v)"
+                    "PS.3.1 R1",
+                    "PS.3.1 R2",
+                    "PS.3.1 R3",
+                    "PS.3.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   ],
                   "source": "EO"
                 },
+                },
+                {
+                  "sections": [
+                    "SC-V Authenticate and monitor repository activity"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                 {
                   "sections": [
                     "PW.7.2"
@@ -1827,7 +2974,13 @@
                 },
                 {
                   "sections": [
-                    "CR1.2, CR1.4, CR1.6, CR2.6, CR2.7, CR3.4, CR3.5"
+                    "PW.7.2 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "CR1.2", "CR1.4", "CR2.8", "CR2.6", "CR2.7", "CR3.4", "CR3.5"
                   ],
                   "source": "BSIMM"
                 },
@@ -1839,15 +2992,62 @@
                 },
                 {
                   "sections": [
-                    "C: Enforce an independent four-eyes principle"
+                    "C: Enforce independent 2-party review"
                   ],
                   "source": "CNCF SSC"
                 },
+                    "PS.1.1 R1",
+                    "PS.1.1 R2",
+                    "PS.1.1 R3",
+                    "PS.1.1 R4",
+                    "PS.1.1 C1",
+                    "PS.1.1 C2",
+                    "PS.1.2 R1",
+                    "PS.1.2 C1",
+                    "PS.1.3 R1",
+                    "PS.1.3 R2",
+                    "PS.1.3 R3",
+                    "PS.1.3 R4"
+
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                 {
                   "sections": [
                     "4"
+                },
+                {
+                  "sections": [
+                    "4.10"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "V-ST-3-B",
+                    "V-ST-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1857,8 +3057,14 @@
               "name": "Automated security scanning tools",
               "objective": "Choose tools to efficiently discover previously-undetected vulnerabilities",
               "questions": [
-                {
+                    "4.5"
                   "id": "P.4.2.1",
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "SC-SA: Enforce MFA for accessing source code repositories"
+                  ],
                   "text": "What security tools are in your toolchain?",
                   "answers": []
                 },
@@ -1878,7 +3084,7 @@
                   "answers": []
                 },
                 {
-                  "id": "P.4.2.5",
+                    "SC-SA: Use SSH keys to provide developers access to upstream source code repositories "
                   "text": "How often is the scanning done for third-party components?",
                   "answers": []
                 },
@@ -1901,27 +3107,58 @@
               "references": [
                 {
                   "sections": [
-                    "4e(i)(F), 4e(ii), 4e(iii), 4e(v), 4e(vi)"
+                    "4e(i)(F)", "4e(ii)", "4e(iii)", "4e(v)", "4e(vi)"
                   ],
                   "source": "EO"
                 },
                 {
                   "sections": [
-                    "PO.3.1; PO.3.2"
+                    "PO.3.1", "PO.3.2"
                   ],
                   "source": "SSDF"
+                    "4.17"
+                {
+                  "source": "OWASP SCVS"
                 },
                 {
                   "sections": [
-                    "CR1.4, ST1.4, ST2.5"
+                    "SC-V Declare protected repository namespaces",
+                    "SC-V Require verification attestations / confirmation",
+                    "SC-CE Establish and adhere to contribution policies"
+                  ],
+                  "sections": [
+                    "PO.3.1 R1", 
+                    "PO.3.1 N1", 
+                    "PO.3.1 N2", 
+                    "PO.3.2 R1",
+                    "PO.3.2 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "CR1.4", "SE.3.9", "ST1.4", "ST2.5"
                   ],
                   "source": "BSIMM"
                 },
                 {
+              "references": [
+                {
                   "sections": [
+                    "5.8"
+                  ],
+                  "source": "OWASP SCVS"
+                }
+              ]
                     "SA-15"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "5.1", "5.4"
+                  ],
+                  "source": "OWASP SCVS"
                 },
                 {
                   "sections": [
@@ -1931,7 +3168,7 @@
                 },
                 {
                   "sections": [
-                    "A: Prevent committing secrets; A: Automate software security scanning; AU: Scan software for vulnerabilities"
+                    "SC-A: Prevent committing secrets to source code repository", "SC-A: Automate software security scanning", "M-A: Scan software for vulnerabilities", "A-V Perform additional checks on the artifact"
                   ],
                   "source": "CNCF SSC"
                 },
@@ -1940,6 +3177,27 @@
                     "1f, 2, 3"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "I-SB-2-A",
+                    "I-SD-2-A",
+                    "I-SB-3-A"
+
+                    "BP-V Enforcing policy",
+                    "SC-V Require verification attestations / confirmation",
+                    "A-V Policy"
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -1958,39 +3216,71 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iv), 4e(vi), 4e(viii)"
+                    "4e(iv)", "4e(vi)", "4e(viii)"
                   ],
                   "source": "EO"
                 },
                 {
                   "sections": [
                     "RV.1.2"
-                  ],
+                    "1.10", "4.13", "4.19"
                   "source": "SSDF"
                 },
                 {
                   "sections": [
+                    "RV.1.2 R1",
+                    "RV.1.2 R2",
+                    "RV.1.2 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                    "M-V: Verify third-party artifacts and open source artifacts",
+                    "BP-V: Validate environments and dependencies before usage",
+                    "D-V Admission controller/deployment gate"
                     "CMVM3.1"
                   ],
                   "source": "BSIMM"
                 },
                 {
                   "sections": [
-                    "SA-11, RA-9, SI-7"
+                    "SA-11", "RA-9", "SI-7"
                   ],
                   "source": "800-161"
                 },
                 {
                   "sections": [
-                    "6"
+                    "5.1",
+                    "5.2"
                   ],
                   "source": "OWASP SCVS"
                 },
                 {
                   "sections": [
-                    "3, 4"
+                    "3", "4"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "V-ST-3-B",
+                    "V-ST-2-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
+                    "PW.6.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                 }
               ]
             },
@@ -2009,9 +3299,15 @@
                   "id": "P.4.4.2",
                   "text": "How are test cases developed to test the security of an application?",
                   "answers": []
-                },
+                    "3"
                 {
                   "id": "P.4.4.3",
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                   "text": "Is security testing factored into a product\u0027s test suite?",
                   "answers": []
                 },
@@ -2034,19 +3330,28 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iv), 4e(v)"
+                    "4e(iv)", "4e(v)"
                   ],
                   "source": "EO"
                 },
                 {
                   "sections": [
-                    "PW.8.1, PW.8.2"
+                    "PW.8.1", "PW.8.2"
                   ],
                   "source": "SSDF"
                 },
                 {
                   "sections": [
-                    "ST1.1, ST1.3, ST1.4, ST2.4, ST2.5, ST2.6, ST3.3, ST3.4, ST3.5, ST3.6, PT1.1, PT1.2, PT1.3, PT2.3, PT3.1, CMVM3.4"
+                    "PW.8.1 R1", 
+                    "PW.8.1 C1", 
+                    "PW.8.2 R1",
+                    "PW.8.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "ST1.1", "ST1.3", "ST1.4", "ST2.4", "ST2.5", "ST2.6", "ST3.3", "ST3.4", "ST3.5", "ST3.6", "PT1.1", "PT1.2", "PT1.3", "PT2.3", "PT3.1", "CMVM3.4"
                   ],
                   "source": "BSIMM"
                 },
@@ -2063,13 +3368,42 @@
                   "source": "OSSF Scorecard"
                 },
                 {
+                    "PW.6.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
                   "sections": [
-                    "2, 4"
+                  "sections": [
+                    "2", "4"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A",
+                    "V-RT-2-A",
+                    "V-RT-2-B",
+                    "V-ST-3-A",
+                    "V-ST-3-B"
+                    "2", "3"
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
                 }
               ]
-            },
+                    "BP-A: Build and related CI/CD should be automated",
+                    "BP-A: Standardize pipeline across projects", 
+                    "BP-A: Build workers should be single-use", 
+                    "BP-CE: Ensure software factory had minimal network connectivity",
+                    "BP-CE: Pass in build worker environment and commands",
+                    "BP-SA: Only allow pipeline modifications through \u0027pipeline as code\u0027"
             {
               "definition": "Regularly check that third-party software components comply with the contractual requirements, such as following a secure SDLC, and fix detected vulnerabilities. Regularly scan components and containers to monitor for vulnerabilities and for evidence that artifacts are being maintained and have not been abandoned or deprecated.",
               "id": "P.4.5",
@@ -2078,6 +3412,12 @@
               "questions": [
                 {
                   "id": "P.4.5.1",
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                   "text": "How do you verify that third-party software components continue to comply with the requirements defined by the organization, such as through using a secure SDLC and the delivery of attestation of security practices?",
                   "answers": []
                 },
@@ -2095,7 +3435,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iii), 4e(iv), 4e(vi), 4e(x)"
+                    "4e(iii)", "4e(iv)", "4e(vi)", "4e(x)"
                   ],
                   "source": "EO"
                 },
@@ -2107,13 +3447,26 @@
                 },
                 {
                   "sections": [
+                    "Build L3: Hardened builds"
+                    "PW.4.4 R2"
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
+                    "BP-A: Provision a secured orchestration platform"
+                  ],
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                     "SA-4, SA-9, SA-11, SA-15, SR-3"
                   ],
                   "source": "800-161"
                 },
                 {
                   "sections": [
-                    "5"
+                    "5", "5.8"
                   ],
                   "source": "OWASP SCVS"
                 },
@@ -2121,13 +3474,21 @@
                   "sections": [
                     "SCA-1, SCA-3"
                   ],
-                  "source": "S2C2F"
+                  "source": "Self-attestation"
                 },
                 {
                   "sections": [
-                    "2, 3, 4"
-                  ],
-                  "source": "Self-attestation"
+                    "I-SB-3-B",
+                    "D-SR-2-B"
+                    "BP-V Validate build artifacts through verifiably reproducible builds",
+                    "BP-V  Recommendations for Reproducible Builds"
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"                  ],
+                  "source": "OSPS"
                 }
               ]
             }
@@ -2141,7 +3502,7 @@
             {
               "definition": "Obtain or generate an SBOM for a product that provides a clear and direct link to the dependencies and their versions used within a product. Ideally, the SBOM will provide signed metadata from the build process. Tools can automate analysis and obtain desired information from the SBOM, such as aligning with vulnerability data to identify vulnerabilities within the exact package contents.",
               "id": "P.5.1",
-              "name": "SBOM consumption",
+                    "BP-CE: Write output to a separate secured storage repo"
               "objective": "Utilize SBOM information to react to security incidents and to identify which components need to be updated or patched.",
               "questions": [
                 {
@@ -2189,9 +3550,32 @@
                 },
                 {
                   "sections": [
-                    "SM: Require SBOM from third-party supplier; SM: Track dependencies between OS components"
+                    "5.4"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "Build L3: Hardened builds",
+                    "BP-A Build Workers Should be Single Use",
+                    "BP-CE Ensure Build Pipeline has minimal network connectivit",
+                    "BP-CE Segregate the Duties of Each Build Worker",
+                    "BP-CE Pass in Build Worker Environment and Commands",
+                    "D-V Air-gapped deployment"
                   ],
                   "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "M-V: Require SBOMs and VEX statements from third-party suppliers", "M-V Track dependencies between open source components"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             },
@@ -2236,6 +3620,12 @@
                 },
                 {
                   "sections": [
+                    "5.8"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
                     "RV.1.1"
                   ],
                   "source": "SSDF"
@@ -2251,6 +3641,24 @@
                     "UPD-1, UPD-2, UPD-3"
                   ],
                   "source": "S2C2F"
+                },
+                    "PO.5.1 C1",
+                    "PO.5.1 R1",
+                    "PO.5.1 R2",
+                    "PO.5.1 R3",
+                    "PO.5.1 R4",
+                    "PO.5.1 R5",
+                    "PO.5.1 R6"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
                 }
               ]
             }
@@ -2262,6 +3670,18 @@
       "description": "Tasks to protect the confidentiality and integrity of source code, software components, and the build infrastructure from tampering and unauthorized access.",
       "id": "E",
       "name": "Environment",
+                },
+                {
+                  "sections": [
+                    "O-EM-2-A",
+                    "O-OM-2-A",
+                    "I-SD-1-B",
+                    "O-IM-2-A",
+                    "O-EM-2-B",
+                    "I-SB-2-A",
+                    "G-PC-1-A"
+                  ],
+                  "source": "SAMM"
       "practices": [
         {
           "description": "Protect from unauthorized or accidental access and alteration of project artifacts.",
@@ -2283,7 +3703,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iii), 4e(vi), 4e(x)"
+                    "4e(iii)", "4e(vi)", "4e(x)"
                   ],
                   "source": "EO"
                 },
@@ -2291,13 +3711,36 @@
                   "sections": [
                     "PS.3.1"
                   ],
-                  "source": "SSDF"
+                    "SC-CE Establish and adhere to contribution policies",
+                    "SC-CE Define roles aligned to functional responsibilities",
+                    "BP-SA Define user roles"
+                },
+                {
+                  "sections": [
+                    "PS.3.1 R1",
+                    "PS.3.1 R2",
+                    "PS.3.1 R3",
+                    "PS.3.1 N1"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
                     "6.3"
                   ],
                   "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "SC-V Authenticate and monitor repository activity"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -2316,7 +3759,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(i)C, 4e(iii), 4e(iv)"
+                    "4e(i)C", "4e(iii)", "4e(iv)"
                   ],
                   "source": "EO"
                 },
@@ -2328,9 +3771,39 @@
                 },
                 {
                   "sections": [
+                    "PS.1.1 R1",
+                    "PS.1.1 R2",
+                    "PS.1.1 R3",
+                    "PS.1.1 R4",
+                    "PS.1.1 C1",
+                    "PS.1.1 C2",
+                    "PS.1.2 R1",
+                    "PS.1.2 C1",
+                    "PS.1.3 R1",
+                    "PS.1.3 R2",
+                    "PS.1.3 R3",
+                    "PS.1.3 R4"
+
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                     "SA-8, SA-10"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "4.10"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -2347,6 +3820,12 @@
                 },
                 {
                   "id": "E.1.3.2",
+                },
+                {
+                  "sections": [
+                    "BP-SA Deploy monitoring tools to detect malicious behavior"
+                  ],
+                  "source": "CNCF SSC"
                   "text": "Are soft or physical tokens used?",
                   "answers": []
                 },
@@ -2359,7 +3838,13 @@
               "references": [
                 {
                   "sections": [
-                    "SA: Enforce MFA"
+                    "4.5"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "SC-SA: Have a key rotation policy"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -2380,12 +3865,13 @@
               "references": [
                 {
                   "sections": [
-                    "SA: Use SSH keys"
+                    "SC-SA: Use SSH keys to provide developers access to upstream source code repositories "
                   ],
                   "source": "CNCF SSC"
                 }
               ]
-            },
+                    "SC-SA: Use short-lived/ephemeral credentials",
+                    "BP-SA Use Short-Lived Workload Certificates"
             {
               "definition": "Branch protection settings to enforce security policies, such as requiring reviews, passing checks, preventing overwriting of history, and signed commits before code is accepted into the main branch. Branch protection can prevent forced pushings, overwriting history, and obfuscation of code changes. In high-risk, high-assurance environments, attribution of code changes, commit signing, and full attestation can be used with branch protection to prevent and detect complex attacks.",
               "id": "E.1.5",
@@ -2406,13 +3892,21 @@
               "references": [
                 {
                   "sections": [
-                    "Branch protection"
+                    "BP-SA: Follow best practices for establishing a root of trust from an offline source"
                   ],
                   "source": "OSSF Scorecard"
                 },
                 {
                   "sections": [
-                    "V: Enforce full attestation and verification for protected branches; C: Use branch protection rules; C: Establish and adhere to contribution policies"
+                    "4.17"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "SC-V Declare protected repository namespaces",
+                    "SC-V Require verification attestations / confirmation",
+                    "SC-CE Establish and adhere to contribution policies"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -2430,7 +3924,14 @@
                   "answers": []
                 }
               ],
-              "references": []
+              "references": [
+                {
+                  "sections": [
+                    "5.8"
+                  ],
+                  "source": "OWASP SCVS"
+                }
+              ]
             }
           ]
         },
@@ -2453,13 +3954,33 @@
                 {
                   "id": "E.2.1.2",
                   "text": "Do you verify the build policy in a cryptographically provable way, such as with in-toto?",
+                    "RV.2.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   "answers": []
                 }
               ],
               "references": [
                 {
                   "sections": [
-                    "BV: Cryptographically guaranteed policy adherence"
+                    "Build L2: Hosted build platform"
+                  ],
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
+                    "BP-V Enforcing policy",
+                    "SC-V Require verification attestations / confirmation",
+                    "A-V Policy"
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A"
+                  ],
+                  "source": "SAMM"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -2490,25 +4011,35 @@
               "references": [
                 {
                   "sections": [
-                    "Build L1: Provenance exists"
+                    "Verifying artifacts"
                   ],
                   "source": "SLSA"
                 },
                 {
                   "sections": [
-                    "1.10, 6.1"
+                    "1.10", "4.13", "4.19"
                   ],
                   "source": "OWASP SCVS"
                 },
+                    "RV.2.2 R1",
+                    "RV.2.2 R2",
+                    "RV.2.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
                 {
                   "sections": [
-                    "AUD-1, AUD-3, AUD-4"
+                {
+                  "sections": [
+                    "AUD-1", "AUD-3", "AUD-4"
                   ],
                   "source": "S2C2F"
                 },
                 {
                   "sections": [
-                    "V: Verify third-party artifacts; BV: Validate environments and dependencies"
+                    "M-V: Verify third-party artifacts and open source artifacts",
+                    "BP-V: Validate environments and dependencies before usage",
+                    "D-V Admission controller/deployment gate"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -2546,11 +4077,24 @@
                 },
                 {
                   "sections": [
-                    "4_Reproducible build"
+                    "PW.6.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "Verifying build platforms"
                   ],
                   "source": "SLSA"
                 },
                 {
+                    "RV.1.3 R1",
+                    "RV.1.3 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   "sections": [
                     "3"
                   ],
@@ -2564,23 +4108,29 @@
                 },
                 {
                   "sections": [
-                    "BV: Validate build artefacts through verifiably reproducible builds."
+                    "3"
                   ],
-                  "source": "CNCF SSC"
                 },
                 {
                   "sections": [
-                    "4"
+                    "I-DM-2-A"
                   ],
+                  "source": "SAMM"
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
             {
-              "definition": "All CI/CD pipeline build steps should be automated with automation standardized across the enterprise via clear templated build pipelines that meet organizational standards. This automation should be treated as \u0027pipeline as code\u0027 with modifications being reviewed and should be immutable. The build should run in an ephemeral and hermetic (isolated and sealed) environment with no parameters or network connectivity except to the hardened local repository of source code and dependencies and code signing infrastructure. The build runs on a hosted build platform that generates and signs the provenance.",
+              "definition": "All CI/CD pipeline build steps should be automated with automation standardized across the enterprise via clear templated build pipelines that meet organizational standards. This automation should be treated as \u0027pipeline as code\u0027 with modifications being reviewed and should be immutable. The build runs on a hosted build platform that generates and signs the provenance.",
               "id": "E.2.4",
               "name": "CI/CD hosting and automation",
-              "objective": "Through automated build and protected environments, reduce human error and malicious actions and artifacts that cause the output of the build process to contain security vulnerabilities.",
+              "objective": "Through automated builds, reduce human error and malicious actions and artifacts that cause the output of the build process to contain security vulnerabilities.",
               "questions": [
                 {
                   "id": "E.2.4.1",
@@ -2599,41 +4149,33 @@
                 },
                 {
                   "id": "E.2.4.4",
-                  "text": "Is the build service run in an ephemeral environment, such as a container or VM, provisioned solely for the build?",
+                  "text": "Are the build steps, sources, and dependencies declared up front with immutable references/use immutable artifacts stored in a local repository manager?",
                   "answers": []
+                    "RV.3.3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                 },
                 {
                   "id": "E.2.4.5",
-                  "text": "Is the build service run in an isolated environment free of influence from other build instances?",
-                  "answers": []
-                },
-                {
-                  "id": "E.2.4.6",
-                  "text": "Can the build output be affected by user parameters other than the build entry point?",
-                  "answers": []
-                },
-                {
-                  "id": "E.2.4.7",
-                  "text": "Are the build steps, sources, and dependencies declared up front with immutable references/use immutable artifacts stored in a local repository manager?",
-                  "answers": []
-                },
-                {
-                  "id": "E.2.4.8",
-                  "text": "Is the build run with no network access (i.e., hermetic)?",
-                  "answers": []
-                },
-                {
-                  "id": "E.2.4.9",
                   "text": "Are infrastructure, build scripts, and GitHub Actions handled \u0027as code\u0027, such as with code review, scanning, testing, and version control?",
                   "answers": []
                 },
                 {
-                  "id": "E.2.4.10",
+                  "id": "E.2.4.6",
                   "text": "Are configuration changes reviewed?",
+                },
+                {
+                  "sections": [
+                    "I-DM-3-B"
+                  ],
+                  "source": "SAMM"
                   "answers": []
                 },
                 {
-                  "id": "E.2.4.11",
+                  "id": "E.2.4.7",
                   "text": "Are CI/CD pipelines standardized across the enterprise?",
                   "answers": []
                 }
@@ -2653,19 +4195,25 @@
                 },
                 {
                   "sections": [
-                    "SE2.4, SE3.2"
+                    "PW.6.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "SE2.4", "SE3.2"
                   ],
                   "source": "BSIMM"
                 },
                 {
                   "sections": [
-                    "Build L2: Hosted build platform; Build L2: Hardened/isolated builds"
+                    "Build L2: Hosted build platform"
                   ],
                   "source": "SLSA"
                 },
                 {
                   "sections": [
-                    "3"
+                    "2", "3"
                   ],
                   "source": "OWASP SCVS"
                 },
@@ -2677,7 +4225,26 @@
                 },
                 {
                   "sections": [
-                    "BV: Build and related CI/CD should be automated; BV: Standardize pipelines; BV: Build workers should be single-use; CE: Ensure software factory had minimal network connectivity; CE: Segregate the duties of each build worker; CE: Pass in build worker environment and commands: SA: Only allow pipeline modifications through \u0027pipeline as code\u0027"
+                    "BP-A: Build and related CI/CD should be automated",
+                    "BP-A: Standardize pipeline across projects", 
+                    "BP-A: Build workers should be single-use", 
+                    "RV.3.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "BP-CE: Ensure software factory had minimal network connectivity",
+                    "BP-CE: Pass in build worker environment and commands",
+                    "BP-SA: Only allow pipeline modifications through \u0027pipeline as code\u0027"
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A",
+                    "G-SM-2-B",
+                    "I-DM-3-B"
+                  ],
+                  "source": "SAMM"
                   ],
                   "source": "CNCF SSC"
                 },
@@ -2686,6 +4253,12 @@
                     "4"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -2708,14 +4281,33 @@
               ],
               "references": [
                 {
+                    "PO.5.3 R1",
+                    "PO.5.3 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                   "sections": [
                     "SE2.7"
                   ],
+                },
+                {
+                  "sections": [
+                    "BP-SA Deploy monitoring tools to detect malicious behavior"
+                  ],
+                  "source": "CNCF SSC"
                   "source": "BSIMM"
                 },
                 {
                   "sections": [
-                    "BA: Provision a secured orchestration platform"
+                    "Build L3: Hardened builds"
+                  ],
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
+                    "BP-A: Provision a secured orchestration platform"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -2733,13 +4325,11 @@
                   "answers": []
                 }
               ],
-              "references": [
-                {
-                  "sections": [
-                    "3"
-                  ],
-                  "source": "OWASP SCVS"
-                },
+                    "BP-V Validate runtime security of build workers",
+                    "SC-SA Use short-lived/ephemeral credentials for machine/service access",
+                    "A-CE Limit which artifacts any given party is authorized to certify",
+                    "A-CE Build in a system for rotating and revoking private keys",
+                    "A-CE Use a container registry that supports OCI image-spec images"
                 {
                   "sections": [
                     "REB-1"
@@ -2748,18 +4338,22 @@
                 },
                 {
                   "sections": [
-                    "BV: Validate build artefacts through verifiably reproducible builds."
+                    "BP-V Validate build artifacts through verifiably reproducible builds",
+                    "BP-V  Recommendations for Reproducible Builds"
                   ],
                   "source": "CNCF SSC"
                 }
               ]
             },
             {
-              "definition": "Write the output from the build process to separate storage from the inputs. A process separate from the build process should upload the artifact to the appropriate deployable repository.",
+              "definition" : "Write the output from the build process to separate storage from the inputs. A process separate from the build process should upload the artifact to the appropriate deployable repository.",
               "id": "E.2.7",
               "name": "Build output",
-              "objective": "Protect the integrity of build output",
-              "questions": [
+              "objective": "Through protected build environments, reduce human error and malicious actions and artifacts that cause the output of the build process to contain security vulnerabilities.",
+    {"id":"SSDF AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
+    {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
+    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
+    {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}
                 {
                   "id": "E.2.7.1",
                   "text": "Do you write artifacts from the build to a separate shared storage from the inputs?",
@@ -2769,7 +4363,66 @@
               "references": [
                 {
                   "sections": [
-                    "CD: Write output to a separate secured storage repo"
+                    "BP-CE: Write output to a separate secured storage repo"
+                  ],
+                  "source": "CNCF SSC"
+                }
+              ]
+            },
+            {
+              "definition": "Builds should run in an ephemeral and hermetic (isolated and sealed) environment with no parameters or network connectivity except to the hardened local repository of source code and dependencies and code signing infrastructure.",
+              "id": "E.2.8",
+              "name": "Hardened and isolated builds",
+              "objective": "Protect the integrity of build output",
+              "questions": [
+                {
+                  "id": "E.2.8.1",
+                  "text": "Is the build service run in an ephemeral environment, such as a container or VM, provisioned solely for the build?",
+                  "answers": []
+                },
+                {
+                  "id": "E.2.8.2",
+                  "text": "Is the build service run in an isolated environment free of influence from other build instances?",
+                  "answers": []
+                },
+                {
+                  "id": "E.2.8.3",
+                  "text": "Can the build output be affected by user parameters other than the build entry point?",
+                  "answers": []
+                },
+                {
+                  "id": "E.2.8.4",
+                  "text": "Is the build run with no network access (i.e., hermetic)?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "PW.6.2"
+                  ],
+                  "source": "SSDF"
+                },
+                {
+                  "sections": [
+                    "3"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "Build L3: Hardened builds"
+                  ],
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
+                    "Build L3: Hardened builds",
+                    "BP-A Build Workers Should be Single Use",
+                    "BP-CE Ensure Build Pipeline has minimal network connectivit",
+                    "BP-CE Segregate the Duties of Each Build Worker",
+                    "BP-CE Pass in Build Worker Environment and Commands",
+                    "D-V Air-gapped deployment"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -2802,7 +4455,7 @@
               "references": [
                 {
                   "sections": [
-                    "IA-5, IA-9"
+                    "IA-5", "IA-9"
                   ],
                   "source": "800-161"
                 }
@@ -2828,32 +4481,68 @@
                   "id": "E.3.2.3",
                   "text": "What kind of approval is needed for access to the build environment?",
                   "answers": []
+                },
+                {
+                  "id": "E.3.2.4",
+                  "text": "Are the build environment workstations held to a security standard, e.g. up-to-date patches, anti-virus definitions, etc?",
+                  "answers": []
                 }
               ],
               "references": [
                 {
                   "sections": [
-                    "4e(i)(A), 4e(i)(B), 4e(i)(C), 4e(i)(D), 4e(i)(E), 4e(i)(F), 4e(ii), 4e(iii), 4e(v), 4e(vi)"
+                    "4e(i)(A)", "4e(i)(B)", "4e(i)(C)", "4e(i)(D)", "4e(i)(E)", "4e(i)(F)", "4e(ii)", "4e(iii)", "4e(v)", "4e(vi)"
                   ],
                   "source": "EO"
                 },
                 {
                   "sections": [
-                    "PO.5.1, PO.5.2"
+                    "PO.5.1", "PO.5.2"
                   ],
                   "source": "SSDF"
                 },
                 {
                   "sections": [
-                    "SA-8, SA-15"
+                    "PO.5.1 C1",
+                    "PO.5.1 R1",
+                    "PO.5.1 R2",
+                    "PO.5.1 R3",
+                    "PO.5.1 R4",
+                    "PO.5.1 R5",
+                    "PO.5.1 R6"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "SE3.10"
+                  ],
+                 
+                  "source": "BSIMM"
+                },
+                {
+                  "sections": [
+                    "SA-8", "SA-15"
                   ],
                   "source": "800-161"
                 },
                 {
                   "sections": [
-                    "1a, 1b, 1c, 1d, 1e, 1f, 2, 3"
+                    "1a", "1b", "1c", "1d", "1e", "1f", "2", "3"
                   ],
                   "source": "Self-attestation"
+                },
+                {
+                  "sections": [
+                    "O-EM-2-A",
+                    "O-OM-2-A",
+                    "I-SD-1-B",
+                    "O-IM-2-A",
+                    "O-EM-2-B",
+                    "I-SB-2-A",
+                    "G-PC-1-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -2877,13 +4566,15 @@
               "references": [
                 {
                   "sections": [
-                    "AC-2, AC-3, AC-6, AC-17, IA-2"
+                    "AC-2", "AC-3", "AC-6", "AC-17", "IA-2"
                   ],
                   "source": "800-161"
                 },
                 {
                   "sections": [
-                    "A: Define individuals/teams responsible for code; C: Define roles aligned to functional responsibilities; SA: Define user roles"
+                    "SC-CE Establish and adhere to contribution policies",
+                    "SC-CE Define roles aligned to functional responsibilities",
+                    "BP-SA Define user roles"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -2909,7 +4600,7 @@
               "references": [
                 {
                   "sections": [
-                    "AC-4, SC-8"
+                    "AC-4", "SC-8"
                   ],
                   "source": "800-161"
                 }
@@ -2961,7 +4652,7 @@
               "references": [
                 {
                   "sections": [
-                    "CM-3, CM-6"
+                    "CM-3", "CM-6"
                   ],
                   "source": "800-161"
                 }
@@ -2990,6 +4681,12 @@
                     "SC-7"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "BP-SA Deploy monitoring tools to detect malicious behavior"
+                  ],
+                  "source": "CNCF SSC"
                 }
               ]
             },
@@ -3008,7 +4705,7 @@
               "references": [
                 {
                   "sections": [
-                    "SA: Have a key rotation policy"
+                    "SC-SA: Have a key rotation policy"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -3034,7 +4731,8 @@
               "references": [
                 {
                   "sections": [
-                    "SA: Use short-lived/ephemeral credentials"
+                    "SC-SA: Use short-lived/ephemeral credentials",
+                    "BP-SA Use Short-Lived Workload Certificates"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -3055,7 +4753,7 @@
               "references": [
                 {
                   "sections": [
-                    "SA: Follow established practices for establishing a root of trust"
+                    "BP-SA: Follow best practices for establishing a root of trust from an offline source"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -3105,7 +4803,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iv), 4e(viii)"
+                    "4e(iv)", "4e(viii)"
                   ],
                   "source": "EO"
                 },
@@ -3117,13 +4815,19 @@
                 },
                 {
                   "sections": [
+                    "RV.2.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                     "SCA-5"
                   ],
                   "source": "S2C2F"
                 },
                 {
                   "sections": [
-                    "CMVM2.2"
+                    "CMVM1.3"
                   ],
                   "source": "BSIMM"
                 },
@@ -3132,6 +4836,12 @@
                     "SA-15"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -3160,7 +4870,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iv), 4e(v), 4e(viii)"
+                    "4e(iv)", "4e(v)", "4e(viii)"
                   ],
                   "source": "EO"
                 },
@@ -3169,6 +4879,14 @@
                     "RV.2.2"
                   ],
                   "source": "SSDF"
+                },
+                {
+                  "sections": [
+                    "RV.2.2 R1",
+                    "RV.2.2 R2",
+                    "RV.2.2 C1"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
@@ -3231,7 +4949,14 @@
                 },
                 {
                   "sections": [
-                    "CMVM1.1, CMVM2.1, CMVM3.7"
+                    "RV.1.3 R1",
+                    "RV.1.3 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "CMVM1.1", "CMVM1.4", "CMVM2.4"
                   ],
                   "source": "BSIMM"
                 },
@@ -3246,6 +4971,12 @@
                     "INV-2"
                   ],
                   "source": "S2C2F"
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -3269,7 +5000,7 @@
               "references": [
                 {
                   "sections": [
-                    "4e(iv), 4e(viii)"
+                    "4e(iv)", "4e(viii)"
                   ],
                   "source": "EO"
                 },
@@ -3278,6 +5009,12 @@
                     "RV.3.3"
                   ],
                   "source": "SSDF"
+                },
+                {
+                  "sections": [
+                    "RV.3.3"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
@@ -3290,6 +5027,12 @@
                     "SI-2"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "I-DM-3-B"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             },
@@ -3340,15 +5083,29 @@
                 },
                 {
                   "sections": [
-                    "RV.3.1, RV.3.2, RV.3.4"
+                    "RV.3.1", "RV.3.2", "RV.3.4"
                   ],
                   "source": "SSDF"
+                },
+                {
+                  "sections": [
+                    "RV.3.1 N1"
+                  ],
+                  "source": "SSDF AI"
                 },
                 {
                   "sections": [
                     "CP3.3, CMVM3.2"
                   ],
                   "source": "BSIMM"
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A",
+                    "G-SM-2-B",
+                    "I-DM-3-B"
+                  ],
+                  "source": "SAMM"
                 }
               ]
             }
@@ -3385,9 +5142,22 @@
                 },
                 {
                   "sections": [
+                    "PO.5.3 R1",
+                    "PO.5.3 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
                     "CA-7"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "BP-SA Deploy monitoring tools to detect malicious behavior"
+                  ],
+                  "source": "CNCF SSC"
                 }
               ]
             },
@@ -3416,7 +5186,11 @@
               "references": [
                 {
                   "sections": [
-                    "V: Validate runtime security of build workers; SA: Use short-lived workload certificates"
+                    "BP-V Validate runtime security of build workers",
+                    "SC-SA Use short-lived/ephemeral credentials for machine/service access",
+                    "A-CE Limit which artifacts any given party is authorized to certify",
+                    "A-CE Build in a system for rotating and revoking private keys",
+                    "A-CE Use a container registry that supports OCI image-spec images"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -3427,17 +5201,20 @@
       ]
     }
   ],
-  "metadata": {
-    "800-161": "NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of tasks specifically identified in this document as mapping back to the Executive Order",
-    "BSIMM": "Building Security In Maturity Model Version 13",
-    "CNCF SSC": "Cloud Native Computing Foundation – Software Supply Chain Best Practices",
-    "EO": "Executive Order 14028 (EO)",
-    "OSSF Scorecard": "OpenSSF Scorecard metrics",
-    "OWASP SCVS": "Open Web Application Security Project Software Component Verification Standard Version 1.0",
-    "S2C2F": "OpenSSF Secure Supply Chain Consumption Framework",
-    "SLSA": "Supply-chain Levels for Software Artifacts v1.0",
-    "SSDF": "NIST Secure Software Development Framework version 1.1 (800-218)",
-    "Self-attestation": "DHS/CISA Secure Software Self-Attestation Common Form"
-  },
-  "version": "1.0"
+  "metadata": [
+    {"id":"800-161", "title":"NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of tasks specifically identified in this document as mapping back to the Executive Order", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf" },
+    {"id": "BSIMM", "title":"Building Security In Maturity Model Version 15", "link":"https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf"},
+    {"id":"CNCF SSC", "title":"Cloud Native Computing Foundation – Software Supply Chain Best Practices", "link":"https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf"},
+    {"id":"EO", "title":"Executive Order 14028 (EO)", "link":"https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity"},
+    {"id":"OSSF Scorecard", "title":"OpenSSF Scorecard metrics", "link":"https://github.com/ossf/scorecard/blob/main/docs/checks.md"},
+    {"id":"OWASP SCVS", "title":"Open Web Application Security Project Software Component Verification Standard Version 1.0", "link":"https://scvs.owasp.org/scvs/"},
+    {"id":"S2C2F", "title": "OpenSSF Secure Supply Chain Consumption Framework", "link":"https://baseline.openssf.org/versions/2025-02-25"},
+    {"id": "SLSA", "title":"Supply-chain Levels for Software Artifacts v1.1", "link":"https://slsa.dev/spec/v1.1/"},
+    {"id":"SSDF", "title":"NIST Secure Software Development Framework version 1.1 (800-218)", "link":"https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"},
+    {"id":"SSDF AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
+    {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
+    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
+    {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}
+  ],
+  "version": "2.0"
 }

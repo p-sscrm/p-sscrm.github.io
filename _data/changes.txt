@@ -1,0 +1,1213 @@
+3495c
+    {"id":"SSDF AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
+    {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
+    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
+    {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}
+.
+3474c
+                    "BP-V Validate runtime security of build workers",
+                    "SC-SA Use short-lived/ephemeral credentials for machine/service access",
+                    "A-CE Limit which artifacts any given party is authorized to certify",
+                    "A-CE Build in a system for rotating and revoking private keys",
+                    "A-CE Use a container registry that supports OCI image-spec images"
+.
+3445a
+                },
+                {
+                  "sections": [
+                    "BP-SA Deploy monitoring tools to detect malicious behavior"
+                  ],
+                  "source": "CNCF SSC"
+.
+3442a
+                    "PO.5.3 R1",
+                    "PO.5.3 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+3406a
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A",
+                    "G-SM-2-B",
+                    "I-DM-3-B"
+                  ],
+                  "source": "SAMM"
+.
+3403a
+                    "RV.3.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+3347a
+                },
+                {
+                  "sections": [
+                    "I-DM-3-B"
+                  ],
+                  "source": "SAMM"
+.
+3338a
+                    "RV.3.3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+3303a
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A"
+                  ],
+                  "source": "SAMM"
+.
+3288a
+                    "RV.1.3 R1",
+                    "RV.1.3 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+3229a
+                    "RV.2.2 R1",
+                    "RV.2.2 R2",
+                    "RV.2.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+3189a
+                },
+                {
+                  "sections": [
+                    "I-DM-2-A"
+                  ],
+                  "source": "SAMM"
+.
+3174a
+                    "RV.2.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+3113c
+                    "BP-SA: Follow best practices for establishing a root of trust from an offline source"
+.
+3092c
+                    "SC-SA: Use short-lived/ephemeral credentials",
+                    "BP-SA Use Short-Lived Workload Certificates"
+.
+3066c
+                    "SC-SA: Have a key rotation policy"
+.
+3047a
+                },
+                {
+                  "sections": [
+                    "BP-SA Deploy monitoring tools to detect malicious behavior"
+                  ],
+                  "source": "CNCF SSC"
+.
+2941c
+                    "SC-CE Establish and adhere to contribution policies",
+                    "SC-CE Define roles aligned to functional responsibilities",
+                    "BP-SA Define user roles"
+.
+2911a
+                },
+                {
+                  "sections": [
+                    "O-EM-2-A",
+                    "O-OM-2-A",
+                    "I-SD-1-B",
+                    "O-IM-2-A",
+                    "O-EM-2-B",
+                    "I-SB-2-A",
+                    "G-PC-1-A"
+                  ],
+                  "source": "SAMM"
+.
+2895a
+                    "PO.5.1 C1",
+                    "PO.5.1 R1",
+                    "PO.5.1 R2",
+                    "PO.5.1 R3",
+                    "PO.5.1 R4",
+                    "PO.5.1 R5",
+                    "PO.5.1 R6"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+2817a
+                },
+                {
+                  "sections": [
+                    "Build L3: Hardened builds",
+                    "BP-A Build Workers Should be Single Use",
+                    "BP-CE Ensure Build Pipeline has minimal network connectivit",
+                    "BP-CE Segregate the Duties of Each Build Worker",
+                    "BP-CE Pass in Build Worker Environment and Commands",
+                    "D-V Air-gapped deployment"
+                  ],
+                  "source": "CNCF SSC"
+.
+2767c
+                    "BP-CE: Write output to a separate secured storage repo"
+.
+2746c
+                    "BP-V Validate build artifacts through verifiably reproducible builds",
+                    "BP-V  Recommendations for Reproducible Builds"
+.
+2734,2739d
+2714a
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
+                    "BP-A: Provision a secured orchestration platform"
+                  ],
+.
+2713c
+                    "Build L3: Hardened builds"
+.
+2683a
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
+.
+2675c
+                    "BP-A: Build and related CI/CD should be automated",
+                    "BP-A: Standardize pipeline across projects", 
+                    "BP-A: Build workers should be single-use", 
+                    "BP-CE: Ensure software factory had minimal network connectivity",
+                    "BP-CE: Pass in build worker environment and commands",
+                    "BP-SA: Only allow pipeline modifications through \u0027pipeline as code\u0027"
+.
+2663c
+                    "2", "3"
+.
+2650a
+                    "PW.6.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+2590a
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
+.
+2588c
+                    "3"
+.
+2569a
+                    "PW.6.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+2532c
+                    "M-V: Verify third-party artifacts and open source artifacts",
+                    "BP-V: Validate environments and dependencies before usage",
+                    "D-V Admission controller/deployment gate"
+.
+2520c
+                    "1.10", "4.13", "4.19"
+.
+2483c
+                    "BP-V Enforcing policy",
+                    "SC-V Require verification attestations / confirmation",
+                    "A-V Policy"
+.
+2448c
+              "references": [
+                {
+                  "sections": [
+                    "5.8"
+                  ],
+                  "source": "OWASP SCVS"
+                }
+              ]
+.
+2431a
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "SC-V Declare protected repository namespaces",
+                    "SC-V Require verification attestations / confirmation",
+                    "SC-CE Establish and adhere to contribution policies"
+                  ],
+.
+2430c
+                    "4.17"
+.
+2398c
+                    "SC-SA: Use SSH keys to provide developers access to upstream source code repositories "
+.
+2378a
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "SC-SA: Enforce MFA for accessing source code repositories"
+                  ],
+.
+2377c
+                    "4.5"
+.
+2348a
+                },
+                {
+                  "sections": [
+                    "4.10"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
+.
+2345a
+                    "PS.1.1 R1",
+                    "PS.1.1 R2",
+                    "PS.1.1 R3",
+                    "PS.1.1 R4",
+                    "PS.1.1 C1",
+                    "PS.1.1 C2",
+                    "PS.1.2 R1",
+                    "PS.1.2 C1",
+                    "PS.1.3 R1",
+                    "PS.1.3 R2",
+                    "PS.1.3 R3",
+                    "PS.1.3 R4"
+
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+2315a
+                },
+                {
+                  "sections": [
+                    "SC-V Authenticate and monitor repository activity"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "I-SB-1-A"
+                  ],
+                  "source": "SAMM"
+.
+2312a
+                    "PS.3.1 R1",
+                    "PS.3.1 R2",
+                    "PS.3.1 R3",
+                    "PS.3.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+2268a
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+.
+2253a
+                    "5.8"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+.
+2209a
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+.
+2208a
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "M-V: Require SBOMs and VEX statements from third-party suppliers", "M-V Track dependencies between open source components"
+                  ],
+.
+2207c
+                    "5.4"
+.
+2145a
+                },
+                {
+                  "sections": [
+                    "I-SB-3-B",
+                    "D-SR-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"                  ],
+                  "source": "OSPS"
+.
+2131c
+                    "5", "5.8"
+.
+2124a
+                    "PW.4.4 R1",
+                    "PW.4.4 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+2084a
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A",
+                    "V-RT-2-A",
+                    "V-RT-2-B",
+                    "V-ST-3-A",
+                    "V-ST-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
+.
+2063a
+                    "PW.8.1 R1", 
+                    "PW.8.1 C1", 
+                    "PW.8.2 R1",
+                    "PW.8.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+2008a
+                },
+                {
+                  "sections": [
+                    "V-ST-3-B",
+                    "V-ST-2-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
+.
+2006c
+                    "3", "4"
+.
+2000c
+                    "5.1",
+                    "5.2"
+.
+1987a
+                    "RV.1.2 R1",
+                    "RV.1.2 R2",
+                    "RV.1.2 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1957a
+                },
+                {
+                  "sections": [
+                    "I-SB-2-A",
+                    "I-SD-2-A",
+                    "I-SB-3-A"
+
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+
+                  ],
+                  "source": "OSPS"
+.
+1949c
+                    "SC-A: Prevent committing secrets to source code repository", "SC-A: Automate software security scanning", "M-A: Scan software for vulnerabilities", "A-V Perform additional checks on the artifact"
+.
+1942a
+                    "5.1", "5.4"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+.
+1930a
+                    "PO.3.1 R1", 
+                    "PO.3.1 N1", 
+                    "PO.3.1 N2", 
+                    "PO.3.2 R1",
+                    "PO.3.2 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1865a
+                },
+                {
+                  "sections": [
+                    "V-ST-3-B",
+                    "V-ST-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-06",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+
+                  ],
+                  "source": "OSPS"
+.
+1857c
+                    "C: Enforce independent 2-party review"
+.
+1844a
+                    "PW.7.2 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1797a
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-03",
+                     "OSPS-BR-01",
+                     "OSPS-BR-05",
+                     "OSPS-QA-01",
+                     "OSPS-QA-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
+.
+1787,1788c
+                  "id": "P.3.5.1",
+                  "text": "What mechanisms are in place, if any, to audit that developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
+.
+1781,1785d
+1771a
+                },
+                {
+                  "sections": [
+                    "I-SB-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-06"
+                  ],
+                  "source": "OSPS"
+.
+1769c
+                    "2", "3"
+.
+1763c
+                    "M-V: Verify third party artifacts and open source libraries; SM", 
+                    "M-V Build libraries from source code",
+                    "M-A Run software composition analysis on ingested software"
+.
+1757c
+                    "SCA-1", "SCA-4", "SCA-5", "ING-2", "ING-4", "ENF-2"
+.
+1751c
+                    "5"
+.
+1731a
+                    "PW.4.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1696a
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-01",
+                     "OSPS-BR-06",
+                     "OSPS-DO-03",
+                     "OSPS-QA-07"
+
+                  ],
+                  "source": "OSPS"
+.
+1694c
+                    "BP-SA: Sign every step in the build process"
+.
+1669a
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-03",
+                     "OSPS-AC-04",
+                     "OSPS-BR-01",
+                     "OSPS-BR-06",
+                     "OSPS-DO-03",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+
+                  ],
+                  "source": "OSPS"
+.
+1667c
+                    "M-V: Define trusted package managers, repositories, and libraries"
+.
+1655c
+                    "1.2", "4.19"
+.
+1631a
+                },
+                {
+                  "sections": [
+                     "OSPS-BR-05",
+                     "OSPS-DO-03",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+.
+1629c
+                    "M: Second and third-party risk management"
+.
+1549a
+                },
+                {
+                  "sections": [
+                    "M-A Scan software for vulnerabilities"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "D-SA-2-B",
+                    "D-SA-2-A"
+                  ],
+                  "source": "SAMM"
+.
+1506a
+                },
+                {
+                  "sections": [
+                    "D-SA-2-A"
+                  ],
+                  "source": "SAMM"
+.
+1486a
+                },
+                {
+                  "id": "P.2.4.2",
+                  "text": "What factors determine if you use in-house or standard features?",
+                  "answers": []
+.
+1484,1485c
+                  "id": "P.2.4.2",
+                  "text": "Or a combination of in-house/proprietary and standard features?",
+.
+1480c
+                  "text": "Can you tell me about your philosophy of whether it is better to use available security features or to \u0027roll your own,\u0027 for example, log management, identity management, access control, and vulnerability management?",
+.
+1468a
+                },
+                {
+                  "sections": [
+                    "D-SA-1-A",
+                    "V-AA-1-A",
+                    "I-SD-1-A",
+                    "O-EM-2-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-02",
+                     "OSPS-BR-01"
+                  ],
+                  "source": "OSPS"
+.
+1453a
+                    "PW.9.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1423a
+                },
+                {
+                  "sections": [
+                    "D-SA-1-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-GV-03"
+                  ],
+                  "source": "OSPS"
+.
+1414a
+                    "PW.5.1 R1",
+                    "PW.5.1 R2",
+                    "PW.5.1 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1379a
+                },
+                {
+                  "sections": [
+                    "D-TA-2-A",
+                    "D-TA-1-B",
+                    "V-AA-1-B",
+                    "V-AA-2-A",
+                    "V-RT-2-A",
+                    "V-RT-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
+.
+1370a
+                    "PW.1.1 R1", 
+                    "PW.1.1 C1", 
+                    "PW.1.1 C2" 
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1366a
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "PW.1.1", "PW.2.1"
+                  ],
+.
+1365c
+                    "3.20", "3.21"
+.
+1314a
+
+.
+1313a
+                },
+                {
+                  "sections": [
+                    "I-SD-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-BR-06",
+                     "OSPS-DO-03"
+                  ],
+                  "source": "OSPS"
+.
+1310a
+                    "A-V Validate the Signatures Generated at Each Step",
+                    "A-A Use TUF to manage signing of artifacts"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+.
+1305c
+                    "signed-release", "licenses"
+.
+1298a
+                    "4.12",
+.
+1288a
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "Distributing provenance"
+                  ],
+.
+1287c
+                    "PS.2.1 R1",
+                    "PS.2.1 R2"
+.
+1236a
+                },
+                {
+                  "sections": [
+                    "D-SR-2-A",
+                    "D-SA-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-01"
+                  ],
+                  "source": "OSPS"
+.
+1219a
+                    "PO.1.2 R1",
+                    "PO.1.2 C1",
+                    "PO.1.2 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+1165a
+                },
+                {
+                  "sections": [
+                    "G-SM-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03",
+                     "OSPS-QA-04",
+                     "OSPS-VM-05",
+                     "OSPS-VM-06"
+                  ],
+                  "source": "OSPS"
+.
+1113a
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-03"
+                  ],
+                  "source": "OSPS"
+.
+1086a
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
+.
+1047a
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-01",
+                     "OSPS-SA-01"
+                  ],
+                  "source": "OSPS"
+.
+1013a
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B",
+                    "V-ST-2-A",
+                    "O-EM-3-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-SA-03"
+                  ],
+                  "source": "OSPS"
+.
+1005c
+                    "SI-5",
+                    "RA-5"
+.
+996a
+                    "RV.1.1 R1",
+                    "RV.1.1 R2",
+                    "RV.1.1 R3"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+937a
+                },
+                {
+                  "sections": [
+                    "G-EG-2-A"
+                  ],
+                  "source": "SAMM"
+.
+919a
+                    "PO.2.2 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+773a
+                },
+                {
+                  "sections": [
+                    "D-SR-3-B"
+                  ],
+                  "source": "SAMM"
+.
+762d
+743a
+                    "1.5"
+                  ],
+                  "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+.
+737a
+                    "PO.1.3 R1",
+                    "PW.3.1 R1",
+                    "PW.3.2",
+                    "PW.3.3"
+
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+690a
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-01"
+                  ],
+                  "source": "OSPS"
+.
+664a
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+.
+662c
+                    "M-V Require SBOMs and VEX statements from third-party suppliers",
+                    "M-V Track dependencies between open source components"
+.
+601a
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-DO-06", 
+                     "OSPS-GV-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
+.
+584a
+                    "PW.7.1 R1",
+                    "PW.7.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+549a
+                },
+                {
+                  "sections": [
+                    "G-EG-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-GV-01"
+                  ],
+                  "source": "OSPS"
+.
+538a
+                    "PO.2.1 R1",
+                    "PO.2.1 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+508a
+                },
+                {
+                  "sections": [
+                    "G-SM-2-B",
+                    "G-PC-1-A",
+                    "G-PC-1-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-VM-04"
+                  ],
+                  "source": "OSPS"
+.
+492a
+                    "PO.4.1 R1",
+                    "PO.4.1 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+446a
+                },
+                {
+                  "sections": [
+                    "G-SM-2-A"
+                  ],
+                  "source": "SAMM"
+.
+442a
+                    "PO.2.3 R1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+395a
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+.
+387c
+                    "M-V: Generate an immutable SBOM of code"
+.
+374c
+                    "2"
+.
+360a
+                    "PS.3.2 R1",
+                    "PS.3.2 R2",
+                    "PS.3.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+311c
+              "objective": "By providing SBOM, enable internal and external customers to analyze the contents of the final software package, including the version of the dependencies.",
+.
+303a
+                },
+                {
+                  "sections": [
+                    "I-SB-2-B"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                     "OSPS-BR-02",  		
+                     "OSPS-BR-04",
+                     "OSPS-DO-06",
+                     "OSPS-QA-02"
+                  ],
+                  "source": "OSPS"
+.
+295c
+                    "BP-V: Enforcing policy",
+                    "A-A Distribute in-toto metadata with TUF",
+                    "D-V Ensure clients can perform Verification of Artifacts and associated metadata",
+                    "D-V Ensure clients can verify the freshness of files",
+                    "D-A Use The Update Framework"
+.
+289c
+                    "6.1",
+                    "6.2",
+                    "6.3",
+                    "6.4"
+.
+276a
+                    "PS.3.2 R1",
+                    "PS.3.2 R2",
+                    "PS.3.2 C1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+224a
+                },
+                {
+                  "sections": [
+                    "BP-SA Sign Every Step in the Build Process",
+                    "A-A Use a store to manage metadata from in-toto"
+                  ],
+                  "source": "CNCF SSC"
+                },
+                {
+                  "sections": [
+                    "I-SB-3-A"
+                  ],
+                  "source": "SAMM"
+                },
+                {
+                  "sections": [
+                    "OSPS-DO-03"
+                  ],
+                  "source": "OSPS"
+.
+198a
+                    "PO.3.3 N1"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+136a
+                },
+                {
+                  "sections": [
+                    "OSPS-LE-02",
+                    "OSPS-LE-03"
+                  ],
+                  "source": "OSPS"
+.
+134c
+                    "AU: Scan software for license implications",
+                    "M-A: Managing software licenses"
+.
+121a
+                    "2.14",
+                    "2.15",
+.
+87a
+                },
+                {
+                  "sections": [
+                    "G-PC-1-A",
+                    "G-PC-2-B"
+                  ],
+                  "source": "SAMM"
+.
+79c
+                    "SC-CE: Establish and adhere to contribution policies"
+.
+60a
+                    "PO.1.1 R1", "PO.1.2 R2"
+                  ],
+                  "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+.
+wq
