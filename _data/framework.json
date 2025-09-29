@@ -330,7 +330,8 @@
                 },
                 {
                   "sections": [
-                    "Distributing provenance"
+                    "Distributing provenance",
+                    "Source L3: Signed and auditable provenance"
                   ],
                   "source": "SLSA"
                 },
@@ -441,6 +442,12 @@
                     "PS.3.2 C1"
                   ],
                   "source": "SSDF AI"
+                },
+                {
+                  "sections": [
+                    "Source L3: Signed and auditable provenance"
+                  ],
+                  "source": "SLSA"
                 },
                 {
                   "sections": [
@@ -1586,7 +1593,8 @@
                 },
                 {
                   "sections": [
-                    "Distributing provenance"
+                    "Distributing provenance",
+                    "Source L3: Signed and auditable provenance"
                   ],
                   "source": "SLSA"
                 },
@@ -2327,6 +2335,12 @@
                 },
                 {
                   "sections": [
+                    " Source L4: Two-party review"
+                  ],
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
                     "CR1.2", "CR1.4", "CR2.8", "CR2.6", "CR2.7", "CR3.4", "CR3.5"
                   ],
                   "source": "BSIMM"
@@ -2951,6 +2965,12 @@
                 },
                 {
                   "sections": [
+                    "Source L3: Signed and auditable provenance"
+                  ],
+                  "source": "SLSA"
+                },
+                {
+                  "sections": [
                     "6.3"
                   ],
                   "source": "OWASP SCVS"
@@ -3023,6 +3043,12 @@
                     "4.10"
                   ],
                   "source": "OWASP SCVS"
+                },
+               {
+                  "sections": [
+                    "Source L1:  Version controlled"
+                  ],
+                  "source": "SLSA"
                 },
                 {
                   "sections": [
@@ -3119,6 +3145,12 @@
                     "4.17"
                   ],
                   "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "Source L3: Signed and auditable provenance"
+                  ],
+                  "source": "SLSA"
                 },
                 {
                   "sections": [
@@ -3380,7 +3412,8 @@
                 },
                 {
                   "sections": [
-                    "Build L2: Hosted build platform"
+                    "Build L2: Hosted build platform",
+                    "Source L3: Signed and auditable provenance"
                   ],
                   "source": "SLSA"
                 },
