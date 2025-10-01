@@ -1,7 +1,7 @@
 {
   "groups": [
     {
-      "description": "Tasks that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements.",
+      "description": "Tasks that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements. ",
       "id": "G",
       "name": "Governance",
       "practices": [
