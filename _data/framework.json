@@ -254,7 +254,7 @@
                 },
                 {
                   "sections": [
-                    "BP-SA Sign Every Step in the Build Process",
+                    "BP-SA Sign every step in the build process",
                     "A-A Use a store to manage metadata from in-toto"
                   ],
                   "source": "CNCF SSC"
@@ -352,7 +352,6 @@
                 },
                 {
                   "sections": [
-                    "BP-V: Enforcing policy",
                     "A-A Distribute in-toto metadata with TUF",
                     "D-V Ensure clients can perform Verification of Artifacts and associated metadata",
                     "D-V Ensure clients can verify the freshness of files",
@@ -2145,7 +2144,8 @@
                 },
                 {
                   "sections": [
-                    "BP-SA: Sign every step in the build process"
+                    "BP-SA: Sign every step in the build process",
+                    "SC-V Require verification attestations / confirmation",
                   ],
                   "source": "CNCF SSC"
                 },
@@ -2230,6 +2230,7 @@
                 },
                 {
                   "sections": [
+                    "A-CE Use a container registry that supports OCI image-spec images",
                     "M-V: Verify third party artifacts and open source libraries; SM", 
                     "M-V Build libraries from source code",
                     "M-A Run software composition analysis on ingested software"
@@ -2486,12 +2487,6 @@
                 },
                 {
                   "sections": [
-                    "SC-A: Prevent committing secrets to source code repository", "SC-A: Automate software security scanning", "M-A: Scan software for vulnerabilities", "A-V Perform additional checks on the artifact"
-                  ],
-                  "source": "CNCF SSC"
-                },
-                {
-                  "sections": [
                     "1f, 2, 3"
                   ],
                   "source": "Self-attestation"
@@ -2518,10 +2513,10 @@
               ]
             },
             {
-              "definition": "Review, analyze, and/or test the software’s code, and the tools used to build it, to identify or confirm the presence, remediation, and disclosure of previously undetected vulnerabilities. Record and triage discovered issues and recommended remediations in the development team’s workflow or issue-tracking system.",
+              "definition": "Review, analyze, and/or test the software’s code, and the tools used to build it, to identify or confirm the presence, remediation, and disclosure of previously undetected vulnerabilities. Tools commonly include SAST, DAST, IAST, SCA, and secret detection tools. Record and triage discovered issues and recommended remediations in the development team’s workflow or issue-tracking system.",
               "id": "P.4.3",
               "name": "Automated vulnerability detection",
-              "objective": "Detect vulnerabilities before deployment through the use of automated tools to reduce the window of opportunity for attackers",
+              "objective": "Detect vulnerabilities before deployment through the use of automated tools to reduce the window of opportunity for attackers.",
               "questions": [
                 {
                   "id": "P.4.3.1",
@@ -2573,6 +2568,16 @@
                     "5.2"
                   ],
                   "source": "OWASP SCVS"
+                },
+                {
+                  "sections": [
+                    "SC-A: Prevent committing secrets to source code repository", 
+                    "SC-A: Automate software security scanning", 
+                    "M-A: Scan software for vulnerabilities", 
+                    "M-A Run software composition analysis on ingested software", 
+                    "A-V Perform additional checks on the artifact"
+                  ],
+                  "source": "CNCF SSC"
                 },
                 {
                   "sections": [
@@ -2772,6 +2777,13 @@
                     "D-SR-2-B"
                   ],
                   "source": "SAMM"
+                },
+                {
+                  "sections": [
+                    "BP-SA Deploy monitoring tools to detect malicious behavior",
+                    "D-A Continuous vulnerability scanning"
+                  ],
+                  "source": "CNCF SSC"
                 },
                 {
                   "sections": [
@@ -3634,8 +3646,7 @@
                     "BP-A Build Workers Should be Single Use",
                     "BP-CE Ensure Build Pipeline has minimal network connectivit",
                     "BP-CE Segregate the Duties of Each Build Worker",
-                    "BP-CE Pass in Build Worker Environment and Commands",
-                    "D-V Air-gapped deployment"
+                    "BP-CE Pass in Build Worker Environment and Commands"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -3738,6 +3749,12 @@
                     "SA-8", "SA-15"
                   ],
                   "source": "800-161"
+                },
+                {
+                  "sections": [
+                    "D-V Air-gapped deployment"
+                  ],
+                  "source": "CNCF SSC"
                 },
                 {
                   "sections": [
@@ -3918,6 +3935,7 @@
               "references": [
                 {
                   "sections": [
+                    "A-CE Build in a system for rotating and revoking private keys",
                     "SC-SA: Have a key rotation policy"
                   ],
                   "source": "CNCF SSC"
@@ -4374,7 +4392,8 @@
                 },
                 {
                   "sections": [
-                    "BP-SA Deploy monitoring tools to detect malicious behavior"
+                    "BP-SA Deploy monitoring tools to detect malicious behavior",
+                    "D-A Continuous vulnerability scanning"
                   ],
                   "source": "CNCF SSC"
                 }
@@ -4408,7 +4427,6 @@
                     "BP-V Validate runtime security of build workers",
                     "SC-SA Use short-lived/ephemeral credentials for machine/service access",
                     "A-CE Limit which artifacts any given party is authorized to certify",
-                    "A-CE Build in a system for rotating and revoking private keys",
                     "A-CE Use a container registry that supports OCI image-spec images"
                   ],
                   "source": "CNCF SSC"
