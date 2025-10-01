@@ -1,0 +1,58 @@
+<nav class="framework-nav">
+    <div class="breadcrumbs">
+        <a href="{{ '/framework/' | relative_url }}">Framework</a>
+        {% if page.group_id %}
+            {% assign group = site.data.framework.groups | where: "id", page.group_id | first %}
+            {% assign gidslug = page.group_id | slugify %}
+            &raquo; <a href="{{ '/framework/groups/' | append: gidslug | relative_url }}">{{ group.name }}</a>
+            {% if page.practice_id %}
+                {% assign practice = group.practices | where: "id", page.practice_id | first %}
+                {% assign pidslug = page.practice_id | slugify %}
+                &raquo; <a href="{{ '/framework/practices/' | append: pidslug | relative_url }}">{{ practice.name }}</a>
+                {% if page.task_id %}
+                    {% assign task = practice.tasks | where: "id", page.task_id | first %}
+                    {% assign tidslug = page.task_id | slugify %}
+                    &raquo; <a href="{{ '/framework/tasks/' | append: tidslug | relative_url }}">{{ task.name }}</a>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="sibling-nav">
+        {% case page.collection %}
+            {% when "groups" %}
+                <h4>Framework Groups</h4>
+                <ul>
+                    {% for group in site.data.framework.groups %}
+                        {% assign gidslug = group.id | slugify %}
+                        <li {% if group.id == page.group_id %}class="active"{% endif %}>
+                            <a href="{{ '/framework/groups/' | append: gidslug | relative_url }}">{{ group.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% when "practices" %}
+                {% assign current_group = site.data.framework.groups | where: "id", page.group_id | first %}
+                <h4>Practices in {{ current_group.name }}</h4>
+                <ul>
+                    {% for practice in current_group.practices %}
+                        {% assign pidslug = practice.id | slugify %}
+                        <li {% if practice.id == page.practice_id %}class="active"{% endif %}>
+                            <a href="{{ '/framework/practices/' | append: pidslug | relative_url }}">{{ practice.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% when "tasks" %}
+                {% assign current_group = site.data.framework.groups | where: "id", page.group_id | first %}
+                {% assign current_practice = current_group.practices | where: "id", page.practice_id | first %}
+                <h4>Tasks in {{ current_practice.name }}</h4>
+                <ul>
+                    {% for task in current_practice.tasks %}
+                        {% assign tidslug = task.id | slugify %}
+                        <li {% if task.id == page.task_id %}class="active"{% endif %}>
+                            <a href="{{ '/framework/tasks/' | append: tidslug | relative_url }}">{{ task.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+        {% endcase %}
+    </div>
+</nav> 

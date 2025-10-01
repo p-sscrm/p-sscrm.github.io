@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% seo title=false %}
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+            <nav class="site-nav">
+                <a href="{{ '/framework/' | relative_url }}">Framework</a>
+                <a href="{{ '/news/' | relative_url }}">News</a>
+                <a href="{{ '/assessment/' | relative_url }}">Assessment</a>
+                <a href="{{ '/contact/' | relative_url }}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-content">
+        <div class="container">
+            {{ content }}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Version {{ site.data.framework.version }}</p>
+        </div>
+    </footer>
+</body>
+</html> 

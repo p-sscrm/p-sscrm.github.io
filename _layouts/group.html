@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% include framework_nav.html %}
+
+<article class="group">
+    <header class="group-header">
+        <h1>{{ page.title }}</h1>
+        <p class="group-description">{{ page.description }}</p>
+    </header>
+
+    <section class="practices">
+        <h2>Practices</h2>
+        {% assign group = site.data.framework.groups | where: "id", page.group_id | first %}
+        {% for practice in group.practices %}
+            <div class="practice-summary">
+                <h3>
+                    {% assign pidslug = practice.id | slugify %}
+                    <a href="{{ '/framework/practices/' | append: pidslug | relative_url }}">
+                        {{ practice.name }} ({{ practice.id }})
+                    </a>
+                </h3>
+                <p>{{ practice.description }}</p>
+            </div>
+        {% endfor %}
+    </section>
+</article> 

@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% include framework_nav.html %}
+
+<article class="practice">
+    <header class="practice-header">
+        <h1>{{ page.practice_id }} {{ page.title }}</h1>
+        <p class="practice-description">{{ page.description }}</p>
+    </header>
+
+    <section class="tasks">
+        <h2>Tasks</h2>
+        {% assign group = site.data.framework.groups | where: "id", page.group_id | first %}
+        {% assign practice = group.practices | where: "id", page.practice_id | first %}
+        
+        {% for task in practice.tasks %}
+            <div class="task-summary">
+                <h3>
+                    {% assign tidslug = task.id | slugify %}
+                    <a href="{{ '/framework/tasks/' | append: tidslug | relative_url }}">
+                        ({{ task.id }}) {{ task.name }}
+                    </a>
+                </h3>
+                {{ task.objective }}
+            </div>
+        {% endfor %}
+    </section>
+</article> 
