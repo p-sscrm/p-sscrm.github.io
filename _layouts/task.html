@@ -54,8 +54,11 @@ layout: default
                             {% endif %}
                         {% endfor %}
                         <li id="{{ reference.source }}" class="reference">
-                            <a href="{{reflink}}" target="_blank" rel="noreferrer nofollow" id="{{ section }}" class="section">
+                            <!--<a href="{{reflink}}" target="_blank" rel="noreferrer nofollow" id="{{ section }}" class="section">
                                 {{ reference.source }}
+                            </a> -->
+                            <a href="{{ '/framework/frameworks/' | append: reference.source | relative_url }}">
+                              {{ reference.source }}
                             </a>
                         {% for section in reference.sections %}
                                 {{ section }}

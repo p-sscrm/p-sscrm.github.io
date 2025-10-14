@@ -5,7 +5,7 @@ module Framework
     def generate(site)
       # Load framework data
       framework = JSON.parse(File.read('_data/framework.json'))
-     
+
       # generate top-level framework page
 #      site.collections.docs << create_doc(site,'_framework',"framework.md",{})
 #      site.collections['groups'].docs << create_doc(
@@ -17,6 +17,20 @@ module Framework
 #          'description' => group['description']
 #        }
 #      )
+
+      # Generate a page for each framework
+      framework['metadata'].each do |fwk|
+        site.collections['frameworks'].docs << create_doc(
+          site, '_frameworks',
+         "#{fwk['id']}.md",
+          {
+            'title' => fwk['title'],
+            'framework_id' => fwk['id'],
+            'description' =>  fwk['description'],
+            'link' => fwk['link'],
+          }
+        )
+      end
  
       # Generate pages for each group
       framework['groups'].each do |group|

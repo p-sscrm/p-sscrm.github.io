@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{% include framework_nav.html %}
+
+<article class="framework">
+    <header class="framework-header">
+        <h1>{{ page.framework_id }} {{ page.title }}</h1>
+        <h2>Source Document: <a href="{{ page.link }}">{{ page.link }}</a></h2>
+        <p class="practice-description">{{ page.description }}</p>
+    </header>
+
+    <section class="framework">
+        <h2>{{ page.framework_id }} - P-SSCRM mapping</h2>
+        <table>
+        <tbody>
+        {% for group in site.data.framework.groups  %}
+          {% for practice in group.practices  %}
+            {% for task in practice.tasks  %}
+              {% for reference in task.references  %}
+                {% if reference.source == page.framework_id %}
+                  <tr>
+                    <td>
+                    {% for section in reference.sections %}
+                      {{ section }} 
+                    {% endfor %}
+                    </td>
+                      <td class="task-summary">
+                        {% assign tidslug = task.id | slugify %}
+                        <a href="{{ '/framework/tasks/' | append: tidslug | relative_url }}">
+                          {{task.id}} {{ task.name }}
+                        </a>
+                      </td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+        </tbody>
+        </table>
+    </section>
+</article> 

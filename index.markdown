@@ -21,14 +21,12 @@ The Proactive Software Supply Chain Risk Management Framework (P-SSCRM) describe
             <td>
                 {% for practice in group.practices %}
                     {% assign pidslug = practice.id | slugify %}
-                    <li>
-                        <a href="{{ '/framework/practices/' | append: pidslug | relative_url }}">{{ practice.name }}</a>
-                    </li>
+                    {% assign pid = practice.id | append: " " %}
+                        <a href="{{ '/framework/practices/' | append: pidslug | relative_url }}">{{ pid | append: practice.name }}</a>
+                        <br>
                 {% endfor %}
             </td>
      {% endfor %}
      </tr>
 </table>
-
-
-
+<p>

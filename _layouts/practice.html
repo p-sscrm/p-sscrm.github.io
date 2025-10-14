@@ -19,7 +19,7 @@ layout: default
                 <h3>
                     {% assign tidslug = task.id | slugify %}
                     <a href="{{ '/framework/tasks/' | append: tidslug | relative_url }}">
-                        ({{ task.id }}) {{ task.name }}
+                        {{ task.id }} {{ task.name }}
                     </a>
                 </h3>
                 {{ task.objective }}

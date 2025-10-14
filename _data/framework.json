@@ -60,7 +60,7 @@
                   "sections": [
                     "PO.1.1 R1", "PO.1.2 R2"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -84,7 +84,7 @@
                   "sections": [
                     "SC-CE: Establish and adhere to contribution policies"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -136,7 +136,7 @@
                     "2.15",
                     "5.12"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -149,7 +149,7 @@
                     "AU: Scan software for license implications",
                     "M-A: Managing software licenses"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -221,7 +221,7 @@
                   "sections": [
                     "PO.3.3 N1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -257,7 +257,7 @@
                     "BP-SA Sign every step in the build process",
                     "A-A Use a store to manage metadata from in-toto"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -326,7 +326,7 @@
                     "PS.3.2 R2",
                     "PS.3.2 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -348,7 +348,7 @@
                     "6.3",
                     "6.4"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -357,7 +357,7 @@
                     "D-V Ensure clients can verify the freshness of files",
                     "D-A Use The Update Framework"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -440,7 +440,7 @@
                     "PS.3.2 R2",
                     "PS.3.2 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -465,7 +465,7 @@
                     "1.4",
                     "2"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -478,7 +478,7 @@
                   "sections": [
                     "M-V: Generate an immutable SBOM of code"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -546,7 +546,7 @@
                   "sections": [
                     "PO.2.3 R1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -609,7 +609,7 @@
                     "PO.4.1 R1",
                     "PO.4.1 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -676,7 +676,7 @@
                     "PO.2.1 R1",
                     "PO.2.1 N1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -741,7 +741,7 @@
                     "PW.7.1 R1",
                     "PW.7.1 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -826,7 +826,7 @@
                   "sections": [
                     "1"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -839,7 +839,7 @@
                     "M-V Require SBOMs and VEX statements from third-party suppliers",
                     "M-V Track dependencies between open source components"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -931,7 +931,7 @@
                     "PW.3.3"
 
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -943,7 +943,7 @@
                   "sections": [
                     "1.5"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -1131,7 +1131,7 @@
                   "sections": [
                     "PO.2.2 R1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -1222,7 +1222,7 @@
                     "RV.1.1 R2",
                     "RV.1.1 R3"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -1502,7 +1502,7 @@
                     "PO.1.2 C1",
                     "PO.1.2 N1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -1589,7 +1589,7 @@
                     "PS.2.1 R1",
                     "PS.2.1 R2"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -1609,20 +1609,20 @@
                     "4.12",
                     "6"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
                     "signed-release", "licenses"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
                     "A-V Validate the Signatures Generated at Each Step",
                     "A-A Use TUF to manage signing of artifacts"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -1696,7 +1696,7 @@
                   "sections": [
                     "3.20", "3.21"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -1710,7 +1710,7 @@
                     "PW.1.1 C1", 
                     "PW.1.1 C2" 
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -1785,7 +1785,7 @@
                     "PW.5.1 R2",
                     "PW.5.1 R3"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -1842,7 +1842,7 @@
                   "sections": [
                     "PW.9.1 N1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -1969,7 +1969,7 @@
                   "sections": [
                     "M-A Scan software for vulnerabilities"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2047,7 +2047,7 @@
                   "sections": [
                     "binary-artifacts","contributors","maintained"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
@@ -2059,7 +2059,7 @@
                   "sections": [
                     "M: Second and third-party risk management"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2094,7 +2094,7 @@
                   "sections": [
                     "1.2", "4.19"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -2106,7 +2106,7 @@
                   "sections": [
                     "M-V: Define trusted package managers, repositories, and libraries"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2145,9 +2145,9 @@
                 {
                   "sections": [
                     "BP-SA: Sign every step in the build process",
-                    "SC-V Require verification attestations / confirmation",
+                    "SC-V Require verification attestations / confirmation"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2195,7 +2195,7 @@
                   "sections": [
                     "PW.4.1 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -2220,7 +2220,7 @@
                   "sections": [
                     "5"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -2235,7 +2235,7 @@
                     "M-V Build libraries from source code",
                     "M-A Run software composition analysis on ingested software"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2340,7 +2340,7 @@
                   "sections": [
                     "PW.7.2 R1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -2358,13 +2358,13 @@
                   "sections": [
                     "code-review"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
                     "C: Enforce independent 2-party review"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2459,7 +2459,7 @@
                     "PO.3.2 R1",
                     "PO.3.2 R2"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -2477,13 +2477,13 @@
                   "sections": [
                     "5.1", "5.4"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
                     "sast","fuzzing"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
@@ -2548,7 +2548,7 @@
                     "RV.1.2 R2",
                     "RV.1.2 R3"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -2567,7 +2567,7 @@
                     "5.1",
                     "5.2"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -2577,7 +2577,7 @@
                     "M-A Run software composition analysis on ingested software", 
                     "A-V Perform additional checks on the artifact"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2659,7 +2659,7 @@
                     "PW.8.2 R1",
                     "PW.8.2 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -2677,7 +2677,7 @@
                   "sections": [
                     "ci-tests"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
@@ -2745,7 +2745,7 @@
                     "PW.4.4 R1",
                     "PW.4.4 R2"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -2757,7 +2757,7 @@
                   "sections": [
                     "5", "5.8"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -2783,7 +2783,7 @@
                     "BP-SA Deploy monitoring tools to detect malicious behavior",
                     "D-A Continuous vulnerability scanning"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2853,13 +2853,13 @@
                   "sections": [
                     "5.4"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
                     "M-V: Require SBOMs and VEX statements from third-party suppliers", "M-V Track dependencies between open source components"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -2912,7 +2912,7 @@
                   "sections": [
                     "5.8"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -2924,7 +2924,7 @@
                   "sections": [
                     "dependency-update-tool"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
@@ -2986,7 +2986,7 @@
                     "PS.3.1 R3",
                     "PS.3.1 N1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -2998,13 +2998,13 @@
                   "sections": [
                     "6.3"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
                     "SC-V Authenticate and monitor repository activity"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -3055,7 +3055,7 @@
                     "PS.1.3 R4"
 
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -3067,7 +3067,7 @@
                   "sections": [
                     "4.10"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                {
                   "sections": [
@@ -3110,13 +3110,13 @@
                   "sections": [
                     "4.5"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
                     "SC-SA: Enforce MFA for accessing source code repositories"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3137,7 +3137,7 @@
                   "sections": [
                     "SC-SA: Use SSH keys to provide developers access to upstream source code repositories "
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3163,13 +3163,13 @@
                   "sections": [
                     "branch-protection"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
                     "4.17"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -3183,7 +3183,7 @@
                     "SC-V Require verification attestations / confirmation",
                     "SC-CE Establish and adhere to contribution policies"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3204,7 +3204,7 @@
                   "sections": [
                     "5.8"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -3251,7 +3251,7 @@
                     "SC-V Require verification attestations / confirmation",
                     "A-V Policy"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3287,7 +3287,7 @@
                   "sections": [
                     "pinned-dependencies"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
@@ -3299,7 +3299,7 @@
                   "sections": [
                     "1.10", "4.13", "4.19"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -3313,7 +3313,7 @@
                     "BP-V: Validate environments and dependencies before usage",
                     "D-V Admission controller/deployment gate"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3351,7 +3351,7 @@
                   "sections": [
                     "PW.6.1 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -3363,7 +3363,7 @@
                   "sections": [
                     "3"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -3444,7 +3444,7 @@
                   "sections": [
                     "PW.6.2 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -3463,13 +3463,13 @@
                   "sections": [
                     "2", "3"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
                     "dangerous-workflow","token-permissions", "pinned-dependencies"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
@@ -3480,7 +3480,7 @@
                     "BP-CE: Pass in build worker environment and commands",
                     "BP-SA: Only allow pipeline modifications through \u0027pipeline as code\u0027"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -3530,7 +3530,7 @@
                   "sections": [
                     "BP-A: Provision a secured orchestration platform"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3558,7 +3558,7 @@
                     "BP-V Validate build artifacts through verifiably reproducible builds",
                     "BP-V  Recommendations for Reproducible Builds"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3584,13 +3584,13 @@
                   "sections": [
                     "packaging"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 },
                 {
                   "sections": [
                     "BP-CE: Write output to a separate secured storage repo"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3632,7 +3632,7 @@
                   "sections": [
                     "3"
                   ],
-                  "source": "OWASP SCVS"
+                  "source": "OWASP-SCVS"
                 },
                 {
                   "sections": [
@@ -3648,7 +3648,7 @@
                     "BP-CE Segregate the Duties of Each Build Worker",
                     "BP-CE Pass in Build Worker Environment and Commands"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             }
@@ -3735,7 +3735,7 @@
                     "PO.5.1 R5",
                     "PO.5.1 R6"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -3754,7 +3754,7 @@
                   "sections": [
                     "D-V Air-gapped deployment"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -3802,11 +3802,17 @@
                 },
                 {
                   "sections": [
+                    "A-CE Limit which artifacts any given party is authorized to certify"
+                  ],
+                  "source": "CNCF-SSC"
+                },
+                {
+                  "sections": [
                     "SC-CE Establish and adhere to contribution policies",
                     "SC-CE Define roles aligned to functional responsibilities",
                     "BP-SA Define user roles"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3916,7 +3922,7 @@
                   "sections": [
                     "BP-SA Deploy monitoring tools to detect malicious behavior"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3938,7 +3944,7 @@
                     "A-CE Build in a system for rotating and revoking private keys",
                     "SC-SA: Have a key rotation policy"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3965,7 +3971,7 @@
                     "SC-SA: Use short-lived/ephemeral credentials",
                     "BP-SA Use Short-Lived Workload Certificates"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -3986,7 +3992,7 @@
                   "sections": [
                     "BP-SA: Follow best practices for establishing a root of trust from an offline source"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             }
@@ -4048,7 +4054,7 @@
                   "sections": [
                     "RV.2.1 N1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -4117,7 +4123,7 @@
                     "RV.2.2 R2",
                     "RV.2.2 C1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -4129,7 +4135,7 @@
                   "sections": [
                     "vulnerabilities"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 }
               ]
             },
@@ -4183,7 +4189,7 @@
                     "RV.1.3 R1",
                     "RV.1.3 R2"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -4213,7 +4219,7 @@
                   "sections": [
                     "security-policy"
                   ],
-                  "source": "OSSF Scorecard"
+                  "source": "OSSF-Scorecard"
                 }
               ]
             },
@@ -4251,7 +4257,7 @@
                   "sections": [
                     "RV.3.3"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -4328,7 +4334,7 @@
                   "sections": [
                     "RV.3.1 N1"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -4382,7 +4388,7 @@
                     "PO.5.3 R1",
                     "PO.5.3 R2"
                   ],
-                  "source": "SSDF AI"
+                  "source": "SSDF-AI"
                 },
                 {
                   "sections": [
@@ -4395,7 +4401,7 @@
                     "BP-SA Deploy monitoring tools to detect malicious behavior",
                     "D-A Continuous vulnerability scanning"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             },
@@ -4426,10 +4432,9 @@
                   "sections": [
                     "BP-V Validate runtime security of build workers",
                     "SC-SA Use short-lived/ephemeral credentials for machine/service access",
-                    "A-CE Limit which artifacts any given party is authorized to certify",
                     "A-CE Use a container registry that supports OCI image-spec images"
                   ],
-                  "source": "CNCF SSC"
+                  "source": "CNCF-SSC"
                 }
               ]
             }
@@ -4441,14 +4446,14 @@
   "metadata": [
     {"id":"800-161", "title":"NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of tasks specifically identified in this document as mapping back to the Executive Order", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf" },
     {"id": "BSIMM", "title":"Building Security In Maturity Model Version 15", "link":"https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf"},
-    {"id":"CNCF SSC", "title":"Cloud Native Computing Foundation – Software Supply Chain Best Practices", "link":"https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf"},
+    {"id":"CNCF-SSC", "title":"Cloud Native Computing Foundation – Software Supply Chain Best Practices", "link":"https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf"},
     {"id":"EO", "title":"Executive Order 14028 (EO)", "link":"https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity"},
-    {"id":"OSSF Scorecard", "title":"OpenSSF Scorecard metrics", "link":"https://github.com/ossf/scorecard/blob/main/docs/checks.md"},
-    {"id":"OWASP SCVS", "title":"Open Web Application Security Project Software Component Verification Standard Version 1.0", "link":"https://scvs.owasp.org/scvs/"},
+    {"id":"OSSF-Scorecard", "title":"OpenSSF Scorecard metrics", "link":"https://github.com/ossf/scorecard/blob/main/docs/checks.md"},
+    {"id":"OWASP-SCVS", "title":"Open Web Application Security Project Software Component Verification Standard Version 1.0", "link":"https://scvs.owasp.org/scvs/"},
     {"id":"S2C2F", "title": "OpenSSF Secure Supply Chain Consumption Framework", "link":"https://baseline.openssf.org/versions/2025-02-25"},
     {"id": "SLSA", "title":"Supply-chain Levels for Software Artifacts v1.1", "link":"https://slsa.dev/spec/v1.1/"},
     {"id":"SSDF", "title":"NIST Secure Software Development Framework version 1.1 (800-218)", "link":"https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"},
-    {"id":"SSDF AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
+    {"id":"SSDF-AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
     {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
     {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
     {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}

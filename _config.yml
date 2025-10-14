@@ -27,6 +27,9 @@ collections:
   tasks:
     output: true
     permalink: /framework/tasks/:name/
+  frameworks:
+    output: true
+    permalink: /framework/frameworks/:name/
 
 # Default layouts
 defaults:
@@ -45,6 +48,11 @@ defaults:
       type: "tasks"
     values:
       layout: "task"
+  - scope:
+      path: ""
+      type: "frameworks"
+    values:
+      layout: "framework"
   - scope:
       path: ""
     values:

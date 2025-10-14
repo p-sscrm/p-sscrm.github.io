@@ -17,7 +17,7 @@ layout: default
                 <h3>
                     {% assign pidslug = practice.id | slugify %}
                     <a href="{{ '/framework/practices/' | append: pidslug | relative_url }}">
-                        {{ practice.name }} ({{ practice.id }})
+                        {{ practice.id }} {{ practice.name }}
                     </a>
                 </h3>
                 <p>{{ practice.description }}</p>
