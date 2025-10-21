@@ -1,7 +1,9 @@
 - name: Home
   link: /
 - name: Framework
-  link: /framework.html
+  link: /framework/index.html
+- name: About
+  link: /about.html
 - name: News
   link: /news.html
 - name: Assessment

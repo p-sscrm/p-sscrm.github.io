@@ -109,17 +109,17 @@
               "questions": [
                 {
                   "id": "G.1.2.1",
-                  "text": "How do you scan check that the software licenses for tools or third party components comply with your organization\u0027s use policies?",
+                  "text": "How do you check that the software licenses for tools or third party components comply with your organization\u0027s use policies?",
                   "answers": []
                 },
                 {
                   "id": "G.1.2.2",
-                  "text": "Is the process automated?",
+                  "text": "What tools, if any, do you use to automate the license check process?",
                   "answers": []
                 },
                 {
                   "id": "G.1.2.3",
-                  "text": "Do you document and track users and uses of software licenses relative to access control policies and software usage restrictions?",
+                  "text": "How do you document and track users and uses of software licenses relative to access control policies and software usage restrictions?",
                   "answers": []
                 }
               ],
@@ -161,44 +161,44 @@
               ]
             },
             {
-              "definition": "Configure tools to generate artifacts to create an audit trail of the use of secure software development practices that conforms with record retention requirements and preserves the integrity of the findings and the confidentiality of the information. Assign responsibility for creating artifacts that tools cannot generate. Attestation should be immutable and published in the source repository releases, in the package registry, or elsewhere with their existence in a transparency log.",
+              "definition": "Configure tools to generate attestations (aka evidence) to create an audit trail for every step in the build process and of the use of secure software development practices. These attestations should indicate conformance with record retention requirements, preserve the integrity of the findings and the authenticity of the information. Assign responsibility for creating attestations that tools cannot generate. Attestations should be immutable and published in the source repository releases, in the package registry, or elsewhere, with their existence recorded in a transparency log.. An attestation is a signed assertion that the record is trustworthy.",
               "id": "G.1.3",
               "name": "Produce attestation",
-              "objective": "Produce evidence of the use of secure software development practices.",
+              "objective": "Produce an audit trail for every step in the build process and  evidence of the use of secure software development practices.",
               "questions": [
                 {
                   "id": "G.1.3.1",
-                  "text": "Can you tell me about automated or manual processes for producing artifacts that attest to the use of secure development practices?",
+                  "text": "Can you tell me about your automated or manual processes for producing attestations for the build process and for the use of secure development practices?",
                   "answers": []
                 },
                 {
                   "id": "G.1.3.2",
-                  "text": "Where are the artifacts stored?",
+                  "text": "Where do you publish your attestations, e.g. source repositories, package registries, transparency logs?",
                   "answers": []
                 },
                 {
                   "id": "G.1.3.3",
-                  "text": "What are your auditability/retention requirements for these artifacts?",
+                  "text": "What are your auditability/retention requirements for these attestations?",
                   "answers": []
                 },
                 {
                   "id": "G.1.3.4",
-                  "text": "Is responsibility assigned for creating needed artifacts that tools cannot generate?",
+                  "text": "Is responsibility assigned for creating needed attestations that tools cannot generate?",
                   "answers": []
                 },
                 {
                   "id": "G.1.3.5",
-                  "text": "Do you use a framework, like in-toto, to produce authenticated meta-data about artifacts, such as for attestation?",
+                  "text": "What tools or frameworks (e.g. TUF, in-toto) do you use to produce authenticated attestations?",
                   "answers": []
                 },
                 {
                   "id": "G.1.3.6",
-                  "text": "Do you need to provide self-attestation for your product?",
+                  "text": "What is your rationale for providing self-attestation for your product?",
                   "answers": []
                 },
                 {
                   "id": "G.1.3.7",
-                  "text": "Is the attestation immutable and published in the source repository releases, in the package registry, or elsewhere with their existence in a transparency log?",
+                  "text": "How do you ensure that the attestations are immutable?",
                   "answers": []
                 }
               ],
@@ -274,14 +274,14 @@
               ]
             },
             {
-              "definition": "Automatically collect and provide provenance data for generated products. For provenance data, including how the artifact was built, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data\u0027s authenticity and integrity can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations. Producers MUST publish attestations in at least one place, and SHOULD publish attestations in more than one place, such as in source repository release, the package registry, and/or a transparency log.  Attestations should be immutable.",
+              "definition": "Automatically collect and provide traceability data for generated products, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data\u0027s traceability can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations.",
               "id": "G.1.4",
               "name": "Deliver provenance",
-              "objective": "By providing provenance data, enable customers to analyze the integrity and verifiability of the actions performed while writing code, compiling, testing, and deploying software by making transparent the steps that were performed, by whom and in what order.",
+              "objective": "Enable traceability and reproducibility of the actions performed while writing code, compiling, testing, and deploying software by making transparent the steps that were performed, by whom and in what order.",
               "questions": [
                 {
                   "id": "G.1.4.1",
-                  "text": "Can you tell me more about your provenance data generation process?",
+                  "text": "Can you tell me more about your manual or automated provenance data generation process?",
                   "answers": []
                 },
                 {
@@ -291,17 +291,17 @@
                 },
                 {
                   "id": "G.1.4.3",
-                  "text": "Is provenance data automatically generated/verified by the build service, or does it involve a manual process or the ability for alteration, or is it read-only?",
+                  "text": "How is provenance data verified?",
                   "answers": []
                 },
                 {
                   "id": "G.1.4.4",
-                  "text": "Is a signing key used for a digital signature? Stored in a secure management system accessible only by the build service?",
+                  "text": "How is the integrity and immutability of provenance data managed?",
                   "answers": []
                 },
                 {
                   "id": "G.1.4.5",
-                  "text": "Do provenance records include the initial state of the machine, VM, or container, and include all user-specified build steps?",
+                  "text": "What do provenance records include, e.g. the initial state of the machine, VM, or container, and user-specified build steps?",
                   "answers": []
                 }
               ],
