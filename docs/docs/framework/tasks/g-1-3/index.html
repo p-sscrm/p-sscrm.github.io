@@ -11,15 +11,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
 <meta property="og:description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
-<link rel="canonical" href="/framework/tasks/g-1-3/" />
-<meta property="og:url" content="/framework/tasks/g-1-3/" />
+<link rel="canonical" href="http://localhost:4000/framework/tasks/g-1-3/" />
+<meta property="og:url" content="http://localhost:4000/framework/tasks/g-1-3/" />
 <meta property="og:site_name" content="P-SSCRM Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-10-17T11:11:39-04:00" />
+<meta property="article:published_time" content="2025-10-21T12:36:30-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Produce attestation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-17T11:11:39-04:00","datePublished":"2025-10-17T11:11:39-04:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"Produce attestation","mainEntityOfPage":{"@type":"WebPage","@id":"/framework/tasks/g-1-3/"},"url":"/framework/tasks/g-1-3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-21T12:36:30-04:00","datePublished":"2025-10-21T12:36:30-04:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"Produce attestation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/framework/tasks/g-1-3/"},"url":"http://localhost:4000/framework/tasks/g-1-3/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -29,6 +29,7 @@
             <a href="/" class="site-title">P-SSCRM Documentation</a>
             <nav class="site-nav">
                 <a href="/framework/">Framework</a>
+                <a href="/about/">About</a>
                 <a href="/news/">News</a>
                 <a href="/assessment/">Assessment</a>
                 <a href="/contact/">Contact</a>
@@ -106,12 +107,12 @@
             <h2>Task Details</h2>
             <div class="detail-item">
                 <h3>Objective</h3>
-                <p>Produce evidence of the use of secure software development practices.</p>
+                <p>Produce an audit trail for every step in the build process and  evidence of the use of secure software development practices.</p>
             </div>
             
             <div class="detail-item">
                 <h3>Definition</h3>
-                <p>Configure tools to generate artifacts to create an audit trail of the use of secure software development practices that conforms with record retention requirements and preserves the integrity of the findings and the confidentiality of the information. Assign responsibility for creating artifacts that tools cannot generate. Attestation should be immutable and published in the source repository releases, in the package registry, or elsewhere with their existence in a transparency log.</p>
+                <p>Configure tools to generate attestations (aka evidence) to create an audit trail for every step in the build process and of the use of secure software development practices. These attestations should indicate conformance with record retention requirements, preserve the integrity of the findings and the authenticity of the information. Assign responsibility for creating attestations that tools cannot generate. Attestations should be immutable and published in the source repository releases, in the package registry, or elsewhere, with their existence recorded in a transparency log.. An attestation is a signed assertion that the record is trustworthy.</p>
             </div>
         </section>
 
@@ -125,31 +126,31 @@
                 <ol>
                     
                         <li id="G.1.3.1" class="question">
-                            Can you tell me about automated or manual processes for producing artifacts that attest to the use of secure development practices?
+                            Can you tell me about your automated or manual processes for producing attestations for the build process and for the use of secure development practices?
                         </li>
                     
                         <li id="G.1.3.2" class="question">
-                            Where are the artifacts stored?
+                            Where do you publish your attestations, e.g. source repositories, package registries, transparency logs?
                         </li>
                     
                         <li id="G.1.3.3" class="question">
-                            What are your auditability/retention requirements for these artifacts?
+                            What are your auditability/retention requirements for these attestations?
                         </li>
                     
                         <li id="G.1.3.4" class="question">
-                            Is responsibility assigned for creating needed artifacts that tools cannot generate?
+                            Is responsibility assigned for creating needed attestations that tools cannot generate?
                         </li>
                     
                         <li id="G.1.3.5" class="question">
-                            Do you use a framework, like in-toto, to produce authenticated meta-data about artifacts, such as for attestation?
+                            What tools or frameworks (e.g. TUF, in-toto) do you use to produce authenticated attestations?
                         </li>
                     
                         <li id="G.1.3.6" class="question">
-                            Do you need to provide self-attestation for your product?
+                            What is your rationale for providing self-attestation for your product?
                         </li>
                     
                         <li id="G.1.3.7" class="question">
-                            Is the attestation immutable and published in the source repository releases, in the package registry, or elsewhere with their existence in a transparency log?
+                            How do you ensure that the attestations are immutable?
                         </li>
                     
                 </ol>
