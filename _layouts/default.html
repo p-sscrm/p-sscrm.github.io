@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    {% seo title=false %}
-</head>
+
+{% include head.html %}
+
 <body>
     <header class="site-header">
         <div class="container">
             <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
             <nav class="site-nav">
-                <a href="{{ '/framework/' | relative_url }}">Framework</a>
+                <a href="{{ '/' | relative_url }}">Framework</a>
                 <a href="{{ '/about/' | relative_url }}">About</a>
                 <a href="{{ '/news/' | relative_url }}">News</a>
                 <a href="{{ '/assessment/' | relative_url }}">Assessment</a>

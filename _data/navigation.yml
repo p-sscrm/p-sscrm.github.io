@@ -1,11 +1,13 @@
 - name: Home
   link: /
 - name: Framework
-  link: /framework/index.html
+  link: /index.html
 - name: About
   link: /about.html
 - name: News
   link: /news.html
+- name: Posts
+  link: /posts.html
 - name: Assessment
   link: /assessment.html
 - name: Contact

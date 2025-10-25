@@ -4443,6 +4443,9 @@
       ]
     }
   ],
+  "pending_metadata": [
+        {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}
+  ],
   "metadata": [
     {"id":"800-161", "title":"NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of tasks specifically identified in this document as mapping back to the Executive Order", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf" },
     {"id": "BSIMM", "title":"Building Security In Maturity Model Version 15", "link":"https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf"},
@@ -4455,8 +4458,7 @@
     {"id":"SSDF", "title":"NIST Secure Software Development Framework version 1.1 (800-218)", "link":"https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"},
     {"id":"SSDF-AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
     {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
-    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
-    {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}
+    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"}
   ],
   "version": "2.0"
 }
