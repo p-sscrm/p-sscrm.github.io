@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,30 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
 <meta property="og:description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
-<link rel="canonical" href="/about.html" />
-<meta property="og:url" content="/about.html" />
+<link rel="canonical" href="http://localhost:4000/about.html" />
+<meta property="og:url" content="http://localhost:4000/about.html" />
 <meta property="og:site_name" content="P-SSCRM Documentation" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="What is P-SSCRM?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"What is P-SSCRM?","url":"/about.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"What is P-SSCRM?","url":"http://localhost:4000/about.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
+
+ <script type="module">
+ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+ mermaid.initialize({ startOnLoad: true });
+ await mermaid.run({
+     querySelector: '.language-mermaid',
+ });
+</script>
+
+
 <body>
-    <header class="site-header">
+
+       <header class="site-header">
         <div class="container">
             <a href="/" class="site-title">P-SSCRM Documentation</a>
             <nav class="site-nav">
@@ -35,6 +47,7 @@
             </nav>
         </div>
     </header>
+
 
     <main class="site-content">
         <div class="container">
