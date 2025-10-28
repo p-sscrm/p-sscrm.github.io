@@ -12,8 +12,8 @@ The table below shows the structure of the Proactive Supply Chain Risk Managemen
 Framework. It includes four broad groups of Governance, Product, Environment, and Deployment.
 Our P-SSCRM as well as both practice and task descriptions, provide a common vocabulary for
 explaining the salient elements of an SSCRM-I. Within the four P-SSCRM groups are 15 practices
-(e.g., Perform compliance). The current version of the P-SSCRM, the P-SSCRM1, is composed of 73
-software supply chain risk management tasks that are organized into these 15 practices.
+(e.g., Perform compliance). P-SSCRM is composed of 74
+Software supply chain risk management tasks are organized into these 15 practices.
 <br>
 <br>
 <table border="2px">
