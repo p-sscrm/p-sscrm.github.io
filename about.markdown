@@ -3,12 +3,13 @@ layout: default
 title:  "What is P-SSCRM?"
 ---
 
-<p align="center">
+<div align="center">
 <img src="https://imgs.xkcd.com/comics/standards.png" />
-</p>
+</div>
 
 ### WHAT IS THE P-SSCRM'S PURPOSE?
 The Proactive Software Supply Chain Risk Management (P-SSCRM) framework is not a new standard. Rather than introducing any new concepts, practices, or tasks, we have aggregated concepts, practices, and tasks from existing software supply chain security frameworks. 
+
 
 We created the P-SSCRM to learn how software supply chain risk management initiatives work
 and to provide a resource for people looking to create or improve their own software supply chain
@@ -16,12 +17,20 @@ risk management initiative. In general, every firm creates its software supply c
 initiative with some high-level goals in mind. The use of the P-SSCRM framework is appropriate if
 your business goals for software security include:
 
-<ul>
-<li>Informed risk management decisions</li>
-<li>Clarity on what is “the right thing to do” for a holistic set of roles involved in software supply chain security based upon the guidance referenced in the framework</li>
-<li>Improved software and associated supply chain security and compliance assurance.</li>
-</ul>
-<br>
+
+* Informed risk management decisions
+* Clarity on what is “the right thing to do” for a holistic set of roles involved in software supply chain security based upon the guidance referenced in the framework
+* Improved software and associated supply chain security and compliance assurance.
+
+
+The P-SSCRM framework provides the structure for a “descriptive” model. That is, P-SSCRM is
+not a prescriptive model that recommends what an organization should do to reduce software
+supply chain risk. Instead, P-SSCRM provides information on what the organizations that have
+undergone a P-SSCRM assessment are doing. Put another way, P-SSCRM is not a set of best
+practices defined by some committee for some one-size-fits-all generic problem. Rather, P-SSCRM
+is a set of actual practices being performed daily by forward-thinking firms.
+
+
 The P-SSCRM framework provides the structure for a “descriptive” model. That is, P-SSCRM is
 not a prescriptive model that recommends what an organization should do to reduce software
 supply chain risk. Instead, P-SSCRM provides information on what the organizations that have
@@ -30,7 +39,6 @@ practices defined by some committee for some one-size-fits-all generic problem. 
 is a set of actual practices being performed daily by forward-thinking firms.
 <br>
 <br>
-### WHERE DID THE P_SSCRM COME FROM?
 
 <table border="2px">
     {% for group in site.data.framework.groups %}
@@ -68,9 +76,36 @@ teams and operations teams.
 software development at an organizational level.
 
 ### TODO: LIFECYCLE
+The diagram below displays the P-SSCRM groups and practices in the context of a product lifecycle model,
+annotating the primary role responsible for each practice. The practices and associated tasks
+protect the integrity of source code, the build environment, deployed and running software
+applications. They also include practices to securely decommission a software product at its end of
+life. The practices that appear in solid boxes along the top and left side of the lifecycle indicate
+practices that are done throughout the product lifecycle.
+
+<img src="/assets/images/PSCCRMLifecycleModel.png" />
+
 
 ### WHO SHOULD USE THE P-SSCRM?
+The P-SSCRM is appropriate for anyone responsible for creating and executing a secure software
+supply chain risk management initiative or looking to incorporate a higher degree of software security
+assurance throughout their existing program. Five example P-SSCRM user stories are also presented
+below:
+* As an individual contributor (business manager, software developer or tester,
+information technology, DevOps engineer), I want to understand the tasks I should adopt
+to reduce software supply chain risk.
+* As a CISO or senior security engineer, I want to guide the adoption of secure software
+supply chain tasks in well-defined iterations to reduce security risk.
+* As a CTO/CIO, I want to demonstrate concrete improvements to software supply chain
+security.
+* As a C-level executive, I want to compare my organization’s secure software supply chain
+tasks with industry trends and to evaluate my organization’s tasks with those prescribed in
+industry standards, guidelines, and publications.
+* As an auditor or legal counsel, I want to assess secure software supply chain practices
+throughout an organization and for (self-) attestation to reflect conformance accurately.
 
+
+### WHY WERE THESE FRAMEWORKS INCLUDED?
 The ten frameworks were chosen because government and industry practitioners frequently
 talked about all ten at meetings and summits and on Slack and blogs during the months of
 development of P-SSCRM. As the tasks of each framework were added to P-SSCRM, each task was
@@ -79,6 +114,7 @@ equivalent if they have the same meaning but most likely different wording/phras
 definition in the different frameworks. A mapping was added when a task was considered equivalent
 to an existing task, and a new task was created otherwise.
 
+
 We did the other mappings by reading the descriptions of the tasks in the various documents to
 assess bi-directional equivalence. The mappings were freely distributed to interested parties for
 feedback over a six-month period.
@@ -86,6 +122,8 @@ As each of the ten standards was considered for inclusion in the P-SSCRM, the st
 and their value in working together synergistically to provide a holistic view of software supply chain
 risk reduction by all five roles were realized. The number of tasks in each of the four groups that
 came from each framework is shown in Table 1.
+
+
 The bolded numbers in Table 1 indicate the framework most influential in providing the tasks for
 a group. Twenty of the 23 Governance tasks came from the NIST 800-161 framework. The Business
 Manager and Software Security roles often conduct the practices of the governance group, for which
@@ -101,20 +139,28 @@ detect evidence that a task has been conducted on a software product/project. Cu
 Product, 2 Environment, and 1 Deployment tasks can be automatically detected.
 
 ### TODO: TABLE OF TASK COUNTS BY FRAMEWORK/PRACTICE
+    {{ site.data.taskcount }}
+    {% for p in site.data.taskcount.practices %}
+        {{p.id}} {{p.name}}
+        {% for framework in p %}
+           {{ framework.count }}
+        {% endfor %}
+    {% endfor %}
+### TABLE 1: TASK COUNT BY FRAMEWORK AND PRACTICE
 
 ### TERMINOLOGY & DEFINITIONS
 
-- Task. Actions or efforts conducted in the process of implementing a secure software
+* Task. Actions or efforts conducted in the process of implementing a secure software
 application and of reducing the security risk of that application and for its producing
 organization. Each task has a lower-level objective to aid in secure software development
 and risk reduction. For example:
-    - P.3.1 Component and container choice: make informed third-party component and container choices
--  Practice. A grouping of P-SSCRM tasks that have a similar mid-level objective to aid in secure
+    * P.3.1 Component and container choice: make informed third-party component and container choices
+*  Practice. A grouping of P-SSCRM tasks that have a similar mid-level objective to aid in secure
 software development and risk reduction. The 73 tasks of the P-SSCRM are organized into 15
 practices. For example,
-    - P.3 Manage component and container choices: software supply chain risk can be reduced by careful choice and handling of third-party components and containers.
--  Group. A grouping of P-SSCRM practices with a similar high-level objective to aid in secure
+    * P.3 Manage component and container choices: software supply chain risk can be reduced by careful choice and handling of third-party components and containers.
+*  Group. A grouping of P-SSCRM practices with a similar high-level objective to aid in secure
 software development and risk reduction. The 15 practices of the P-SSCRM are organized
 into four groups: Governance, Product, Environment, and Deployment.
-o Product (P): Tasks to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.
+* Product (P): Tasks to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.
 
