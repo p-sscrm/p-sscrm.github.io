@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-21T12:36:30-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">P-SSCRM Documentation</title><subtitle>The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here  is designed to help you understand and plan a secure software supply chain risk management initiative.</subtitle><entry><title type="html">What is P-SSCRM?</title><link href="http://localhost:4000/update/2025/10/14/p-sscrm_overview.html" rel="alternate" type="text/html" title="What is P-SSCRM?" /><published>2025-10-14T14:37:27-04:00</published><updated>2025-10-14T14:37:27-04:00</updated><id>http://localhost:4000/update/2025/10/14/p-sscrm_overview</id><content type="html" xml:base="http://localhost:4000/update/2025/10/14/p-sscrm_overview.html"><![CDATA[<p>One thing the Proactive Software Supply Chain Risk Managementi (P-SSCRM) framework is not is another standard. Rather than introducing any new concepts, practices, or tasks, we have aggregated concepts, practices, and tasks from existing software supply chain security frameworks. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-10-22T15:46:18-04:00</updated><id>/feed.xml</id><title type="html">P-SSCRM Documentation</title><subtitle>The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here  is designed to help you understand and plan a secure software supply chain risk management initiative.</subtitle><entry><title type="html">What is P-SSCRM?</title><link href="/update/2025/10/14/p-sscrm_overview.html" rel="alternate" type="text/html" title="What is P-SSCRM?" /><published>2025-10-14T14:37:27-04:00</published><updated>2025-10-14T14:37:27-04:00</updated><id>/update/2025/10/14/p-sscrm_overview</id><content type="html" xml:base="/update/2025/10/14/p-sscrm_overview.html"><![CDATA[<p>One thing the Proactive Software Supply Chain Risk Managementi (P-SSCRM) framework is not is another standard. Rather than introducing any new concepts, practices, or tasks, we have aggregated concepts, practices, and tasks from existing software supply chain security frameworks. 
 <img src="/assets/images/xkcd_927_standards_2x.png" alt="XKCD Standards" /></p>
 <p>P-SSCRM is designed to help you understand and plan a secure software supply chain risk management initiative. P-SSCRM was created through a process of understanding and analyzing real world data from nine industry leading software supply chain risk management initiatives as well as through the analysis and unification of ten government and industry documents, frameworks, and standards. Although individual methodologies and standards differ, many initiatives and standards share common ground. P-SSCRM describes this common ground and presents a model for understanding, quantifying, and developing a secure software supply chain risk management program and determining where your organization's existing efforts stand when contrasted with other real world software supply chain risk management initiatives.
 
@@ -190,11 +190,6 @@
                 <a href="/framework/frameworks/SAMM">SAMM</a>
             </th>
       
-        
-            <th>
-                <a href="/framework/frameworks/OSPS">OSPS</a>
-            </th>
-      
     </tr>
     </thead>
     <tbody>
@@ -202,11 +197,6 @@
       
         <tr>
         <td>G.1 Perform compliance
-        
-          <td>
-          
-          
-          </td>
         
           <td>
           
@@ -332,19 +322,9 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>G.3 Manage suppliers
-        
-          <td>
-          
-          
-          </td>
         
           <td>
           
@@ -470,19 +450,9 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>G.5 Assess and manage risk
-        
-          <td>
-          
-          
-          </td>
         
           <td>
           
@@ -610,19 +580,9 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>P.2 Build security in
-        
-          <td>
-          
-          
-          </td>
         
           <td>
           
@@ -748,11 +708,6 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>P.4 Discover vulnerabilities
@@ -817,19 +772,9 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>P.5 Manage vulnerable components and containers
-        
-          <td>
-          
-          
-          </td>
         
           <td>
           
@@ -957,11 +902,6 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>E.2 Safeguard build integrity
@@ -1026,19 +966,9 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>E.3 Secure software development environment
-        
-          <td>
-          
-          
-          </td>
         
           <td>
           
@@ -1166,19 +1096,9 @@
           
           </td>
         
-          <td>
-          
-          
-          </td>
-        
       
         <tr>
         <td>D.2 Monitor intrusions/violations
-        
-          <td>
-          
-          
-          </td>
         
           <td>
           
@@ -1245,7 +1165,7 @@
     &lt;/tr&gt;
     <tbody>
 &lt;/table&gt;
-</tbody></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></tbody></table></p></p></p>]]></content><author><name></name></author><category term="update" /><summary type="html"><![CDATA[One thing the Proactive Software Supply Chain Risk Managementi (P-SSCRM) framework is not is another standard. Rather than introducing any new concepts, practices, or tasks, we have aggregated concepts, practices, and tasks from existing software supply chain security frameworks. P-SSCRM is designed to help you understand and plan a secure software supply chain risk management initiative. P-SSCRM was created through a process of understanding and analyzing real world data from nine industry leading software supply chain risk management initiatives as well as through the analysis and unification of ten government and industry documents, frameworks, and standards. Although individual methodologies and standards differ, many initiatives and standards share common ground. P-SSCRM describes this common ground and presents a model for understanding, quantifying, and developing a secure software supply chain risk management program and determining where your organization's existing efforts stand when contrasted with other real world software supply chain risk management initiatives.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2025/07/16/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-07-16T17:37:16-04:00</published><updated>2025-07-16T17:37:16-04:00</updated><id>http://localhost:4000/jekyll/update/2025/07/16/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2025/07/16/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</tbody></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></tbody></table></p></p></p>]]></content><author><name></name></author><category term="update" /><summary type="html"><![CDATA[One thing the Proactive Software Supply Chain Risk Managementi (P-SSCRM) framework is not is another standard. Rather than introducing any new concepts, practices, or tasks, we have aggregated concepts, practices, and tasks from existing software supply chain security frameworks. P-SSCRM is designed to help you understand and plan a secure software supply chain risk management initiative. P-SSCRM was created through a process of understanding and analyzing real world data from nine industry leading software supply chain risk management initiatives as well as through the analysis and unification of ten government and industry documents, frameworks, and standards. Although individual methodologies and standards differ, many initiatives and standards share common ground. P-SSCRM describes this common ground and presents a model for understanding, quantifying, and developing a secure software supply chain risk management program and determining where your organization's existing efforts stand when contrasted with other real world software supply chain risk management initiatives.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2025/07/16/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-07-16T17:37:16-04:00</published><updated>2025-07-16T17:37:16-04:00</updated><id>/jekyll/update/2025/07/16/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2025/07/16/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
