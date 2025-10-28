@@ -45,7 +45,9 @@ software supply chain risk management tasks that are organized into these 15 pra
      </tr>
 </table>
 <br>
-<p>
+
+### WHERE DID THE P_SSCRM COME FROM?
+
 The Proactive Software Supply Chain Risk Management (P-SSCRM) Framework results from a
 unique study of real-world software supply chain risk management initiatives and the union of the
 tasks in ten government and industry documents (standards and frameworks). Tasks in the P-SSCRM

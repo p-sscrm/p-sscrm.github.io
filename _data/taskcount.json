@@ -1,0 +1,22 @@
+{
+  “practices”: [
+    {
+      "id": "G.1",
+      "name": "Perform compliance",
+      “frameworks”: [
+        { "name": “EO”, "count": 1 },
+        { "name": “SSDF”, "count": 1 },
+        { "name": “BSIMM”, "count": 7 }
+        ]
+    },
+    {
+      "id": "G.2",
+      "name": "Perform compliance",
+      “frameworks”: [
+        { "name": “EO”, "count": 1 },
+        { "name": “SSDF”, "count": 1 },
+        { "name": “BSIMM”, "count": 7 }
+        ]
+    }
+  ] 
+}

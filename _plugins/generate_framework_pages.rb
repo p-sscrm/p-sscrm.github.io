@@ -78,7 +78,7 @@ module Framework
     end
     
     private
-    
+
     def create_doc2(site, collection_name, path, data)
       doc = Jekyll::Document.new(
         File.join(site.source, collection_name, path),
@@ -88,7 +88,7 @@ module Framework
       doc.merge_data!(data)
       doc
     end
-
+    
     def create_doc(site, collection_name, path, data)
       doc = Jekyll::Document.new(
         File.join(site.source, collection_name, path),
