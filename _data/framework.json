@@ -780,28 +780,23 @@
               ]
             },
             {
-              "definition": "Maintain a system component inventory, including hardware, software licenses, software versions, direct and transitive component owners, containers, machine names, and network addresses. Maintain an operations software inventory, including a map of source code; open source incorporated during the build and dynamic production; software deployments and related containerization, orchestration, and deployment automation code with respective owners. Unique identifiers for the inventoried assets should be established. Suppliers should also produce an asset inventory. Particular attention should be placed when a product or system is retired.",
+              "definition": "Maintain a system component inventory, including hardware, software licenses, software versions, direct and transitive component owners, containers, machine names, and network addresses. Maintain an operations software inventory, including a map of source code; open source incorporated during the build and dynamic production; software deployments and related containerization, orchestration, and deployment automation code with respective owners. Unique identifiers for the inventoried assets should be established. Suppliers should also produce an asset inventory, for example through generating SBOMs. Particular attention should be placed when a product or system is retired.",
               "id": "G.2.5",
               "name": "Asset inventory",
-              "objective": "Hardware and software assets are inventoried to enable incidence response; system analysis; traceability for critical components; and reliable identification when assets need to be changed or decommissioned.",
+              "objective": "Hardware and software assets are inventoried to enable incident response; system analysis; traceability for critical components; and reliable identification when assets need to be changed or decommissioned.",
               "questions": [
                 {
                   "id": "G.2.5.1",
-                  "text": "How is a system component inventory maintained for hardware, software licenses, software versions, component owners, machine names, and network addresses with identifiers for each of these?",
+                  "text": "How is an asset inventory automatically or manually generated and maintained?",
                   "answers": []
                 },
                 {
                   "id": "G.2.5.2",
-                  "text": "Is the components inventory process automated or manual?",
+                  "text": "How do you integrate vulnerability management with asset inventory management, for example through SBOMs or software composition analysis?",
                   "answers": []
                 },
                 {
                   "id": "G.2.5.3",
-                  "text": "Are the artifacts machine-readable (such as through SBOM generation)?",
-                  "answers": []
-                },
-                {
-                  "id": "G.2.5.4",
                   "text": "What process is used for the asset inventory to be updated when a product or system goes to end-of-life?",
                   "answers": []
                 }
@@ -889,7 +884,7 @@
           "name": "Manage suppliers",
           "tasks": [
             {
-              "definition": "Compliance requirements, security requirements, and secure SDLC practices are included in vendor contracts with specified means of adherence enforcement. Examples include supplying an SBOM, self-attestation of security practices and provenance information; having a vulnerability disclosure program and incident response plan; and a security training program. The vendors include component, cloud, middleware providers, container and orchestration providers, and contractors.",
+              "definition": "Compliance requirements, security requirements, and secure SDLC practices are included in vendor contracts with specified means of adherence enforcement. Examples include supplying an SBOM, VEX, self-attestation of security practices and provenance information; having a vulnerability disclosure program and incident response plan; and a security training program. The vendors include component, cloud, middleware providers, container and orchestration providers, and contractors.",
               "id": "G.3.1",
               "name": "Security-related contract terms",
               "objective": "Component, system, and service acquisition policies include the inclusion of adherence to security policies, security requirements, and secure SDLC practices that are compatible with compliance requirements.",
@@ -901,7 +896,7 @@
                 },
                 {
                   "id": "G.3.1.2",
-                  "text": "Do you require SBOMs, provenance data, and attestation of adhering to security practices from your suppliers?",
+                  "text": "How Do you obtain SBOMs, provenance data, and attestation of adhering to security practices from your suppliers?",
                   "answers": []
                 },
                 {
@@ -950,6 +945,12 @@
                     "ING-1"
                   ],
                   "source": "S2C2F"
+                },
+                {
+                  "sections": [
+                    "M-V Require SBOMs and VEX statements from third-party suppliers"
+                  ],
+                  "source": "CNCF-SSC"
                 },
                 {
                   "sections": [
@@ -1540,7 +1541,7 @@
               ]
             },
             {
-              "definition": "Use code protection mechanisms, such as the use of an established certificate authority for code signing, to enable the attestation of the provenance, integrity, and authorization of important code. Make software integrity verification information, such as cryptographic hashes for release files, available to software acquirers on a well-secure website.",
+              "definition": "Use code protection mechanisms, such as the use of an established certificate authority for code signing, to enable the attestation of the provenance, integrity, and authorization of important code. Make software integrity verification information, such as cryptographic hashes for release files, available to software acquirers on a well-secured website.",
               "id": "P.1.2",
               "name": "Software release integrity",
               "objective": "Provide software acquirers assurance that the software they acquire is legitimate and has not been tampered with.",
@@ -1552,7 +1553,7 @@
                 },
                 {
                   "id": "P.1.2.2",
-                  "text": "Do you use a certificate authority for code/commit signing?",
+                  "text": "What certificate authority do you use for code/commit signing?",
                   "answers": []
                 },
                 {
@@ -1562,12 +1563,7 @@
                 },
                 {
                   "id": "P.1.2.4",
-                  "text": "Do you ensure use a dedicated, protected signing server when signing is required?",
-                  "answers": []
-                },
-                {
-                  "id": "P.1.2.5",
-                  "text": "What kind of license is declared for a project?",
+                  "text": "How do you manage and protect your signing server, for example is it dedicated?",
                   "answers": []
                 }
               ],
@@ -1932,7 +1928,7 @@
               "questions": [
                 {
                   "id": "P.2.5.1",
-                  "text": "What processes are used to scan in-house components built using SDLC processes for vulnerabilities and how is the process similar or different to what is done for third-party components?",
+                  "text": "What processes are used to scan in-house components built using SDLC processes for vulnerabilities, and how is the process similar or different to what is done for third-party components?",
                   "answers": []
                 },
                 {
@@ -1942,7 +1938,7 @@
                 },
                 {
                   "id": "P.2.5.3",
-                  "text": "Are in-house components monitored to ensure they are regularly maintained?",
+                  "text": "How are in-house components monitored to ensure they are regularly maintained?",
                   "answers": []
                 }
               ],
@@ -2131,7 +2127,7 @@
               "questions": [
                 {
                   "id": "P.3.3.1",
-                  "text": "Do you require the software producers to sign code commits of the components and tools you bring into your product?",
+                  "text": "How do you require the software producers to sign code commits of the components and tools you bring into your product?",
                   "answers": []
                 }
               ],
@@ -3065,6 +3061,12 @@
                 },
                 {
                   "sections": [
+                    "SC-V Authenticate and monitor repository activity"
+                  ],
+                  "source": "CNCF-SSC"
+                },
+                {
+                  "sections": [
                     "4.10"
                   ],
                   "source": "OWASP-SCVS"
@@ -3229,12 +3231,12 @@
               "questions": [
                 {
                   "id": "E.2.1.1",
-                  "text": "Do you have a templated build policy that specifies the required build workflow to ensure the integrity, authentication, and auditability?",
+                  "text": "How do you specify a templated build policy that specifies the required build workflow to ensure the integrity, authentication, and auditability?",
                   "answers": []
                 },
                 {
                   "id": "E.2.1.2",
-                  "text": "Do you verify the build policy in a cryptographically provable way, such as with in-toto?",
+                  "text": "How do you verify the build policy in a cryptographically provable way, such as with in-toto?",
                   "answers": []
                 }
               ],
