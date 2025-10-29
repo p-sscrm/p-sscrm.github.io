@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure coding | P-SSCRM Documentation</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Secure coding" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
+<meta property="og:description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
+<link rel="canonical" href="http://localhost:4000/framework/tasks/p-2-2/" />
+<meta property="og:url" content="http://localhost:4000/framework/tasks/p-2-2/" />
+<meta property="og:site_name" content="P-SSCRM Documentation" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-26T07:35:41-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Secure coding" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-26T07:35:41-04:00","datePublished":"2025-10-26T07:35:41-04:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"Secure coding","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/framework/tasks/p-2-2/"},"url":"http://localhost:4000/framework/tasks/p-2-2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+ <script type="module">
+ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+ mermaid.initialize({ startOnLoad: true });
+ await mermaid.run({
+     querySelector: '.language-mermaid',
+ });
+</script>
+
+
+<body>
+
+       <header class="site-header">
+        <div class="container">
+            <a href="/" class="site-title">P-SSCRM Documentation</a>
+            <nav class="site-nav">
+                <a href="/">Framework</a>
+                <a href="/about">About</a>
+                <a href="/news/">News</a>
+                <a href="/assessment/">Assessment</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="site-content">
+        <div class="container">
+            <nav class="framework-nav">
+    <div class="breadcrumbs">
+        <a href="/framework/">Framework</a>
+        
+            
+            
+            &raquo; <a href="/framework/groups/p">Product</a>
+            
+                
+                
+                &raquo; <a href="/framework/practices/p-2">Build security in</a>
+                
+                    
+                    
+                    &raquo; <a href="/framework/tasks/p-2-2">Secure coding</a>
+                
+            
+        
+    </div>
+
+    <div class="sibling-nav">
+        
+                
+                
+                <h4>Tasks in Build security in</h4>
+                <ul>
+                    
+                        
+                        <li >
+                            <a href="/framework/tasks/p-2-1">Security design review</a>
+                        </li>
+                    
+                        
+                        <li class="active">
+                            <a href="/framework/tasks/p-2-2">Secure coding</a>
+                        </li>
+                    
+                        
+                        <li >
+                            <a href="/framework/tasks/p-2-3">Secure-by-default implementation</a>
+                        </li>
+                    
+                        
+                        <li >
+                            <a href="/framework/tasks/p-2-4">Standard security features</a>
+                        </li>
+                    
+                        
+                        <li >
+                            <a href="/framework/tasks/p-2-5">In-house components</a>
+                        </li>
+                    
+                </ul>
+        
+    </div>
+</nav> 
+
+
+<article class="task">
+    <header class="task-header">
+        <h1>P.2.2 Secure coding</h1>
+    </header>
+
+    <div class="task-content">
+        <section class="task-details">
+            <h2>Task Details</h2>
+            <div class="detail-item">
+                <h3>Objective</h3>
+                <p>Decrease the number of security vulnerabilities introduced during source code creation.</p>
+            </div>
+            
+            <div class="detail-item">
+                <h3>Definition</h3>
+                <p>Follow secure coding standards and practices appropriate to the development languages, APIs, and environment. Examples include validating all inputs, encoding outputs, and avoiding unsafe functions. Use development environments and static analysis tools that support compliance with secure coding practices as source code is being implemented.</p>
+            </div>
+        </section>
+
+        <section class="assessment">
+            <h2>Assessment Questions</h2>
+            <div class="questions">
+                
+                
+                
+                
+                <ol>
+                    
+                        <li id="P.2.2.1" class="question">
+                            What kind of secure coding practices are used?
+                        </li>
+                    
+                        <li id="P.2.2.2" class="question">
+                            How are these practices communicated to developers and enforced?
+                        </li>
+                    
+                </ol>
+            </div>
+        </section>
+        <section class="references">
+            <h2>Reference sources</h2>
+            <div class="sources">
+                
+                
+                
+
+                <ol>
+                    
+                        
+                        
+                        
+                        <li id="EO" class="reference">
+                            <!--<a href="https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                EO
+                            </a> -->
+                            <a href="/framework/frameworks/eo">
+                              EO
+                            </a>
+                        
+                                4e(iv)
+                        
+                        </li>
+                    
+                        
+                        
+                        
+                        <li id="SSDF" class="reference">
+                            <!--<a href="https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                SSDF
+                            </a> -->
+                            <a href="/framework/frameworks/ssdf">
+                              SSDF
+                            </a>
+                        
+                                PW.5.1
+                        
+                        </li>
+                    
+                        
+                        
+                        
+                        <li id="SSDF-AI" class="reference">
+                            <!--<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                SSDF-AI
+                            </a> -->
+                            <a href="/framework/frameworks/ssdf-ai">
+                              SSDF-AI
+                            </a>
+                        
+                                PW.5.1 R1
+                        
+                                PW.5.1 R2
+                        
+                                PW.5.1 R3
+                        
+                        </li>
+                    
+                        
+                        
+                        
+                        <li id="BSIMM" class="reference">
+                            <!--<a href="https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                BSIMM
+                            </a> -->
+                            <a href="/framework/frameworks/bsimm">
+                              BSIMM
+                            </a>
+                        
+                                SR3.3
+                        
+                                CR1.4
+                        
+                                CR3.5
+                        
+                        </li>
+                    
+                        
+                        
+                        
+                        <li id="Self-attestation" class="reference">
+                            <!--<a href="https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                Self-attestation
+                            </a> -->
+                            <a href="/framework/frameworks/self-attestation">
+                              Self-attestation
+                            </a>
+                        
+                                4
+                        
+                        </li>
+                    
+                        
+                        
+                        
+                        <li id="SAMM" class="reference">
+                            <!--<a href="https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                SAMM
+                            </a> -->
+                            <a href="/framework/frameworks/samm">
+                              SAMM
+                            </a>
+                        
+                                D-SA-1-A
+                        
+                        </li>
+                    
+                        
+                        
+                        
+                        <li id="OSPS" class="reference">
+                            <!--<a href="https://arxiv.org/pdf/2404.12300" target="_blank" rel="noreferrer nofollow" id="" class="section">
+                                OSPS
+                            </a> -->
+                            <a href="/framework/frameworks/osps">
+                              OSPS
+                            </a>
+                        
+                                OSPS-GV-03
+                        
+                        </li>
+                    
+                </ol>
+            </div>
+    </div>
+</article> 
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 P-SSCRM Documentation. Version 2.0</p>
+        </div>
+    </footer>
+</body>
+</html> 
