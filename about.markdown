@@ -67,7 +67,15 @@ teams and operations teams.
 - Software Security: This role creates and facilitates processes and procedures for secure
 software development at an organizational level.
 
-### TODO: LIFECYCLE
+### TODO LIFECYCLE
+The diagram below displays the P-SSCRM groups and practices in the context of a product lifecycle model,
+annotating the primary role responsible for each practice. The practices and associated tasks
+protect the integrity of source code, the build environment, deployed and running software
+applications. They also include practices to securely decommission a software product at its end of
+life. The practices that appear in solid boxes along the top and left side of the lifecycle indicate
+practices that are done throughout the product lifecycle.
+
+<img src="/assets/images/PSCCRMLifecycleModel.png" />
 
 ### WHO SHOULD USE THE P-SSCRM?
 
