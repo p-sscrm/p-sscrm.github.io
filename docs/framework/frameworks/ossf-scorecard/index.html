@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSSF Scorecard metrics | P-SSCRM Documentation</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="OpenSSF Scorecard metrics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
+<meta property="og:description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
+<link rel="canonical" href="http://localhost:4000/framework/frameworks/ossf-scorecard/" />
+<meta property="og:url" content="http://localhost:4000/framework/frameworks/ossf-scorecard/" />
+<meta property="og:site_name" content="P-SSCRM Documentation" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-28T15:24:12-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="OpenSSF Scorecard metrics" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-28T15:24:12-04:00","datePublished":"2025-10-28T15:24:12-04:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"OpenSSF Scorecard metrics","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/framework/frameworks/ossf-scorecard/"},"url":"http://localhost:4000/framework/frameworks/ossf-scorecard/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+ <script type="module">
+ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+ mermaid.initialize({ startOnLoad: true });
+ await mermaid.run({
+     querySelector: '.language-mermaid',
+ });
+</script>
+
+
+<body>
+
+       <header class="site-header">
+        <div class="container">
+            <a href="/" class="site-title">P-SSCRM Documentation</a>
+            <nav class="site-nav">
+                <a href="/">Framework</a>
+                <a href="/about">About</a>
+                <a href="/news/">News</a>
+                <a href="/assessment/">Assessment</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="site-content">
+        <div class="container">
+            <nav class="framework-nav">
+    <div class="breadcrumbs">
+        <a href="/framework/">Framework</a>
+        
+    </div>
+
+    <div class="sibling-nav">
+        
+    </div>
+</nav> 
+
+
+<article class="framework">
+    <header class="framework-header">
+        <h1>OSSF-Scorecard OpenSSF Scorecard metrics</h1>
+        <h2>Source Document: <a href="https://github.com/ossf/scorecard/blob/main/docs/checks.md">https://github.com/ossf/scorecard/blob/main/docs/checks.md</a></h2>
+        <p class="practice-description"></p>
+    </header>
+
+    <section class="framework">
+        <h2>OSSF-Scorecard - P-SSCRM mapping</h2>
+        <table>
+        <tbody>
+        
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+        
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      signed-release 
+                    
+                      licenses 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/p-1-2">
+                          P.1.2 Software release integrity
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      binary-artifacts 
+                    
+                      contributors 
+                    
+                      maintained 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/p-3-1">
+                          P.3.1 Component and container choice
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      code-review 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/p-4-1">
+                          P.4.1 Security code review
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      sast 
+                    
+                      fuzzing 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/p-4-2">
+                          P.4.2 Automated security scanning tools
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      ci-tests 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/p-4-4">
+                          P.4.4 Executable security testing
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      dependency-update-tool 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/p-5-2">
+                          P.5.2 Dependency update
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+            
+          
+        
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <tr>
+                    <td>
+                    
+                      branch-protection 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/e-1-5">
+                          E.1.5 Branch protection
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+            
+              
+                
+                  <tr>
+                    <td>
+                    
+                      pinned-dependencies 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/e-2-2">
+                          E.2.2 Verify dependencies and environment
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      dangerous-workflow 
+                    
+                      token-permissions 
+                    
+                      pinned-dependencies 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/e-2-4">
+                          E.2.4 CI/CD hosting and automation
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+              
+                
+                  <tr>
+                    <td>
+                    
+                      packaging 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/e-2-7">
+                          E.2.7 Build output
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+          
+        
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      vulnerabilities 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/d-1-2">
+                          D.1.2 Risk-based vulnerability remediation
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <tr>
+                    <td>
+                    
+                      security-policy 
+                    
+                    </td>
+                      <td class="task-summary">
+                        
+                        <a href="/framework/tasks/d-1-3">
+                          D.1.3 Vulnerability disclosure
+                        </a>
+                      </td>
+                  </tr>
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+            
+          
+        
+        </tbody>
+        </table>
+    </section>
+</article> 
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 P-SSCRM Documentation. Version 2.0</p>
+        </div>
+    </footer>
+</body>
+</html> 
