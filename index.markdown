@@ -63,6 +63,7 @@ references, are:
     {% for fwk in site.data.framework.metadata %}
         <li>
             <a href="{{ fwk.link }}">{{ fwk.title }}</a>
+            <a href="/framework/frameworks/{{ fwk.id }}"> (mapping)</a>
         </li>
     {% endfor %}
 </ul>

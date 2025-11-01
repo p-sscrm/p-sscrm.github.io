@@ -7,7 +7,7 @@ module Framework
       framework = JSON.parse(File.read('_data/framework.json'))
 
       # generate top-level framework page
-#      site.collections.docs << create_doc(site,'_framework',"framework.md",{})
+#      site.collections.docs << create_doc(site,'_framework',"framework2.md",{})
 #      site.collections['groups'].docs << create_doc(
 #        site, '_groups',
 #        "#{group['id']}.md",
@@ -75,6 +75,10 @@ module Framework
           end
         end
       end
+      # get, write task counts 
+      counts = summarize_tasks_by_practice_and_framework(framework)
+      site.data['taskcount2'] = JSON.pretty_generate(counts)
+      #create_doc(site, '_data', 'taskcounts2.json',JSON.pretty_generate(counts))
     end
     
     private
@@ -98,5 +102,49 @@ module Framework
       doc.merge_data!(data)
       doc
     end
+
+    def summarize_tasks_by_practice_and_framework(data)
+      practice_map = {}
+
+      (data['groups'] || []).each do |group|
+        (group['practices'] || []).each do |practice|
+          practice_id = practice['id']
+          next unless practice_id
+
+          practice_name = practice['name'] || ''
+          entry = practice_map[practice_id] ||= { name: practice_name, counts: Hash.new(0) }
+          entry[:name] = practice_name if entry[:name].to_s.empty? && !practice_name.to_s.empty?
+
+          (practice['tasks'] || []).each do |task|
+            frameworks = Set.new
+            (task['references'] || []).each do |ref|
+              if ref.is_a?(Hash)
+                source = ref['source']
+                if source
+                  if source.is_a?(String)
+                    frameworks.add(source) unless source.empty?
+                  else
+                    frameworks.add(source)
+                  end
+                end
+              end
+            end
+            frameworks.each { |fw| entry[:counts][fw] += 1 }
+          end
+        end
+      end
+
+      practices_out = practice_map
+        .map do |pid, info|
+          frameworks_out = info[:counts]
+            .sort_by { |fw, _| fw }
+            .map { |fw, cnt| { 'name' => fw, 'count' => cnt } }
+
+          { 'id' => pid, 'name' => info[:name], 'frameworks' => frameworks_out }
+        end
+
+      { 'practices' => practices_out }
+    end
+
   end
 end 

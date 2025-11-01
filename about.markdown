@@ -126,3 +126,30 @@ software development and risk reduction. The 15 practices of the P-SSCRM are org
 into four groups: Governance, Product, Environment, and Deployment.
 o Product (P): Tasks to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.
 
+### TABLE 1: TASK COUNTS BY FRAMEWORK AND PRACTICE
+
+<table border="2px">
+    <thead>
+      <th>Practice/Framework</th>
+      {% for fwk in site.data.framework.metadata %}
+        {% assign gidslug = group.id | downcase %}
+            <th>
+                <a href="{{ '/framework/frameworks/' | append: fwk.id | relative_url }}">{{ fwk.id }}</a>
+            </th>
+      {% endfor %}
+    </thead>
+    <tbody>
+      {% for practice in site.data.taskcount.practices %}
+        <tr>
+        <td>{{ practice.id }} {{ practice.name }}
+        {% for fwk in site.data.framework.metadata %}
+            {% assign taskcount = "" %}
+            {% for f in practice.frameworks %}
+                {% if f.name == fwk.id %}
+                    {% assign taskcount = f.count %}
+                {% endif %}
+            {% endfor %}
+            <td> {{ taskcount }}</td>
+        {% endfor %}
+      {% endfor %}
+    <tbody>

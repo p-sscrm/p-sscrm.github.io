@@ -1,0 +1,670 @@
+{
+  "practices": [
+    {
+      "id": "G.1",
+      "name": "Perform compliance",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 5
+        },
+        {
+          "name": "BSIMM",
+          "count": 3
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 5
+        },
+        {
+          "name": "EO",
+          "count": 4
+        },
+        {
+          "name": "OSPS",
+          "count": 4
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 3
+        },
+        {
+          "name": "S2C2F",
+          "count": 2
+        },
+        {
+          "name": "SAMM",
+          "count": 4
+        },
+        {
+          "name": "SLSA",
+          "count": 3
+        },
+        {
+          "name": "SSDF",
+          "count": 4
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 4
+        },
+        {
+          "name": "Self-attestation",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "G.2",
+      "name": "Develop security policies",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 5
+        },
+        {
+          "name": "BSIMM",
+          "count": 5
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 1
+        },
+        {
+          "name": "EO",
+          "count": 4
+        },
+        {
+          "name": "OSPS",
+          "count": 5
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 1
+        },
+        {
+          "name": "S2C2F",
+          "count": 1
+        },
+        {
+          "name": "SAMM",
+          "count": 4
+        },
+        {
+          "name": "SSDF",
+          "count": 4
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 4
+        },
+        {
+          "name": "Self-attestation",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "G.3",
+      "name": "Manage suppliers",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 5
+        },
+        {
+          "name": "BSIMM",
+          "count": 1
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 1
+        },
+        {
+          "name": "EO",
+          "count": 1
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 1
+        },
+        {
+          "name": "S2C2F",
+          "count": 1
+        },
+        {
+          "name": "SAMM",
+          "count": 1
+        },
+        {
+          "name": "SLSA",
+          "count": 1
+        },
+        {
+          "name": "SSDF",
+          "count": 1
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 1
+        },
+        {
+          "name": "Self-attestation",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "G.4",
+      "name": "Training",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 3
+        },
+        {
+          "name": "BSIMM",
+          "count": 3
+        },
+        {
+          "name": "EO",
+          "count": 2
+        },
+        {
+          "name": "OSPS",
+          "count": 1
+        },
+        {
+          "name": "SAMM",
+          "count": 2
+        },
+        {
+          "name": "SSDF",
+          "count": 2
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 2
+        },
+        {
+          "name": "Self-attestation",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "G.5",
+      "name": "Assess and manage risk",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 2
+        },
+        {
+          "name": "BSIMM",
+          "count": 4
+        },
+        {
+          "name": "EO",
+          "count": 2
+        },
+        {
+          "name": "OSPS",
+          "count": 4
+        },
+        {
+          "name": "SAMM",
+          "count": 1
+        },
+        {
+          "name": "SSDF",
+          "count": 2
+        },
+        {
+          "name": "Self-attestation",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "P.1",
+      "name": "Develop security requirements",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 1
+        },
+        {
+          "name": "BSIMM",
+          "count": 2
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 1
+        },
+        {
+          "name": "EO",
+          "count": 2
+        },
+        {
+          "name": "OSPS",
+          "count": 2
+        },
+        {
+          "name": "OSSF-Scorecard",
+          "count": 1
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 1
+        },
+        {
+          "name": "S2C2F",
+          "count": 1
+        },
+        {
+          "name": "SAMM",
+          "count": 2
+        },
+        {
+          "name": "SLSA",
+          "count": 1
+        },
+        {
+          "name": "SSDF",
+          "count": 2
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "P.2",
+      "name": "Build security in",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 2
+        },
+        {
+          "name": "BSIMM",
+          "count": 5
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 1
+        },
+        {
+          "name": "EO",
+          "count": 5
+        },
+        {
+          "name": "OSPS",
+          "count": 3
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 1
+        },
+        {
+          "name": "SAMM",
+          "count": 5
+        },
+        {
+          "name": "SSDF",
+          "count": 5
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 3
+        },
+        {
+          "name": "Self-attestation",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "P.3",
+      "name": "Manage component and container choices",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 2
+        },
+        {
+          "name": "BSIMM",
+          "count": 3
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 4
+        },
+        {
+          "name": "EO",
+          "count": 1
+        },
+        {
+          "name": "OSPS",
+          "count": 5
+        },
+        {
+          "name": "OSSF-Scorecard",
+          "count": 1
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 2
+        },
+        {
+          "name": "S2C2F",
+          "count": 4
+        },
+        {
+          "name": "SAMM",
+          "count": 1
+        },
+        {
+          "name": "SLSA",
+          "count": 1
+        },
+        {
+          "name": "SSDF",
+          "count": 1
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 1
+        },
+        {
+          "name": "Self-attestation",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "P.4",
+      "name": "Discover vulnerabilities",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 4
+        },
+        {
+          "name": "BSIMM",
+          "count": 4
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 3
+        },
+        {
+          "name": "EO",
+          "count": 5
+        },
+        {
+          "name": "OSPS",
+          "count": 5
+        },
+        {
+          "name": "OSSF-Scorecard",
+          "count": 3
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 3
+        },
+        {
+          "name": "S2C2F",
+          "count": 1
+        },
+        {
+          "name": "SAMM",
+          "count": 5
+        },
+        {
+          "name": "SLSA",
+          "count": 1
+        },
+        {
+          "name": "SSDF",
+          "count": 5
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 5
+        },
+        {
+          "name": "Self-attestation",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "P.5",
+      "name": "Manage vulnerable components and containers",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 2
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 1
+        },
+        {
+          "name": "OSPS",
+          "count": 2
+        },
+        {
+          "name": "OSSF-Scorecard",
+          "count": 1
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 2
+        },
+        {
+          "name": "S2C2F",
+          "count": 1
+        },
+        {
+          "name": "SSDF",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "E.1",
+      "name": "Safeguard artifact integrity",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 2
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 5
+        },
+        {
+          "name": "EO",
+          "count": 2
+        },
+        {
+          "name": "OSSF-Scorecard",
+          "count": 1
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 5
+        },
+        {
+          "name": "SAMM",
+          "count": 2
+        },
+        {
+          "name": "SLSA",
+          "count": 3
+        },
+        {
+          "name": "SSDF",
+          "count": 2
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "E.2",
+      "name": "Safeguard build integrity",
+      "frameworks": [
+        {
+          "name": "BSIMM",
+          "count": 2
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 7
+        },
+        {
+          "name": "EO",
+          "count": 2
+        },
+        {
+          "name": "OSSF-Scorecard",
+          "count": 3
+        },
+        {
+          "name": "OWASP-SCVS",
+          "count": 4
+        },
+        {
+          "name": "S2C2F",
+          "count": 3
+        },
+        {
+          "name": "SAMM",
+          "count": 2
+        },
+        {
+          "name": "SLSA",
+          "count": 6
+        },
+        {
+          "name": "SSDF",
+          "count": 3
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 2
+        },
+        {
+          "name": "Self-attestation",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "E.3",
+      "name": "Secure software development environment",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 7
+        },
+        {
+          "name": "BSIMM",
+          "count": 1
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 6
+        },
+        {
+          "name": "EO",
+          "count": 1
+        },
+        {
+          "name": "SAMM",
+          "count": 1
+        },
+        {
+          "name": "SSDF",
+          "count": 1
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 1
+        },
+        {
+          "name": "Self-attestation",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "D.1",
+      "name": "Respond to/disclose vulnerabilities",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 4
+        },
+        {
+          "name": "BSIMM",
+          "count": 4
+        },
+        {
+          "name": "EO",
+          "count": 5
+        },
+        {
+          "name": "OSSF-Scorecard",
+          "count": 2
+        },
+        {
+          "name": "S2C2F",
+          "count": 3
+        },
+        {
+          "name": "SAMM",
+          "count": 4
+        },
+        {
+          "name": "SSDF",
+          "count": 5
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "D.2",
+      "name": "Monitor intrusions/violations",
+      "frameworks": [
+        {
+          "name": "800-161",
+          "count": 1
+        },
+        {
+          "name": "CNCF-SSC",
+          "count": 2
+        },
+        {
+          "name": "EO",
+          "count": 1
+        },
+        {
+          "name": "SSDF-AI",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
