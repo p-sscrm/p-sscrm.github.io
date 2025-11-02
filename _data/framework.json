@@ -2951,7 +2951,7 @@
           "name": "Safeguard artifact integrity",
           "tasks": [
             {
-              "definition": "Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data, metadata) to be retained for each software release.",
+              "definition": "Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data, attestations, metadata) to be retained for each software release.",
               "id": "E.1.1",
               "name": "Safely store release artifacts",
               "objective": "Preserve release artifacts to help in the identification and analysis of vulnerabilities discovered after release.",
@@ -3275,12 +3275,17 @@
                 },
                 {
                   "id": "E.2.2.3",
-                  "text": "Do you validate that the build environment\u0027s sources and dependencies come from a secure, trusted source of truth?",
+                  "text": "How do you validate that the build environment\u0027s sources and dependencies come from a secure, trusted source of truth?",
                   "answers": []
                 },
                 {
                   "id": "E.2.2.4",
                   "text": "What is your dependency version constraint strategy, e.g. how do you manage pinning and floating versions of your dependencies?",
+                  "answers": []
+                },
+                {
+                  "id": "E.2.2.5",
+                  "text": "How do you validate that the deployment environment\u0027s sources and dependencies come from a secure, trusted source of truth?",
                   "answers": []
                 }
               ],
@@ -3420,12 +3425,12 @@
                 },
                 {
                   "id": "E.2.4.6",
-                  "text": "Are configuration changes reviewed?",
+                  "text": "How are configuration changes reviewed?",
                   "answers": []
                 },
                 {
                   "id": "E.2.4.7",
-                  "text": "Are CI/CD pipelines standardized across the enterprise?",
+                  "text": "How are CI/CD pipelines standardized across the enterprise?",
                   "answers": []
                 }
               ],
@@ -3911,6 +3916,11 @@
                   "id": "E.3.7.2",
                   "text": "How are trust boundaries considered, and how is the separation/isolation implemented?",
                   "answers": []
+                },
+                {
+                  "id": "E.3.7.3",
+                  "text": "How is malicious behavior detection implemented and managed?",
+                  "answers": []
                 }
               ],
               "references": [
@@ -4369,7 +4379,7 @@
               "questions": [
                 {
                   "id": "D.2.1.1",
-                  "text": "Are running systems continuously monitored to gather information for risk decisions, criticality analysis, vulnerability and threat analysis, incident response, and insider threat, including boundary protections of supply chain components and supply chain information flow?",
+                  "text": "How are running systems continuously monitored to gather information for risk decisions, criticality analysis, vulnerability and threat analysis, incident response, and insider threat, including boundary protections of supply chain components and supply chain information flow?",
                   "answers": []
                 },
                 {
