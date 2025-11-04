@@ -164,11 +164,11 @@
               "definition": "Configure tools to generate attestations (aka evidence) to create an audit trail for every step in the build process and of the use of secure software development practices. These attestations should indicate conformance with record retention requirements, preserve the integrity of the findings and the authenticity of the information. For AI models, generate attestations of the integrity and provenance of the training datasets.  Assign responsibility for creating attestations that tools cannot generate. Attestations should be immutable and published in the source repository releases, in the package registry, or elsewhere, with their existence recorded in a transparency log.. An attestation is a signed assertion that the record is trustworthy.",
               "id": "G.1.3",
               "name": "Produce attestation",
-              "objective": "Produce an audit trail for every step in the build process and evidence of the use of secure software development practices.",
+              "objective": "Produce an audit trail for every step in the build process, the integrity/provenance of training data, and evidence of the use of secure software development practices.",
               "questions": [
-                {
+                { 
                   "id": "G.1.3.1",
-                  "text": "Describe your automated or manual processes for producing attestations for the build process and for the use of secure development practices?",
+                  "text": "Describe your automated or manual processes for producing attestations for the build process, the integrity/provenance of training data, and for the use of secure development practices?",
                   "answers": []
                 },
                 {
