@@ -306,7 +306,7 @@
                 },
                                 {
                   "id": "G.1.4.6",
-                  "text": "How do you ensure that any generated AI models do not contain sensitive data, e.g. PII, IP, financial, or other regulated data?",
+                  "text": "How do you ensure that access to generated AI models trained on sensitive data (e.g. PII, IP, financial, or other regulated data) is restricted to individuals who already have access rights to the sensitive data or that generated models do not contain sensitive data?",
                   "answers": []
                 }
               ],
@@ -520,7 +520,7 @@
               "questions": [
                 {
                   "id": "G.2.1.1",
-                  "text": "Please describe upper management\u0027s commitment to secure software development.",
+                  "text": "Please describe upper management\u0027s commitment to secure software development, including those involving AI models.",
                   "answers": []
                 },
                 {
@@ -531,11 +531,6 @@
                 {
                   "id": "G.2.1.3",
                   "text": "Comment on the adequacy of resources dedicated to secure software development.",
-                  "answers": []
-                },
-                {
-                  "id": "G.2.1.4",
-                  "text": "What are the guidelines you have in place for assessing the quality attributes of the AI models you use and/or generate?.",
                   "answers": []
                 }
               ],
