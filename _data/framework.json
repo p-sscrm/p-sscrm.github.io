@@ -1,7 +1,7 @@
 {
   "groups": [
     {
-      "description": "Tasks that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements. ",
+      "description": "Controls that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements. ",
       "id": "G",
       "name": "Governance",
       "practices": [
@@ -504,7 +504,7 @@
           ]
         },
         {
-          "description": "Establishing organizational roles and tasks for driving internal security standards in alignment with the business purpose of the organization.",
+          "description": "Establishing organizational roles and controls for driving internal security standards in alignment with the business purpose of the organization.",
           "id": "G.2",
           "name": "Develop security policies",
           "tasks": [
@@ -516,7 +516,7 @@
               "questions": [
                 {
                   "id": "G.2.1.1",
-                  "text": "Please describe upper management\u0027s commitment to secure software development, including those involving AI models.",
+                  "text": "Please describe upper management\u0027s commitment to secure software development practices involving AI models.",
                   "answers": []
                 },
                 {
@@ -647,10 +647,10 @@
               ]
             },
             {
-              "definition": "Throughout the organization, create new roles and alter responsibilities for existing roles to incorporate security tasks and practices, as appropriate, into the SDLC and to keep management educated and informed on security issues. These roles can be centralized for the organization to promote thought leadership among developers and architects; and distributed throughout the organization in a network of security advocates.",
+              "definition": "Throughout the organization, create new roles and alter responsibilities for existing roles to incorporate security controls and practices, as appropriate, into the SDLC and to keep management educated and informed on security issues. These roles can be centralized for the organization to promote thought leadership among developers and architects; and distributed throughout the organization in a network of security advocates.",
               "id": "G.2.3",
               "name": "Roles and responsibilities",
-              "objective": "Ownership for security tasks throughout the SDLC at the organizational level and at the product team- and operational- level are established and visible.",
+              "objective": "Ownership for security controls throughout the SDLC at the organizational level and at the product team- and operational- level are established and visible.",
               "questions": [
                 {
                   "id": "G.2.3.1",
@@ -882,7 +882,7 @@
           ]
         },
         {
-          "description": "Tasks to require that third-party suppliers employ adequate security measures to protect information, applications, AI models, and services provided to the organization.",
+          "description": "Controls to require that third-party suppliers employ adequate security measures to protect information, applications, AI models, and services provided to the organization.",
           "id": "G.3",
           "name": "Manage suppliers",
           "tasks": [
@@ -1459,7 +1459,7 @@
       ]
     },
     {
-      "description": "Tasks to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.",
+      "description": "Controls to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.",
       "id": "P",
       "name": "Product",
       "practices": [
@@ -2942,7 +2942,7 @@
       ]
     },
     {
-      "description": "Tasks to protect the confidentiality and integrity of source code, software components, and the build infrastructure from tampering and unauthorized access.",
+      "description": "Controls to protect the confidentiality and integrity of source code, software components, and the build infrastructure from tampering and unauthorized access.",
       "id": "E",
       "name": "Environment",
       "practices": [
@@ -3986,12 +3986,12 @@
       ]
     },
     {
-      "description": "Tasks for identifying, analyzing, and addressing vulnerabilities in products in production/that have been deployed",
+      "description": "Controls for identifying, analyzing, and addressing vulnerabilities in products in production/that have been deployed",
       "id": "D",
       "name": "Deployment",
       "practices": [
         {
-          "description": "Tasks for identifying and addressing vulnerabilities in products and preventing similar ones from occuring in the future.",
+          "description": "Controls for identifying and addressing vulnerabilities in products and preventing similar ones from occuring in the future.",
           "id": "D.1",
           "name": "Respond to/disclose vulnerabilities",
           "tasks": [
@@ -4283,7 +4283,7 @@
               ]
             },
             {
-              "definition": "Analyze vulnerabilities discovered throughout the process and in production to determine their root cause for being injected and not discovered earlier before production. Incident response feedback should be fed back to developers and be considered when evolving the SDLC. Record lessons learned. Identify patterns, such as security tasks in the SDLC needing to be followed. Discuss and disseminate these patterns to developers. Guide process correction if the current process is not being followed.",
+              "definition": "Analyze vulnerabilities discovered throughout the process and in production to determine their root cause for being injected and not discovered earlier before production. Incident response feedback should be fed back to developers and be considered when evolving the SDLC. Record lessons learned. Identify patterns, such as security controls in the SDLC needing to be followed. Discuss and disseminate these patterns to developers. Guide process correction if the current process is not being followed.",
               "id": "D.1.6",
               "name": "Root cause analysis",
               "objective": "Reduce the frequency of vulnerabilities in the future",
@@ -4337,7 +4337,7 @@
           ]
         },
         {
-          "description": "Tasks for identifying malicious activity at runtime.",
+          "description": "Controls for identifying malicious activity at runtime.",
           "id": "D.2",
           "name": "Monitor intrusions/violations",
           "tasks": [
