@@ -2164,11 +2164,16 @@
               "questions": [
                 {
                   "id": "P.3.4.1",
-                  "text": "How do you arrange for a local component repository in which binaries and source code of third-party components are stored?",
+                  "text": "Describe the vetting and scanning process you use when you choose components, containers, binaries and AI models from public ecosystems or from third-parties.",
                   "answers": []
                 },
                 {
                   "id": "P.3.4.2",
+                  "text": "How do you arrange for a local component repository in which binaries and source code of third-party components are stored?",
+                  "answers": []
+                },
+                {
+                  "id": "P.3.4.3",
                   "text": "What are your policies for rebuilding components from source?",
                   "answers": []
                 }
@@ -2247,43 +2252,6 @@
                 {
                   "sections": [
                      "OSPS-DO-06"
-                  ],
-                  "source": "OSPS"
-                }
-              ]
-            },
-            {
-              "definition": "Audit to ensure developers are consuming components that have gone through the approved vetting process even on their own machines because developer endpoints can become infected. Restrict product build to only packages in the repository of vetted components.",
-              "id": "P.3.5",
-              "name": "Prevent component vetting bypass",
-              "objective": "Ensure developers are not bypassing the component vetting process",
-              "questions": [
-                {
-                  "id": "P.3.5.1",
-                  "text": "In what ways could a developer bypass the component vetting process?",
-                  "answers": []
-                },
-                {
-                  "id": "P.3.5.2",
-                  "text": "What are the mechanisms in place to monitor whether developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
-                  "answers": []
-                }
-              ],
-              "references": [
-                {
-                  "sections": [
-                    "AUD-2"
-                  ],
-                  "source": "S2C2F"
-                },
-                {
-                  "sections": [
-                     "OSPS-AC-03",
-                     "OSPS-BR-01",
-                     "OSPS-BR-05",
-                     "OSPS-QA-01",
-                     "OSPS-QA-03",
-                     "OSPS-QA-07"
                   ],
                   "source": "OSPS"
                 }
@@ -4422,6 +4390,142 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Controls that have been identified but not associated with a framework",
+      "id": "U",
+      "name": "Unassigned",
+      "practices": [
+          {
+          "description": "Identify controls that have not been recorded in one or more SSC frameworks.",
+          "id": "U.1",
+          "name": "Identify SSC Control Gaps",
+          "tasks": [
+            {
+              "definition": "Audit to ensure developers are consuming components that have gone through the approved vetting process even on their own machines because developer endpoints can become infected. Restrict product build to only packages in the repository of vetted components.",
+              "id": "P.3.5",
+              "name": "Prevent component vetting bypass",
+              "objective": "Ensure developers are not bypassing the component vetting process",
+              "questions": [
+                {
+                  "id": "P.3.5.1",
+                  "text": "In what ways could a developer bypass the component vetting process?",
+                  "answers": []
+                },
+                {
+                  "id": "P.3.5.2",
+                  "text": "What are the mechanisms in place to monitor whether developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "AUD-2"
+                  ],
+                  "source": "S2C2F"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-03",
+                     "OSPS-BR-01",
+                     "OSPS-BR-05",
+                     "OSPS-QA-01",
+                     "OSPS-QA-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
+                }          
+
+              ]
+            },
+            {
+              "definition": "Zero-day vulnerabilities may not be fixed by an upstream maintainer in a desired timeframe. Implement an emergency response process to fix the vulnerability, re-build, deploy to your organization, and contribute the fix to the upstream maintainer.",
+              "id": "D.1.5",
+              "name": "Emergency artifact fix",
+              "objective": "Fix a zero-day vulnerability.",
+              "questions": [
+                {
+                  "id": "D.1.5.1",
+                  "text": "How do you handle it when an external artifact has a zero-day vulnerability that is not being fixed by an upstream maintainer in a desired timeframe?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "FIX-1"
+                  ],
+                  "source": "S2C2F"
+                }
+              ]
+            },
+            {
+              "definition": "Organizations should be responsible consumers and sustainable contributors to the open-source projects on which they depend.  Mechanisms may include donating, paying open-source developers, channeling funds to projects, fundraising for regular audits of critical projects, and having paid staff dedicated to upstream contributions.",
+              "id": "G.5.5",
+              "name": "Support Upstream Dependencies",
+              "objective": "Sustainable open-source software.",
+              "questions": [
+                {
+                  "id": "G.5.5.1",
+                  "text": "How do you support the projects providing your upstream dependencies?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "RQ3"
+                  ],
+                  "source": "Closing"
+                }
+              ]
+            },
+            {
+              "definition": "Automated scanning tools can detect anomalies and undesired behaviors in each environment, including development, build, testing, and deployment.",
+              "id": "E.3.11",
+              "name": "Development Environment Scanning Tools",
+              "objective": "Detect anomalies in the development infrastructure.",
+              "questions": [
+                {
+                  "id": "E.3.11.1",
+                  "text": "What tools do you use to secure your development environment? For example, tools to remove viruses, scan files downloaded from the internet before execution, detect signatures of anomalous payloads, and identify changes in configuration settings.",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "RQ3"
+                  ],
+                  "source": "Closing"
+                }
+              ]
+            },
+            {
+              "definition": "Partners can help during vulnerability response by providing information about compromises, enabling improved response efforts, and collaborating in dealing with attacks. Adversaries are only empowered when no collaboration exists between software organizations.",
+              "id": "D.1.7",
+              "name": "Establish Response Partnerships",
+              "objective": "Develop external incident information sources through collaboration.",
+              "questions": [
+                {
+                  "id": "E.3.11.1",
+                  "text": "What vulnerability information and incident response relationships do you have with external organizations?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "RQ3"
+                  ],
+                  "source": "Closing"
+                }
+              ]
+            }       
+          ]
+          }
+        ]
     }
   ],
   "pending_metadata": [
@@ -4439,7 +4543,8 @@
     {"id":"SSDF", "title":"NIST Secure Software Development Framework version 1.1 (800-218)", "link":"https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"},
     {"id":"SSDF-AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
     {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
-    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"}
+    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
+    {"id":"Closing", "title":"Closing the Chain", "link":"https://arxiv.org/pdf/2503.12192"}
   ],
   "version": "2.0"
 }
