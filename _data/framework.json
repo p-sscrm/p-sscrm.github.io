@@ -1,7 +1,7 @@
 {
   "groups": [
     {
-      "description": "Tasks that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements. ",
+      "description": "Controls that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements. ",
       "id": "G",
       "name": "Governance",
       "practices": [
@@ -11,14 +11,14 @@
           "name": "Perform compliance",
           "tasks": [
             {
-              "definition": "Identify, document, communicate, and maintain security requirements and policies for the organization\u0027s software development infrastructure and secure SDLC. Maintain the requirements and policies over time. Incorporate constraints imposed by standards and regulations and customer-driven security requirements.",
+              "definition": "Identify, document, communicate, and maintain security requirements and policies for the organization\u0027s software development infrastructure, including all AI models used, and secure SDLC. Maintain the requirements and policies over time. Incorporate constraints imposed by standards and regulations and customer-driven security requirements.",
               "id": "G.1.1",
               "name": "Organizational security requirements",
               "objective": "Organizational security requirements, such as those imposed by standards and regulations, are included in the SDLC.",
               "questions": [
                 {
                   "id": "G.1.1.1",
-                  "text": "Do you have a defined secure SDLC that the engineers are aware of?",
+                  "text": "How do you document and share a secure SDLC that the engineers are aware of?",
                   "answers": [
                     {
                       "id": "G.1.1.1.1",
@@ -58,7 +58,7 @@
                 },
                 {
                   "sections": [
-                    "PO.1.1 R1", "PO.1.2 R2"
+                    "PO.1.1", "PO.1.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -161,14 +161,14 @@
               ]
             },
             {
-              "definition": "Configure tools to generate attestations (aka evidence) to create an audit trail for every step in the build process and of the use of secure software development practices. These attestations should indicate conformance with record retention requirements, preserve the integrity of the findings and the authenticity of the information. Assign responsibility for creating attestations that tools cannot generate. Attestations should be immutable and published in the source repository releases, in the package registry, or elsewhere, with their existence recorded in a transparency log.. An attestation is a signed assertion that the record is trustworthy.",
+              "definition": "Configure tools to generate attestations (aka evidence) to create an audit trail for every step in the build process and of the use of secure software development practices. These attestations should indicate conformance with record retention requirements, preserve the integrity of the findings and the authenticity of the information. For AI models, generate attestations of the integrity and provenance of the training datasets.  Assign responsibility for creating attestations that tools cannot generate. Attestations should be immutable and published in the source repository releases, in the package registry, or elsewhere, with their existence recorded in a transparency log.. An attestation is a signed assertion that the record is trustworthy.",
               "id": "G.1.3",
               "name": "Produce attestation",
-              "objective": "Produce an audit trail for every step in the build process and  evidence of the use of secure software development practices.",
+              "objective": "Produce an audit trail for every step in the build process, the integrity/provenance of training data, and evidence of the use of secure software development practices.",
               "questions": [
-                {
+                { 
                   "id": "G.1.3.1",
-                  "text": "Can you tell me about your automated or manual processes for producing attestations for the build process and for the use of secure development practices?",
+                  "text": "Describe your automated or manual processes for producing attestations for the build process, the integrity/provenance of training data, and for the use of secure development practices?",
                   "answers": []
                 },
                 {
@@ -183,7 +183,7 @@
                 },
                 {
                   "id": "G.1.3.4",
-                  "text": "Is responsibility assigned for creating needed attestations that tools cannot generate?",
+                  "text": "How is responsibility assigned for creating needed attestations that tools cannot generate?",
                   "answers": []
                 },
                 {
@@ -219,7 +219,7 @@
                 },
                 {
                   "sections": [
-                    "PO.3.3 N1"
+                    "PO.3.3"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -274,7 +274,7 @@
               ]
             },
             {
-              "definition": "Automatically collect and provide traceability data for generated products, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data\u0027s traceability can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations.",
+              "definition": "Automatically collect and provide traceability data for generated products, including AI models, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data\u0027s traceability can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations.",
               "id": "G.1.4",
               "name": "Deliver provenance",
               "objective": "Enable traceability and reproducibility of the actions performed while writing code, compiling, testing, and deploying software by making transparent the steps that were performed, by whom and in what order.",
@@ -303,6 +303,11 @@
                   "id": "G.1.4.5",
                   "text": "What do provenance records include, e.g. the initial state of the machine, VM, or container, and user-specified build steps?",
                   "answers": []
+                },
+                                {
+                  "id": "G.1.4.6",
+                  "text": "How do you ensure that access to generated AI models trained on sensitive data (e.g. PII, IP, financial, or other regulated data) is restricted to individuals who already have access rights to the sensitive data or that generated models do not contain sensitive data?",
+                  "answers": []
                 }
               ],
               "references": [
@@ -322,9 +327,7 @@
                 },
                 {
                   "sections": [
-                    "PS.3.2 R1",
-                    "PS.3.2 R2",
-                    "PS.3.2 C1"
+                    "PS.3.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -383,14 +386,14 @@
               ]
             },
             {
-              "definition": "Generate (preferably during build time) and provide a SBOM (in a machine-readable, NTIA-supported format) for generated products. SBOMs should be digitally signed using a verifiable and trusted key. VEX data for all components should also be considered.",
+              "definition": "Generate (preferably during build time) and provide a SBOM (in a machine-readable, NTIA-supported format) for generated products, including AI models. SBOMs should be digitally signed using a verifiable and trusted key. VEX data for all components should also be considered.",
               "id": "G.1.5",
               "name": "Deliver SBOM",
               "objective": "By providing SBOM, enable internal and external customers to analyze the contents of the final software package, including the version of the dependencies.",
               "questions": [
                 {
                   "id": "G.1.5.1",
-                  "text": "Do you deliver an SBOM and provenance data that satisfy your contracts with software acquirers, such as in a standard-base format?",
+                  "text": "How do you deliver an SBOM and provenance data that satisfy your contracts with software acquirers, such as in a standard-base format?",
                   "answers": []
                 },
                 {
@@ -405,17 +408,17 @@
                 },
                 {
                   "id": "G.1.5.4",
-                  "text": "Do you digitally sign the SBOMs?",
+                  "text": "How do you digitally sign the SBOMs?",
                   "answers": []
                 },
                 {
                   "id": "G.1.5.5",
-                  "text": "Do you produce a VEX supplement for your SBOM?",
+                  "text": "How do you produce a VEX supplement for your SBOM, if any?",
                   "answers": []
                 },
                 {
                   "id": "G.1.5.6",
-                  "text": "What is your process for generating the VEX information?",
+                  "text": "What is your process for generating the VEX information, if any?",
                   "answers": []
                 }
               ],
@@ -436,9 +439,7 @@
                 },
                 {
                   "sections": [
-                    "PS.3.2 R1",
-                    "PS.3.2 R2",
-                    "PS.3.2 C1"
+                    "PS.3.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -503,19 +504,19 @@
           ]
         },
         {
-          "description": "Establishing organizational roles and tasks for driving internal security standards in alignment with the business purpose of the organization.",
+          "description": "Establishing organizational roles and controls for driving internal security standards in alignment with the business purpose of the organization.",
           "id": "G.2",
           "name": "Develop security policies",
           "tasks": [
             {
-              "definition": "An upper management (e.g., c-suite) leadership team understands the business risk of insecure software development violating compliance and privacy obligations. The team is responsible for the entire software development process and deploying secure software to production. The commitment of this team is communicated to personnel associated with development-related roles and is backed up by the commitment to allocating adequate resources and making sometimes-difficult business decisions for security over faster release dates.",
+              "definition": "An upper management (e.g., c-suite) leadership team understands the business risk of insecure software development, including AI models used and delivered, and of violating compliance and privacy obligations. The team is responsible for the entire software development process and deploying secure software to production. The commitment of this team is communicated to personnel associated with development-related roles and is backed up by the commitment to allocating adequate resources and making sometimes-difficult business decisions for security over faster release dates.",
               "id": "G.2.1",
               "name": "Upper management support",
               "objective": "Upper management understands the business risks of insecure software and supports the resources necessary for secure software development.",
               "questions": [
                 {
                   "id": "G.2.1.1",
-                  "text": "Can you share about upper management\u0027s commitment to secure software development?",
+                  "text": "Please describe upper management\u0027s commitment to secure software development practices involving AI models.",
                   "answers": []
                 },
                 {
@@ -544,7 +545,7 @@
                 },
                 {
                   "sections": [
-                    "PO.2.3 R1"
+                    "PO.2.3"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -564,7 +565,7 @@
               ]
             },
             {
-              "definition": "Define criteria for a secure SDLC and associated software security checks that indicate how effectively software resulting from the SDLC meets the organization\u0027s expectations. These checks include key performance indicators (KPI), vulnerability severity scores, and security checks included in the \u0027definition of done\u0027 in an agile process and may be used for go/no-go decisions. The use of automated tools aids thoroughness, objectivity, and efficiency of these checks.",
+              "definition": "Define criteria for a secure SDLC and associated software security checks that indicate how effectively software, including AI models, resulting from the SDLC meets the organization\u0027s expectations. These checks include key performance indicators (KPI), vulnerability severity scores, and security checks included in the \u0027definition of done\u0027 in an agile process and may be used for go/no-go decisions. The use of automated tools aids thoroughness, objectivity, and efficiency of these checks.",
               "id": "G.2.2",
               "name": "Secure SDLC checks",
               "objective": "Criteria throughout the SDLC are used to check the software\u0027s security during development.",
@@ -606,8 +607,7 @@
                 },
                 {
                   "sections": [
-                    "PO.4.1 R1",
-                    "PO.4.1 C1"
+                    "PO.4.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -647,14 +647,19 @@
               ]
             },
             {
-              "definition": "Throughout the organization, create new roles and alter responsibilities for existing roles to incorporate security tasks and practices, as appropriate, into the SDLC and to keep management educated and informed on security issues. These roles can be centralized for the organization to promote thought leadership among developers and architects; and distributed throughout the organization in a network of security advocates.",
+              "definition": "Throughout the organization, create new roles and alter responsibilities for existing roles to incorporate security controls and practices, as appropriate, into the SDLC and to keep management educated and informed on security issues. These roles can be centralized for the organization to promote thought leadership among developers and architects; and distributed throughout the organization in a network of security advocates.",
               "id": "G.2.3",
               "name": "Roles and responsibilities",
-              "objective": "Ownership for security tasks throughout the SDLC at the organizational level and at the product team- and operational- level are established and visible.",
+              "objective": "Ownership for security controls throughout the SDLC at the organizational level and at the product team- and operational- level are established and visible.",
               "questions": [
                 {
                   "id": "G.2.3.1",
                   "text": "What security roles and responsibilities have been created to encompass all parts of the SDLC - both within the development teams as well as at an organizational level?",
+                  "answers": []
+                },
+                {
+                  "id": "G.2.3.2",
+                  "text": "What security roles and responsibilities have been created to address AI model acquisition, development, use, and publication?",
                   "answers": []
                 }
               ],
@@ -673,8 +678,7 @@
                 },
                 {
                   "sections": [
-                    "PO.2.1 R1",
-                    "PO.2.1 N1"
+                    "PO.2.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -707,14 +711,14 @@
               ]
             },
             {
-              "definition": "The policies for whether security-focused code review (a person looks directly at the code to find issues) and security-focused code analysis (tools are used to find issues in code, either in a fully automated way or in conjunction with a person) should be conducted based upon the characteristics/criticality of the software and its stage of development. Policies are established for both code developed in-house and third-party code.",
+              "definition": "The policies for whether security-focused code review (a person looks directly at the code to find issues) and security-focused code analysis (tools are used to find issues in code, either in a fully automated way or in conjunction with a person) should be conducted based upon the characteristics/criticality of the software and its stage of development. Policies are established for code and AI models developed in-house and for third-party code and AI models.",
               "id": "G.2.4",
               "name": "Security code review policy",
               "objective": "Guidelines on which code should undergo a security-focused manual or automated review are communicated.",
               "questions": [
                 {
                   "id": "G.2.4.1",
-                  "text": "What kind of guidelines are set in place for which code should be manually or automatically reviewed from a security perspective?",
+                  "text": "What kind of guidelines are set in place for which code and models should be manually or automatically reviewed from a security perspective?",
                   "answers": []
                 },
                 {
@@ -738,8 +742,7 @@
                 },
                 {
                   "sections": [
-                    "PW.7.1 R1",
-                    "PW.7.1 C1"
+                    "PW.7.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -879,15 +882,15 @@
           ]
         },
         {
-          "description": "Tasks to require that third-party suppliers employ adequate security measures to protect information, applications, and services provided to the organization.",
+          "description": "Controls to require that third-party suppliers employ adequate security measures to protect information, applications, AI models, and services provided to the organization.",
           "id": "G.3",
           "name": "Manage suppliers",
           "tasks": [
             {
-              "definition": "Compliance requirements, security requirements, and secure SDLC practices are included in vendor contracts with specified means of adherence enforcement. Examples include supplying an SBOM, VEX, self-attestation of security practices and provenance information; having a vulnerability disclosure program and incident response plan; and a security training program. The vendors include component, cloud, middleware providers, container and orchestration providers, and contractors.",
+              "definition": "Compliance requirements, security requirements, and secure SDLC practices are included in vendor contracts with specified means of adherence enforcement. Examples include supplying an SBOM, VEX, self-attestation of security practices and provenance information; having a vulnerability disclosure program and incident response plan; and a security training program. The vendors include component, cloud, AI model, middleware providers, container and orchestration providers, and contractors.",
               "id": "G.3.1",
               "name": "Security-related contract terms",
-              "objective": "Component, system, and service acquisition policies include the inclusion of adherence to security policies, security requirements, and secure SDLC practices that are compatible with compliance requirements.",
+              "objective": "Component, system, AI model, and service acquisition policies include the inclusion of adherence to security policies, security requirements, and secure SDLC practices that are compatible with compliance requirements.",
               "questions": [
                 {
                   "id": "G.3.1.1",
@@ -902,6 +905,11 @@
                 {
                   "id": "G.3.1.3",
                   "text": "How is adherence to contract terms verified?",
+                  "answers": []
+                },
+                {
+                  "id": "G.3.1.4",
+                  "text": "How do you track the provenance of training, testing, fine-tuning, and aligning data used for AI models?",
                   "answers": []
                 }
               ],
@@ -920,8 +928,8 @@
                 },
                 {
                   "sections": [
-                    "PO.1.3 R1",
-                    "PW.3.1 R1",
+                    "PO.1.3",
+                    "PW.3.1",
                     "PW.3.2",
                     "PW.3.3"
 
@@ -1094,7 +1102,7 @@
           "name": "Training",
           "tasks": [
             {
-              "definition": "Provide literacy and role-based training on software security and secure software supply chain. This training should include information about the firm\u0027s security culture, the secure software development lifecycle, containerization and security orchestration, common security mistakes, technology such as CI/CD and DevSecOps, and recognizing insider threat. Require this training as part of onboarding and periodically.",
+              "definition": "Provide literacy and role-based training on software security and secure software supply chain. This training should include information about the firm\u0027s security culture, the secure software development lifecycle, containerization and security orchestration, common security mistakes, technology such as CI/CD, AI models, and DevSecOps, and recognizing insider threat. Require this training as part of onboarding and periodically.",
               "id": "G.4.1",
               "name": "Role-based training",
               "objective": "Provide security training for all personnel involved in software development",
@@ -1130,7 +1138,7 @@
                 },
                 {
                   "sections": [
-                    "PO.2.2 R1"
+                    "PO.2.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -1192,14 +1200,14 @@
               ]
             },
             {
-              "definition": "Have a process for continuously learning about emerging attack trends and vulnerabilities. Gather information from software acquirers, users, and public sources on potential vulnerabilities in the software and third-party components that the software uses, and investigate all credible reports. Use a subscription to a cyber threat intelligence feed, attend technical conferences, monitor attacker forums, and study trends within the enterprise. Make this information on attack trends actionable and useful for developers, testers, security operations, and others to identify vulnerabilities in existing products, perform improved threat modeling and security architecture, and evolve the SDLC.",
+              "definition": "Have a process for continuously learning about emerging attack trends and vulnerabilities. Gather information from software acquirers, users, and public sources on potential vulnerabilities in the software and third-party components that the software uses, including AI models, and investigate all credible reports. Use a subscription to a cyber threat intelligence feed, attend technical conferences, monitor attacker forums, and study trends within the enterprise. Make this information on attack trends actionable and useful for developers, testers, security operations, and others to identify vulnerabilities in existing products, perform improved threat modeling and security architecture, and evolve the SDLC.",
               "id": "G.4.3",
               "name": "Gather attack trends",
               "objective": "Stay current on attack trends.",
               "questions": [
                 {
                   "id": "G.4.3.1",
-                  "text": "How do you monitor new attack trends and vulnerabilities applicable to your software, such as by monitoring a cyberthreat intelligence feed and attacker forums, or attending conferences?",
+                  "text": "How do you monitor new attack trends and vulnerabilities applicable to your software and AI models, such as by monitoring a cyberthreat intelligence feed and attacker forums, or attending conferences?",
                   "answers": []
                 }
               ],
@@ -1219,9 +1227,7 @@
                 },
                 {
                   "sections": [
-                    "RV.1.1 R1",
-                    "RV.1.1 R2",
-                    "RV.1.1 R3"
+                    "RV.1.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -1453,7 +1459,7 @@
       ]
     },
     {
-      "description": "Tasks to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.",
+      "description": "Controls to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.",
       "id": "P",
       "name": "Product",
       "practices": [
@@ -1463,10 +1469,10 @@
           "name": "Develop security requirements",
           "tasks": [
             {
-              "definition": "Identify and document security requirements for organization-developed software, including risk-reducing software architecture and design choices, security patterns, and translating compliance constraints to requirements. Examples include using memory-safe languages and secure frameworks, isolation and sandboxing component strategies, code modularity, security features, secure-by-design components, application containers, and product features that aid in secure deployment, operation, and maintenance. Containers can be used as a strategy for tighter coupling of an application and its dependencies, immutability, and some isolation benefits. Maintain these requirements over time.",
+              "definition": "Identify and document security requirements for organization-developed software, including AI models, including risk-reducing software architecture and design choices, security patterns, and translating compliance constraints to requirements. Examples include using memory-safe languages and secure frameworks, isolation and sandboxing component strategies, code modularity, security features, secure-by-design components, application containers, and product features that aid in secure deployment, operation, and maintenance. Containers can be used as a strategy for tighter coupling of an application and its dependencies, immutability, and some isolation benefits. Maintain these requirements over time.",
               "id": "P.1.1",
               "name": "Product security requirements",
-              "objective": "Identify and document security requirements for organization-developed software",
+              "objective": "Identify and document security requirements for organization-developed software, including AI models",
               "questions": [
                 {
                   "id": "P.1.1.1",
@@ -1475,12 +1481,12 @@
                 },
                 {
                   "id": "P.1.1.2",
-                  "text": "Which of the following strategies are considered: the use of memory-safe languages, secure frameworks, isolation and sandboxing?",
+                  "text": "Which of the following strategies are considered: the use of memory-safe languages, secure frameworks, isolation, acceptance testing, and sandboxing?",
                   "answers": []
                 },
                 {
                   "id": "P.1.1.3",
-                  "text": "Are completion and adherence tracked?",
+                  "text": "How are completion and adherence tracked?",
                   "answers": []
                 }
               ],
@@ -1499,9 +1505,7 @@
                 },
                 {
                   "sections": [
-                    "PO.1.2 R1",
-                    "PO.1.2 C1",
-                    "PO.1.2 N1"
+                    "PO.1.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -1541,7 +1545,7 @@
               ]
             },
             {
-              "definition": "Use code protection mechanisms, such as the use of an established certificate authority for code signing, to enable the attestation of the provenance, integrity, and authorization of important code. Make software integrity verification information, such as cryptographic hashes for release files, available to software acquirers on a well-secured website.",
+              "definition": "Use code protection mechanisms, such as the use of an established certificate authority for code signing, to enable the attestation of the provenance, integrity, and authorization of important code and AI models. Make software integrity verification information, such as cryptographic hashes for release files, available to software acquirers on a well-secured website.",
               "id": "P.1.2",
               "name": "Software release integrity",
               "objective": "Provide software acquirers assurance that the software they acquire is legitimate and has not been tampered with.",
@@ -1582,8 +1586,7 @@
                 },
                 {
                   "sections": [
-                    "PS.2.1 R1",
-                    "PS.2.1 R2"
+                    "PS.2.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -1702,9 +1705,7 @@
                 },
                 {
                   "sections": [
-                    "PW.1.1 R1", 
-                    "PW.1.1 C1", 
-                    "PW.1.1 C2" 
+                    "PW.1.1" 
                   ],
                   "source": "SSDF-AI"
                 },
@@ -1746,7 +1747,7 @@
               ]
             },
             {
-              "definition": "Follow secure coding standards and practices appropriate to the development languages, APIs, and environment. Examples include validating all inputs, encoding outputs, and avoiding unsafe functions. Use development environments and static analysis tools that support compliance with secure coding practices as source code is being implemented.",
+              "definition": "Follow secure coding standards and practices appropriate to the development languages, APIs, AI models, and environment. Examples include validating all inputs, encoding outputs, and avoiding unsafe functions. Use development environments and static analysis tools that support compliance with secure coding practices as source code is being implemented.",
               "id": "P.2.2",
               "name": "Secure coding",
               "objective": "Decrease the number of security vulnerabilities introduced during source code creation.",
@@ -1777,9 +1778,7 @@
                 },
                 {
                   "sections": [
-                    "PW.5.1 R1",
-                    "PW.5.1 R2",
-                    "PW.5.1 R3"
+                    "PW.5.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -1810,14 +1809,14 @@
               ]
             },
             {
-              "definition": "Reduce the likelihood of software deploying with weak security settings by defining secure deployment parameters so that the default settings are secure and do not weaken the security functions provided by the platform, network infrastructure, or services.",
+              "definition": "Reduce the likelihood of software deploying with weak security settings by defining secure deployment parameters so that the default settings are secure and do not weaken the security functions provided by the platform, AI models, network infrastructure, or services.",
               "id": "P.2.3",
               "name": "Secure-by-default implementation",
               "objective": "Improve the security of software at the time of installation.",
               "questions": [
                 {
                   "id": "P.2.3.1",
-                  "text": "Are the default installation settings for products, platform, network infrastructure, services defined to be secure by default?",
+                  "text": "How do you determine whether the default installation settings for products, platform, models, network infrastructure, services defined to be secure by default?",
                   "answers": []
                 }
               ],
@@ -1836,7 +1835,7 @@
                 },
                 {
                   "sections": [
-                    "PW.9.1 N1"
+                    "PW.9.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -2158,19 +2157,24 @@
               ]
             },
             {
-              "definition": "Components, binaries, and containers chosen from public ecosystems undergo a vetting process, including reviewing component meta-data and provenance data; secure composition analysis; binary composition analysis; and other security scanning. Rebuild software dependencies from source code when possible to remove additional software that may be contained in a compiled version. Establish repositories to host organization-approved components and containers.",
+              "definition": "Components, binaries, containers, and AI models chosen from public ecosystems undergo a vetting process, including reviewing component meta-data and provenance data; secure composition analysis; binary composition analysis; and other security scanning. Rebuild software dependencies from source code when possible to remove additional software that may be contained in a compiled version. Establish repositories to host organization-approved components and containers.",
               "id": "P.3.4",
               "name": "Vetted third-party component and container repositories",
               "objective": "Engineers can choose from organization-approved components",
               "questions": [
                 {
                   "id": "P.3.4.1",
-                  "text": "Do you have a local component repository in which binaries and source code of third-party components are stored?",
+                  "text": "Describe the vetting and scanning process you use when you choose components, containers, binaries and AI models from public ecosystems or from third-parties.",
                   "answers": []
                 },
                 {
                   "id": "P.3.4.2",
-                  "text": "Do you rebuild a component from source when possible?",
+                  "text": "How do you arrange for a local component repository in which binaries and source code of third-party components are stored?",
+                  "answers": []
+                },
+                {
+                  "id": "P.3.4.3",
+                  "text": "What are your policies for rebuilding components from source?",
                   "answers": []
                 }
               ],
@@ -2189,7 +2193,7 @@
                 },
                 {
                   "sections": [
-                    "PW.4.1 C1"
+                    "PW.4.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -2252,48 +2256,11 @@
                   "source": "OSPS"
                 }
               ]
-            },
-            {
-              "definition": "Audit to ensure developers are consuming components that have gone through the approved vetting process even on their own machines because developer endpoints can become infected. Restrict product build to only packages in the repository of vetted components.",
-              "id": "P.3.5",
-              "name": "Prevent component vetting bypass",
-              "objective": "Ensure developers are not bypassing the component vetting process",
-              "questions": [
-                {
-                  "id": "P.3.5.1",
-                  "text": "In what ways could a developer bypass the component vetting process?",
-                  "answers": []
-                },
-                {
-                  "id": "P.3.5.2",
-                  "text": "What are the mechanisms in place to monitor whether developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
-                  "answers": []
-                }
-              ],
-              "references": [
-                {
-                  "sections": [
-                    "AUD-2"
-                  ],
-                  "source": "S2C2F"
-                },
-                {
-                  "sections": [
-                     "OSPS-AC-03",
-                     "OSPS-BR-01",
-                     "OSPS-BR-05",
-                     "OSPS-QA-01",
-                     "OSPS-QA-03",
-                     "OSPS-QA-07"
-                  ],
-                  "source": "OSPS"
-                }
-              ]
             }
           ]
         },
         {
-          "description": "Use automated and manual vulnerability discovery techniques to identify previously-undisclosed vulnerabilities in in-house and third-party code.",
+          "description": "Use automated and manual vulnerability discovery techniques to identify previously-undisclosed vulnerabilities in in-house and third-party code, including AI models.",
           "id": "P.4",
           "name": "Discover vulnerabilities",
           "tasks": [
@@ -2334,7 +2301,7 @@
                 },
                 {
                   "sections": [
-                    "PW.7.2 R1"
+                    "PW.7.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -2430,7 +2397,17 @@
                 },
                 {
                   "id": "P.4.2.8",
-                  "text": "Do you scan your tools for vulnerabilities?",
+                  "text": "How do you scan your tools for vulnerabilities?",
+                  "answers": []
+                },
+                {
+                  "id": "P.4.2.9",
+                  "text": "How do you scan acquired AI models for security issues?",
+                  "answers": []
+                },
+                {
+                  "id": "P.4.2.10",
+                  "text": "How do you scan released AI models for security issues?",
                   "answers": []
                 }
               ],
@@ -2449,11 +2426,8 @@
                 },
                 {
                   "sections": [
-                    "PO.3.1 R1", 
-                    "PO.3.1 N1", 
-                    "PO.3.1 N2", 
-                    "PO.3.2 R1",
-                    "PO.3.2 R2"
+                    "PO.3.1", 
+                    "PO.3.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -2509,7 +2483,7 @@
               ]
             },
             {
-              "definition": "Review, analyze, and/or test the software’s code, and the tools used to build it, to identify or confirm the presence, remediation, and disclosure of previously undetected vulnerabilities. Tools commonly include SAST, DAST, IAST, SCA, and secret detection tools. Record and triage discovered issues and recommended remediations in the development team’s workflow or issue-tracking system.",
+              "definition": "Review, analyze, and/or test the software’s code, and the tools used to build it, including AI models, to identify or confirm the presence, remediation, and disclosure of previously undetected vulnerabilities. Tools commonly include SAST, DAST, IAST, SCA, and secret detection tools. Record and triage discovered issues and recommended remediations in the development team’s workflow or issue-tracking system.",
               "id": "P.4.3",
               "name": "Automated vulnerability detection",
               "objective": "Detect vulnerabilities before deployment through the use of automated tools to reduce the window of opportunity for attackers.",
@@ -2540,9 +2514,7 @@
                 },
                 {
                   "sections": [
-                    "RV.1.2 R1",
-                    "RV.1.2 R2",
-                    "RV.1.2 R3"
+                    "RV.1.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -2599,7 +2571,7 @@
               ]
             },
             {
-              "definition": "Executable testing, such as done by in-house testers or third-party penetration testers, is performed to find previously-undiscovered vulnerabilities. In-house testers should be guided by design review results, threat modeling, security requirements, and the security mechanisms in security features. Testing should include containers. Automate security tests as possible. Scope the testing, design the tests, perform the testing, and document the results, including recording and triaging all discovered issues and recommended remediations in the development team’s workflow or issue tracking system. Test the build process and scripts.",
+              "definition": "Executable testing, such as done by in-house testers or third-party penetration testers, is performed to find previously-undiscovered vulnerabilities. In-house testers should be guided by design review results, threat modeling, security requirements, and the security mechanisms in security features. Testing should include containers and AI models. Automate security tests as possible. Scope the testing, design the tests, perform the testing, and document the results, including recording and triaging all discovered issues and recommended remediations in the development team’s workflow or issue tracking system. Test the build process and scripts.",
               "id": "P.4.4",
               "name": "Executable security testing",
               "objective": "Discover vulnerabilities only detected through executable testing",
@@ -2650,10 +2622,8 @@
                 },
                 {
                   "sections": [
-                    "PW.8.1 R1", 
-                    "PW.8.1 C1", 
-                    "PW.8.2 R1",
-                    "PW.8.2 C1"
+                    "PW.8.1", 
+                    "PW.8.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -2702,7 +2672,7 @@
               ]
             },
             {
-              "definition": "Regularly check that third-party software components comply with the contractual requirements, such as following a secure SDLC, and fix detected vulnerabilities. Regularly scan components and containers to monitor for vulnerabilities and for evidence that artifacts are being maintained and have not been abandoned or deprecated.",
+              "definition": "Regularly check that third-party software components, including AI models, comply with the contractual requirements, such as following a secure SDLC, and fix detected vulnerabilities. Regularly scan components and containers to monitor for vulnerabilities and for evidence that artifacts are being maintained and have not been abandoned or deprecated.",
               "id": "P.4.5",
               "name": "Regular third-party compliance",
               "objective": "Identify increased security risk of third-party and open-source components",
@@ -2714,7 +2684,7 @@
                 },
                 {
                   "id": "P.4.5.2",
-                  "text": "Do you check that components are being maintained and are not at end-of-life or have been abandoned?",
+                  "text": "How do you check that components are being maintained and are not at end-of-life or have been abandoned?",
                   "answers": []
                 },
                 {
@@ -2738,8 +2708,7 @@
                 },
                 {
                   "sections": [
-                    "PW.4.4 R1",
-                    "PW.4.4 R2"
+                    "PW.4.4"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -2941,7 +2910,7 @@
       ]
     },
     {
-      "description": "Tasks to protect the confidentiality and integrity of source code, software components, and the build infrastructure from tampering and unauthorized access.",
+      "description": "Controls to protect the confidentiality and integrity of source code, software components, and the build infrastructure from tampering and unauthorized access.",
       "id": "E",
       "name": "Environment",
       "practices": [
@@ -2951,14 +2920,14 @@
           "name": "Safeguard artifact integrity",
           "tasks": [
             {
-              "definition": "Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data, metadata) to be retained for each software release.",
+              "definition": "Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data, configuration files, metadata) to be retained for each software release.",
               "id": "E.1.1",
               "name": "Safely store release artifacts",
               "objective": "Preserve release artifacts to help in the identification and analysis of vulnerabilities discovered after release.",
               "questions": [
                 {
                   "id": "E.1.1.1",
-                  "text": "What files and supporting data (like integrity validation, provenance, and metadata) do you securely archive and retain for each software release?",
+                  "text": "What files and supporting data (like integrity validation, provenance, configuration files, and metadata) do you securely archive and retain for each software release?",
                   "answers": []
                 }
               ],
@@ -2977,10 +2946,7 @@
                 },
                 {
                   "sections": [
-                    "PS.3.1 R1",
-                    "PS.3.1 R2",
-                    "PS.3.1 R3",
-                    "PS.3.1 N1"
+                    "PS.3.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -3011,7 +2977,7 @@
               ]
             },
             {
-              "definition": "Store project artifacts, including but not limited to source code, executable code, infrastructure as code, and configuration-as-code, in a repository with restricted access using the principle of least privilege based on the nature of the artifact. Use version control to track and store all changes to this code with accountability to an authenticated individual account with access granted to personnel, tools, and services. As appropriate, sign or encrypt artifacts. Indefinitely retain change history.",
+              "definition": "Store project artifacts, including but not limited to source code, executable code, infrastructure as code, AI models, and configuration-as-code, in a repository with restricted access using the principle of least privilege based on the nature of the artifact. Use version control to track and store all changes to this code with accountability to an authenticated individual account with access granted to personnel, tools, and services. As appropriate, sign or encrypt artifacts. Indefinitely retain change history.",
               "id": "E.1.2",
               "name": "Version control",
               "objective": "Prevent unauthorized changes to artifacts, both inadvertent and intentional.",
@@ -3037,18 +3003,9 @@
                 },
                 {
                   "sections": [
-                    "PS.1.1 R1",
-                    "PS.1.1 R2",
-                    "PS.1.1 R3",
-                    "PS.1.1 R4",
-                    "PS.1.1 C1",
-                    "PS.1.1 C2",
-                    "PS.1.2 R1",
-                    "PS.1.2 C1",
-                    "PS.1.3 R1",
-                    "PS.1.3 R2",
-                    "PS.1.3 R3",
-                    "PS.1.3 R4"
+                    "PS.1.1",
+                    "PS.1.2",
+                    "PS.1.3"
 
                   ],
                   "source": "SSDF-AI"
@@ -3320,7 +3277,7 @@
               ]
             },
             {
-              "definition": "Determine which compiler, interpreter, and build tool features should be used to reduce vulnerabilities, such as producing compiler warnings for vulnerable code that are treated as errors; application of obfuscation techniques; approved configurations being used; verification of sources and manifests of dependencies; and approved tools configurations are available as configuration-as-code.",
+              "definition": "Determine which compiler, interpreter, AI training, and build tool features should be used to reduce vulnerabilities, such as producing compiler warnings for vulnerable code that are treated as errors; application of obfuscation techniques; approved configurations being used; verification of sources and manifests of dependencies; and approved tools configurations are available as configuration-as-code.",
               "id": "E.2.3",
               "name": "Defensive compilation and build",
               "objective": "Reduce vulnerabilities during compilation and build.",
@@ -3351,7 +3308,7 @@
                 },
                 {
                   "sections": [
-                    "PW.6.1 C1"
+                    "PW.6.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -3395,7 +3352,7 @@
               "questions": [
                 {
                   "id": "E.2.4.1",
-                  "text": "Are your build steps defined in a build script, with the only manual step being to invoke the script?",
+                  "text": "How do you ensure reproducibility of your build processes, e.g. through defined build scripts, with the only manual step being to invoke the script?",
                   "answers": []
                 },
                 {
@@ -3405,27 +3362,27 @@
                 },
                 {
                   "id": "E.2.4.3",
-                  "text": "Does the build run on a hosted build platform?",
+                  "text": "How do you ensure the build environment is reproducible, e.g.Does the build run on a hosted build platform?",
                   "answers": []
                 },
                 {
                   "id": "E.2.4.4",
-                  "text": "Are the build steps, sources, and dependencies declared up front with immutable references/use immutable artifacts stored in a local repository manager?",
+                  "text": "How are the build steps, sources, and dependencies declared up front with immutable references/use immutable artifacts stored in a local repository manager?",
                   "answers": []
                 },
                 {
                   "id": "E.2.4.5",
-                  "text": "Are infrastructure, build scripts, and GitHub Actions handled \u0027as code\u0027, such as with code review, scanning, testing, and version control?",
+                  "text": "How are infrastructure, build scripts, and GitHub Actions handled \u0027as code\u0027, such as with code review, scanning, testing, and version control?",
                   "answers": []
                 },
                 {
                   "id": "E.2.4.6",
-                  "text": "Are configuration changes reviewed?",
+                  "text": "How are configuration changes reviewed?",
                   "answers": []
                 },
                 {
                   "id": "E.2.4.7",
-                  "text": "Are CI/CD pipelines standardized across the enterprise?",
+                  "text": "How are CI/CD pipelines standardized across the enterprise?",
                   "answers": []
                 }
               ],
@@ -3444,7 +3401,7 @@
                 },
                 {
                   "sections": [
-                    "PW.6.2 C1"
+                    "PW.6.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -3688,14 +3645,14 @@
               ]
             },
             {
-              "definition": "Using network segmentation and access control to separate and protect each environment (e.g., endpoints, development, build, test, deployment) involved in software development to protect from internal and external threats. Remote access to the build environment should be rare, logged, and require multi-party approval. Log and monitor access, particularly privileged access. Configure the environment\u0027s hosting infrastructure following a zero-trust architecture.",
+              "definition": "Using network segmentation and access control to separate and protect each environment (e.g., endpoints, development, build, test, deployment, model training) involved in software development to protect from internal and external threats. Remote access to the build environment should be rare, logged, and require multi-party approval. Log and monitor access, particularly privileged access. Configure the environment\u0027s hosting infrastructure following a zero-trust architecture.",
               "id": "E.3.2",
               "name": "Environmental separation",
-              "objective": "Separate and protect each environment involved in software development (i.e., development, build, test, deployment)",
+              "objective": "Separate and protect each environment involved in software development (i.e., development, build, test, deployment, model training)",
               "questions": [
                 {
                   "id": "E.3.2.1",
-                  "text": "Are environments involved in software development (e.g., endpoints, development, build, test, deployment) separated and protected from physical and remote access to the build environment?",
+                  "text": "How are environments involved in software development (e.g., endpoints, development, build, test, model training, deployment) separated and protected from physical and remote access to the build environment?",
                   "answers": []
                 },
                 {
@@ -3710,7 +3667,7 @@
                 },
                 {
                   "id": "E.3.2.4",
-                  "text": "Are the build environment workstations held to a security standard, e.g. up-to-date patches, anti-virus definitions, etc?",
+                  "text": "How are the build environment workstations held to a security standard, e.g. up-to-date patches, anti-virus definitions, etc?",
                   "answers": []
                 }
               ],
@@ -3729,13 +3686,7 @@
                 },
                 {
                   "sections": [
-                    "PO.5.1 C1",
-                    "PO.5.1 R1",
-                    "PO.5.1 R2",
-                    "PO.5.1 R3",
-                    "PO.5.1 R4",
-                    "PO.5.1 R5",
-                    "PO.5.1 R6"
+                    "PO.5.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -4003,12 +3954,12 @@
       ]
     },
     {
-      "description": "Tasks for identifying, analyzing, and addressing vulnerabilities in products in production/that have been deployed",
+      "description": "Controls for identifying, analyzing, and addressing vulnerabilities in products in production/that have been deployed",
       "id": "D",
       "name": "Deployment",
       "practices": [
         {
-          "description": "Tasks for identifying and addressing vulnerabilities in products and preventing similar ones from occuring in the future.",
+          "description": "Controls for identifying and addressing vulnerabilities in products and preventing similar ones from occuring in the future.",
           "id": "D.1",
           "name": "Respond to/disclose vulnerabilities",
           "tasks": [
@@ -4030,7 +3981,7 @@
                 },
                 {
                   "id": "D.1.1.3",
-                  "text": "Is a severity rating, such as CVSS, used to aid prioritization?",
+                  "text": "What mechanisms are used for prioritization, e.g. is a severity rating, such as CVSS, used to aid prioritization?",
                   "answers": []
                 },
                 {
@@ -4054,7 +4005,7 @@
                 },
                 {
                   "sections": [
-                    "RV.2.1 N1"
+                    "RV.2.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -4121,9 +4072,7 @@
                 },
                 {
                   "sections": [
-                    "RV.2.2 R1",
-                    "RV.2.2 R2",
-                    "RV.2.2 C1"
+                    "RV.2.2"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -4159,7 +4108,7 @@
                 },
                 {
                   "id": "D.1.3.3",
-                  "text": "Do you publish a security policy (via a security.md file) to inform users about a vulnerability and how to report it?",
+                  "text": "How do you publish a security policy (e.g. via a security.md file) to inform users about a vulnerability and how to report it?",
                   "answers": []
                 },
                 {
@@ -4188,8 +4137,7 @@
                 },
                 {
                   "sections": [
-                    "RV.1.3 R1",
-                    "RV.1.3 R2"
+                    "RV.1.3"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -4233,12 +4181,12 @@
               "questions": [
                 {
                   "id": "D.1.4.1",
-                  "text": "Does your team have a process of proactively eradicating or reducing a whole class of vulnerabilities based upon previously-identified vulnerabilities or incidents?",
+                  "text": "Describe the team's process of proactively eradicating or reducing a whole class of vulnerabilities based upon previously-identified vulnerabilities or incidents?",
                   "answers": []
                 },
                 {
                   "id": "D.1.4.2",
-                  "text": "Are these patterns folded back into the SDLC?",
+                  "text": "How are these patterns folded back into the SDLC?",
                   "answers": []
                 }
               ],
@@ -4303,19 +4251,19 @@
               ]
             },
             {
-              "definition": "Analyze vulnerabilities discovered throughout the process and in production to determine their root cause for being injected and not discovered earlier before production. Incident response feedback should be fed back to developers and be considered when evolving the SDLC. Record lessons learned. Identify patterns, such as security tasks in the SDLC needing to be followed. Discuss and disseminate these patterns to developers. Guide process correction if the current process is not being followed.",
+              "definition": "Analyze vulnerabilities discovered throughout the process and in production to determine their root cause for being injected and not discovered earlier before production. Incident response feedback should be fed back to developers and be considered when evolving the SDLC. Record lessons learned. Identify patterns, such as security controls in the SDLC needing to be followed. Discuss and disseminate these patterns to developers. Guide process correction if the current process is not being followed.",
               "id": "D.1.6",
               "name": "Root cause analysis",
               "objective": "Reduce the frequency of vulnerabilities in the future",
               "questions": [
                 {
                   "id": "D.1.6.1",
-                  "text": "Do you analyze identified vulnerabilities to determine their root cause, including how the vulnerability was injected and, perhaps, how it escaped vulnerability detection efforts and made it into production?",
+                  "text": "How do you analyze identified vulnerabilities to determine their root cause, including how the vulnerability was injected and, perhaps, how it escaped vulnerability detection efforts and made it into production?",
                   "answers": []
                 },
                 {
                   "id": "D.1.6.2",
-                  "text": "Do you communicate trends to developers? How can trends identified in root cause be factored into your SDLC process?",
+                  "text": "How do you communicate trends to developers? How can trends identified in root cause be factored into your SDLC process?",
                   "answers": []
                 }
               ],
@@ -4334,7 +4282,7 @@
                 },
                 {
                   "sections": [
-                    "RV.3.1 N1"
+                    "RV.3.1"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -4357,7 +4305,7 @@
           ]
         },
         {
-          "description": "Tasks for identifying malicious activity at runtime.",
+          "description": "Controls for identifying malicious activity at runtime.",
           "id": "D.2",
           "name": "Monitor intrusions/violations",
           "tasks": [
@@ -4387,8 +4335,7 @@
                 },
                 {
                   "sections": [
-                    "PO.5.3 R1",
-                    "PO.5.3 R2"
+                    "PO.5.3"
                   ],
                   "source": "SSDF-AI"
                 },
@@ -4443,6 +4390,142 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Controls that have been identified but not associated with a framework",
+      "id": "U",
+      "name": "Unassigned",
+      "practices": [
+          {
+          "description": "Identify controls that have not been recorded in one or more SSC frameworks.",
+          "id": "U.1",
+          "name": "Identify SSC Control Gaps",
+          "tasks": [
+            {
+              "definition": "Audit to ensure developers are consuming components that have gone through the approved vetting process even on their own machines because developer endpoints can become infected. Restrict product build to only packages in the repository of vetted components.",
+              "id": "P.3.5",
+              "name": "Prevent component vetting bypass",
+              "objective": "Ensure developers are not bypassing the component vetting process",
+              "questions": [
+                {
+                  "id": "P.3.5.1",
+                  "text": "In what ways could a developer bypass the component vetting process?",
+                  "answers": []
+                },
+                {
+                  "id": "P.3.5.2",
+                  "text": "What are the mechanisms in place to monitor whether developers are consuming third party code through the approved ingestion method and not bypassing the vetting process?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "AUD-2"
+                  ],
+                  "source": "S2C2F"
+                },
+                {
+                  "sections": [
+                     "OSPS-AC-03",
+                     "OSPS-BR-01",
+                     "OSPS-BR-05",
+                     "OSPS-QA-01",
+                     "OSPS-QA-03",
+                     "OSPS-QA-07"
+                  ],
+                  "source": "OSPS"
+                }          
+
+              ]
+            },
+            {
+              "definition": "Zero-day vulnerabilities may not be fixed by an upstream maintainer in a desired timeframe. Implement an emergency response process to fix the vulnerability, re-build, deploy to your organization, and contribute the fix to the upstream maintainer.",
+              "id": "D.1.5",
+              "name": "Emergency artifact fix",
+              "objective": "Fix a zero-day vulnerability.",
+              "questions": [
+                {
+                  "id": "D.1.5.1",
+                  "text": "How do you handle it when an external artifact has a zero-day vulnerability that is not being fixed by an upstream maintainer in a desired timeframe?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "FIX-1"
+                  ],
+                  "source": "S2C2F"
+                }
+              ]
+            },
+            {
+              "definition": "Organizations should be responsible consumers and sustainable contributors to the open-source projects on which they depend.  Mechanisms may include donating, paying open-source developers, channeling funds to projects, fundraising for regular audits of critical projects, and having paid staff dedicated to upstream contributions.",
+              "id": "G.5.5",
+              "name": "Support Upstream Dependencies",
+              "objective": "Sustainable open-source software.",
+              "questions": [
+                {
+                  "id": "G.5.5.1",
+                  "text": "How do you support the projects providing your upstream dependencies?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "RQ3"
+                  ],
+                  "source": "Closing"
+                }
+              ]
+            },
+            {
+              "definition": "Automated scanning tools can detect anomalies and undesired behaviors in each environment, including development, build, testing, and deployment.",
+              "id": "E.3.11",
+              "name": "Development Environment Scanning Tools",
+              "objective": "Detect anomalies in the development infrastructure.",
+              "questions": [
+                {
+                  "id": "E.3.11.1",
+                  "text": "What tools do you use to secure your development environment? For example, tools to remove viruses, scan files downloaded from the internet before execution, detect signatures of anomalous payloads, and identify changes in configuration settings.",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "RQ3"
+                  ],
+                  "source": "Closing"
+                }
+              ]
+            },
+            {
+              "definition": "Partners can help during vulnerability response by providing information about compromises, enabling improved response efforts, and collaborating in dealing with attacks. Adversaries are only empowered when no collaboration exists between software organizations.",
+              "id": "D.1.7",
+              "name": "Establish Response Partnerships",
+              "objective": "Develop external incident information sources through collaboration.",
+              "questions": [
+                {
+                  "id": "E.3.11.1",
+                  "text": "What vulnerability information and incident response relationships do you have with external organizations?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "RQ3"
+                  ],
+                  "source": "Closing"
+                }
+              ]
+            }       
+          ]
+          }
+        ]
     }
   ],
   "pending_metadata": [
@@ -4460,7 +4543,8 @@
     {"id":"SSDF", "title":"NIST Secure Software Development Framework version 1.1 (800-218)", "link":"https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"},
     {"id":"SSDF-AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
     {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
-    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"}
+    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
+    {"id":"Closing", "title":"Closing the Chain", "link":"https://arxiv.org/pdf/2503.12192"}
   ],
   "version": "2.0"
 }
