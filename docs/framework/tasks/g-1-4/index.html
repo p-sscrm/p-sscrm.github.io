@@ -12,15 +12,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
 <meta property="og:description" content="The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative." />
-<link rel="canonical" href="/framework/tasks/g-1-4/" />
-<meta property="og:url" content="/framework/tasks/g-1-4/" />
+<link rel="canonical" href="http://localhost:4000/framework/tasks/g-1-4/" />
+<meta property="og:url" content="http://localhost:4000/framework/tasks/g-1-4/" />
 <meta property="og:site_name" content="P-SSCRM Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-11-01T13:31:46-04:00" />
+<meta property="article:published_time" content="2025-12-08T13:01:07-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Deliver provenance" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-11-01T13:31:46-04:00","datePublished":"2025-11-01T13:31:46-04:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"Deliver provenance","mainEntityOfPage":{"@type":"WebPage","@id":"/framework/tasks/g-1-4/"},"url":"/framework/tasks/g-1-4/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-08T13:01:07-05:00","datePublished":"2025-12-08T13:01:07-05:00","description":"The Proactive Software Supply Chain Risk Management Framework (P SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative.","headline":"Deliver provenance","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/framework/tasks/g-1-4/"},"url":"http://localhost:4000/framework/tasks/g-1-4/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -125,7 +125,7 @@
             
             <div class="detail-item">
                 <h3>Definition</h3>
-                <p>Automatically collect and provide traceability data for generated products, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data's traceability can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations.</p>
+                <p>Automatically collect and provide traceability data for generated products, including AI models, including: what entity built the package, what build process they used, and the top-level inputs to the build, such that the data's traceability can be verified and is generated automatically from the build service using a convention common in the package ecosystem. Provenance SHOULD accompany the artifact at publish time, and package ecosystems SHOULD provide a way to map a given artifact to its corresponding attestations.</p>
             </div>
         </section>
 
@@ -156,6 +156,10 @@
                     
                         <li id="G.1.4.5" class="question">
                             What do provenance records include, e.g. the initial state of the machine, VM, or container, and user-specified build steps?
+                        </li>
+                    
+                        <li id="G.1.4.6" class="question">
+                            How do you ensure that access to generated AI models trained on sensitive data (e.g. PII, IP, financial, or other regulated data) is restricted to individuals who already have access rights to the sensitive data or that generated models do not contain sensitive data?
                         </li>
                     
                 </ol>
@@ -215,11 +219,7 @@
                               SSDF-AI
                             </a>
                         
-                                PS.3.2 R1
-                        
-                                PS.3.2 R2
-                        
-                                PS.3.2 C1
+                                PS.3.2
                         
                         </li>
                     

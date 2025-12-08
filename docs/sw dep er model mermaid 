@@ -1,0 +1,56 @@
+```mermaid
+---
+title: Software Dependencies Entity Relationship Model
+--- 
+erDiagram
+    Package ||--o{ Version : "has"
+    Version ||--o{ Dependency : "requires"
+    Version ||--|| License : "is licensed under"
+    Package ||--o{ Maintainer : "maintained by"
+    Version ||--o{ SecurityVulnerability : "may have"
+
+    Package {
+        string name PK
+        string description
+        string repository_url
+        datetime created_at
+        datetime updated_at
+    }
+
+    Version {
+        string version_number PK
+        string package_name FK
+        string checksum
+        datetime release_date
+        boolean is_stable
+    }
+
+    Dependency {
+        string dependent_version FK
+        string required_package FK
+        string version_constraint
+        boolean is_dev_dependency
+    }
+
+    License {
+        string license_id PK
+        string name
+        string spdx_identifier
+        boolean is_osi_approved
+    }
+
+    Maintainer {
+        string email PK
+        string name
+        string public_key
+        datetime joined_date
+    }
+
+    SecurityVulnerability {
+        string cve_id PK
+        string severity
+        string description
+        datetime reported_date
+        datetime patched_version_date
+    } 
+    ```
