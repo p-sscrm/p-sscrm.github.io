@@ -10,7 +10,7 @@ layout: default
     </header>
 
     <section class="tasks">
-        <h2>Tasks</h2>
+        <h2>Controls</h2>
         {% assign group = site.data.framework.groups | where: "id", page.group_id | first %}
         {% assign practice = group.practices | where: "id", page.practice_id | first %}
         

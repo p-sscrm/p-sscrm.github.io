@@ -4532,7 +4532,7 @@
         {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}
   ],
   "metadata": [
-    {"id":"800-161", "title":"NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of tasks specifically identified in this document as mapping back to the Executive Order", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf" },
+    {"id":"800-161", "title":"NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of controls specifically identified in this document as mapping back to the Executive Order", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf" },
     {"id": "BSIMM", "title":"Building Security In Maturity Model Version 15", "link":"https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf"},
     {"id":"CNCF-SSC", "title":"Cloud Native Computing Foundation – Software Supply Chain Best Practices", "link":"https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf"},
     {"id":"EO", "title":"Executive Order 14028 (EO)", "link":"https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity"},
