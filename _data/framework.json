@@ -3786,12 +3786,7 @@
                 },
                 {
                   "sections": [
-                    "A-CE Limit which artifacts any given party is authorized to certify"
-                  ],
-                  "source": "CNCF-SSC"
-                },
-                {
-                  "sections": [
+                    "A-CE Limit which artifacts any given party is authorized to certify",
                     "SC-CE Establish and adhere to contribution policies",
                     "SC-CE Define roles aligned to functional responsibilities",
                     "BP-SA Define user roles"
