@@ -2338,7 +2338,7 @@
                 },
                 {
                   "sections": [
-                    " Source L4: Two-party review"
+                    "Source L4: Two-party review"
                   ],
                   "source": "SLSA"
                 },
@@ -3163,7 +3163,7 @@
                 },
                 {
                   "sections": [
-                    "Source L3: Signed and auditable provenance"
+                    "Source L2: Controls"
                   ],
                   "source": "SLSA"
                 },
