@@ -8,9 +8,29 @@ layout: default
         <h1>{{ page.title }}</h1>
         <p class="group-description">{{ page.description }}</p>
     </header>
+    {% if page.group_id == 'U' %}
+    <section class="tasks">
+        <h2>Controls</h2>
+        {% assign group = site.data.framework.groups | where: "id", page.group_id | first %}
+        {% assign practice = group.practices | where: "id", page.practice_id | first %}
+
+        {% for task in practice.tasks %}
+            <div class="task-summary">
+                <h3>
+                    {% assign tidslug = task.id | slugify %}
+                    <a href="{{ '/framework/tasks/' | append: tidslug | relative_url }}">
+                        {{ task.id }} {{ task.name }}
+                    </a>
+                </h3>
+                {{ task.objective }}
+            </div>
+        {% endfor %}
+    </section> 
+    {% else  %} 
 
     <section class="practices">
         <h2>Practices</h2>
+        <h2>{{page.group_id}}</h2>
         {% assign group = site.data.framework.groups | where: "id", page.group_id | first %}
         {% for practice in group.practices %}
             <div class="practice-summary">
@@ -24,4 +44,5 @@ layout: default
             </div>
         {% endfor %}
     </section>
+    {% endif  %} 
 </article> 
