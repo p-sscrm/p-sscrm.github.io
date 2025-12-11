@@ -1974,6 +1974,37 @@
                   "source": "SAMM"
                 }
               ]
+            },
+                        {
+              "definition": "Inputs to AI model training, evaluation, and the outputs of AI models should be evaluated for security risks, e.g. bias and data poisoning.",
+              "id": "P.2.6",
+              "name": "Confirm Integrity of AI model data",
+              "objective": "Evaluate AI foundation model, training, and fine-tuning data for potential security impacts.",
+              "questions": [
+                {
+                  "id": "P.2.6.1",
+                  "text": "What processes are used to evaluate AI models build or consumed in your SDLC, and how is the process similar or different to what is done for third-party components?",
+                  "answers": []
+                },
+                {
+                  "id": "P.2.6.2",
+                  "text": "How are AI models monitored to ensure they are regularly maintained?",
+                  "answers": []
+                },
+                {
+                  "id": "P.2.6.3",
+                  "text": "How do you track the provenance of your AI models and data?",
+                  "answers": []
+                }
+              ],
+              "references": [
+                {
+                  "sections": [
+                    "PW.3"
+                  ],
+                  "source": "SSDF AI"
+                }
+              ]
             }
           ]
         },
@@ -3755,12 +3786,7 @@
                 },
                 {
                   "sections": [
-                    "A-CE Limit which artifacts any given party is authorized to certify"
-                  ],
-                  "source": "CNCF-SSC"
-                },
-                {
-                  "sections": [
+                    "A-CE Limit which artifacts any given party is authorized to certify",
                     "SC-CE Establish and adhere to contribution policies",
                     "SC-CE Define roles aligned to functional responsibilities",
                     "BP-SA Define user roles"
