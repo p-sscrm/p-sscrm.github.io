@@ -74,3 +74,20 @@ references, are:
     {% endfor %}
 </ul>
 <p>
+<p>
+
+Other Software Supply Chain frameworks not mapped into P-SSCRM:
+<ul>
+    {% for fwk in site.data.framework.pending_metadata %}
+        <li>
+            <a href="{{ fwk.link }}">{{ fwk.title }}</a>
+            <a href="/framework/frameworks/{{ fwk.id | slugify }}"> (mapping)</a>
+        </li>
+    {% endfor %}
+</ul>
+
+S2C2F, which is now deprecated and folded into SLSA v1.2, had two controls in P-SSCRM v1.01 that are now <a href="{{ '/framework/groups/u'}}">Unassigned controls</a>.  The control numbers from P-SSCRM v1.01 remain intact for these currently unassigned controls.  
+Closing the Chain research study, which identified controls needed to mitigate ATT&CK techniques but that were found in the ten contributing frameworks [unassigned controls].   
+
+<p>
+

@@ -4230,27 +4230,6 @@
               ]
             },
             {
-              "definition": "Zero-day vulnerabilities may not be fixed by an upstream maintainer in a desired timeframe. Implement an emergency response process to fix the vulnerability, re-build, deploy to your organization, and contribute the fix to the upstream maintainer.",
-              "id": "D.1.5",
-              "name": "Emergency artifact fix",
-              "objective": "Fix a zero-day vulnerability.",
-              "questions": [
-                {
-                  "id": "D.1.5.1",
-                  "text": "How do you handle it when an external artifact has a zero-day vulnerability that is not being fixed by an upstream maintainer in a desired timeframe?",
-                  "answers": []
-                }
-              ],
-              "references": [
-                {
-                  "sections": [
-                    "FIX-1"
-                  ],
-                  "source": "S2C2F"
-                }
-              ]
-            },
-            {
               "definition": "Analyze vulnerabilities discovered throughout the process and in production to determine their root cause for being injected and not discovered earlier before production. Incident response feedback should be fed back to developers and be considered when evolving the SDLC. Record lessons learned. Identify patterns, such as security controls in the SDLC needing to be followed. Discuss and disseminate these patterns to developers. Guide process correction if the current process is not being followed.",
               "id": "D.1.6",
               "name": "Root cause analysis",
@@ -4462,7 +4441,7 @@
             },
             {
               "definition": "Organizations should be responsible consumers and sustainable contributors to the open-source projects on which they depend.  Mechanisms may include donating, paying open-source developers, channeling funds to projects, fundraising for regular audits of critical projects, and having paid staff dedicated to upstream contributions.",
-              "id": "G.5.5",
+              "id": "G.3.x",
               "name": "Support Upstream Dependencies",
               "objective": "Sustainable open-source software.",
               "questions": [
@@ -4483,7 +4462,7 @@
             },
             {
               "definition": "Automated scanning tools can detect anomalies and undesired behaviors in each environment, including development, build, testing, and deployment.",
-              "id": "E.3.11",
+              "id": "E.3.x",
               "name": "Development Environment Scanning Tools",
               "objective": "Detect anomalies in the development infrastructure.",
               "questions": [
@@ -4504,7 +4483,7 @@
             },
             {
               "definition": "Partners can help during vulnerability response by providing information about compromises, enabling improved response efforts, and collaborating in dealing with attacks. Adversaries are only empowered when no collaboration exists between software organizations.",
-              "id": "D.1.7",
+              "id": "D.1.x",
               "name": "Establish Response Partnerships",
               "objective": "Develop external incident information sources through collaboration.",
               "questions": [
@@ -4529,22 +4508,22 @@
     }
   ],
   "pending_metadata": [
-        {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"}
+        {"id":"S2C2F", "title": "OpenSSF Secure Supply Chain Consumption Framework", "link":"https://baseline.openssf.org/versions/2025-02-25"},
+        {"id":"OSPS","title":"Open Source Project Security (OSPS) Baseline","link":"https://baseline.openssf.org/versions/2025-02-25"},
+        {"id":"Closing", "title":"Closing the Chain", "link":"https://arxiv.org/pdf/2503.12192"},
+        {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping (SAMM)", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"}
   ],
   "metadata": [
     {"id":"800-161", "title":"NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of controls specifically identified in this document as mapping back to the Executive Order", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf" },
-    {"id": "BSIMM", "title":"Building Security In Maturity Model Version 15", "link":"https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf"},
-    {"id":"CNCF-SSC", "title":"Cloud Native Computing Foundation – Software Supply Chain Best Practices", "link":"https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf"},
+    {"id": "BSIMM", "title":"Building Security In Maturity Model Version 15 (BSIMM)", "link":"https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf"},
+    {"id":"CNCF-SSC", "title":"Cloud Native Computing Foundation – Software Supply Chain Best Practices (CNCF)", "link":"https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf"},
     {"id":"EO", "title":"Executive Order 14028 (EO)", "link":"https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity"},
     {"id":"OSSF-Scorecard", "title":"OpenSSF Scorecard metrics", "link":"https://github.com/ossf/scorecard/blob/main/docs/checks.md"},
-    {"id":"OWASP-SCVS", "title":"Open Web Application Security Project Software Component Verification Standard Version 1.0", "link":"https://scvs.owasp.org/scvs/"},
-    {"id":"S2C2F", "title": "OpenSSF Secure Supply Chain Consumption Framework", "link":"https://baseline.openssf.org/versions/2025-02-25"},
-    {"id": "SLSA", "title":"Supply-chain Levels for Software Artifacts v1.1", "link":"https://slsa.dev/spec/v1.1/"},
-    {"id":"SSDF", "title":"NIST Secure Software Development Framework version 1.1 (800-218)", "link":"https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"},
-    {"id":"SSDF-AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (800-218A)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
-    {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"},
-    {"id":"SAMM", "title":"OWASP SAMM-SSDF Mapping", "link":"https://docs.google.com/spreadsheets/d/1AsIbEHK_csuYkUx8tSZvHBFlywYZ5wBejfJHi8AvnZM/edit?gid=2133626997#gid=2133626997"},
-    {"id":"Closing", "title":"Closing the Chain", "link":"https://arxiv.org/pdf/2503.12192"}
+    {"id":"OWASP-SCVS", "title":"Open Web Application Security Project Software Component Verification Standard Version 1.0 (OWASP-SCVS)", "link":"https://scvs.owasp.org/scvs/"},
+    {"id": "SLSA", "title":"Supply-chain Levels for Software Artifacts v1.1 (SLSA)", "link":"https://slsa.dev/spec/v1.1/"},
+    {"id":"SSDF", "title":"NIST Secure Software Development Framework version 1.1 (SSDF)", "link":"https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"},
+    {"id":"SSDF-AI", "title":"NIST Secure Software Development Practices for Gen AI version 1.1 (SSDF-AI)", "link":"https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"},
+    {"id":"Self-attestation", "title":"DHS/CISA Secure Software Self-Attestation Common Form", "link":"https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"}
   ],
   "version": "2.0"
 }
