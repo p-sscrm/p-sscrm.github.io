@@ -8,12 +8,11 @@ layout: default
 The Proactive Software Supply Chain Risk Management Framework (P-SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative. P-SSCRM was created through a process of understanding and analyzing real world data from nine industry leading software supply chain risk management initiatives as well as through the analysis and unification of ten government and industry documents, frameworks, and standards. Although individual methodologies and standards differ, many initiatives and standards share common ground. P-SSCRM describes this common ground and presents a model for understanding, quantifying, and developing a secure software supply chain risk management program and determining where your organization's existing efforts stand when contrasted with other real world software supply chain risk management initiatives.
 <br>
 <br>
-The table below shows the structure of the Proactive Supply Chain Risk Management (P-SSCRM)
+The table below shows the structure of the P-SSCRM
 Framework. It includes four broad groups of Governance, Product, Environment, and Deployment.
-Our P-SSCRM as well as both practice and control descriptions, provide a common vocabulary for
-explaining the salient elements of an SSCRM-I. Within the four P-SSCRM groups are 15 practices
-(e.g., Perform compliance). The current version of the P-SSCRM, the P-SSCRM, is composed of 74
-software supply chain risk management controls that are organized into these 15 practices.
+Our practice and control descriptions, provide a common vocabulary for
+explaining the salient elements of an Software Supply Chain Risk Management Initiative (SSCRM-I). Within the four P-SSCRM groups are 15 practices
+(e.g., Perform compliance). The current version of the P-SSCRM is composed of 75 software supply chain risk management controls that are organized into these 15 practices.
 <br>
 <br>
 <table border="2px">
@@ -52,13 +51,14 @@ software supply chain risk management controls that are organized into these 15 
 </table>
 <br>
 <p>
-The Proactive Software Supply Chain Risk Management (P-SSCRM) Framework results from a
-unique study of real-world software supply chain risk management initiatives and the union of the
+The P-SSCRM Framework is the result of a study of real-world software supply chain risk management initiatives and the union of the
 controls in ten government and industry documents (standards and frameworks). Controls in the P-SSCRM
 are mapped to one or more of these standards and frameworks. We present the model as built
 directly from these controls and from data observed in real-world software supply chain risk
 management initiatives from a diverse and global collection of firms through data collected in 2022
-and 2023.
+and 2023. We have conducted interviews based on P-SSCRM at nine software development organizations, as described in <a href="https://arxiv.org/abs/2509.08083">[Williams, Miguez]</a>, which found that the organizations had implemented common security controls and were in the process of adopting controls to guard against the novel attack vectors introduced by software supply chain attacks. 
+
+
 <br>
 <br>
 <p>
@@ -74,19 +74,18 @@ references, are:
     {% endfor %}
 </ul>
 <p>
-<p>
 
+
+<br />
 Other Software Supply Chain frameworks not mapped into P-SSCRM:
 <ul>
-    {% for fwk in site.data.framework.pending_metadata %}
+    <li><a href="https://github.com/ossf/s2c2f">S2C2F</a>, which is now deprecated and folded into SLSA v1.2, had two controls in P-SSCRM v1.01 that are now <a href="{{ '/framework/groups/u'}}">Unassigned controls</a>. The control numbers from P-SSCRM v1.01 remain intact for these currently unassigned controls.</li>
         <li>
-            <a href="{{ fwk.link }}">{{ fwk.title }}</a>
-            <a href="/framework/frameworks/{{ fwk.id | slugify }}"> (mapping)</a>
+        The <a href="https://arxiv.org/pdf/2503.12192">'Closing the Chain'</a> research study, which identified controls needed to mitigate MITRE ATT&CK techniques but that were found in the ten contributing frameworks. The newly identified controls are listed in <a href="{{ '/framework/groups/u'}}">Unassigned controls</a>. 
         </li>
-    {% endfor %}
 </ul>
 
-S2C2F, which is now deprecated and folded into SLSA v1.2, had two controls in P-SSCRM v1.01 that are now <a href="{{ '/framework/groups/u'}}">Unassigned controls</a>.  The control numbers from P-SSCRM v1.01 remain intact for these currently unassigned controls.  
+  The control numbers from P-SSCRM v1.01 remain intact for these currently unassigned controls.  
 Closing the Chain research study, which identified controls needed to mitigate ATT&CK techniques but that were found in the ten contributing frameworks [unassigned controls].   
 
 <p>
