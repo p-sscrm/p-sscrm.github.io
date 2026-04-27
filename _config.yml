@@ -7,14 +7,20 @@ twitter_username: jekyllrb
 github_username:  p-sscrm
 
 # Build settings
-theme: minima
+#theme: "minima"
+theme: "minimal-mistakes-jekyll"
+#minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 #remote_theme: pages-themes/merlot@v0.2.0
 #remote_theme: pages-themes/modernist@v0.2.0
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+#  - jekyll-include-cache
 #  - jekyll-remote-theme
+#remote_theme: "jekyll/minima@1e8a445"
 
 # Collections for framework components
 collections:
@@ -30,6 +36,10 @@ collections:
   frameworks:
     output: true
     permalink: /framework/frameworks/:name/
+  roles:
+    output: true
+    permalink: /framework/roles/:name/
+ 
 
 # Default layouts
 defaults:
@@ -53,6 +63,11 @@ defaults:
       type: "frameworks"
     values:
       layout: "framework"
+  - scope:
+      path: ""
+      type: "roles"
+    values:
+      layout: "role"  
   - scope:
       path: ""
     values:
