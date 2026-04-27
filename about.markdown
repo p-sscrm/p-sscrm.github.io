@@ -8,13 +8,14 @@ title:  "What is P-SSCRM?"
 </p>
 
 ### WHAT IS THE P-SSCRM'S PURPOSE?
-The Proactive Software Supply Chain Risk Management (P-SSCRM) framework is not a new standard. Rather than introducing any new concepts, practices, or controls, we have aggregated concepts, practices, and controls from existing software supply chain security frameworks. 
-
 We created the P-SSCRM to learn how software supply chain risk management initiatives work
 and to provide a resource for people looking to create or improve their own software supply chain
 risk management initiative. In general, every firm creates its software supply chain risk management
 initiative with some high-level goals in mind. The use of the P-SSCRM framework is appropriate if
 your business goals for software security include:
+
+The Proactive Software Supply Chain Risk Management (P-SSCRM) framework is not a new standard. Rather than introducing any new concepts, practices, or controls, we have aggregated concepts, practices, and controls from existing software supply chain security frameworks. 
+
 
 <ul>
 <li>Informed risk management decisions</li>
@@ -67,7 +68,7 @@ teams and operations teams.
 - Software Security: This role creates and facilitates processes and procedures for secure
 software development at an organizational level.
 
-### TODO LIFECYCLE
+### LIFECYCLE
 The diagram below displays the P-SSCRM groups and practices in the context of a product lifecycle model,
 annotating the primary role responsible for each practice. The practices and associated controls
 protect the integrity of source code, the build environment, deployed and running software
@@ -108,7 +109,6 @@ the table is to provide a longitudinal status of the ability of software ecosyst
 detect evidence that a control has been conducted on a software product/project. Currently, only 6
 Product, 2 Environment, and 1 Deployment controls can be automatically detected.
 
-### TODO: TABLE OF TASK COUNTS BY FRAMEWORK/PRACTICE
 
 ### TERMINOLOGY & DEFINITIONS
 

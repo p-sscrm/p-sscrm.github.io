@@ -11,14 +11,26 @@ layout: default
     </header>
 
     <section class="framework">
-        <h2>{{ page.framework_id }} - P-SSCRM mapping</h2>
+        <h2>{{ page.framework_id }} - P-SSCRMZ mapping</h2>
         <table>
         <tbody>
         {% for group in site.data.framework.groups  %}
           {% for practice in group.practices  %}
             {% for task in practice.tasks  %}
+              {% if page.framework_id=="P-SSCRM" %}
+                  <tr>
+                    <td>
+                    </td>
+                      <td class="task-summary">
+                        {% assign tidslug = task.id | slugify %}
+                        <a href="{{ '/framework/tasks/' | append: tidslug | relative_url }}">
+                          {{task.id}} {{ task.name }} 
+                        </a>
+                      </td>
+                  </tr>
+              {% endif %}
               {% for reference in task.references  %}
-                {% if reference.source == page.framework_id %}
+                {% if reference.source == page.framework_id and page.framework_id!="P-SSCRM" %}
                   <tr>
                     <td>
                     {% for section in reference.sections %}

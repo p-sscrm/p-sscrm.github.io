@@ -5,7 +5,7 @@
 layout: default
 ---
 ### Introduction
-The Proactive Software Supply Chain Risk Management Framework (P-SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative. P-SSCRM was created through a process of understanding and analyzing real world data from nine industry leading software supply chain risk management initiatives as well as through the analysis and unification of ten government and industry documents, frameworks, and standards. Although individual methodologies and standards differ, many initiatives and standards share common ground. P-SSCRM describes this common ground and presents a model for understanding, quantifying, and developing a secure software supply chain risk management program and determining where your organization's existing efforts stand when contrasted with other real world software supply chain risk management initiatives.
+The Proactive Software Supply Chain Risk Management Framework (P-SSCRM) described here is designed to help you understand and plan a secure software supply chain risk management initiative. Although individual methodologies and standards differ, many initiatives and standards share common ground. P-SSCRM describes this common ground and presents a model for understanding, quantifying, and developing a secure software supply chain risk management program and determining where your organization's existing efforts stand when contrasted with other real world software supply chain risk management initiatives.
 <br>
 <br>
 The table below shows the structure of the P-SSCRM
@@ -56,7 +56,7 @@ controls in ten government and industry documents (standards and frameworks). Co
 are mapped to one or more of these standards and frameworks. We present the model as built
 directly from these controls and from data observed in real-world software supply chain risk
 management initiatives from a diverse and global collection of firms through data collected in 2022
-and 2023. We have conducted interviews based on P-SSCRM at nine software development organizations, as described in <a href="https://arxiv.org/abs/2509.08083">[Williams, Miguez]</a>, which found that the organizations had implemented common security controls and were in the process of adopting controls to guard against the novel attack vectors introduced by software supply chain attacks. 
+and 2023. We have conducted interviews based on P-SSCRM at nine software development organizations, as described in <a href="https://arxiv.org/abs/2509.08083">[Williams, Migues]</a>, which found that the organizations had implemented common security controls and were in the process of adopting controls to guard against the novel attack vectors introduced by software supply chain attacks. 
 
 
 <br>
