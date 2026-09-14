@@ -22,11 +22,7 @@ Organizations that build and ship software and want an external, structured read
 on their supply chain security posture — whether or not you have used P-SSCRM
 before.
 
-## Privacy
-
-Findings are reported in aggregate in any research output. Identifying details
-about a participating organization are not published without explicit
-permission.
+## Sign-up Form
 
 <p>
   {% if site.participate_form_url and site.participate_form_url != "#" %}
@@ -37,8 +33,6 @@ permission.
 </p>
 
 ## Questions, or want to talk first?
-
-Reach out to the maintainers directly:
 
 - **Laurie Williams** — [csc.ncsu.edu/people/lawilli3](https://csc.ncsu.edu/people/lawilli3/) · [lawilli3@ncsu.edu](mailto:lawilli3@ncsu.edu)
 - **Patrick Morrison** — [linkedin.com/in/pmorrisonfl](https://www.linkedin.com/in/pmorrisonfl/) · [pjmorris@ncsu.edu](mailto:pjmorris@ncsu.edu)
