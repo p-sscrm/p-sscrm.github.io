@@ -16,7 +16,7 @@ with P-SSCRM keeps you aligned with these sources.
     {% if fw %}
       <li>
         <h2>{% if fw.url %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% else %}{{ fw.name }}{% endif %}</h2>
-        <p>{{ fw.full_name }}</p>
+        <p title="{{ fw.full_name }}">{{ fw.full_name }}</p>
       </li>
     {% endif %}
   {% endfor %}
@@ -24,8 +24,10 @@ with P-SSCRM keeps you aligned with these sources.
 
 ## Which controls cite each standard
 
-Expand a standard to see the P-SSCRM controls that map to it; each links to its
-full entry on [The Framework]({{ "/framework/" | relative_url }}).
+Expand a standard to see the P-SSCRM controls that map to it, grouped by
+Practice; each links to its full entry on
+[The Framework]({{ "/framework/" | relative_url }}). Search below to narrow
+every standard down to the matching controls.
 
 {% assign ordered_controls = "" | split: "" %}
 {% assign _groups = site.groups | sort: "weight" %}
@@ -36,24 +38,39 @@ full entry on [The Framework]({{ "/framework/" | relative_url }}).
     {% assign ordered_controls = ordered_controls | concat: _cs %}
   {% endfor %}
 {% endfor %}
-<div class="reverse-map">
+
+<div class="reverse-map-controls">
+  <input type="search" id="reverse-map-filter" class="reverse-map-filter" placeholder="Search a control, e.g. G.1.1 or &ldquo;SBOM&rdquo;&hellip;" aria-controls="reverse-map">
+  <button type="button" class="expand-all-btn" id="reverse-map-expand-all">Expand all</button>
+  <button type="button" class="expand-all-btn" id="reverse-map-collapse-all">Collapse all</button>
+</div>
+<p class="reverse-map-empty" id="reverse-map-empty" hidden>No controls match that search.</p>
+
+<div class="reverse-map" id="reverse-map">
   {% for key in fw_order %}
     {% assign fw = site.data.frameworks[key] %}
     {% if fw %}
+      {% assign last_practice = "" %}
       <details>
         <summary>{{ fw.name }} <span class="reverse-map-full">{{ fw.full_name }}</span></summary>
-        <ul class="child-list">
+        <div class="reverse-map-body">
           {% for control in ordered_controls %}
             {% assign ref = control.frameworks[key] %}
             {% if ref %}
-              <li><a href="{{ "/framework/" | relative_url }}#{{ control.slug }}">{{ control.code }} &mdash; {{ control.title }}</a> <span class="mapping-ref">{{ ref }}</span></li>
+              {% if control.practice != last_practice %}
+                {% assign practice = site.practices | where: "slug", control.practice | first %}
+                <p class="reverse-map-practice fw-group-{{ practice.group }}"><span class="code-badge">{{ practice.code }}</span> {{ practice.title }}</p>
+                {% assign last_practice = control.practice %}
+              {% endif %}
+              <a class="reverse-map-item" href="{{ "/framework/" | relative_url }}#{{ control.slug }}" data-code="{{ control.code | downcase }}" data-title="{{ control.title | downcase }}" data-ref="{{ ref | downcase }}">{{ control.code }} &mdash; {{ control.title }} <span class="mapping-ref">{{ ref }}</span></a>
             {% endif %}
           {% endfor %}
-        </ul>
+        </div>
       </details>
     {% endif %}
   {% endfor %}
 </div>
+<script src="{{ "/static/js/reverse-map-filter.js" | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
 {% if site.data.frameworks_pending and site.data.frameworks_pending.size > 0 %}
 ## Standards being added

@@ -5,25 +5,58 @@ layout: default
   <h1>{{ page.title }}</h1>
   {{ content }}
 
-  <ul class="content-list">
-    {% for role in site.data.roles %}
-      <li><a href="#role-{{ role.id | downcase }}">{{ role.name }}</a> — {{ role.tasks | size }} controls</li>
-    {% endfor %}
-  </ul>
+  <div class="framework-controls">
+    <input type="search" id="roles-search" class="reverse-map-filter" placeholder="Search a role or control, e.g. G.1.1 or &ldquo;SBOM&rdquo;&hellip;" aria-controls="roles-grid">
+    <button type="button" class="expand-all-btn" id="roles-expand-all">Expand all</button>
+    <button type="button" class="expand-all-btn" id="roles-collapse-all">Collapse all</button>
+  </div>
+  <p class="framework-search-empty" id="roles-search-empty" hidden>No roles or controls match that search.</p>
 
-  {% for role in site.data.roles %}
-    <section class="role-block" id="role-{{ role.id | downcase }}">
-      <h2>{{ role.name }}</h2>
-      <p>{{ role.description }}</p>
-      <ul class="child-list">
-        {% for code in role.tasks %}
-          {% assign cslug = code | downcase | replace: ".", "-" %}
-          {% assign control = site.controls | where: "slug", cslug | first %}
-          {% if control %}
-            <li><a href="{{ "/framework/" | relative_url }}#{{ control.slug }}">{{ control.code }} — {{ control.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </section>
-  {% endfor %}
+  <div class="roles-grid" id="roles-grid">
+    {% for role in site.data.roles %}
+      {% assign g_count = 0 %}{% assign p_count = 0 %}{% assign e_count = 0 %}{% assign d_count = 0 %}
+      {% for code in role.tasks %}
+        {% assign g0 = code | slice: 0 %}
+        {% case g0 %}
+          {% when "G" %}{% assign g_count = g_count | plus: 1 %}
+          {% when "P" %}{% assign p_count = p_count | plus: 1 %}
+          {% when "E" %}{% assign e_count = e_count | plus: 1 %}
+          {% when "D" %}{% assign d_count = d_count | plus: 1 %}
+        {% endcase %}
+      {% endfor %}
+      {% assign total = role.tasks | size %}
+      <details class="role-card" id="role-{{ role.id | downcase }}">
+        <summary class="role-card-summary">
+          <span class="role-card-name">{{ role.name }}</span>
+          <span class="role-card-ratio" title="{{ g_count }} Governance &middot; {{ p_count }} Product &middot; {{ e_count }} Environment &middot; {{ d_count }} Deployment">
+            <span class="role-card-bar">
+              {% if g_count > 0 %}<span class="role-card-seg role-seg-g" style="flex-grow: {{ g_count }};"></span>{% endif %}
+              {% if p_count > 0 %}<span class="role-card-seg role-seg-p" style="flex-grow: {{ p_count }};"></span>{% endif %}
+              {% if e_count > 0 %}<span class="role-card-seg role-seg-e" style="flex-grow: {{ e_count }};"></span>{% endif %}
+              {% if d_count > 0 %}<span class="role-card-seg role-seg-d" style="flex-grow: {{ d_count }};"></span>{% endif %}
+            </span>
+            <span class="role-card-count">{{ total }}</span>
+          </span>
+        </summary>
+        <div class="role-card-body">
+          <p class="role-card-desc">{{ role.description }}</p>
+          <ul class="role-card-controls">
+            {% for code in role.tasks %}
+              {% assign cslug = code | downcase | replace: ".", "-" %}
+              {% assign control = site.controls | where: "slug", cslug | first %}
+              {% if control %}
+                {% assign practice = site.practices | where: "slug", control.practice | first %}
+                <li class="fw-group-{{ practice.group }}" data-code="{{ control.code | downcase }}" data-title="{{ control.title | downcase }}">
+                  <a href="{{ "/framework/" | relative_url }}#{{ control.slug }}">
+                    <span class="code-badge">{{ control.code }}</span> {{ control.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+    {% endfor %}
+  </div>
 </article>
+<script src="{{ "/static/js/roles-search.js" | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

@@ -1,24 +1,22 @@
-<header class="site-header">
-  <div class="site-banner">
-    <a class="site-wordmark" href="{{ "/" | relative_url }}" aria-label="P-SSCRM — home">
-      <span class="site-logo" aria-hidden="true">
-        {%- comment -%} TODO: swap for <img src="{{ "/static/img/logo.svg" | relative_url }}" alt=""> when the mark is ready {%- endcomment -%}
-        <span class="site-logo-placeholder">P</span>
-      </span>
-      <span class="site-wordmark-text">
-        <span class="site-wordmark-name">P&#8209;SSCRM</span>
-        <span class="site-wordmark-expand">Proactive Secure Software Supply Chain Risk Management</span>
-      </span>
-    </a>
-  </div>
-  <div class="site-nav-bar">
-    <nav class="container site-nav" aria-label="Primary">
-      <a href="{{ "/" | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
-      <a href="{{ "/about/" | relative_url }}"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
-      <a href="{{ "/framework/" | relative_url }}"{% if page.url == "/framework/" %} aria-current="page"{% endif %}>Framework</a>
-      <a href="{{ "/roles/" | relative_url }}"{% if page.url == "/roles/" %} aria-current="page"{% endif %}>Roles</a>
-      <a href="{{ "/frameworks/" | relative_url }}"{% if page.url == "/frameworks/" %} aria-current="page"{% endif %}>Standards</a>
-      <a href="{{ "/participate/" | relative_url }}"{% if page.url == "/participate/" %} aria-current="page"{% endif %}>Join the Study</a>
-    </nav>
-  </div>
+<header class="site-banner">
+  <a class="site-wordmark" href="{{ "/" | relative_url }}" aria-label="P-SSCRM — home">
+    <span class="site-logo" aria-hidden="true">
+      {%- comment -%} TODO: swap for <img src="{{ "/static/img/logo.svg" | relative_url }}" alt=""> when the mark is ready {%- endcomment -%}
+      <span class="site-logo-placeholder">P</span>
+    </span>
+    <span class="site-wordmark-text">
+      <span class="site-wordmark-name">P&#8209;SSCRM</span>
+      <span class="site-wordmark-expand">Proactive Secure Software Supply Chain Risk Management</span>
+    </span>
+  </a>
 </header>
+<div class="site-nav-bar">
+  <nav class="container site-nav" aria-label="Primary">
+    <a href="{{ "/" | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
+    <a href="{{ "/about/" | relative_url }}"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
+    <a href="{{ "/framework/" | relative_url }}"{% if page.url == "/framework/" %} aria-current="page"{% endif %}>Framework</a>
+    <a href="{{ "/roles/" | relative_url }}"{% if page.url == "/roles/" %} aria-current="page"{% endif %}>Roles</a>
+    <a href="{{ "/frameworks/" | relative_url }}"{% if page.url == "/frameworks/" %} aria-current="page"{% endif %}>Standards</a>
+    <a href="{{ "/participate/" | relative_url }}"{% if page.url == "/participate/" %} aria-current="page"{% endif %}>Join the Study</a>
+  </nav>
+</div>
