@@ -8,10 +8,12 @@ description: "What P-SSCRM is, why it exists, how it was built, and how to cite 
 
 P-SSCRM (Proactive Secure Software Supply Chain Risk Management) is a framework
 for managing software supply chain security risk. It organizes the work into
-four **Groups** — Governance, Product, Environment, and Deployment — each broken
-into **Practices** and then into concrete **Controls**. Every control states an
-objective, a fuller definition, a set of self-assessment questions, and a
-mapping to the established standards it draws from.
+**Groups** — Governance, Product, Environment, and Deployment, plus an
+Unassigned holding group for controls identified but not yet tied to a
+standard — each broken into **Practices** and then into concrete **Controls**.
+Every control states an objective, a fuller definition, a set of
+self-assessment questions, and a mapping to the established standards it
+draws from.
 
 ## The problem it solves
 

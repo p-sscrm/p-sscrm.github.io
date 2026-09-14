@@ -9,7 +9,7 @@ P-SSCRM was assembled by analysing and unifying the government and industry
 standards below. Every P-SSCRM control cites one or more of them, so aligning
 with P-SSCRM keeps you aligned with these sources.
 
-{% assign fw_order = "eo,800-161,ssdf,ssdf-ai,self-attestation,slsa,bsimm,samm,cncf-ssc,s2c2f,osps,ossf-scorecard,owasp-scvs" | split: "," %}
+{% assign fw_order = "eo,800-161,ssdf,ssdf-ai,self-attestation,slsa,bsimm,cncf-ssc,ossf-scorecard,owasp-scvs" | split: "," %}
 <ul class="framework-index">
   {% for key in fw_order %}
     {% assign fw = site.data.frameworks[key] %}
@@ -51,8 +51,32 @@ every standard down to the matching controls.
     {% assign fw = site.data.frameworks[key] %}
     {% if fw %}
       {% assign last_practice = "" %}
+      {% assign g_count = 0 %}{% assign p_count = 0 %}{% assign e_count = 0 %}{% assign d_count = 0 %}
+      {% for control in ordered_controls %}
+        {% if control.frameworks[key] %}
+          {% assign g0 = control.code | slice: 0 %}
+          {% case g0 %}
+            {% when "G" %}{% assign g_count = g_count | plus: 1 %}
+            {% when "P" %}{% assign p_count = p_count | plus: 1 %}
+            {% when "E" %}{% assign e_count = e_count | plus: 1 %}
+            {% when "D" %}{% assign d_count = d_count | plus: 1 %}
+          {% endcase %}
+        {% endif %}
+      {% endfor %}
+      {% assign fw_total = g_count | plus: p_count | plus: e_count | plus: d_count %}
       <details>
-        <summary>{{ fw.name }} <span class="reverse-map-full">{{ fw.full_name }}</span></summary>
+        <summary>
+          <span class="reverse-map-name">{{ fw.name }} <span class="reverse-map-full">{{ fw.full_name }}</span></span>
+          <span class="reverse-map-ratio" title="{{ g_count }} Governance &middot; {{ p_count }} Product &middot; {{ e_count }} Environment &middot; {{ d_count }} Deployment">
+            <span class="role-card-bar">
+              {% if g_count > 0 %}<span class="role-card-seg role-seg-g" style="flex-grow: {{ g_count }};"></span>{% endif %}
+              {% if p_count > 0 %}<span class="role-card-seg role-seg-p" style="flex-grow: {{ p_count }};"></span>{% endif %}
+              {% if e_count > 0 %}<span class="role-card-seg role-seg-e" style="flex-grow: {{ e_count }};"></span>{% endif %}
+              {% if d_count > 0 %}<span class="role-card-seg role-seg-d" style="flex-grow: {{ d_count }};"></span>{% endif %}
+            </span>
+            <span class="reverse-map-count">{{ fw_total }}</span>
+          </span>
+        </summary>
         <div class="reverse-map-body">
           {% for control in ordered_controls %}
             {% assign ref = control.frameworks[key] %}
@@ -76,6 +100,6 @@ every standard down to the matching controls.
 ## Standards being added
 
 <ul>
-  {% for item in site.data.frameworks_pending %}<li>{{ item }}</li>{% endfor %}
+  {% for item in site.data.frameworks_pending %}<li>{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</li>{% endfor %}
 </ul>
 {% endif %}

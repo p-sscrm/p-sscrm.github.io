@@ -39,7 +39,6 @@ layout: default
           </span>
         </summary>
         <div class="role-card-body">
-          <p class="role-card-desc">{{ role.description }}</p>
           <ul class="role-card-controls">
             {% for code in role.tasks %}
               {% assign cslug = code | downcase | replace: ".", "-" %}

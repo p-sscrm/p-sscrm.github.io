@@ -56,8 +56,7 @@
     var anyMatch = false;
     cards.forEach(function (card) {
       var name = card.querySelector(".role-card-name").textContent.toLowerCase();
-      var desc = card.querySelector(".role-card-desc").textContent.toLowerCase();
-      var roleMatch = textMatch(name, q) || textMatch(desc, q);
+      var roleMatch = textMatch(name, q);
       var hasMatch = roleMatch;
 
       card.querySelectorAll(".role-card-controls li").forEach(function (li) {

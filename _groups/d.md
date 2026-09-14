@@ -6,4 +6,4 @@ slug: "d"
 weight: 40
 ---
 
-Tasks for identifying, analyzing, and addressing vulnerabilities in products in production/that have been deployed
+Controls for identifying, analyzing, and addressing vulnerabilities in products in production/that have been deployed

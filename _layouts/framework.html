@@ -68,8 +68,9 @@ layout: default
                         <ul class="framework-list">
                           {% for pair in control.frameworks %}{% if pair[1] %}
                             {% assign fw = site.data.frameworks[pair[0]] %}
+                            {% assign fw_name = fw.name | default: pair[0] | upcase %}
                             <li class="framework-badge">
-                              {% if fw.url %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% else %}{{ fw.name }}{% endif %}
+                              {% if fw.url %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw_name }}</a>{% else %}{{ fw_name }}{% endif %}
                               <span class="mapping-ref">{{ pair[1] }}</span>
                             </li>
                           {% endif %}{% endfor %}

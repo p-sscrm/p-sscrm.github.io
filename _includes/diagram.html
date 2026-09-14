@@ -1,7 +1,7 @@
 {% assign dgroups = site.groups | sort: "weight" %}
-{% assign glosses = "g|Policy, compliance, measurement, accountability.;p|The software you build and its dependencies.;e|Source code, components, build infrastructure.;d|Vulnerabilities in what you have shipped." | split: ";" %}
+{% assign glosses = "g|Policy, compliance, measurement, accountability.;p|The software you build and its dependencies.;e|Source code, components, build infrastructure.;d|Vulnerabilities in what you have shipped.;u|Identified, not yet tied to a standard." | split: ";" %}
 <figure class="fw-figure">
-  <div class="fw-diagram" role="group" aria-label="P-SSCRM at a glance: four Groups, their Practices, and Controls">
+  <div class="fw-diagram" role="group" aria-label="P-SSCRM at a glance: its Groups, their Practices, and Controls">
     {% for group in dgroups %}
       {% assign gloss = "" %}
       {% for pair in glosses %}

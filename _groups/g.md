@@ -6,4 +6,4 @@ slug: "g"
 weight: 10
 ---
 
-Tasks that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements.
+Controls that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements.

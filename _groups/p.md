@@ -6,4 +6,4 @@ slug: "p"
 weight: 20
 ---
 
-Tasks to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.
+Controls to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.

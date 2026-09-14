@@ -11,11 +11,7 @@ permalink: /
     <h1 class="hero-brand">P&#8209;SSCRM</h1>
     <p class="hero-expand">Proactive Secure Software Supply Chain Risk Management</p>
     <p class="hero-tagline">The uniting framework for secure software supply chain risk management of code dependencies, build infrastructure, AI models and data, and the humans who maintain them.</p>
-    <p class="hero-lede">P-SSCRM collects the practice scattered across SSDF, SLSA, BSIMM, NIST 800-161, and a dozen more standards into one model of Groups, Practices, and Controls — each control mapped back to the sources it came from.</p>
-    <p class="hero-actions">
-      <a class="btn" href="{{ "/participate/" | relative_url }}">Join the Study</a>
-      <a class="btn btn-secondary" href="{{ v.download_url }}" target="_blank" rel="noopener">View the framework data (JSON)</a>
-    </p>
+    <p class="hero-lede">Teams securing a software supply chain face a crowded field of standards — SSDF, SLSA, BSIMM, NIST 800-161, and a dozen more — with overlapping vocabulary and no single through-line. P-SSCRM is that through-line: one model of Groups, Practices, and Controls, each mapped back to the sources it came from, so you can work from a single checklist and still show alignment with the standards that apply to you.</p>
   </div>
 </section>
 
@@ -34,7 +30,7 @@ permalink: /
 <section class="home-section">
   <div class="container">
     <h2>What it covers</h2>
-    <p class="section-intro">Four Groups, fifteen Practices, seventy-four Controls. Follow any cell into the framework.</p>
+    <p class="section-intro">{{ site.groups.size }} Groups, {{ site.practices.size }} Practices, {{ site.controls.size }} Controls. Follow any cell into the framework.</p>
     {% include diagram.html %}
   </div>
 </section>
@@ -51,17 +47,6 @@ permalink: /
 
 <section class="home-section">
   <div class="container">
-    <h2>Use it</h2>
-    <ul class="use-links">
-      <li><a href="{{ "/framework/" | relative_url }}">Read the framework</a></li>
-      <li><a href="{{ "/framework/" | relative_url }}#self-assessment">Work through the self-assessment questions</a></li>
-      <li><a href="{{ "/participate/" | relative_url }}">Join the interview study</a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="home-section">
-  <div class="container">
     <h2>Background &amp; citation</h2>
     <p>P-SSCRM was built by unifying the common ground across the field's government and industry initiatives and standards. It is described in a paper on arXiv and stewarded with the S3C2 research center.</p>
     <p>
@@ -70,5 +55,16 @@ permalink: /
       <a href="{{ "/about/" | relative_url }}">Full background</a>
     </p>
     <p class="section-note">Current framework data: v{{ v.version }} (<a href="{{ v.download_url }}" target="_blank" rel="noopener">JSON</a>). MITRE ATT&amp;CK mapping: v{{ mv.version }}. Data comes from <a href="https://github.com/p-sscrm/p-sscrm" target="_blank" rel="noopener">p-sscrm/p-sscrm</a> and <a href="https://github.com/p-sscrm/ats-to-ts" target="_blank" rel="noopener">p-sscrm/ats-to-ts</a>.</p>
+  </div>
+</section>
+
+<section class="home-section home-cta">
+  <div class="container">
+    <h2>Put P-SSCRM to work</h2>
+    <p>Read the framework, work through the self-assessment questions for your Groups and Practices, or help shape P-SSCRM by joining the interview study.</p>
+    <p class="hero-actions">
+      <a class="btn" href="{{ "/participate/" | relative_url }}">Join the Study</a>
+      <a class="btn btn-secondary" href="{{ "/framework/" | relative_url }}">View the Framework</a>
+    </p>
   </div>
 </section>
