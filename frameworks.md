@@ -39,6 +39,8 @@ every standard down to the matching controls.
   {% endfor %}
 {% endfor %}
 
+{% include group-key.html %}
+
 <div class="reverse-map-controls">
   <input type="search" id="reverse-map-filter" class="reverse-map-filter" placeholder="Search a control, e.g. G.1.1 or &ldquo;SBOM&rdquo;&hellip;" aria-controls="reverse-map">
   <button type="button" class="expand-all-btn" id="reverse-map-expand-all">Expand all</button>

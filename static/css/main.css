@@ -653,10 +653,17 @@ h1 code,
 /* ==========================================================================
    Overview diagram — columns = Groups, expandable tiles = Practices
    ========================================================================== */
-.fw-figure { margin: 1.5rem 0 0; }
+.fw-figure {
+  margin: 1.5rem 0 0;
+  /* break out of the 900px text column so all five Groups fit in one row */
+  width: min(1180px, calc(100vw - 3rem));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .fw-diagram {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.7rem;
   align-items: start;
 }
@@ -777,7 +784,8 @@ h1 code,
 .fw-col-d .fw-cell-count { background: var(--group-d); }
 .fw-col-u .fw-cell-count { background: var(--group-u); }
 
-@media (max-width: 900px) { .fw-diagram { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1100px) { .fw-diagram { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) { .fw-diagram { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .fw-diagram { grid-template-columns: 1fr; } }
 
 /* ==========================================================================
@@ -816,6 +824,8 @@ h1 code,
 .audience-cards p { font-size: 0.88rem; color: var(--text-muted); margin: 0 0 0.6rem; }
 
 .footer-meta { font-size: 0.78rem; margin: 0.6rem 0 0.3rem; }
+/* the closing call-to-action band sits flush against the footer rule */
+main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
 
 /* ==========================================================================
    Roles page
@@ -870,14 +880,41 @@ h1 code,
 }
 .role-card-bar {
   display: flex;
-  width: 46px;
-  height: 8px;
-  border-radius: 999px;
-  overflow: hidden;
-  background: var(--border);
+  gap: 2px;
+  width: 120px;
+  height: 12px;
   flex-shrink: 0;
 }
-.role-card-seg { height: 100%; }
+.role-card-seg { height: 100%; flex-basis: 0; min-width: 7px; border-radius: 3px; }
+@media (max-width: 520px) { .role-card-bar { width: 72px; } }
+
+/* colour key shown above the roles and standards lists */
+.group-key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.1rem;
+  margin: 1rem 0 0.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.group-key-label { font-weight: 600; }
+.group-key-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+.group-key-item::before { content: ""; width: 0.9rem; height: 0.6rem; border-radius: 3px; background: var(--k); }
+.group-key-g { --k: var(--group-g); }
+.group-key-p { --k: var(--group-p); }
+.group-key-e { --k: var(--group-e); }
+.group-key-d { --k: var(--group-d); }
+
+/* News */
+.news-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.news-list li { border-top: 1px solid var(--border); padding: 1.1rem 0; }
+.news-list h2 { margin: 0.15rem 0 0.4rem; font-size: 1.15rem; padding: 0; border: 0; }
+.news-date { font-size: 0.8rem; color: var(--text-muted); }
+.news-list p { margin: 0; color: var(--text-muted); }
+.lifecycle-figure { margin: 1.25rem 0; }
+.lifecycle-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.lifecycle-figure figcaption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
 .role-seg-g { background: var(--group-g); }
 .role-seg-p { background: var(--group-p); }
 .role-seg-e { background: var(--group-e); }

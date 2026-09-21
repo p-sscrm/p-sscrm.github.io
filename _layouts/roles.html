@@ -5,6 +5,7 @@ layout: default
   <h1>{{ page.title }}</h1>
   {{ content }}
 
+  {% include group-key.html %}
   <div class="framework-controls">
     <input type="search" id="roles-search" class="reverse-map-filter" placeholder="Search a role or control, e.g. G.1.1 or &ldquo;SBOM&rdquo;&hellip;" aria-controls="roles-grid">
     <button type="button" class="expand-all-btn" id="roles-expand-all">Expand all</button>

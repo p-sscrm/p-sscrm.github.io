@@ -3,6 +3,8 @@ description: "P-SSCRM is a framework for managing software supply chain security
 baseurl: ""
 url: ""
 
+permalink: /news/:year/:month/:day/:title/
+
 collections:
   groups:
     output: false

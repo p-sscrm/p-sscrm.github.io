@@ -36,6 +36,11 @@ ATT&CK technique mappings are maintained at
 [github.com/p-sscrm/ats-to-ts](https://github.com/p-sscrm/ats-to-ts). This site
 is generated from those repositories.
 
+<figure class="lifecycle-figure">
+  <img src="{{ "/static/img/lifecycle-model.png" | relative_url }}" alt="P-SSCRM lifecycle model by role: Practices A to O placed along the software lifecycle from internally developed source through build, package, deploy, run and retire, coloured by the role responsible.">
+  <figcaption>The P-SSCRM lifecycle model by role: where each Practice applies across the software lifecycle, and which role owns it.</figcaption>
+</figure>
+
 ## Who it's for
 
 - **Security leaders** planning or benchmarking a supply chain security program.

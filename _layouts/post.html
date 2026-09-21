@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<article class="container">
+  <p class="news-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+  <p><a href="{{ "/news/" | relative_url }}">&larr; All news</a></p>
+</article>
