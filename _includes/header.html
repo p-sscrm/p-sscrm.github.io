@@ -9,11 +9,6 @@
       <span class="site-wordmark-expand">Proactive Secure Software Supply Chain Risk Management</span>
     </span>
   </a>
-  {%- comment -%} Hidden until theme-toggle.js runs, so it never shows without JavaScript. {%- endcomment -%}
-  <button type="button" class="theme-toggle" id="theme-toggle" hidden>
-    <span data-icon="moon">{% include icon.html name="moon" %}</span>
-    <span data-icon="sun">{% include icon.html name="sun" %}</span>
-  </button>
 </header>
 <div class="site-nav-bar">
   <nav class="container site-nav" aria-label="Primary">
@@ -24,5 +19,11 @@
     <a href="{{ "/frameworks/" | relative_url }}"{% if page.url == "/frameworks/" %} aria-current="page"{% endif %}>Standards</a>
     <a href="{{ "/news/" | relative_url }}"{% if page.url == "/news/" or page.layout == "post" %} aria-current="page"{% endif %}>News</a>
     <a href="{{ "/participate/" | relative_url }}"{% if page.url == "/participate/" %} aria-current="page"{% endif %}>Join the Study</a>
+    {%- comment -%} Hidden until theme-toggle.js runs, so it never shows without JavaScript. {%- endcomment -%}
+    <button type="button" class="theme-toggle" id="theme-toggle" hidden>
+      <span data-icon="moon">{% include icon.html name="moon" %}</span>
+      <span data-icon="sun">{% include icon.html name="sun" %}</span>
+      <span class="theme-toggle-label"></span>
+    </button>
   </nav>
 </div>

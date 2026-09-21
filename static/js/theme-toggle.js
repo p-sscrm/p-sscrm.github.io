@@ -15,12 +15,14 @@
     return systemDark.matches ? "dark" : "light";
   }
 
-  // Show the sun while dark (click for light) and the moon while light (click for dark).
+  // The icon and word say what a click will give you: a sun and "Light" while dark,
+  // a moon and "Dark" while light.
   function updateButton() {
     var theme = currentTheme();
     var nextTheme = theme === "dark" ? "light" : "dark";
     button.querySelector('[data-icon="sun"]').hidden = theme !== "dark";
     button.querySelector('[data-icon="moon"]').hidden = theme !== "light";
+    button.querySelector(".theme-toggle-label").textContent = nextTheme === "dark" ? "Dark" : "Light";
     button.setAttribute("aria-label", "Switch to " + nextTheme + " mode");
     button.title = "Switch to " + nextTheme + " mode";
   }
