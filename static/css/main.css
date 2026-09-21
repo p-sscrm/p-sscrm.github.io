@@ -33,7 +33,7 @@
   --font-body: 'Inter', 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
 
-  --max-width: 900px;
+  --max-width: 1120px;
   --radius: 6px;
   --content-top-pad: 2rem;
   --header-height: 52px;
@@ -316,7 +316,7 @@ h1 code,
 
 .site-footer {
   border-top: 1px solid var(--border);
-  margin-top: 3.5rem;
+  margin-top: 0.5rem;
   padding: 2rem 0 2.5rem;
   color: var(--text-muted);
   font-size: 0.8rem;
@@ -655,11 +655,6 @@ h1 code,
    ========================================================================== */
 .fw-figure {
   margin: 1.5rem 0 0;
-  /* break out of the 900px text column so all five Groups fit in one row */
-  width: min(1180px, calc(100vw - 3rem));
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .fw-diagram {
   display: grid;
@@ -819,8 +814,11 @@ h1 code,
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
 }
-.audience-cards li { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; background: var(--surface); }
-.audience-cards h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+.audience-cards li { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; background: var(--surface); display: flex; flex-direction: column; }
+.audience-cards h3 { margin: 0.75rem 0 0.3rem; font-size: 1rem; }
+.audience-cards p { font-size: 0.88rem; color: var(--text-muted); margin: 0 0 0.75rem; flex: 1; }
+.audience-cards li > a { margin-top: auto; }
+.card-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 8px; background: var(--accent-soft); color: var(--accent); }
 .audience-cards p { font-size: 0.88rem; color: var(--text-muted); margin: 0 0 0.6rem; }
 
 .footer-meta { font-size: 0.78rem; margin: 0.6rem 0 0.3rem; }
@@ -913,7 +911,7 @@ main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
 .news-date { font-size: 0.8rem; color: var(--text-muted); }
 .news-list p { margin: 0; color: var(--text-muted); }
 .lifecycle-figure { margin: 1.25rem 0; }
-.lifecycle-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.lifecycle-figure img { display: block; width: 100%; height: auto; aspect-ratio: 1088 / 548; object-fit: cover; object-position: top; /* trims the caption baked into the image */ border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
 .lifecycle-figure figcaption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
 .role-seg-g { background: var(--group-g); }
 .role-seg-p { background: var(--group-p); }
@@ -930,7 +928,21 @@ main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
   flex-shrink: 0;
 }
 .role-card-body { padding: 0 1.1rem 1.1rem; border-top: 1px solid var(--border); }
-.role-card-controls { list-style: none; margin: 0.85rem 0 0; padding: 0; }
+.role-card[open] { grid-column: 1 / -1; }
+.role-card-controls { list-style: none; margin: 0.85rem 0 0; padding: 0; columns: 3 260px; column-gap: 2rem; }
+.role-card-controls li { break-inside: avoid; }
 .role-card-controls li { margin: 0.4rem 0; }
 .role-card-controls a { display: flex; gap: 0.4rem; align-items: baseline; color: var(--text); font-size: 0.9rem; }
 .role-card-controls a:hover { color: var(--accent); }
+
+/* Reading measure: the page column is wide (tables, diagrams), prose stays comfortable */
+main .container > p,
+main .container > ul:not([class]),
+main .container > ol:not([class]),
+main .container > blockquote { max-width: 72ch; }
+
+/* Latest news strip on the home page */
+.home-news { list-style: none; padding: 0; margin: 1rem 0 0.75rem; max-width: 72ch; }
+.home-news li { display: flex; flex-wrap: wrap; gap: 0.15rem 1rem; padding: 0.6rem 0; border-top: 1px solid var(--border); }
+.home-news .news-date { flex: 0 0 9.5rem; }
+.home-news a { font-weight: 500; }

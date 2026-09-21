@@ -43,12 +43,12 @@ is generated from those repositories.
 
 ## Who it's for
 
-- **Security leaders** planning or benchmarking a supply chain security program.
-- **Engineers and practitioners** doing the work — start with
-  [Which controls apply to me?]({{ "/roles/" | relative_url }}).
-- **Assessors and consultants** evaluating a program against recognized practice.
-- **Researchers and standards authors** looking for a consolidated view of the
-  field.
+<ul class="audience-cards">
+  <li><span class="card-icon">{% include icon.html name="shield" %}</span><h3>Security leaders</h3><p>Planning or benchmarking a supply chain security program.</p><a href="{{ "/framework/" | relative_url }}">The Framework</a></li>
+  <li><span class="card-icon">{% include icon.html name="wrench" %}</span><h3>Engineers</h3><p>Engineers and practitioners doing the work of securing builds, dependencies and deployments.</p><a href="{{ "/roles/" | relative_url }}">Which controls apply to me?</a></li>
+  <li><span class="card-icon">{% include icon.html name="clipboard-check" %}</span><h3>Assessors</h3><p>Assessors and consultants evaluating a program against recognized practice.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Self-assessment</a></li>
+  <li><span class="card-icon">{% include icon.html name="search" %}</span><h3>Researchers</h3><p>Researchers and standards authors looking for a consolidated view of the field.</p><a href="{{ "/frameworks/" | relative_url }}">Contributing standards</a></li>
+</ul>
 
 ## Citing P-SSCRM
 

@@ -19,10 +19,10 @@ permalink: /
   <div class="container">
     <h2>Who P-SSCRM is for</h2>
     <ul class="audience-cards">
-      <li><h3>New to this?</h3><p>Start with what P-SSCRM is and why it exists.</p><a href="{{ "/about/" | relative_url }}">What is P-SSCRM?</a></li>
-      <li><h3>Planning a program</h3><p>See the whole model and where your gaps are.</p><a href="{{ "/framework/" | relative_url }}">The Framework</a></li>
-      <li><h3>Doing the work</h3><p>Find the controls that map to your role.</p><a href="{{ "/roles/" | relative_url }}">Which controls apply to me?</a></li>
-      <li><h3>Assessing or researching</h3><p>Use the controls and questions as an instrument.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Self-assessment</a></li>
+      <li><span class="card-icon">{% include icon.html name="book-open" %}</span><h3>New to this?</h3><p>Start with what P-SSCRM is and why it exists.</p><a href="{{ "/about/" | relative_url }}">What is P-SSCRM?</a></li>
+      <li><span class="card-icon">{% include icon.html name="layout-grid" %}</span><h3>Planning a program</h3><p>See the whole model and where your gaps are.</p><a href="{{ "/framework/" | relative_url }}">The Framework</a></li>
+      <li><span class="card-icon">{% include icon.html name="wrench" %}</span><h3>Doing the work</h3><p>Find the controls that map to your role.</p><a href="{{ "/roles/" | relative_url }}">Which controls apply to me?</a></li>
+      <li><span class="card-icon">{% include icon.html name="clipboard-check" %}</span><h3>Assessing or researching</h3><p>Use the controls and questions as an instrument.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Self-assessment</a></li>
     </ul>
   </div>
 </section>
@@ -42,6 +42,18 @@ permalink: /
     {% assign names = "eo,800-161,ssdf,slsa,bsimm,cncf-ssc" | split: "," %}
     {% for key in names %}{% assign fw = site.data.frameworks[key] %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}, and more.</p>
     <p><a href="{{ "/frameworks/" | relative_url }}">See all contributing standards and which controls cite each one &rarr;</a></p>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <h2>Latest news</h2>
+    <ul class="home-news">
+      {% for post in site.posts limit: 3 %}
+      <li><span class="news-date">{{ post.date | date: "%B %-d, %Y" }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ "/news/" | relative_url }}">All news &rarr;</a></p>
   </div>
 </section>
 
