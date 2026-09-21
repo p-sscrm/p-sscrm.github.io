@@ -9,6 +9,11 @@
       <span class="site-wordmark-expand">Proactive Secure Software Supply Chain Risk Management</span>
     </span>
   </a>
+  {%- comment -%} Hidden until theme-toggle.js runs, so it never shows without JavaScript. {%- endcomment -%}
+  <button type="button" class="theme-toggle" id="theme-toggle" hidden>
+    <span data-icon="moon">{% include icon.html name="moon" %}</span>
+    <span data-icon="sun">{% include icon.html name="sun" %}</span>
+  </button>
 </header>
 <div class="site-nav-bar">
   <nav class="container site-nav" aria-label="Primary">

@@ -10,6 +10,8 @@
   --accent: #2557A7;
   --accent-dark: #17396B;
   --accent-soft: #EAF1FB;
+  --accent-fill: #2557A7;        /* solid backgrounds carrying white text */
+  --accent-fill-hover: #17396B;
   --code: #0F6E5C;
   --code-soft: #E6F5F1;
 
@@ -18,14 +20,20 @@
   --group-e: #8A4B2E;
   --group-d: #6B4EA8;
   --group-u: #5B6472;
+  --group-g-ink: #2557A7;
   --group-g-tint: #EAF1FB;
+  --group-p-ink: #2F7D4F;
   --group-p-tint: #E8F3EC;
+  --group-e-ink: #8A4B2E;
   --group-e-tint: #F6ECE4;
+  --group-d-ink: #6B4EA8;
   --group-d-tint: #EFEAF8;
+  --group-u-ink: #5B6472;
   --group-u-tint: #EDEEF1;
 
   --role: #52525B;
   --role-tint: #F1F1F3;
+  --role-ink: #52525B;
   --mitre: #B3261E;
   --mitre-tint: #FBEAE9;
 
@@ -37,7 +45,71 @@
   --radius: 6px;
   --content-top-pad: 2rem;
   --header-height: 52px;
+  color-scheme: light dark;
 }
+
+/* Dark colours. Used when the visitor's system is dark (unless they picked light
+   with the toggle), or when they picked dark with the toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F141B;
+    --surface: #171E28;
+    --text: #E6EAF0;
+    --text-muted: #9AA5B4;
+    --border: #2A3441;
+    --accent: #8DB4F2;
+    --accent-dark: #B9D0F7;
+    --accent-soft: #16233A;
+    --accent-fill: #2A55A0;
+    --accent-fill-hover: #3766BA;
+    --code: #5FD0B6;
+    --code-soft: #12302A;
+    --group-g-ink: #8DB4F2;
+    --group-p-ink: #74C79A;
+    --group-e-ink: #E0A583;
+    --group-d-ink: #B7A2EC;
+    --group-u-ink: #A9B2C0;
+    --group-g-tint: #16233A;
+    --group-p-tint: #14291D;
+    --group-e-tint: #2C1F17;
+    --group-d-tint: #221B33;
+    --group-u-tint: #212833;
+    --role-tint: #222229;
+    --role-ink: #C4C4CC;
+    --mitre: #F28B82;
+    --mitre-tint: #33191A;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F141B;
+  --surface: #171E28;
+  --text: #E6EAF0;
+  --text-muted: #9AA5B4;
+  --border: #2A3441;
+  --accent: #8DB4F2;
+  --accent-dark: #B9D0F7;
+  --accent-soft: #16233A;
+  --accent-fill: #2A55A0;
+  --accent-fill-hover: #3766BA;
+  --code: #5FD0B6;
+  --code-soft: #12302A;
+  --group-g-ink: #8DB4F2;
+  --group-p-ink: #74C79A;
+  --group-e-ink: #E0A583;
+  --group-d-ink: #B7A2EC;
+  --group-u-ink: #A9B2C0;
+  --group-g-tint: #16233A;
+  --group-p-tint: #14291D;
+  --group-e-tint: #2C1F17;
+  --group-d-tint: #221B33;
+  --group-u-tint: #212833;
+  --role-tint: #222229;
+  --role-ink: #C4C4CC;
+  --mitre: #F28B82;
+  --mitre-tint: #33191A;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -90,7 +162,7 @@ button:focus-visible {
   padding: 0 1.5rem;
 }
 
-.site-banner { display: block; background: var(--accent); color: #fff; }
+.site-banner { position: relative; display: block; background: var(--accent-fill); color: #fff; }
 .site-wordmark {
   display: flex;
   align-items: center;
@@ -205,7 +277,7 @@ button:focus-visible {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.55rem 1.2rem;
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff !important;
   border-radius: var(--radius);
   font-weight: 600;
@@ -213,7 +285,7 @@ button:focus-visible {
   text-decoration: none !important;
   transition: background 0.15s ease;
 }
-.btn:hover { background: var(--accent-dark); }
+.btn:hover { background: var(--accent-fill-hover); }
 
 main .container { padding-top: var(--content-top-pad); padding-bottom: 2.5rem; }
 
@@ -232,11 +304,11 @@ h1 code,
 }
 
 /* Framework page: colour each control/practice/group code by its Group */
-.fw-group-g .code-badge { color: var(--group-g); background: var(--group-g-tint); }
-.fw-group-p .code-badge { color: var(--group-p); background: var(--group-p-tint); }
-.fw-group-e .code-badge { color: var(--group-e); background: var(--group-e-tint); }
-.fw-group-d .code-badge { color: var(--group-d); background: var(--group-d-tint); }
-.fw-group-u .code-badge { color: var(--group-u); background: var(--group-u-tint); }
+.fw-group-g .code-badge { color: var(--group-g-ink); background: var(--group-g-tint); }
+.fw-group-p .code-badge { color: var(--group-p-ink); background: var(--group-p-tint); }
+.fw-group-e .code-badge { color: var(--group-e-ink); background: var(--group-e-tint); }
+.fw-group-d .code-badge { color: var(--group-d-ink); background: var(--group-d-tint); }
+.fw-group-u .code-badge { color: var(--group-u-ink); background: var(--group-u-tint); }
 
 .framework-list {
   list-style: none;
@@ -366,7 +438,7 @@ h1 code,
   padding: 0 0.9rem 0 0.7rem;
   border: none;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff;
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -382,7 +454,7 @@ h1 code,
 }
 #back-to-top span { font-size: 1rem; }
 
-#back-to-top:hover { background: var(--accent-dark); }
+#back-to-top:hover { background: var(--accent-fill-hover); }
 
 #back-to-top.is-visible {
   opacity: 1;
@@ -560,7 +632,7 @@ h1 code,
 .fw-questions ul { margin: 0; padding-left: 1.1rem; }
 .fw-questions li { margin: 0.2rem 0; }
 .role-badge { background: var(--role-tint); border-color: rgba(82, 82, 91, 0.25); }
-.role-badge a { color: var(--role); font-weight: 600; }
+.role-badge a { color: var(--role-ink); font-weight: 600; }
 
 .fw-standards { margin-top: 2.5rem; }
 
@@ -615,7 +687,7 @@ h1 code,
   padding: 0.1rem 0.5rem;
   border-radius: 999px;
   color: #fff;
-  background: var(--accent);
+  background: var(--accent-fill);
   flex-shrink: 0;
 }
 .reverse-map-body { margin-top: 0.5rem; }
@@ -757,11 +829,11 @@ h1 code,
 }
 .fw-col-foot { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.35rem; }
 
-.fw-col-g .fw-cell-code { color: var(--group-g); }
-.fw-col-p .fw-cell-code { color: var(--group-p); }
-.fw-col-e .fw-cell-code { color: var(--group-e); }
-.fw-col-d .fw-cell-code { color: var(--group-d); }
-.fw-col-u .fw-cell-code { color: var(--group-u); }
+.fw-col-g .fw-cell-code { color: var(--group-g-ink); }
+.fw-col-p .fw-cell-code { color: var(--group-p-ink); }
+.fw-col-e .fw-cell-code { color: var(--group-e-ink); }
+.fw-col-d .fw-cell-code { color: var(--group-d-ink); }
+.fw-col-u .fw-cell-code { color: var(--group-u-ink); }
 
 .fw-col-g .fw-col-head { background: var(--group-g); }
 .fw-col-p .fw-col-head { background: var(--group-p); }
@@ -833,7 +905,7 @@ main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
   margin: 1.5rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 1rem;
   align-items: start;
 }
@@ -884,7 +956,7 @@ main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
   flex-shrink: 0;
 }
 .role-card-seg { height: 100%; flex-basis: 0; min-width: 7px; border-radius: 3px; }
-@media (max-width: 520px) { .role-card-bar { width: 72px; } }
+@media (max-width: 520px) { .role-card-bar { width: 72px; } .roles-grid { grid-template-columns: 1fr; } }
 
 /* colour key shown above the roles and standards lists */
 .group-key {
@@ -946,3 +1018,24 @@ main .container > blockquote { max-width: 72ch; }
 .home-news li { display: flex; flex-wrap: wrap; gap: 0.15rem 1rem; padding: 0.6rem 0; border-top: 1px solid var(--border); }
 .home-news .news-date { flex: 0 0 9.5rem; }
 .home-news a { font-weight: 500; }
+
+/* Light / dark switch, top right of the blue banner */
+.theme-toggle {
+  position: absolute;
+  top: 50%;
+  right: max(1.5rem, calc((100% - var(--max-width)) / 2 + 1.5rem));
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.theme-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+.theme-toggle:focus-visible { outline-color: #fff; }
