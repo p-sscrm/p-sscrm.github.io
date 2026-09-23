@@ -64,7 +64,9 @@ paper and link to this site.
 
 P-SSCRM is stewarded by researchers at NC State University in collaboration with
 the [Secure Software Supply Chain Center (S3C2)](https://s3c2.org/){:target="_blank" rel="noopener"}. For
-questions or corrections, see [Contact]({{ "/contact/" | relative_url }}).
+questions or corrections, see [Contact]({{ "/contact/" | relative_url }}). 
+
+We welcome the participation and collaboration of all other interested parties.
 
 ## License
 
