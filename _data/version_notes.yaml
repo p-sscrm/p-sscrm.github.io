@@ -1,0 +1,5 @@
+# Manually maintained release notes for the Version History section on the
+# About page. Keyed by framework version number. Not touched by
+# scripts/sync_data.py — add an entry here when a new framework version ships.
+
+"2.0": "Updated SLSA to v1.2, BSIMM to 15, and CNCF SSC to v2; added SSDF-AI; added a more granular mapping of OWASP SCVS; removed S3C2F, which was incorporated into SLSA v1.2."

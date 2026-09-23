@@ -987,6 +987,9 @@ main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
 .lifecycle-figure { margin: 1.25rem 0; }
 .lifecycle-figure img { display: block; width: 100%; height: auto; aspect-ratio: 1088 / 548; object-fit: cover; object-position: top; /* trims the caption baked into the image */ border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
 .lifecycle-figure figcaption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
+.radar-figure { margin: 1.25rem 0; }
+.radar-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.radar-figure figcaption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
 .role-seg-g { background: var(--group-g); }
 .role-seg-p { background: var(--group-p); }
 .role-seg-e { background: var(--group-e); }
@@ -1009,11 +1012,11 @@ main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
 .role-card-controls a { display: flex; gap: 0.4rem; align-items: baseline; color: var(--text); font-size: 0.9rem; }
 .role-card-controls a:hover { color: var(--accent); }
 
-/* Reading measure: the page column is wide (tables, diagrams), prose stays comfortable */
+/* Prose fills the page column, same as headings, cards, and figures */
 main .container > p,
 main .container > ul:not([class]),
 main .container > ol:not([class]),
-main .container > blockquote { max-width: 72ch; }
+main .container > blockquote { max-width: none; }
 
 /* Latest news strip on the home page */
 .home-news { list-style: none; padding: 0; margin: 1rem 0 0.75rem; max-width: 72ch; }

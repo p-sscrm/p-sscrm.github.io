@@ -12,7 +12,7 @@ for managing software supply chain security risk. It organizes the work into
 Unassigned holding group for controls identified but not yet tied to a
 standard — each broken into **Practices** and then into concrete **Controls**.
 Every control states an objective, a fuller definition, a set of
-self-assessment questions, and a mapping to the established standards it
+assessment questions, and a mapping to the established standards it
 draws from.
 
 ## The problem it solves
@@ -26,14 +26,17 @@ one checklist and still show alignment with the standards that apply to them.
 
 ## How it was built
 
+P-SSCRM v1.0 was authored by Laurie Williams, Sammy Migues, Jamie Boote, and
+Ben Hutchison.
+
 P-SSCRM was assembled by analyzing the contributing standards and frameworks
 listed under [Standards & Frameworks]({{ "/frameworks/" | relative_url }}),
 identifying the common practices across them, and expressing each as a control
 with an explicit back-mapping. The framework definition and its mappings are
 maintained in the open at
-[github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm); the MITRE
+[github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm){:target="_blank" rel="noopener"}; the MITRE
 ATT&CK technique mappings are maintained at
-[github.com/p-sscrm/ats-to-ts](https://github.com/p-sscrm/ats-to-ts). This site
+[github.com/p-sscrm/ats-to-ts](https://github.com/p-sscrm/ats-to-ts){:target="_blank" rel="noopener"}. This site
 is generated from those repositories.
 
 <figure class="lifecycle-figure">
@@ -46,7 +49,7 @@ is generated from those repositories.
 <ul class="audience-cards">
   <li><span class="card-icon">{% include icon.html name="shield" %}</span><h3>Security leaders</h3><p>Planning or benchmarking a supply chain security program.</p><a href="{{ "/framework/" | relative_url }}">The Framework</a></li>
   <li><span class="card-icon">{% include icon.html name="wrench" %}</span><h3>Engineers</h3><p>Engineers and practitioners doing the work of securing builds, dependencies and deployments.</p><a href="{{ "/roles/" | relative_url }}">Which controls apply to me?</a></li>
-  <li><span class="card-icon">{% include icon.html name="clipboard-check" %}</span><h3>Assessors</h3><p>Assessors and consultants evaluating a program against recognized practice.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Self-assessment</a></li>
+  <li><span class="card-icon">{% include icon.html name="clipboard-check" %}</span><h3>Assessors</h3><p>Assessors and consultants evaluating a program against recognized practice.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Assessment questions</a></li>
   <li><span class="card-icon">{% include icon.html name="search" %}</span><h3>Researchers</h3><p>Researchers and standards authors looking for a consolidated view of the field.</p><a href="{{ "/frameworks/" | relative_url }}">Contributing standards</a></li>
 </ul>
 
@@ -54,28 +57,30 @@ is generated from those repositories.
 
 P-SSCRM is described in the paper *P-SSCRM: Proactive Secure Software Supply
 Chain Risk Management*, available at
-[arxiv.org/abs/2404.12300](https://arxiv.org/abs/2404.12300). Please cite that
+[arxiv.org/abs/2404.12300](https://arxiv.org/abs/2404.12300){:target="_blank" rel="noopener"}. Please cite that
 paper and link to this site.
 
 ## Who maintains it
 
 P-SSCRM is stewarded by researchers at NC State University in collaboration with
-the [Secure Software Supply Chain Center (S3C2)](https://s3c2.org/). For
+the [Secure Software Supply Chain Center (S3C2)](https://s3c2.org/){:target="_blank" rel="noopener"}. For
 questions or corrections, see [Contact]({{ "/contact/" | relative_url }}).
 
 ## License
 
-The framework content is published by the upstream project; see
-[github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm) for its
-license. This website's code is in the site repository.
+P-SSCRM is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/){:target="_blank" rel="noopener"}
+license. See
+[github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm){:target="_blank" rel="noopener"} for the
+framework content. This website's code is in the site repository.
 
 ## Version history
 {: #versions}
 
 Only the version marked **current** should be used for new compliance work;
 earlier versions are kept for reference. Data comes directly from
-[p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm) and
-[p-sscrm/ats-to-ts](https://github.com/p-sscrm/ats-to-ts).
+[p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm){:target="_blank" rel="noopener"} and
+[p-sscrm/ats-to-ts](https://github.com/p-sscrm/ats-to-ts){:target="_blank" rel="noopener"}.
 
 #### Framework
 {: .version-heading}
@@ -86,6 +91,8 @@ earlier versions are kept for reference. Data comes directly from
       {% if ver.current %}<strong>Current</strong>{% else %}Previous{% endif %} &mdash;
       <span class="version-number">v{{ ver.version }}</span>
       (<a href="{{ ver.download_url }}" target="_blank" rel="noopener">JSON</a>)
+      {% assign note = site.data.version_notes[ver.version] %}
+      {% if note %}<br>{{ note }}{% endif %}
     </li>
   {% endfor %}
 </ul>

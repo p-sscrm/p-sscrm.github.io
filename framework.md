@@ -2,7 +2,7 @@
 layout: framework
 title: "The Framework"
 permalink: /framework/
-description: "Every P-SSCRM Group, Practice, and Control on one page, with standard and MITRE ATT&CK mappings, self-assessment questions, and role assignments."
+description: "Every P-SSCRM Group, Practice, and Control on one page, with standard and MITRE ATT&CK mappings, assessment questions, and role assignments."
 ---
 
 P-SSCRM organizes software supply chain security into Groups, each broken

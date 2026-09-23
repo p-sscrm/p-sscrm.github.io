@@ -14,7 +14,7 @@ with P-SSCRM keeps you aligned with these sources.
   {% for key in fw_order %}
     {% assign fw = site.data.frameworks[key] %}
     {% if fw %}
-      <li>
+      <li id="{{ key }}">
         <h2>{% if fw.url %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% else %}{{ fw.name }}{% endif %}</h2>
         <p title="{{ fw.full_name }}">{{ fw.full_name }}</p>
       </li>
@@ -97,11 +97,3 @@ every standard down to the matching controls.
   {% endfor %}
 </div>
 <script src="{{ "/static/js/reverse-map-filter.js" | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
-
-{% if site.data.frameworks_pending and site.data.frameworks_pending.size > 0 %}
-## Standards being added
-
-<ul>
-  {% for item in site.data.frameworks_pending %}<li>{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</li>{% endfor %}
-</ul>
-{% endif %}

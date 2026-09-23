@@ -7,8 +7,8 @@ layout: default
   {{ content }}
 
   <section class="self-assessment-note" id="self-assessment">
-    <h2>Assess yourself</h2>
-    <p>Every control below carries a short set of questions. Work through them with your team for an informal, qualitative self-assessment — there is no score. For a formal, interview-based assessment, see <a href="{{ "/participate/" | relative_url }}">Join the Study</a>.</p>
+    <h2>Assessment questions</h2>
+    <p>Every control below carries a short set of questions under an "Assessment questions" heading. Search for a control below, or click <strong>Expand all</strong>, then work through the questions with your team for an informal, qualitative assessment — there is no score. For a formal, interview-based assessment, see <a href="{{ "/participate/" | relative_url }}">Measure and Improve</a>.</p>
   </section>
 
   {% include diagram.html %}
@@ -53,7 +53,7 @@ layout: default
 
                     {% if control.questions and control.questions.size > 0 %}
                       <div class="fw-block fw-questions">
-                        <p class="fw-label">Assess yourself</p>
+                        <p class="fw-label">Assessment questions</p>
                         <ul>
                           {% for q in control.questions %}<li>{{ q.text }}</li>{% endfor %}
                         </ul>

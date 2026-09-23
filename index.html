@@ -11,7 +11,7 @@ permalink: /
     <h1 class="hero-brand">P&#8209;SSCRM</h1>
     <p class="hero-expand">Proactive Secure Software Supply Chain Risk Management</p>
     <p class="hero-tagline">The uniting framework for secure software supply chain risk management of code dependencies, build infrastructure, AI models and data, and the humans who maintain them.</p>
-    <p class="hero-lede">Teams securing a software supply chain face a crowded field of standards — SSDF, SLSA, BSIMM, NIST 800-161, and a dozen more — with overlapping vocabulary and no single through-line. P-SSCRM is that through-line: one model of Groups, Practices, and Controls, each mapped back to the sources it came from, so you can work from a single checklist and still show alignment with the standards that apply to you.</p>
+    <p class="hero-lede">Teams securing a software supply chain face a crowded field of standards — <a href="{{ "/frameworks/" | relative_url }}#ssdf">SSDF</a>, <a href="{{ "/frameworks/" | relative_url }}#ssdf-ai">SSDF-AI</a>, <a href="{{ "/frameworks/" | relative_url }}#slsa">SLSA</a>, <a href="{{ "/frameworks/" | relative_url }}#800-161">NIST 800-161</a>, <a href="{{ "/frameworks/" | relative_url }}#owasp-scvs">OWASP SCVS</a>, and <a href="{{ "/frameworks/" | relative_url }}">five more</a> — with overlapping vocabulary and no single through-line. P-SSCRM is that through-line: one model of Groups, Practices, and Controls, each mapped back to the sources it came from, so you can work from a single checklist and still show alignment with the standards that apply to you.</p>
   </div>
 </section>
 
@@ -19,17 +19,17 @@ permalink: /
   <div class="container">
     <h2>Who P-SSCRM is for</h2>
     <ul class="audience-cards">
-      <li><span class="card-icon">{% include icon.html name="book-open" %}</span><h3>New to this?</h3><p>Start with what P-SSCRM is and why it exists.</p><a href="{{ "/about/" | relative_url }}">What is P-SSCRM?</a></li>
+      <li><span class="card-icon">{% include icon.html name="book-open" %}</span><h3>New to P-SSCRM?</h3><p>Start with what P-SSCRM is and why it exists.</p><a href="{{ "/about/" | relative_url }}">What is P-SSCRM?</a></li>
       <li><span class="card-icon">{% include icon.html name="layout-grid" %}</span><h3>Planning a program</h3><p>See the whole model and where your gaps are.</p><a href="{{ "/framework/" | relative_url }}">The Framework</a></li>
       <li><span class="card-icon">{% include icon.html name="wrench" %}</span><h3>Doing the work</h3><p>Find the controls that map to your role.</p><a href="{{ "/roles/" | relative_url }}">Which controls apply to me?</a></li>
-      <li><span class="card-icon">{% include icon.html name="clipboard-check" %}</span><h3>Assessing or researching</h3><p>Use the controls and questions as an instrument.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Self-assessment</a></li>
+      <li><span class="card-icon">{% include icon.html name="clipboard-check" %}</span><h3>Assessing or researching</h3><p>Use the controls and questions as an instrument.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Assessment questions</a></li>
     </ul>
   </div>
 </section>
 
 <section class="home-section">
   <div class="container">
-    <h2>What it covers</h2>
+    <h2>P-SSCRM Framework</h2>
     <p class="section-intro">{{ site.groups.size }} Groups, {{ site.practices.size }} Practices, {{ site.controls.size }} Controls. Follow any cell into the framework.</p>
     {% include diagram.html %}
   </div>
@@ -47,7 +47,7 @@ permalink: /
 
 <section class="home-section">
   <div class="container">
-    <h2>Latest news</h2>
+    <h2>News</h2>
     <ul class="home-news">
       {% for post in site.posts limit: 3 %}
       <li><span class="news-date">{{ post.date | date: "%B %-d, %Y" }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
@@ -62,7 +62,8 @@ permalink: /
     <h2>Background &amp; citation</h2>
     <p>P-SSCRM was built by unifying the common ground across the field's government and industry initiatives and standards. It is described in a paper on arXiv and stewarded with the S3C2 research center.</p>
     <p>
-      <a href="https://arxiv.org/abs/2404.12300" target="_blank" rel="noopener">Read the paper (arXiv 2404.12300)</a> &middot;
+      <a href="https://arxiv.org/abs/2404.12300" target="_blank" rel="noopener">P-SSCRM v1.0</a> &middot;
+      <a href="https://dl.acm.org/doi/epdf/10.1145/3733827.3765526" target="_blank" rel="noopener">Baseline study</a> &middot;
       <a href="https://s3c2.org/" target="_blank" rel="noopener">S3C2</a> &middot;
       <a href="{{ "/about/" | relative_url }}">Full background</a>
     </p>
@@ -73,9 +74,9 @@ permalink: /
 <section class="home-section home-cta">
   <div class="container">
     <h2>Put P-SSCRM to work</h2>
-    <p>Read the framework, work through the self-assessment questions for your Groups and Practices, or help shape P-SSCRM by joining the interview study.</p>
+    <p>Read the framework, work through the assessment questions for your Groups and Practices, or help shape P-SSCRM by joining the interview study.</p>
     <p class="hero-actions">
-      <a class="btn" href="{{ "/participate/" | relative_url }}">Join the Study</a>
+      <a class="btn" href="{{ "/participate/" | relative_url }}">Measure and Improve</a>
       <a class="btn btn-secondary" href="{{ "/framework/" | relative_url }}">View the Framework</a>
     </p>
   </div>
