@@ -62,7 +62,3 @@ Then review what changed with `git status` / `git diff` before committing — th
 ## Deploying
 
 Pushing to `main` triggers `.github/workflows/jekyll.yml`, which builds the site with Jekyll (using both `_config.yml` and `_config_production.yml`) and publishes it to GitHub Pages automatically. There's no staging environment — whatever's on `main` is what's live.
-
-## Contributing
-
-No `CONTRIBUTING.md` yet — ask in the project chat/repo issues if you're unsure where to start.
