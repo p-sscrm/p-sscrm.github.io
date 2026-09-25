@@ -33,34 +33,41 @@ paper used to check frameworks against real attacks, applied here to build a
 mapping instead of an evaluation.
 
 <figure class="attck-figure">
-  <div class="attck-timeline attck-timeline-process" role="group" aria-label="How the ATT&CK to P-SSCRM mapping was built">
-    <div class="attck-tl-step">
-      <div class="attck-tl-marker" data-num="1">{% include icon.html name="search" %}</div>
-      <div class="attck-tl-content">
-        <h3>ATT&amp;CK techniques</h3>
-        <p>Techniques used or plausible in software supply chain attacks such as SolarWinds, Log4j, and XZ Utils.</p>
+  <div class="attck-flow" role="group" aria-label="How the ATT&CK to P-SSCRM mapping was built">
+    <div class="attck-flow-node">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon">{% include icon.html name="search" %}</span>
+        <span class="attck-flow-num">Step 1</span>
       </div>
+      <h3>ATT&amp;CK techniques</h3>
+      <p>Techniques used or plausible in software supply chain attacks such as SolarWinds, Log4j, and XZ Utils.</p>
     </div>
-    <div class="attck-tl-step">
-      <div class="attck-tl-marker" data-num="2">{% include icon.html name="layout-grid" %}</div>
-      <div class="attck-tl-content">
-        <h3>Four independent strategies</h3>
-        <p>Separate passes &mdash; keyword matching, technique-description matching, and manual, incident-grounded analysis &mdash; each propose candidate control&ndash;technique pairs.</p>
+    <div class="attck-flow-arrow" aria-hidden="true"></div>
+    <div class="attck-flow-node">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon">{% include icon.html name="layout-grid" %}</span>
+        <span class="attck-flow-num">Step 2</span>
       </div>
+      <h3>Four independent strategies</h3>
+      <p>Separate passes &mdash; keyword matching, technique-description matching, and manual, incident-grounded analysis &mdash; each propose candidate control&ndash;technique pairs.</p>
     </div>
-    <div class="attck-tl-step">
-      <div class="attck-tl-marker" data-num="3">{% include icon.html name="clipboard-check" %}</div>
-      <div class="attck-tl-content">
-        <h3>Agreed-upon mapping</h3>
-        <p>Only pairs the strategies agree on are kept, producing the reconciled mapping.</p>
+    <div class="attck-flow-arrow" aria-hidden="true"></div>
+    <div class="attck-flow-node">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon">{% include icon.html name="clipboard-check" %}</span>
+        <span class="attck-flow-num">Step 3</span>
       </div>
+      <h3>Agreed-upon mapping</h3>
+      <p>Only pairs the strategies agree on are kept, producing the reconciled mapping.</p>
     </div>
-    <div class="attck-tl-step">
-      <div class="attck-tl-marker" data-num="4">{% include icon.html name="wrench" %}</div>
-      <div class="attck-tl-content">
-        <h3>P-SSCRM controls</h3>
-        <p>Each technique is attached to the control(s) that mitigate it &mdash; and, through those controls, to the ten standards they already cite.</p>
+    <div class="attck-flow-arrow" aria-hidden="true"></div>
+    <div class="attck-flow-node">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon">{% include icon.html name="wrench" %}</span>
+        <span class="attck-flow-num">Step 4</span>
       </div>
+      <h3>P-SSCRM controls</h3>
+      <p>Each technique is attached to the control(s) that mitigate it &mdash; and, through those controls, to the ten standards they already cite.</p>
     </div>
   </div>
   <figcaption>How the ATT&amp;CK&ndash;to&ndash;P-SSCRM mapping was built, from technique to reconciled control mapping.</figcaption>
@@ -71,66 +78,60 @@ mapping instead of an evaluation.
 Because P-SSCRM controls already cite standards like BSIMM and the CNCF
 Software Supply Chain Best Practices, adding the ATT&CK mapping gives a
 three-way link. [P.3.3, &ldquo;Require signed commits&rdquo;]({{ "/framework/" | relative_url }}#p-3-3)
-is a clean example &mdash; it mitigates a single technique and cites two standards:
+mitigates a single technique and cites two standards, so the whole chain fits
+in one diagram:
 
 <figure class="attck-figure">
-  <div class="attck-timeline attck-timeline-example" role="group" aria-label="Example: P.3.3 Require signed commits, mapped to technique and standards">
-    <div class="attck-tl-step">
-      <div class="attck-tl-marker attck-tl-marker-control">{% include icon.html name="shield" %}</div>
-      <div class="attck-tl-content">
-        <a class="attck-node attck-node-control" href="{{ "/framework/" | relative_url }}#p-3-3">
-          <span class="attck-node-label">P-SSCRM Control</span>
-          <span class="attck-node-name">P.3.3 &mdash; Require signed commits</span>
-        </a>
+  <div class="attck-flow" role="group" aria-label="Example: P.3.3 Require signed commits, mapped to technique and standards">
+    <a class="attck-flow-node attck-flow-node-control" href="{{ "/framework/" | relative_url }}#p-3-3">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon attck-flow-icon-control">{% include icon.html name="shield" %}</span>
+        <span class="attck-node-label">P-SSCRM Control</span>
       </div>
-    </div>
-    <div class="attck-tl-step">
-      <div class="attck-tl-marker attck-tl-marker-technique">{% include icon.html name="search" %}</div>
-      <div class="attck-tl-content">
-        <a class="attck-node attck-node-technique" href="https://attack.mitre.org/techniques/T1554/" target="_blank" rel="noopener">
-          <span class="attck-node-label">ATT&amp;CK Technique</span>
-          <span class="attck-node-name">T1554 &mdash; Compromise Host Software Binary</span>
-        </a>
+      <span class="attck-node-name">P.3.3 &mdash; Require signed commits</span>
+    </a>
+    <div class="attck-flow-arrow" aria-hidden="true"></div>
+    <a class="attck-flow-node attck-flow-node-technique" href="https://attack.mitre.org/techniques/T1554/" target="_blank" rel="noopener">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon attck-flow-icon-technique">{% include icon.html name="search" %}</span>
+        <span class="attck-node-label">ATT&amp;CK Technique</span>
       </div>
-    </div>
-    <div class="attck-tl-step">
-      <div class="attck-tl-marker attck-tl-marker-standards">{% include icon.html name="clipboard-check" %}</div>
-      <div class="attck-tl-content">
-        <div class="attck-node attck-node-standards">
-          <span class="attck-node-label">Standards</span>
-          <ul class="framework-list">
-            <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#bsimm" target="_blank" rel="noopener">BSIMM</a> <span class="mapping-ref">SE2.4</span></li>
-            <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#cncf-ssc" target="_blank" rel="noopener">CNCF-SSC</a> <span class="mapping-ref">Sign every step in the build process</span></li>
-          </ul>
-        </div>
+      <span class="attck-node-name">T1554 &mdash; Compromise Host Software Binary</span>
+    </a>
+    <div class="attck-flow-arrow" aria-hidden="true"></div>
+    <div class="attck-flow-node attck-flow-node-standards">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon attck-flow-icon-standards">{% include icon.html name="clipboard-check" %}</span>
+        <span class="attck-node-label">Standards</span>
       </div>
+      <ul class="framework-list">
+        <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#bsimm" target="_blank" rel="noopener">BSIMM</a> <span class="mapping-ref">SE2.4</span></li>
+        <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#cncf-ssc" target="_blank" rel="noopener">CNCF-SSC</a> <span class="mapping-ref">Sign every step in the build process</span></li>
+      </ul>
     </div>
   </div>
   <figcaption>P.3.3 mitigates ATT&amp;CK technique T1554, and already cites BSIMM and the CNCF-SSC best practices &mdash; so the ATT&amp;CK mapping links T1554 to those standards too.</figcaption>
 </figure>
 
-## See it on a control
+## See a control's ATT&CK mapping directly
 
-Every control's entry on [The Framework]({{ "/framework/" | relative_url }}) lists its
-ATT&CK techniques under &ldquo;ATT&amp;CK techniques,&rdquo; alongside its standard
-mappings. A few examples:
+Every control's entry on [The Framework]({{ "/framework/" | relative_url }}) lists the
+ATT&CK technique(s) it mitigates, next to its standard mappings. A few examples,
+technique shown alongside each:
 
 <ul class="attck-examples">
-  <li><a href="{{ "/framework/" | relative_url }}#p-3-3">P.3.3 &mdash; Require signed commits</a></li>
-  <li><a href="{{ "/framework/" | relative_url }}#p-4-1">P.4.1 &mdash; Security code review</a></li>
-  <li><a href="{{ "/framework/" | relative_url }}#d-1-6">D.1.6 &mdash; Root cause analysis</a></li>
+  <li><a href="{{ "/framework/" | relative_url }}#p-3-3">P.3.3 &mdash; Require signed commits</a> <span class="mapping-ref">T1554</span></li>
+  <li><a href="{{ "/framework/" | relative_url }}#p-4-1">P.4.1 &mdash; Security code review</a> <span class="mapping-ref">T1195</span></li>
+  <li><a href="{{ "/framework/" | relative_url }}#d-1-6">D.1.6 &mdash; Root cause analysis</a> <span class="mapping-ref">T1195</span></li>
 </ul>
 
-<p class="attck-examples-note">Or browse <a href="{{ "/framework/" | relative_url }}">The Framework</a> directly and expand any control.</p>
+<p class="attck-examples-note">Or open <a href="{{ "/framework/" | relative_url }}">The Framework</a> and expand any control to see its mapping.</p>
 
 ## From technique back to controls
 
-The mapping also runs in reverse: pick an ATT&CK technique to see every
-P-SSCRM control that mitigates it, grouped by Practice. This is a list of
-individual techniques rather than the higher-level ATT&CK Tactics
-(kill-chain phases) &mdash; the mapping data only identifies techniques, not
-the tactics they belong to. Search below to narrow the list to a specific
-technique or control.
+The mapping also runs in reverse: pick an ATT&CK technique below to see every
+P-SSCRM control that mitigates it, grouped by Practice. Search to find a
+specific technique or control.
 
 {% assign all_techniques = "" | split: "" %}
 {% for control in site.controls %}
@@ -158,7 +159,7 @@ technique or control.
   <button type="button" class="expand-all-btn" id="reverse-map-collapse-all">Collapse all</button>
 </div>
 <p class="reverse-map-empty" id="reverse-map-empty" hidden>No techniques match that search.</p>
-<p class="section-note">{{ techniques.size }} ATT&amp;CK techniques are currently mapped, collapsed by default &mdash; expand one or search to find it.</p>
+<p class="section-note">{{ techniques.size }} ATT&amp;CK techniques are mapped. Click one to open it, or search to find a specific one.</p>
 
 <div class="reverse-map reverse-map-compact" id="reverse-map">
   {% for technique in techniques %}

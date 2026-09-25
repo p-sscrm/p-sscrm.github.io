@@ -1,24 +1,29 @@
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-inner">
     {% assign v = site.data.versions | where: "current", true | first %}
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="{{ "/about/" | relative_url }}">
-        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 1.5A6.5 6.5 0 1 0 8 14.5 6.5 6.5 0 0 0 8 1.5Zm.9 10.2H7.1V7.1h1.8v4.6ZM8 5.9a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
-        About
-      </a>
-      <a href="{{ "/faq/" | relative_url }}">
-        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 1.5A6.5 6.5 0 1 0 8 14.5 6.5 6.5 0 0 0 8 1.5Zm.8 10.6H7.2v-1.6h1.6v1.6Zm1.3-4.4-.7.7c-.5.5-.7.9-.7 1.7H7.1c0-1.1.3-1.7.9-2.3l1-1c.3-.3.4-.6.4-1 0-.8-.6-1.3-1.4-1.3-.9 0-1.4.5-1.5 1.4H4.8c.1-1.7 1.3-2.8 3.1-2.8 1.8 0 3 1 3 2.6 0 .7-.3 1.3-.8 1.8Z"/></svg>
-        FAQ
-      </a>
-      <a href="{{ "/contact/" | relative_url }}">
-        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 3.5h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Zm.6 1.3L8 8.4l5.4-3.6H2.6Zm10.8 1.1-5 3.3a.8.8 0 0 1-.8 0l-5-3.3v5h10.8v-5Z"/></svg>
-        Contact
-      </a>
-      <a href="https://github.com/p-sscrm/p-sscrm.github.io" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2 .4-2.5-.5-2.7-1-.1-.3-.6-1-1-1.2-.3-.2-.8-.6 0-.6.7 0 1.2.7 1.4 1 .8 1.3 2 1 2.5.8.1-.6.3-1 .6-1.2-2-.2-3.7-1-3.7-4.3 0-1 .3-1.7.9-2.4-.1-.2-.4-1 .1-2.2 0 0 .7-.2 2.3.9a7.7 7.7 0 0 1 4.2 0c1.6-1.1 2.3-.9 2.3-.9.5 1.2.2 2 .1 2.2.6.7.9 1.4.9 2.4 0 3.3-2 4.1-3.9 4.3.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0 0 8 0Z"/></svg>
-        GitHub
-      </a>
-    </nav>
-    <p class="footer-meta">{{ site.time | date: "%Y" }} P&#8209;SSCRM Documentation &middot; Version {{ v.version }}</p>
+    <div class="footer-main">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="{{ "/about/" | relative_url }}">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 1.5A6.5 6.5 0 1 0 8 14.5 6.5 6.5 0 0 0 8 1.5Zm.9 10.2H7.1V7.1h1.8v4.6ZM8 5.9a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
+          About
+        </a>
+        <a href="{{ "/faq/" | relative_url }}">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 1.5A6.5 6.5 0 1 0 8 14.5 6.5 6.5 0 0 0 8 1.5Zm.8 10.6H7.2v-1.6h1.6v1.6Zm1.3-4.4-.7.7c-.5.5-.7.9-.7 1.7H7.1c0-1.1.3-1.7.9-2.3l1-1c.3-.3.4-.6.4-1 0-.8-.6-1.3-1.4-1.3-.9 0-1.4.5-1.5 1.4H4.8c.1-1.7 1.3-2.8 3.1-2.8 1.8 0 3 1 3 2.6 0 .7-.3 1.3-.8 1.8Z"/></svg>
+          FAQ
+        </a>
+        <a href="{{ "/contact/" | relative_url }}">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 3.5h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Zm.6 1.3L8 8.4l5.4-3.6H2.6Zm10.8 1.1-5 3.3a.8.8 0 0 1-.8 0l-5-3.3v5h10.8v-5Z"/></svg>
+          Contact
+        </a>
+        <a href="https://github.com/p-sscrm/p-sscrm.github.io" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2 .4-2.5-.5-2.7-1-.1-.3-.6-1-1-1.2-.3-.2-.8-.6 0-.6.7 0 1.2.7 1.4 1 .8 1.3 2 1 2.5.8.1-.6.3-1 .6-1.2-2-.2-3.7-1-3.7-4.3 0-1 .3-1.7.9-2.4-.1-.2-.4-1 .1-2.2 0 0 .7-.2 2.3.9a7.7 7.7 0 0 1 4.2 0c1.6-1.1 2.3-.9 2.3-.9.5 1.2.2 2 .1 2.2.6.7.9 1.4.9 2.4 0 3.3-2 4.1-3.9 4.3.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A8 8 0 0 0 8 0Z"/></svg>
+          GitHub
+        </a>
+      </nav>
+      <p class="footer-meta">{{ site.time | date: "%Y" }} P&#8209;SSCRM Documentation &middot; Version {{ v.version }}</p>
+    </div>
+    <a class="footer-partner" href="https://s3c2.org/" target="_blank" rel="noopener" aria-label="S3C2 — Secure Software Supply Chain Center">
+      <img src="{{ "/static/img/s3c2-logo.png" | relative_url }}" alt="S3C2 — Secure Software Supply Chain Center" class="footer-partner-logo">
+    </a>
   </div>
 </footer>
