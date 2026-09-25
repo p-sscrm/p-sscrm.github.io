@@ -33,29 +33,34 @@ paper used to check frameworks against real attacks, applied here to build a
 mapping instead of an evaluation.
 
 <figure class="attck-figure">
-  <div class="attck-process" role="group" aria-label="How the ATT&CK to P-SSCRM mapping was built">
-    <div class="attck-step">
-      <span class="attck-step-num">1</span>
-      <h3>ATT&amp;CK techniques</h3>
-      <p>Techniques used or plausible in software supply chain attacks such as SolarWinds, Log4j, and XZ Utils.</p>
+  <div class="attck-timeline attck-timeline-process" role="group" aria-label="How the ATT&CK to P-SSCRM mapping was built">
+    <div class="attck-tl-step">
+      <div class="attck-tl-marker" data-num="1">{% include icon.html name="search" %}</div>
+      <div class="attck-tl-content">
+        <h3>ATT&amp;CK techniques</h3>
+        <p>Techniques used or plausible in software supply chain attacks such as SolarWinds, Log4j, and XZ Utils.</p>
+      </div>
     </div>
-    <div class="attck-arrow" aria-hidden="true">&rarr;</div>
-    <div class="attck-step">
-      <span class="attck-step-num">2</span>
-      <h3>Four independent strategies</h3>
-      <p>Separate passes &mdash; keyword matching, technique-description matching, and manual, incident-grounded analysis &mdash; each propose candidate control&ndash;technique pairs.</p>
+    <div class="attck-tl-step">
+      <div class="attck-tl-marker" data-num="2">{% include icon.html name="layout-grid" %}</div>
+      <div class="attck-tl-content">
+        <h3>Four independent strategies</h3>
+        <p>Separate passes &mdash; keyword matching, technique-description matching, and manual, incident-grounded analysis &mdash; each propose candidate control&ndash;technique pairs.</p>
+      </div>
     </div>
-    <div class="attck-arrow" aria-hidden="true">&rarr;</div>
-    <div class="attck-step">
-      <span class="attck-step-num">3</span>
-      <h3>Agreed-upon mapping</h3>
-      <p>Only pairs the strategies agree on are kept, producing the reconciled mapping.</p>
+    <div class="attck-tl-step">
+      <div class="attck-tl-marker" data-num="3">{% include icon.html name="clipboard-check" %}</div>
+      <div class="attck-tl-content">
+        <h3>Agreed-upon mapping</h3>
+        <p>Only pairs the strategies agree on are kept, producing the reconciled mapping.</p>
+      </div>
     </div>
-    <div class="attck-arrow" aria-hidden="true">&rarr;</div>
-    <div class="attck-step">
-      <span class="attck-step-num">4</span>
-      <h3>P-SSCRM controls</h3>
-      <p>Each technique is attached to the control(s) that mitigate it &mdash; and, through those controls, to the ten standards they already cite.</p>
+    <div class="attck-tl-step">
+      <div class="attck-tl-marker" data-num="4">{% include icon.html name="wrench" %}</div>
+      <div class="attck-tl-content">
+        <h3>P-SSCRM controls</h3>
+        <p>Each technique is attached to the control(s) that mitigate it &mdash; and, through those controls, to the ten standards they already cite.</p>
+      </div>
     </div>
   </div>
   <figcaption>How the ATT&amp;CK&ndash;to&ndash;P-SSCRM mapping was built, from technique to reconciled control mapping.</figcaption>
@@ -69,23 +74,36 @@ three-way link. [P.3.3, &ldquo;Require signed commits&rdquo;]({{ "/framework/" |
 is a clean example &mdash; it mitigates a single technique and cites two standards:
 
 <figure class="attck-figure">
-  <div class="attck-example" role="group" aria-label="Example: P.3.3 Require signed commits, mapped to technique and standards">
-    <a class="attck-node attck-node-control" href="{{ "/framework/" | relative_url }}#p-3-3">
-      <span class="attck-node-label">P-SSCRM Control</span>
-      <span class="attck-node-name">P.3.3 &mdash; Require signed commits</span>
-    </a>
-    <div class="attck-arrow" aria-hidden="true">&darr;</div>
-    <a class="attck-node attck-node-technique" href="https://attack.mitre.org/techniques/T1554/" target="_blank" rel="noopener">
-      <span class="attck-node-label">ATT&amp;CK Technique</span>
-      <span class="attck-node-name">T1554 &mdash; Compromise Host Software Binary</span>
-    </a>
-    <div class="attck-arrow" aria-hidden="true">&darr;</div>
-    <div class="attck-node attck-node-standards">
-      <span class="attck-node-label">Standards</span>
-      <ul class="framework-list">
-        <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#bsimm" target="_blank" rel="noopener">BSIMM</a> <span class="mapping-ref">SE2.4</span></li>
-        <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#cncf-ssc" target="_blank" rel="noopener">CNCF-SSC</a> <span class="mapping-ref">Sign every step in the build process</span></li>
-      </ul>
+  <div class="attck-timeline attck-timeline-example" role="group" aria-label="Example: P.3.3 Require signed commits, mapped to technique and standards">
+    <div class="attck-tl-step">
+      <div class="attck-tl-marker attck-tl-marker-control">{% include icon.html name="shield" %}</div>
+      <div class="attck-tl-content">
+        <a class="attck-node attck-node-control" href="{{ "/framework/" | relative_url }}#p-3-3">
+          <span class="attck-node-label">P-SSCRM Control</span>
+          <span class="attck-node-name">P.3.3 &mdash; Require signed commits</span>
+        </a>
+      </div>
+    </div>
+    <div class="attck-tl-step">
+      <div class="attck-tl-marker attck-tl-marker-technique">{% include icon.html name="search" %}</div>
+      <div class="attck-tl-content">
+        <a class="attck-node attck-node-technique" href="https://attack.mitre.org/techniques/T1554/" target="_blank" rel="noopener">
+          <span class="attck-node-label">ATT&amp;CK Technique</span>
+          <span class="attck-node-name">T1554 &mdash; Compromise Host Software Binary</span>
+        </a>
+      </div>
+    </div>
+    <div class="attck-tl-step">
+      <div class="attck-tl-marker attck-tl-marker-standards">{% include icon.html name="clipboard-check" %}</div>
+      <div class="attck-tl-content">
+        <div class="attck-node attck-node-standards">
+          <span class="attck-node-label">Standards</span>
+          <ul class="framework-list">
+            <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#bsimm" target="_blank" rel="noopener">BSIMM</a> <span class="mapping-ref">SE2.4</span></li>
+            <li class="framework-badge"><a href="{{ "/frameworks/" | relative_url }}#cncf-ssc" target="_blank" rel="noopener">CNCF-SSC</a> <span class="mapping-ref">Sign every step in the build process</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <figcaption>P.3.3 mitigates ATT&amp;CK technique T1554, and already cites BSIMM and the CNCF-SSC best practices &mdash; so the ATT&amp;CK mapping links T1554 to those standards too.</figcaption>
@@ -103,7 +121,7 @@ mappings. A few examples:
   <li><a href="{{ "/framework/" | relative_url }}#d-1-6">D.1.6 &mdash; Root cause analysis</a></li>
 </ul>
 
-<p class="attck-examples-note">Or browse [The Framework]({{ "/framework/" | relative_url }}) directly and expand any control.</p>
+<p class="attck-examples-note">Or browse <a href="{{ "/framework/" | relative_url }}">The Framework</a> directly and expand any control.</p>
 
 ## From technique back to controls
 
@@ -132,6 +150,8 @@ technique or control.
   {% endfor %}
 {% endfor %}
 
+{% include group-key.html %}
+
 <div class="reverse-map-controls">
   <input type="search" id="reverse-map-filter" class="reverse-map-filter" placeholder="Search a technique, e.g. T1554, or a control&hellip;" aria-controls="reverse-map">
   <button type="button" class="expand-all-btn" id="reverse-map-expand-all">Expand all</button>
@@ -144,13 +164,29 @@ technique or control.
   {% for technique in techniques %}
     {% assign last_practice = "" %}
     {% assign t_count = 0 %}
+    {% assign g_count = 0 %}{% assign p_count = 0 %}{% assign e_count = 0 %}{% assign d_count = 0 %}
     {% for control in ordered_controls %}
-      {% if control.mitre_attack contains technique %}{% assign t_count = t_count | plus: 1 %}{% endif %}
+      {% if control.mitre_attack contains technique %}
+        {% assign t_count = t_count | plus: 1 %}
+        {% assign g0 = control.code | slice: 0 %}
+        {% case g0 %}
+          {% when "G" %}{% assign g_count = g_count | plus: 1 %}
+          {% when "P" %}{% assign p_count = p_count | plus: 1 %}
+          {% when "E" %}{% assign e_count = e_count | plus: 1 %}
+          {% when "D" %}{% assign d_count = d_count | plus: 1 %}
+        {% endcase %}
+      {% endif %}
     {% endfor %}
     <details>
       <summary>
         <span class="reverse-map-name"><a href="https://attack.mitre.org/techniques/{{ technique }}/" target="_blank" rel="noopener">{{ technique }}</a></span>
-        <span class="reverse-map-ratio">
+        <span class="reverse-map-ratio" title="{{ g_count }} Governance &middot; {{ p_count }} Product &middot; {{ e_count }} Environment &middot; {{ d_count }} Deployment">
+          <span class="role-card-bar">
+            {% if g_count > 0 %}<span class="role-card-seg role-seg-g" style="flex-grow: {{ g_count }};"></span>{% endif %}
+            {% if p_count > 0 %}<span class="role-card-seg role-seg-p" style="flex-grow: {{ p_count }};"></span>{% endif %}
+            {% if e_count > 0 %}<span class="role-card-seg role-seg-e" style="flex-grow: {{ e_count }};"></span>{% endif %}
+            {% if d_count > 0 %}<span class="role-card-seg role-seg-d" style="flex-grow: {{ d_count }};"></span>{% endif %}
+          </span>
           <span class="reverse-map-count">{{ t_count }}</span>
         </span>
       </summary>
