@@ -1050,3 +1050,108 @@ main .container > blockquote { max-width: none; }
   .theme-toggle { padding: 0; width: 2rem; justify-content: center; }
   .theme-toggle-label { display: none; }
 }
+
+/* ==========================================================================
+   ATT&CK mapping page — process diagram and control/technique/standard example
+   ========================================================================== */
+.attck-figure { margin: 1.5rem 0; }
+.attck-figcaption,
+.attck-figure figcaption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; }
+
+/* Mobile-first: a vertical stack. No flex-wrap here on purpose — wrapping a
+   row of steps-plus-arrows leaves an orphaned arrow pointing at whichever
+   step wrapped to its own line. Above the breakpoint there's a matching
+   horizontal layout, so the switch between the two is a clean binary jump
+   rather than an uncontrolled reflow. */
+.attck-process {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+.attck-step {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 0.9rem 1rem;
+}
+@media (min-width: 960px) {
+  .attck-process { flex-direction: row; align-items: stretch; }
+  .attck-step { flex: 1 1 0; }
+}
+.attck-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: var(--accent-fill);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.attck-step h3 { font-size: 0.9rem; margin: 0.6rem 0 0.3rem; }
+.attck-step p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+
+.attck-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  flex: 0 0 auto;
+}
+
+.attck-example {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  max-width: 420px;
+}
+.attck-node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem;
+  background: var(--surface);
+}
+a.attck-node { text-decoration: none; }
+a.attck-node:hover { border-color: var(--accent); }
+.attck-node-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.attck-node-name { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+.attck-node-control { border-left: 3px solid var(--group-p); }
+.attck-node-technique { border-left: 3px solid var(--mitre); background: var(--mitre-tint); }
+.attck-node-technique .attck-node-name { color: var(--mitre); }
+.attck-node-standards { border-left: 3px solid var(--accent); }
+.attck-node-standards .framework-list { margin-top: 0.4rem; }
+
+.attck-examples { list-style: none; margin: 0.75rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.attck-examples a { font-weight: 600; }
+.attck-examples-note { margin: 1rem 0 0; }
+
+.attck-process .attck-arrow { transform: rotate(90deg); padding: 0.15rem 0; }
+@media (min-width: 960px) {
+  .attck-process .attck-arrow { transform: none; padding: 0; }
+}
+
+/* Reverse (technique -> control) map: many more entries than the standards
+   reverse map, so lay collapsed rows out in columns instead of one long
+   single-column stack. */
+.reverse-map-compact { columns: 3 240px; column-gap: 0.75rem; }
+.reverse-map-compact details {
+  break-inside: avoid;
+  margin: 0 0 0.5rem;
+  padding: 0.4rem 0.75rem;
+}
+.reverse-map-compact summary { font-size: 0.86rem; gap: 0.5rem; }
+@media (max-width: 640px) { .reverse-map-compact { columns: 1; } }
