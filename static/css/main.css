@@ -415,23 +415,35 @@ h1 code,
 .footer-inner {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 1.5rem 2rem;
   flex-wrap: wrap;
 }
 .footer-main { min-width: 0; }
-.footer-partner { flex-shrink: 0; display: block; }
+.footer-partner {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
 .footer-partner-logo {
   display: block;
-  height: 64px;
+  height: 96px;
   width: auto;
   /* The artwork is dark shapes on a transparent background (no dark-mode
      variant) — without this it disappears against the dark theme's near-black
      footer. */
   background: #fff;
   border-radius: 4px;
-  padding: 4px 6px;
+  padding: 6px 8px;
 }
+.footer-partner-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.footer-partner:hover .footer-partner-link { color: var(--accent); }
 
 @media (max-width: 640px) {
   /* a 5-item question-style nav wraps to several lines on phones —
@@ -1157,6 +1169,22 @@ a.attck-flow-node:hover { border-color: var(--accent); }
 .attck-flow-node-technique .attck-node-name { color: var(--mitre); }
 .attck-flow-node-standards { border-left: 3px solid var(--accent); }
 .attck-flow-node-standards .framework-list { margin-top: 0.5rem; }
+
+/* Hub diagram: P-SSCRM sits at the center of the flow, visually emphasized
+   as the thing that connects the technique on one side to the standards on
+   the other, rather than just another step in a linear chain. */
+.attck-flow-hub .attck-flow-node-hub {
+  border: 2px solid var(--group-p);
+  background: var(--group-p-tint);
+}
+.attck-flow-hub .attck-flow-node-hub .attck-flow-icon-control {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.attck-flow-hub .attck-flow-node-hub .attck-node-name { font-size: 0.95rem; }
+@media (min-width: 900px) {
+  .attck-flow-hub .attck-flow-node-hub { flex: 1.15 1 0; }
+}
 
 @media (min-width: 900px) {
   .attck-flow { flex-direction: row; align-items: stretch; }

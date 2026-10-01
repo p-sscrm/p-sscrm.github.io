@@ -82,21 +82,21 @@ mitigates a single technique and cites two standards, so the whole chain fits
 in one diagram:
 
 <figure class="attck-figure">
-  <div class="attck-flow" role="group" aria-label="Example: P.3.3 Require signed commits, mapped to technique and standards">
-    <a class="attck-flow-node attck-flow-node-control" href="{{ "/framework/" | relative_url }}#p-3-3">
-      <div class="attck-flow-head">
-        <span class="attck-flow-icon attck-flow-icon-control">{% include icon.html name="shield" %}</span>
-        <span class="attck-node-label">P-SSCRM Control</span>
-      </div>
-      <span class="attck-node-name">P.3.3 &mdash; Require signed commits</span>
-    </a>
-    <div class="attck-flow-arrow" aria-hidden="true"></div>
+  <div class="attck-flow attck-flow-hub" role="group" aria-label="Example: P.3.3 Require signed commits, at the center of technique and standards">
     <a class="attck-flow-node attck-flow-node-technique" href="https://attack.mitre.org/techniques/T1554/" target="_blank" rel="noopener">
       <div class="attck-flow-head">
         <span class="attck-flow-icon attck-flow-icon-technique">{% include icon.html name="search" %}</span>
         <span class="attck-node-label">ATT&amp;CK Technique</span>
       </div>
       <span class="attck-node-name">T1554 &mdash; Compromise Host Software Binary</span>
+    </a>
+    <div class="attck-flow-arrow" aria-hidden="true"></div>
+    <a class="attck-flow-node attck-flow-node-control attck-flow-node-hub" href="{{ "/framework/" | relative_url }}#p-3-3">
+      <div class="attck-flow-head">
+        <span class="attck-flow-icon attck-flow-icon-control">{% include icon.html name="shield" %}</span>
+        <span class="attck-node-label">P-SSCRM Control</span>
+      </div>
+      <span class="attck-node-name">P.3.3 &mdash; Require signed commits</span>
     </a>
     <div class="attck-flow-arrow" aria-hidden="true"></div>
     <div class="attck-flow-node attck-flow-node-standards">
@@ -110,7 +110,7 @@ in one diagram:
       </ul>
     </div>
   </div>
-  <figcaption>P.3.3 mitigates ATT&amp;CK technique T1554, and already cites BSIMM and the CNCF-SSC best practices &mdash; so the ATT&amp;CK mapping links T1554 to those standards too.</figcaption>
+  <figcaption>P.3.3 sits at the center of the mapping: it mitigates ATT&amp;CK technique T1554, and already cites BSIMM and the CNCF-SSC best practices &mdash; so P-SSCRM is what connects T1554 to those standards.</figcaption>
 </figure>
 
 ## See a control's ATT&CK mapping directly
