@@ -136,8 +136,8 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
-h1 { font-size: clamp(1.9rem, 1.3rem + 2.6vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.4rem, 1.15rem + 1vw, 1.7rem); font-weight: 700; margin-top: 1.15em; letter-spacing: -0.01em; }
+h1 { font-size: unquote("clamp(1.9rem, 1.3rem + 2.6vw, 2.6rem)"); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: unquote("clamp(1.4rem, 1.15rem + 1vw, 1.7rem)"); font-weight: 700; margin-top: 1.15em; letter-spacing: -0.01em; }
 h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1em; }
 h4 { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em; }
 
@@ -194,7 +194,7 @@ button:focus-visible {
   display: block;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.1rem);
+  font-size: unquote("clamp(1.5rem, 1.1rem + 1.8vw, 2.1rem)");
   letter-spacing: 0.02em;
   line-height: 1.1;
 }
@@ -295,7 +295,7 @@ button:focus-visible {
 }
 .hero .container { padding-top: 0; padding-bottom: 0; }
 .hero-brand {
-  font-size: clamp(2.6rem, 1.5rem + 4.6vw, 4.4rem);
+  font-size: unquote("clamp(2.6rem, 1.5rem + 4.6vw, 4.4rem)");
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -311,7 +311,7 @@ button:focus-visible {
 .hero-tagline {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.15rem, 1rem + 0.75vw, 1.5rem);
+  font-size: unquote("clamp(1.15rem, 1rem + 0.75vw, 1.5rem)");
   line-height: 1.35;
   letter-spacing: -0.01em;
   color: var(--accent-dark);
