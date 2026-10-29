@@ -23,7 +23,7 @@ layout: default
   <div id="framework-tree">
     {% for group in groups %}
       {% assign practices = site.practices | where: "group", group.slug | sort: "weight" %}
-      <details class="fw-group fw-group-{{ group.slug }}" id="{{ group.slug }}" data-code="{{ group.code | downcase }}" data-title="{{ group.title | downcase }}" open>
+      <details class="fw-group fw-group-{{ group.slug }}" id="{{ group.slug }}" data-code="{{ group.code | downcase }}" data-title="{{ group.title | downcase | escape }}" open>
         <summary class="fw-group-summary">
           <h2>{{ group.title }} <a class="code-badge" href="#{{ group.slug }}">{{ group.code }}</a></h2>
         </summary>
@@ -32,7 +32,7 @@ layout: default
 
         {% for practice in practices %}
           {% assign controls = site.controls | where: "practice", practice.slug | sort: "weight" %}
-          <details class="fw-practice" id="{{ practice.slug }}" data-code="{{ practice.code | downcase }}" data-title="{{ practice.title | downcase }}">
+          <details class="fw-practice" id="{{ practice.slug }}" data-code="{{ practice.code | downcase }}" data-title="{{ practice.title | downcase | escape }}">
             <summary class="fw-practice-summary">
               <h3><a class="code-badge" href="#{{ practice.slug }}">{{ practice.code }}</a> {{ practice.title }}</h3>
               <span class="fw-practice-count">{{ controls.size }}</span>
@@ -43,7 +43,7 @@ layout: default
               {% for control in controls %}
                 {% assign body_text = control.content | strip_html | append: " " | append: control.definition %}
                 {% if control.questions %}{% for q in control.questions %}{% assign body_text = body_text | append: " " | append: q.text %}{% endfor %}{% endif %}
-                <details class="fw-control" id="{{ control.slug }}" data-code="{{ control.code | downcase }}" data-title="{{ control.title | downcase }}" data-body="{{ body_text | downcase | strip_newlines | normalize_whitespace }}">
+                <details class="fw-control" id="{{ control.slug }}" data-code="{{ control.code | downcase }}" data-title="{{ control.title | downcase | escape }}" data-body="{{ body_text | downcase | strip_newlines | normalize_whitespace | escape }}">
                   <summary class="fw-control-summary">
                     <a class="code-badge" href="#{{ control.slug }}">{{ control.code }}</a> {{ control.title }}
                   </summary>

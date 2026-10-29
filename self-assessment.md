@@ -5,7 +5,7 @@ description: "Privately score your own use of each P-SSCRM control, add notes, a
 ---
 
 Score how well your organization follows each control, add your own notes, and
-see where you are strong or thin. Your scores and notes are saved only in this
+open the radar chart to see where you are strong or thin. Your scores and notes are saved only in this
 browser, so nothing is shared or sent anywhere. This is an informal, qualitative
 exercise with no official score; for a formal, interview-based assessment see
 [Measure and Improve]({{ "/participate/" | relative_url }}).
@@ -18,7 +18,7 @@ exercise with no official score; for a formal, interview-based assessment see
 
   <div class="sa-top">
     <p class="sa-progress" id="sa-progress" aria-live="polite"></p>
-    <button type="button" class="expand-all-btn sa-radar-btn" id="sa-radar-btn" aria-expanded="false" aria-controls="sa-radar">Radar chart</button>
+    <button type="button" class="expand-all-btn sa-radar-btn" id="sa-radar-btn" aria-expanded="false" aria-controls="sa-radar">View radar chart</button>
     <details class="sa-data" id="sa-data">
       <summary class="expand-all-btn">Your data</summary>
       <div class="sa-data-menu">
@@ -40,9 +40,9 @@ exercise with no official score; for a formal, interview-based assessment see
         <p class="fw-col-head sa-col-head"><span class="fw-col-name">{{ group.title }}</span></p>
         {% for practice in practices %}
           {% assign pcontrols = site.controls | where: "practice", practice.slug | sort: "weight" %}
-          <button type="button" class="sa-tile" data-practice="{{ practice.slug }}" data-code="{{ practice.code }}" data-group="{{ group.slug }}" data-title="{{ practice.title }}" aria-pressed="false" aria-controls="sa-panel-{{ practice.slug }}">
+          <button type="button" class="sa-tile" data-practice="{{ practice.slug }}" data-code="{{ practice.code }}" data-group="{{ group.slug }}" data-title="{{ practice.title | escape }}" aria-pressed="false" aria-controls="sa-panel-{{ practice.slug }}">
             <span class="sa-tile-main">
-              <span class="sa-tile-name">{{ practice.title }}</span>
+              <span class="sa-tile-name"><span class="code-badge">{{ practice.code }}</span> {{ practice.title }}</span>
               <span class="sa-pips" aria-hidden="true">{% for c in pcontrols %}<i></i>{% endfor %}</span>
             </span>
             <span class="sa-tile-score" data-score>&ndash;</span>
@@ -60,7 +60,7 @@ exercise with no official score; for a formal, interview-based assessment see
         <div class="sa-panel-head">
           <h2 id="sa-panel-{{ practice.slug }}-title"><span class="code-badge">{{ practice.code }}</span> {{ practice.title }}</h2>
           <span class="sa-panel-avg" data-avg></span>
-          <button type="button" class="sa-icon-btn" data-toggle-note="practice" aria-expanded="false" aria-label="Note on {{ practice.title }}" title="Note on this practice">{% include icon.html name="note" %}</button>
+          <button type="button" class="sa-icon-btn" data-toggle-note="practice" aria-expanded="false" aria-label="Note on {{ practice.title | escape }}" title="Note on this practice">{% include icon.html name="note" %}</button>
           <button type="button" class="sa-text-btn" data-hide-scored aria-pressed="false">Hide scored</button>
           <button type="button" class="sa-icon-btn" data-close aria-label="Close" title="Close">&times;</button>
         </div>
@@ -109,7 +109,14 @@ exercise with no official score; for a formal, interview-based assessment see
       <button type="button" class="sa-icon-btn" data-close aria-label="Close" title="Close">&times;</button>
     </div>
     <div class="sa-radar-body">
-      <svg id="sa-radar-svg" class="sa-radar-svg" viewBox="-150 -140 300 280" role="img" aria-label="Radar chart of your average score for each practice"></svg>
+      <div class="sa-radar-fig">
+        <svg id="sa-radar-svg" class="sa-radar-svg" viewBox="-150 -140 300 280" role="img" aria-label="Radar chart of your average score for each practice"></svg>
+        <div class="sa-radar-tip" id="sa-radar-tip" role="presentation" hidden></div>
+        <p class="sa-radar-legend" aria-hidden="true">
+          <span><i class="sa-key"></i> All controls scored</span>
+          <span><i class="sa-key is-partial"></i> Some not scored yet</span>
+        </p>
+      </div>
       <div>
         <p class="sa-radar-note">Practices with no scored controls sit at the centre and are marked "not scored".</p>
         <ul class="sa-radar-list" id="sa-radar-list"></ul>

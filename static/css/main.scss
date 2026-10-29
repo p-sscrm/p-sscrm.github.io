@@ -1,3 +1,11 @@
+---
+---
+/* Fonts are self-hosted (latin subset, SIL Open Font License) so visiting the site
+   sends nothing to a third party. */
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500 700; font-display: swap; src: url(../fonts/space-grotesk.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 600; font-display: swap; src: url(../fonts/inter.woff2) format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500 600; font-display: swap; src: url(../fonts/jetbrains-mono.woff2) format('woff2'); }
+
 /* ==========================================================================
    P-SSCRM — Design tokens
    ========================================================================== */
@@ -12,6 +20,7 @@
   --accent-soft: #EAF1FB;
   --accent-fill: #2557A7;        /* solid backgrounds carrying white text */
   --accent-fill-hover: #17396B;
+  --on-accent: #fff;              /* text on --accent-fill and group colours */
   --code: #0F6E5C;
   --code-soft: #E6F5F1;
 
@@ -48,41 +57,9 @@
   color-scheme: light dark;
 }
 
-/* NOTE: the dark colours are listed twice (the block below and the [data-theme="dark"]
-   block after it). Change both together. */
 /* Dark colours. Used when the visitor's system is dark (unless they picked light
    with the toggle), or when they picked dark with the toggle. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0F141B;
-    --surface: #171E28;
-    --text: #E6EAF0;
-    --text-muted: #9AA5B4;
-    --border: #2A3441;
-    --accent: #8DB4F2;
-    --accent-dark: #B9D0F7;
-    --accent-soft: #16233A;
-    --accent-fill: #2A55A0;
-    --accent-fill-hover: #3766BA;
-    --code: #5FD0B6;
-    --code-soft: #12302A;
-    --group-g-ink: #8DB4F2;
-    --group-p-ink: #74C79A;
-    --group-e-ink: #E0A583;
-    --group-d-ink: #B7A2EC;
-    --group-u-ink: #A9B2C0;
-    --group-g-tint: #16233A;
-    --group-p-tint: #14291D;
-    --group-e-tint: #2C1F17;
-    --group-d-tint: #221B33;
-    --group-u-tint: #212833;
-    --role-tint: #222229;
-    --role-ink: #C4C4CC;
-    --mitre: #F28B82;
-    --mitre-tint: #33191A;
-  }
-}
-:root[data-theme="dark"] {
+@mixin dark-palette {
   --bg: #0F141B;
   --surface: #171E28;
   --text: #E6EAF0;
@@ -110,6 +87,10 @@
   --mitre: #F28B82;
   --mitre-tint: #33191A;
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-palette; }
+}
+:root[data-theme="dark"] { @include dark-palette; }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
 
@@ -133,6 +114,19 @@ main {
   flex: 1;
   min-width: 0;
 }
+main:focus { outline: none; }
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.5rem 0.9rem;
+  background: var(--accent-fill);
+  color: var(--on-accent);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+.skip-link:focus { top: 0.5rem; text-decoration: none; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
@@ -151,6 +145,7 @@ p { margin: 0 0 0.85em; color: var(--text); }
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+.site-wordmark:hover, .btn:hover, .fw-col-head:hover { text-decoration: none; }
 
 a:focus-visible,
 button:focus-visible {
@@ -164,7 +159,7 @@ button:focus-visible {
   padding: 0 1.5rem;
 }
 
-.site-banner { display: block; background: var(--accent-fill); color: #fff; }
+.site-banner { display: block; background: var(--accent-fill); color: var(--on-accent); }
 .site-wordmark {
   display: flex;
   align-items: center;
@@ -172,8 +167,8 @@ button:focus-visible {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.1rem 1.5rem 1rem;
-  color: #fff !important;
-  text-decoration: none !important;
+  color: var(--on-accent);
+  text-decoration: none;
 }
 /* Logo slot — replace .site-logo-placeholder with an <img> when the mark lands */
 .site-logo {
@@ -334,11 +329,11 @@ button:focus-visible {
   margin-top: 0.5rem;
   padding: 0.55rem 1.2rem;
   background: var(--accent-fill);
-  color: #fff !important;
+  color: var(--on-accent);
   border-radius: var(--radius);
   font-weight: 600;
   font-size: 0.9rem;
-  text-decoration: none !important;
+  text-decoration: none;
   transition: background 0.15s ease;
 }
 .btn:hover { background: var(--accent-fill-hover); }
@@ -464,7 +459,7 @@ h1 code,
 }
 .footer-nav a:hover { color: var(--accent); }
 .footer-nav svg { opacity: 0.55; flex-shrink: 0; }
-.footer-meta { font-size: 0.78rem; line-height: 1.6; margin: 0.4rem 0 0; max-width: 72ch; }
+.footer-meta { font-size: 0.78rem; line-height: 1.6; margin: 0.6rem 0 0.3rem; max-width: 72ch; }
 .footer-meta a { color: var(--accent); }
 .footer-inner {
   display: flex;
@@ -529,7 +524,7 @@ h1 code,
   border: none;
   border-radius: 999px;
   background: var(--accent-fill);
-  color: #fff;
+  color: var(--on-accent);
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
@@ -658,7 +653,7 @@ h1 code,
   font-size: 0.72rem;
   padding: 0.05rem 0.5rem;
   border-radius: 999px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--text-muted);
   flex-shrink: 0;
   order: 2;
@@ -789,7 +784,7 @@ h1 code,
   font-size: 0.75rem;
   padding: 0.1rem 0.5rem;
   border-radius: 999px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent-fill);
   flex-shrink: 0;
 }
@@ -919,8 +914,8 @@ h1 code,
   min-height: 4.6rem;
   padding: 0.6rem 0.75rem;
   border-radius: var(--radius);
-  color: #fff !important;
-  text-decoration: none !important;
+  color: var(--on-accent);
+  text-decoration: none;
 }
 .fw-col-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
 .fw-col-gloss { font-size: 0.72rem; line-height: 1.35; opacity: 0.92; margin-top: 0.2rem; }
@@ -966,7 +961,7 @@ h1 code,
   font-size: 0.72rem;
   padding: 0.05rem 0.4rem;
   border-radius: 999px;
-  color: #fff;
+  color: var(--on-accent);
   flex-shrink: 0;
 }
 .fw-cell-controls {
@@ -1021,9 +1016,9 @@ h1 code,
    Landing extras
    ========================================================================== */
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
-.btn-secondary { background: transparent; color: var(--accent) !important; border: 1px solid var(--accent); }
+.btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
 .btn-secondary:hover { background: var(--accent-soft); }
-.btn-disabled { background: var(--border); color: var(--text-muted) !important; cursor: not-allowed; }
+.btn-disabled { background: var(--border); color: var(--text-muted); cursor: not-allowed; }
 
 .home-section { padding: 1rem 0; }
 .home-section:first-of-type { padding-top: 1.75rem; }
@@ -1080,7 +1075,6 @@ h1 code,
 .audience-cards li > a:hover { text-decoration: underline; }
 .audience-cards li:hover > a::after { transform: translateX(2px); }
 
-.footer-meta { font-size: 0.78rem; margin: 0.6rem 0 0.3rem; }
 /* the closing call-to-action band sits flush against the footer rule */
 main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
 
@@ -1185,15 +1179,14 @@ main:has(> .home-cta:last-child) + .site-footer { margin-top: 0; }
   font-size: 0.75rem;
   padding: 0.1rem 0.5rem;
   border-radius: 999px;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--role);
   flex-shrink: 0;
 }
 .role-card-body { padding: 0 1.1rem 1.1rem; border-top: 1px solid var(--border); }
 .role-card[open] { grid-column: 1 / -1; }
 .role-card-controls { list-style: none; margin: 0.85rem 0 0; padding: 0; columns: 3 260px; column-gap: 2rem; }
-.role-card-controls li { break-inside: avoid; }
-.role-card-controls li { margin: 0.4rem 0; }
+.role-card-controls li { break-inside: avoid; margin: 0.4rem 0; }
 .role-card-controls a { display: flex; gap: 0.4rem; align-items: baseline; color: var(--text); font-size: 0.9rem; }
 .role-card-controls a:hover { color: var(--accent); }
 
@@ -1240,7 +1233,6 @@ main .container > blockquote { max-width: none; }
    ATT&CK mapping page — process diagram and control/technique/standard example
    ========================================================================== */
 .attck-figure { margin: 1.5rem 0; }
-.attck-figcaption,
 .attck-figure figcaption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; }
 
 /* Flowchart: boxes connected directly by arrows (with a visible arrowhead,
@@ -1273,7 +1265,7 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
   height: 1.9rem;
   border-radius: 999px;
   background: var(--accent-fill);
-  color: #fff;
+  color: var(--on-accent);
   flex-shrink: 0;
 }
 .attck-flow-icon .icon { width: 15px; height: 15px; }
@@ -1393,7 +1385,8 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
 .sa-progress { flex: 1; min-width: 12rem; margin: 0; font-size: 0.9rem; color: var(--text-muted); }
 .sa-progress strong { color: var(--text); }
 .sa-top .expand-all-btn { width: auto; margin: 0; flex-shrink: 0; list-style: none; }
-.sa-radar-btn[aria-expanded="true"] { background: var(--accent-fill); border-color: var(--accent-fill); color: #fff; }
+.sa-top .sa-radar-btn { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--on-accent); }
+.sa-top .sa-radar-btn:hover { background: var(--accent-fill-hover); border-color: var(--accent-fill-hover); }
 .sa-data { position: relative; }
 .sa-data > summary::-webkit-details-marker { display: none; }
 .sa-data-menu {
@@ -1436,6 +1429,7 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
 .sa-tile[aria-pressed="true"] { background: var(--sa-tint, var(--accent-soft)); box-shadow: inset 3px 0 0 var(--sa-c, var(--accent)); }
 .sa-tile-main { flex: 1; min-width: 0; }
 .sa-tile-name { display: block; }
+.sa-tile-name .code-badge { font-size: 0.8em; color: var(--sa-ink, var(--code)); background: var(--sa-tint, var(--code-soft)); }
 .sa-pips { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 0.35rem; }
 .sa-pips i {
   width: 7px; height: 7px;
@@ -1551,13 +1545,31 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
   background: var(--surface);
 }
 .sa-scale label:hover span { background: var(--sa-tint, var(--accent-soft)); color: var(--sa-ink, var(--accent)); }
-.sa-scale input:checked + span { background: var(--sa-c, var(--accent-fill)); color: #fff; }
+.sa-scale input:checked + span { background: var(--sa-c, var(--accent-fill)); color: var(--on-accent); }
 .sa-more { padding: 0.2rem 0.8rem 0.8rem 0.8rem; font-size: 0.86rem; }
 .sa-more[hidden] { display: none; }
 .sa-more ul { margin: 0.2rem 0 0.6rem 1.1rem; padding: 0; }
 
 .sa-radar-body { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; padding: 1rem; }
-.sa-radar-svg { width: min(100%, 380px); height: auto; flex-shrink: 0; margin: 0 auto; }
+.sa-radar-fig { position: relative; width: min(100%, 380px); flex: 0 0 auto; margin: 0 auto; }
+.sa-radar-svg { display: block; width: 100%; height: auto; }
+line.sa-radar-hit { stroke: transparent; stroke-width: 14; pointer-events: stroke; }
+circle.sa-radar-hit { fill: transparent; pointer-events: all; }
+.sa-radar-tip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 6px));
+  padding: 0.15rem 0.45rem;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+.sa-radar-tip[hidden] { display: none; }
 .sa-radar-grid { fill: none; stroke: var(--border); stroke-width: 1; }
 .sa-radar-area { fill: var(--text); fill-opacity: 0.07; stroke: var(--text-muted); stroke-width: 1.5; stroke-linejoin: round; }
 .sa-radar-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; fill: var(--text-muted); }
@@ -1565,13 +1577,17 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
 .sa-radar-label-p { fill: var(--group-p-ink); }
 .sa-radar-label-e { fill: var(--group-e-ink); }
 .sa-radar-label-d { fill: var(--group-d-ink); }
-.sa-radar-dot { fill: var(--text-muted); stroke: var(--surface); stroke-width: 1.5; }
-.sa-radar-dot-g { fill: var(--group-g); }
-.sa-radar-dot-p { fill: var(--group-p); }
-.sa-radar-dot-e { fill: var(--group-e); }
-.sa-radar-dot-d { fill: var(--group-d); }
-.sa-radar-body > div { flex: 1; min-width: 15rem; }
+.sa-radar-dot { fill: var(--dot, var(--text-muted)); stroke: var(--surface); stroke-width: 1.5; }
+.sa-radar-dot.is-partial { fill: var(--surface); stroke: var(--dot, var(--text-muted)); }
+.sa-radar-dot-g { --dot: var(--group-g); }
+.sa-radar-dot-p { --dot: var(--group-p); }
+.sa-radar-dot-e { --dot: var(--group-e); }
+.sa-radar-dot-d { --dot: var(--group-d); }
+.sa-radar-body > div:not(.sa-radar-fig) { flex: 1; min-width: 15rem; }
 .sa-radar-note { margin: 0 0 0.6rem; font-size: 0.82rem; color: var(--text-muted); }
+.sa-radar-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin: 0.5rem 0 0; justify-content: center; font-size: 0.78rem; color: var(--text-muted); }
+.sa-key { display: inline-block; width: 8px; height: 8px; margin-right: 0.3rem; border-radius: 50%; border: 1.5px solid var(--text-muted); background: var(--text-muted); vertical-align: baseline; }
+.sa-key.is-partial { background: var(--surface); }
 .sa-radar-list { list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
 .sa-radar-list li {
   display: grid;
@@ -1584,6 +1600,7 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
 .sa-radar-list li:last-child { border-bottom: 0; }
 .sa-radar-list .code-badge { font-size: 0.72em; }
 .sa-radar-name { min-width: 0; }
+.sa-radar-name small { display: block; font-size: 0.75rem; color: var(--text-muted); }
 .sa-radar-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
 .sa-radar-bar i { display: block; height: 100%; background: var(--sa-c, var(--accent)); border-radius: 3px; }
 .sa-radar-val { text-align: right; font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums; }

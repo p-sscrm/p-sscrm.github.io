@@ -23,12 +23,12 @@ participate_form_url: "#"
 
 sass:
   style: compressed
+  sourcemap: never
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - scripts
-  - docs
   - DEVELOPMENT.md
   - README.md
   - node_modules

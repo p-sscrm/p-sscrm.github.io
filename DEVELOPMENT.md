@@ -26,16 +26,17 @@ Output goes to `_site/` (gitignored, not committed).
 
 ## Repo layout
 
-- Root pages (`index.html`, `about.md`, `contact.md`, `faq.md`, `participate.md`, `roles.md`, `framework.md`) — hand-written, one per page.
+- Root pages (`index.html`, `about.md`, `contact.md`, `faq.md`, `participate.md`, `roles.md`, `framework.md`, `frameworks.md`, `attack-mapping.md`, `self-assessment.md`, `news.md`) — hand-written, one per page.
 - `_layouts/` — Jekyll templates that decide how each type of page looks.
-- `_includes/` — reusable snippets (`head`, `header`, `footer`, `diagram`).
+- `_includes/` — reusable snippets (`head`, `header`, `footer`, `icon`, and others).
 - `_groups/`, `_practices/`, `_controls/` — the actual framework content, one file per item. Generated, see below. Collections with `output: false`; rendered inline on `/framework/`, no per-item pages.
-- `_data/` — structured data (YAML) the templates read from: `frameworks.yaml`, `versions.yaml`, `mitre_versions.yaml`, `roles.yaml`. Also generated.
-- `static/css/main.css` — all site styling, one file, plain CSS (no preprocessor).
-- `static/js/` — the small amount of JS the site uses (currently just the back-to-top button).
-- `static/img/` — images, including in-progress design source files (e.g. Affinity `.af` files) — not part of the built site, just stored here.
+- `_data/` — structured data (YAML) the templates read from: `frameworks.yaml`, `frameworks_pending.yaml`, `versions.yaml`, `version_notes.yaml`, `mitre_versions.yaml`, `roles.yaml`. Also generated.
+- `static/css/main.scss` — all site styling, one file. It is almost entirely plain CSS; Jekyll compiles it to `/static/css/main.css`. Sass is used only to share the dark palette between the system-dark and toggle-dark rules.
+- `static/fonts/` — self-hosted web fonts (latin subset, SIL Open Font License), declared at the top of `main.scss`.
+- `static/js/` — the site's small scripts, one per feature (theme, nav, search/filter pages, self-assessment). `theme-init.js` runs in `<head>` so the saved theme applies before the page draws.
+- `static/img/` — site images. Design source files (Affinity `.af`) are gitignored.
 - `_config.yml` — site settings for local development (empty base URL).
-- `_config_production.yml` — overrides for the deployed site (GitHub Pages subpath). Only applied during the production build, not local `jekyll serve`.
+- `_config_production.yml` — overrides for the deployed site (the production `url`). Only applied during the production build, not local `jekyll serve`.
 - `scripts/sync_data.py` — pulls framework data from GitHub. See below.
 
 ## Content: generated vs. hand-written
@@ -56,9 +57,11 @@ Then review what changed with `git status` / `git diff` before committing — th
 
 ## Styling conventions
 
-- Design tokens (colors, fonts, spacing) are CSS custom properties in `:root` at the top of `static/css/main.css` — use them instead of hardcoding values.
+- Design tokens (colors, fonts, spacing) are CSS custom properties in `:root` at the top of `static/css/main.scss` — use them instead of hardcoding values.
 - CSS/JS are served as plain static files with a cache-busting `?v=<timestamp>` query string appended in the templates (`_includes/head.html`, `_layouts/default.html`) — there's no build pipeline/fingerprinting step like some site generators have. If you add a new stylesheet or script, drop it in `static/` and reference it the same way.
 
 ## Deploying
+
+The page `<head>` sets a Content-Security-Policy meta tag (`_includes/head.html`): scripts and fonts must come from this site, so don't add inline `<script>` blocks or third-party scripts without updating it. Actions in the workflow are pinned to commit SHAs; Dependabot (`.github/dependabot.yml`) proposes updates.
 
 Pushing to `main` triggers `.github/workflows/jekyll.yml`, which builds the site with Jekyll (using both `_config.yml` and `_config_production.yml`) and publishes it to GitHub Pages automatically. There's no staging environment — whatever's on `main` is what's live.

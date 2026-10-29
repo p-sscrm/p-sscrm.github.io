@@ -56,7 +56,7 @@
         group.hidden = !groupHasMatch;
       });
 
-      details.hidden = q && !anyMatch;
+      details.hidden = !!(q && !anyMatch);
       if (q) details.open = anyMatch;
       if (anyMatch) anyStandardMatch = true;
     });

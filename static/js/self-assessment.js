@@ -9,6 +9,7 @@
   var VERSION = 1;
   var SCALE = [0, 0.25, 0.5, 0.75, 1];
   var MAX_NOTE = 5000;
+  var MAX_IMPORT = 1024 * 1024;
 
   var storageOk = true;
 
@@ -19,6 +20,8 @@
   });
   var radarPanel = document.getElementById("sa-radar");
   var radarBtn = document.getElementById("sa-radar-btn");
+  var radarSvg = document.getElementById("sa-radar-svg");
+  var radarTip = document.getElementById("sa-radar-tip");
   var openPractice = null;
 
   function hasPanel(slug) {
@@ -75,7 +78,7 @@
     Object.keys(practices).forEach(function (slug) {
       if (!hasPanel(slug)) return;
       var n = practices[slug] && typeof practices[slug].n === "string" ? practices[slug].n.slice(0, MAX_NOTE) : "";
-      if (n) out.practices[slug] = { n: n };
+      if (n.trim()) out.practices[slug] = { n: n };
     });
     return out;
   }
@@ -91,19 +94,22 @@
     return v.toFixed(2);
   }
 
-  // { avg: number|null, scored: n, total: n } for one practice.
+  // { avg: number|null, scored: n, total: n, flags: [bool] } for one practice;
+  // flags says which controls (in page order) are scored.
   function practiceStats(slug) {
     var items = panels[slug].querySelectorAll("[data-control]");
     var sum = 0;
     var scored = 0;
-    [].forEach.call(items, function (li) {
+    var flags = [].map.call(items, function (li) {
       var c = state.controls[li.getAttribute("data-control")];
-      if (c && c.s !== null) {
+      var on = !!c && c.s !== null;
+      if (on) {
         sum += c.s;
         scored += 1;
       }
+      return on;
     });
-    return { avg: scored ? sum / scored : null, scored: scored, total: items.length };
+    return { avg: scored ? sum / scored : null, scored: scored, total: items.length, flags: flags };
   }
 
   // ---- rendering --------------------------------------------------------
@@ -125,9 +131,8 @@
     var st = practiceStats(slug);
     tile.querySelector("[data-score]").textContent = st.avg === null ? "–" : fmt(st.avg);
     tile.classList.toggle("is-scored", st.avg !== null);
-    var pips = tile.querySelectorAll(".sa-pips i");
-    [].forEach.call(pips, function (pip, i) {
-      pip.classList.toggle("on", i < st.scored);
+    [].forEach.call(tile.querySelectorAll(".sa-pips i"), function (pip, i) {
+      pip.classList.toggle("on", !!st.flags[i]);
     });
     tile.setAttribute("aria-label", tile.getAttribute("data-title") + ": " +
       (st.avg === null ? "not scored" : "average " + fmt(st.avg)) + ", " + st.scored + " of " + st.total + " controls scored");
@@ -191,6 +196,7 @@
     var n = tiles.length;
     svg.textContent = "";
     list.textContent = "";
+    hideTip();
 
     function point(i, v, r) {
       var a = (-Math.PI / 2) + (2 * Math.PI * i) / n;
@@ -208,7 +214,7 @@
 
     var values = tiles.map(function (t) {
       var st = practiceStats(t.getAttribute("data-practice"));
-      return { tile: t, avg: st.avg };
+      return { tile: t, avg: st.avg, scored: st.scored, total: st.total };
     });
     var area = values.map(function (v, i) { return point(i, v.avg === null ? 0 : v.avg).join(","); }).join(" ");
     svg.appendChild(svgEl("polygon", { points: area, "class": "sa-radar-area" }));
@@ -216,18 +222,28 @@
     values.forEach(function (v, i) {
       var group = v.tile.getAttribute("data-group");
       var code = v.tile.getAttribute("data-code");
+      var partial = v.avg !== null && v.scored < v.total;
       var lp = point(i, 1, 1.13);
+
+      // One group per practice so the tooltip works over its label, axis end and dot.
+      var g = svgEl("g", { "data-i": i });
+      var a = point(i, 0.9);
+      var b = point(i, 1.2);
+      g.appendChild(svgEl("line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], "class": "sa-radar-hit" }));
       var label = svgEl("text", {
         x: lp[0], y: lp[1], "class": "sa-radar-label sa-radar-label-" + group,
         "text-anchor": Math.abs(lp[0]) < 6 ? "middle" : lp[0] > 0 ? "start" : "end",
         "dominant-baseline": "middle"
       });
       label.textContent = code;
-      svg.appendChild(label);
+      g.appendChild(label);
       if (v.avg !== null) {
         var dp = point(i, v.avg);
-        svg.appendChild(svgEl("circle", { cx: dp[0], cy: dp[1], r: 3, "class": "sa-radar-dot sa-radar-dot-" + group }));
+        // Dots near the centre crowd each other, so only the rest get their own hit area.
+        if (v.avg >= 0.25) g.appendChild(svgEl("circle", { cx: dp[0], cy: dp[1], r: 5, "class": "sa-radar-hit" }));
+        g.appendChild(svgEl("circle", { cx: dp[0], cy: dp[1], r: 3, "class": "sa-radar-dot sa-radar-dot-" + group + (partial ? " is-partial" : "") }));
       }
+      svg.appendChild(g);
 
       var li = document.createElement("li");
       li.className = "fw-group-" + group;
@@ -237,6 +253,11 @@
       var name = document.createElement("span");
       name.className = "sa-radar-name";
       name.textContent = v.tile.getAttribute("data-title");
+      if (partial) {
+        var part = document.createElement("small");
+        part.textContent = v.scored + " of " + v.total + " controls scored";
+        name.appendChild(part);
+      }
       var score = document.createElement("span");
       score.className = "sa-radar-val" + (v.avg === null ? " is-empty" : "");
       score.textContent = v.avg === null ? "not scored" : fmt(v.avg);
@@ -255,6 +276,44 @@
       list.appendChild(li);
     });
   }
+
+  // Small tooltip over a practice's label, axis end or dot.
+  function hideTip() {
+    if (radarTip) radarTip.hidden = true;
+  }
+
+  function showTip(g) {
+    var i = g.getAttribute("data-i");
+    if (!radarTip.hidden && radarTip.getAttribute("data-i") === i) return;
+    radarTip.setAttribute("data-i", i);
+    var tile = tiles[+i];
+    var st = practiceStats(tile.getAttribute("data-practice"));
+    radarTip.textContent = tile.getAttribute("data-code") + " " + tile.getAttribute("data-title") + " \u00b7 " +
+      (st.avg === null ? "not scored" : fmt(st.avg)) + " \u00b7 " + st.scored + "/" + st.total + " scored";
+    radarTip.hidden = false;
+
+    // Above the practice's axis end, kept inside the chart box.
+    var box = radarSvg.getBoundingClientRect();
+    var vb = radarSvg.viewBox.baseVal;
+    var scale = box.width / vb.width;
+    var ang = (-Math.PI / 2) + (2 * Math.PI * +i) / tiles.length;
+    var half = radarTip.offsetWidth / 2;
+    radarTip.style.left = Math.max(half, Math.min(box.width - half, (Math.cos(ang) * 100 - vb.x) * scale)) + "px";
+    radarTip.style.top = Math.max(radarTip.offsetHeight + 8, (Math.sin(ang) * 100 - vb.y) * scale) + "px";
+  }
+
+  radarSvg.addEventListener("pointerover", function (e) {
+    var g = e.target.closest("[data-i]");
+    if (g) showTip(g);
+    else hideTip();
+  });
+  radarSvg.addEventListener("pointerleave", function (e) {
+    if (e.pointerType !== "touch") hideTip();
+  });
+  // Touch has no hover: a tap anywhere else closes it.
+  document.addEventListener("pointerdown", function (e) {
+    if (!e.target.closest("[data-i]")) hideTip();
+  });
 
   // ---- panels -----------------------------------------------------------
 
@@ -277,6 +336,7 @@
   function setRadar(open) {
     radarPanel.hidden = !open;
     radarBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    radarBtn.textContent = open ? "Hide radar chart" : "View radar chart";
     if (open) {
       renderRadar();
       var smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -510,6 +570,10 @@
     var file = fileInput.files && fileInput.files[0];
     fileInput.value = "";
     if (!file) return;
+    if (file.size > MAX_IMPORT) {
+      window.alert("That file is too large to be a P-SSCRM self-assessment export.");
+      return;
+    }
     var reader = new FileReader();
     reader.onload = function () {
       var imported = null;
