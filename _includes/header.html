@@ -15,11 +15,22 @@
     <a href="{{ "/" | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
     <a href="{{ "/about/" | relative_url }}"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
     <a href="{{ "/framework/" | relative_url }}"{% if page.url == "/framework/" %} aria-current="page"{% endif %}>Framework</a>
-    <a href="{{ "/roles/" | relative_url }}"{% if page.url == "/roles/" %} aria-current="page"{% endif %}>Roles</a>
-    <a href="{{ "/frameworks/" | relative_url }}"{% if page.url == "/frameworks/" %} aria-current="page"{% endif %}>Standards</a>
-    <a href="{{ "/attack-mapping/" | relative_url }}"{% if page.url == "/attack-mapping/" %} aria-current="page"{% endif %}>ATT&amp;CK Mapping</a>
+    <details class="nav-group"{% if page.url == "/roles/" or page.url == "/frameworks/" or page.url == "/attack-mapping/" %} data-current{% endif %}>
+      <summary>Explore</summary>
+      <div class="nav-menu">
+        <a href="{{ "/roles/" | relative_url }}"{% if page.url == "/roles/" %} aria-current="page"{% endif %}>Roles</a>
+        <a href="{{ "/frameworks/" | relative_url }}"{% if page.url == "/frameworks/" %} aria-current="page"{% endif %}>Standards</a>
+        <a href="{{ "/attack-mapping/" | relative_url }}"{% if page.url == "/attack-mapping/" %} aria-current="page"{% endif %}>ATT&amp;CK Mapping</a>
+      </div>
+    </details>
+    <details class="nav-group"{% if page.url == "/self-assessment/" or page.url == "/participate/" %} data-current{% endif %}>
+      <summary>Assess</summary>
+      <div class="nav-menu">
+        <a href="{{ "/self-assessment/" | relative_url }}"{% if page.url == "/self-assessment/" %} aria-current="page"{% endif %}>Self-assessment</a>
+        <a href="{{ "/participate/" | relative_url }}"{% if page.url == "/participate/" %} aria-current="page"{% endif %}>Measure and Improve</a>
+      </div>
+    </details>
     <a href="{{ "/news/" | relative_url }}"{% if page.url == "/news/" or page.layout == "post" %} aria-current="page"{% endif %}>News</a>
-    <a href="{{ "/participate/" | relative_url }}"{% if page.url == "/participate/" %} aria-current="page"{% endif %}>Measure and Improve</a>
     {%- comment -%} Hidden until theme-toggle.js runs, so it never shows without JavaScript. {%- endcomment -%}
     <button type="button" class="theme-toggle" id="theme-toggle" hidden>
       <span data-icon="moon">{% include icon.html name="moon" %}</span>
