@@ -769,6 +769,64 @@ h1 code,
   color: var(--text-muted);
 }
 
+/* Control counts by practice and standard */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.counts-table-wrap {
+  margin: 1rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.counts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.counts-table th,
+.counts-table td {
+  padding: 0.45rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+.counts-table thead th {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  text-align: left;
+  white-space: nowrap;
+  background: var(--bg);
+}
+.counts-table tbody th,
+.counts-table tfoot th {
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.counts-table tbody th a { color: var(--text); }
+.counts-table tbody th a:hover { color: var(--accent); }
+.counts-table .counts-num { text-align: right; font-variant-numeric: tabular-nums; }
+.counts-table .counts-total { font-weight: 600; border-right: 1px solid var(--border); }
+.counts-table .counts-zero { color: var(--text-muted); opacity: 0.6; }
+.counts-table tfoot th,
+.counts-table tfoot td {
+  font-weight: 600;
+  border-top: 2px solid var(--border);
+  border-bottom: 0;
+}
+.counts-table tbody tr:last-child th,
+.counts-table tbody tr:last-child td { border-bottom: 0; }
+.counts-table tbody tr:hover { background: var(--bg); }
+.counts-table .code-badge { font-size: 0.8em; margin-right: 0.3rem; }
+
 /* ==========================================================================
    Overview diagram — columns = Groups, expandable tiles = Practices
    ========================================================================== */
