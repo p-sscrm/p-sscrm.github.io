@@ -22,56 +22,53 @@ with P-SSCRM keeps you aligned with these sources.
   {% endfor %}
 </ul>
 
-## Control counts by practice and standard
+## Control coverage by group and standard
 
-How many controls in each Practice cite each standard, so you can compare
-where each one is strong or thin. The P-SSCRM column is the total number of
-controls in the Practice. Controls not yet assigned to a Practice group are not
-counted.
+How many controls in each Practice Group cite each standard. A number in brackets, such as <span class="counts-unique">[5]</span>,
+is how many of those controls come from that standard alone. The P-SSCRM row is the
+total number of controls in the group. Controls not yet assigned to a group are not counted.
 
 {% assign count_groups = site.groups | where_exp: "g", "g.slug != 'u'" | sort: "weight" %}
 <div class="counts-table-wrap">
   <table class="counts-table">
-    <caption class="visually-hidden">Number of controls per practice that cite each standard</caption>
+    <caption class="visually-hidden">Number of controls per practice group that cite each standard, with the number cited by that standard alone in brackets</caption>
     <thead>
       <tr>
-        <th scope="col">Practice</th>
-        <th scope="col" class="counts-num"><a href="{{ "/framework/" | relative_url }}">P-SSCRM</a></th>
-        {% for key in fw_order %}{% assign fw = site.data.frameworks[key] %}{% if fw %}
-        <th scope="col" class="counts-num"><a href="#{{ key }}" title="{{ fw.full_name }}">{{ fw.name }}</a></th>
-        {% endif %}{% endfor %}
+        <th scope="col">Framework</th>
+        {% for g in count_groups %}<th scope="col" class="counts-num">{{ g.title }}</th>{% endfor %}
+        <th scope="col" class="counts-num">Total</th>
       </tr>
     </thead>
     <tbody>
-      {% for g in count_groups %}
-        {% assign count_practices = site.practices | where: "group", g.slug | sort: "weight" %}
-        {% for p in count_practices %}
-          {% assign pc = site.controls | where: "practice", p.slug %}
-          <tr class="counts-row fw-group-{{ g.slug }}">
-            <th scope="row"><a href="{{ "/framework/" | relative_url }}#{{ p.slug }}"><span class="code-badge">{{ p.code }}</span> {{ p.title }}</a></th>
-            <td class="counts-num counts-total">{{ pc.size }}</td>
-            {% for key in fw_order %}{% assign fw = site.data.frameworks[key] %}{% if fw %}
-              {% assign n = 0 %}
-              {% for c in pc %}{% if c.frameworks[key] %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
-              <td class="counts-num{% if n == 0 %} counts-zero{% endif %}">{% if n == 0 %}&ndash;{% else %}{{ n }}{% endif %}</td>
-            {% endif %}{% endfor %}
-          </tr>
-        {% endfor %}
-      {% endfor %}
-    </tbody>
-    <tfoot>
-      <tr>
-        <th scope="row">All practices</th>
+      <tr class="counts-row counts-pssrm">
+        <th scope="row"><a href="{{ "/framework/" | relative_url }}">P-SSCRM</a></th>
         {% assign all_total = 0 %}
-        {% for g in count_groups %}{% assign gp = site.practices | where: "group", g.slug %}{% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% assign all_total = all_total | plus: pc.size %}{% endfor %}{% endfor %}
+        {% for g in count_groups %}
+          {% assign gn = 0 %}
+          {% assign gp = site.practices | where: "group", g.slug %}
+          {% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% assign gn = gn | plus: pc.size %}{% endfor %}
+          {% assign all_total = all_total | plus: gn %}
+          <td class="counts-num">{{ gn }}</td>
+        {% endfor %}
         <td class="counts-num counts-total">{{ all_total }}</td>
-        {% for key in fw_order %}{% assign fw = site.data.frameworks[key] %}{% if fw %}
-          {% assign n = 0 %}
-          {% for g in count_groups %}{% assign gp = site.practices | where: "group", g.slug %}{% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% for c in pc %}{% if c.frameworks[key] %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}{% endfor %}{% endfor %}
-          <td class="counts-num">{{ n }}</td>
-        {% endif %}{% endfor %}
       </tr>
-    </tfoot>
+      {% for key in fw_order %}{% assign fw = site.data.frameworks[key] %}{% if fw %}
+      {% assign tot_n = 0 %}{% assign tot_u = 0 %}
+      <tr class="counts-row">
+        <th scope="row"><a href="#{{ key }}" title="{{ fw.full_name }}">{{ fw.name }}</a></th>
+        {% for g in count_groups %}
+          {% assign n = 0 %}{% assign u = 0 %}
+          {% assign gp = site.practices | where: "group", g.slug %}
+          {% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}
+            {% for c in pc %}{% if c.frameworks[key] %}{% assign n = n | plus: 1 %}{% if c.frameworks.size == 1 %}{% assign u = u | plus: 1 %}{% endif %}{% endif %}{% endfor %}
+          {% endfor %}
+          {% assign tot_n = tot_n | plus: n %}{% assign tot_u = tot_u | plus: u %}
+          <td class="counts-num">{{ n }}{% if u > 0 %} <span class="counts-unique">[{{ u }}]</span>{% endif %}</td>
+        {% endfor %}
+        <td class="counts-num counts-total">{{ tot_n }}{% if tot_u > 0 %} <span class="counts-unique">[{{ tot_u }}]</span>{% endif %}</td>
+      </tr>
+      {% endif %}{% endfor %}
+    </tbody>
   </table>
 </div>
 

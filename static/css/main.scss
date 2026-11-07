@@ -1,5 +1,6 @@
 ---
 ---
+@use "sass:string";
 /* Fonts are self-hosted (latin subset, SIL Open Font License) so visiting the site
    sends nothing to a third party. */
 @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500 700; font-display: swap; src: url(../fonts/space-grotesk.woff2) format('woff2'); }
@@ -136,8 +137,8 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
-h1 { font-size: unquote("clamp(1.9rem, 1.3rem + 2.6vw, 2.6rem)"); font-weight: 700; letter-spacing: -0.02em; }
-h2 { font-size: unquote("clamp(1.4rem, 1.15rem + 1vw, 1.7rem)"); font-weight: 700; margin-top: 1.15em; letter-spacing: -0.01em; }
+h1 { font-size: string.unquote("clamp(1.9rem, 1.3rem + 2.6vw, 2.6rem)"); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: string.unquote("clamp(1.4rem, 1.15rem + 1vw, 1.7rem)"); font-weight: 700; margin-top: 1.15em; letter-spacing: -0.01em; }
 h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1em; }
 h4 { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em; }
 
@@ -170,31 +171,24 @@ button:focus-visible {
   color: var(--on-accent);
   text-decoration: none;
 }
-/* Logo slot — replace .site-logo-placeholder with an <img> when the mark lands */
 .site-logo {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 52px;
+  height: 52px;
+  padding: 4px;
+  background: #fff;
   border-radius: var(--radius);
-  overflow: hidden;
 }
 .site-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.site-logo-placeholder {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.4rem;
-  line-height: 1;
-}
 .site-wordmark-text { min-width: 0; }
 .site-wordmark-name {
   display: block;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: unquote("clamp(1.5rem, 1.1rem + 1.8vw, 2.1rem)");
+  font-size: string.unquote("clamp(1.5rem, 1.1rem + 1.8vw, 2.1rem)");
   letter-spacing: 0.02em;
   line-height: 1.1;
 }
@@ -295,7 +289,7 @@ button:focus-visible {
 }
 .hero .container { padding-top: 0; padding-bottom: 0; }
 .hero-brand {
-  font-size: unquote("clamp(2.6rem, 1.5rem + 4.6vw, 4.4rem)");
+  font-size: string.unquote("clamp(2.6rem, 1.5rem + 4.6vw, 4.4rem)");
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -311,7 +305,7 @@ button:focus-visible {
 .hero-tagline {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: unquote("clamp(1.15rem, 1rem + 0.75vw, 1.5rem)");
+  font-size: string.unquote("clamp(1.15rem, 1rem + 0.75vw, 1.5rem)");
   line-height: 1.35;
   letter-spacing: -0.01em;
   color: var(--accent-dark);
@@ -857,7 +851,7 @@ h1 code,
   background: var(--bg);
 }
 .counts-table thead th.counts-num { text-align: right; }
-.counts-table thead th:first-child { width: 30%; }
+.counts-table thead th:first-child { width: 22%; }
 .counts-table tbody th,
 .counts-table tfoot th {
   text-align: left;
@@ -866,7 +860,10 @@ h1 code,
 .counts-table tbody th a { color: var(--text); }
 .counts-table tbody th a:hover { color: var(--accent); }
 .counts-table .counts-num { text-align: right; font-variant-numeric: tabular-nums; }
-.counts-table .counts-total { font-weight: 600; border-right: 1px solid var(--border); }
+.counts-table .counts-total { font-weight: 600; border-left: 1px solid var(--border); }
+.counts-table .counts-unique { color: var(--accent); font-weight: 600; }
+.counts-table .counts-pssrm th,
+.counts-table .counts-pssrm td { font-weight: 700; background: var(--bg); }
 .counts-table .counts-zero { color: var(--text-muted); opacity: 0.6; }
 .counts-table tfoot th,
 .counts-table tfoot td {
