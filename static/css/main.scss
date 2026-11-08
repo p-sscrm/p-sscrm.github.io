@@ -184,16 +184,14 @@ button:focus-visible {
   justify-content: center;
   width: 60px;
   height: 60px;
+  /* White tile keeps the navy artwork legible on the dark theme; invisible on the light one. */
+  box-sizing: border-box;
+  padding: 4px;
+  background: #fff;
+  border-radius: var(--radius);
 }
 .site-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
-/* Two logo files: dark artwork for the light theme, light artwork for the dark theme. */
-.site-logo .logo-dark { display: none; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .site-logo .logo-light { display: none; }
-  :root:not([data-theme="light"]) .site-logo .logo-dark { display: block; }
-}
-:root[data-theme="dark"] .site-logo .logo-light { display: none; }
-:root[data-theme="dark"] .site-logo .logo-dark { display: block; }
+/* One logo in every theme: it uses the S3C2 color scheme. */
 .site-wordmark-text { min-width: 0; }
 .site-wordmark-name {
   display: block;
