@@ -65,3 +65,5 @@ Then review what changed with `git status` / `git diff` before committing — th
 The page `<head>` sets a Content-Security-Policy meta tag (`_includes/head.html`): scripts and fonts must come from this site, so don't add inline `<script>` blocks or third-party scripts without updating it. Actions in the workflow are pinned to commit SHAs; Dependabot (`.github/dependabot.yml`) proposes updates.
 
 Pushing to `main` triggers `.github/workflows/jekyll.yml`, which builds the site with Jekyll (using both `_config.yml` and `_config_production.yml`) and publishes it to GitHub Pages automatically. There's no staging environment — whatever's on `main` is what's live.
+
+In the repo's Settings → Pages, the Source must be **GitHub Actions**. The legacy "Deploy from a branch" builder uses old Ruby Sass and fails on this site's SCSS.
