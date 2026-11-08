@@ -4,14 +4,13 @@ permalink: /participate/
 description: "Take part in an interview-based P-SSCRM assessment of your organization."
 ---
 
-Work is underway to add assessment questions related to AI into controls, as
-appropriate. Once complete, P-SSCRM v3 will be released, and the research team
-will begin interview-based assessments. Organizations who participate in an
-assessment will be provided with a report of their software supply chain
-security practices adoption, using P-SSCRM as the instrument and following the
-methodology described in the
-[project paper](https://arxiv.org/abs/2404.12300){:target="_blank" rel="noopener"} and a comparison of their
-adoption versus other companies who have been assessed.
+We are adding AI-related assessment questions to the controls where they fit.
+Once that is done, P-SSCRM v3 will be released and the research team will begin
+interview-based assessments. Organizations that take part receive a report on how
+fully they have adopted software supply chain security practices, using P-SSCRM
+and the method described in the
+[project paper](https://arxiv.org/abs/2404.12300){:target="_blank" rel="noopener"}, along with a comparison
+to other organizations that have been assessed.
 
 <figure class="radar-figure">
   <img src="{{ "/static/img/radar.png" | relative_url }}" alt="Radar chart comparing an organization's P-SSCRM practice adoption against other assessed companies.">
@@ -20,9 +19,9 @@ adoption versus other companies who have been assessed.
 
 ## What taking part involves
 
-- Interviews with people who are responsible for the roles for your supply
-  chain governance, secure SDLC, build infrastructure, and release process.
-- We walk through the P-SSCRM controls and record how your practices line up.
+- Interviews with the people responsible for your supply chain governance,
+  secure development, build infrastructure, and release process.
+- We walk through the P-SSCRM controls and record how your practices compare.
 - You receive a summary of the findings for your organization.
 
 ## Who should take part

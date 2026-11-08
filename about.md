@@ -17,12 +17,11 @@ draws from.
 
 ## The problem it solves
 
-Teams trying to secure a software supply chain face a crowded field of
-government and industry guidance — SSDF, SLSA, BSIMM, CNCF, OpenSSF, NIST
-800-161, Executive Order 14028, and more — with overlapping vocabulary and no
-single through-line. P-SSCRM was built to be that through-line: a single model
-whose controls are cross-referenced to those sources, so a team can work from
-one checklist and still show alignment with the standards that apply to them.
+Securing a software supply chain means working with many government and industry
+standards — SSDF, SLSA, BSIMM, CNCF, OpenSSF, NIST 800-161, Executive Order
+14028, and more — that overlap and use different terms. P-SSCRM brings them
+together in one model. Each control points back to its sources, so a team can
+work from one checklist and still show it meets the standards that apply.
 
 ## How it was built
 
@@ -31,8 +30,8 @@ Ben Hutchison.
 
 P-SSCRM was assembled by analyzing the contributing standards and frameworks
 listed under [Standards & Frameworks]({{ "/frameworks/" | relative_url }}),
-identifying the common practices across them, and expressing each as a control
-with an explicit back-mapping. The framework definition and its mappings are
+finding the practices they have in common, and writing each one as a control
+with a clear link back to its sources. The framework definition and its mappings are
 maintained in the open at
 [github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm){:target="_blank" rel="noopener"}; the MITRE
 ATT&CK technique mappings are maintained at
@@ -62,7 +61,7 @@ paper and link to this site.
 
 ## Who maintains it
 
-P-SSCRM is stewarded by researchers at NC State University in collaboration with
+P-SSCRM is run by researchers at NC State University in collaboration with
 the [Secure Software Supply Chain Center (S3C2)](https://s3c2.org/){:target="_blank" rel="noopener"}. For
 questions or corrections, see [Contact]({{ "/contact/" | relative_url }}). 
 

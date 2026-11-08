@@ -5,10 +5,10 @@ permalink: /attack-mapping/
 description: "How P-SSCRM controls are mapped to the MITRE ATT&CK techniques they mitigate, and to the standards those techniques connect to."
 ---
 
-Each P-SSCRM control is mapped to the [MITRE ATT&amp;CK](https://attack.mitre.org/){:target="_blank" rel="noopener"}
-technique(s) it mitigates. Because every control is already cross-referenced to the
-government and industry standards on [Standards & Frameworks]({{ "/frameworks/" | relative_url }}),
-this mapping also connects ATT&CK techniques to those ten standards
+Each P-SSCRM control is linked to the [MITRE ATT&amp;CK](https://attack.mitre.org/){:target="_blank" rel="noopener"}
+attack techniques it helps defend against. Every control already points to the
+standards on [Standards & Frameworks]({{ "/frameworks/" | relative_url }}),
+so this also connects each ATT&CK technique to those ten standards
 &mdash; SSDF, SLSA, BSIMM, NIST 800-161, and the rest &mdash; through P-SSCRM.
 
 The mapping is described in *Your ATs to Ts: MITRE ATT&amp;CK Attack Technique to
@@ -116,7 +116,7 @@ in one diagram:
 ## See a control's ATT&CK mapping directly
 
 Every control's entry on [The Framework]({{ "/framework/" | relative_url }}) lists the
-ATT&CK technique(s) it mitigates, next to its standard mappings. A few examples,
+ATT&CK techniques it defends against, next to its standard mappings. A few examples,
 technique shown alongside each:
 
 <ul class="attck-examples">

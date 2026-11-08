@@ -8,5 +8,5 @@ description: "Every P-SSCRM Group, Practice, and Control on one page, with stand
 P-SSCRM organizes software supply chain security into Groups, each broken
 into Practices, each broken into Controls. Use the search box to jump
 straight to what you need, or click a Practice below to open its Controls.
-Every code badge (like <span class="code-badge">G.1.1</span>) is a permalink —
-click it to jump there and grab the link from your address bar.
+Click any code badge (like <span class="code-badge">G.1.1</span>) to get a direct
+link to that control.

@@ -5,9 +5,9 @@ permalink: /frameworks/
 description: "The government and industry standards P-SSCRM was built from, and which P-SSCRM controls cite each one."
 ---
 
-P-SSCRM was assembled by analysing and unifying the government and industry
-standards below. Every P-SSCRM control cites one or more of them, so aligning
-with P-SSCRM keeps you aligned with these sources.
+P-SSCRM was built by combining the government and industry standards listed below.
+Every P-SSCRM control draws on at least one of them, so following P-SSCRM also
+keeps you in line with these standards.
 
 {% assign fw_order = "eo,800-161,ssdf,ssdf-ai,self-attestation,slsa,bsimm,cncf-ssc,ossf-scorecard,owasp-scvs" | split: "," %}
 <ul class="framework-index">
@@ -24,60 +24,78 @@ with P-SSCRM keeps you aligned with these sources.
 
 ## Control coverage by group and standard
 
-How many controls in each Practice Group cite each standard. A number in brackets, such as <span class="counts-unique">[5]</span>,
-is how many of those controls come from that standard alone. The P-SSCRM row is the
-total number of controls in the group. Controls not yet assigned to a group are not counted.
+Each row is one standard. Each number is how many P-SSCRM controls draw on that
+standard, split by Practice Group (the four columns). **The stronger the color, the more
+of that group the standard covers.** The last column shows the share of all
+P-SSCRM controls the standard covers. A number in brackets, such as
+<span class="counts-unique">[5]</span>, is how many of those controls cite this standard
+and no other. The rest are also cited by at least one other standard.
 
 {% assign count_groups = site.groups | where_exp: "g", "g.slug != 'u'" | sort: "weight" %}
+{% assign all_total = 0 %}
+{% for g in count_groups %}{% assign gp = site.practices | where: "group", g.slug %}{% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% assign all_total = all_total | plus: pc.size %}{% endfor %}{% endfor %}
 <div class="counts-table-wrap">
   <table class="counts-table">
-    <caption class="visually-hidden">Number of controls per practice group that cite each standard, with the number cited by that standard alone in brackets</caption>
+    <caption class="visually-hidden">Number of P-SSCRM controls per practice group that draw on each standard, shaded by the share of the group covered, plus overall coverage and how many controls come from that standard alone</caption>
     <thead>
       <tr>
-        <th scope="col">Framework</th>
-        {% for g in count_groups %}<th scope="col" class="counts-num">{{ g.title }}</th>{% endfor %}
-        <th scope="col" class="counts-num">Total</th>
+        <th scope="col">Standard</th>
+        {% for g in count_groups %}<th scope="col" class="counts-num counts-g-{{ g.slug }}">{{ g.title }}</th>{% endfor %}
+        <th scope="col" class="counts-total-head">Overall coverage</th>
       </tr>
     </thead>
     <tbody>
       <tr class="counts-row counts-pssrm">
         <th scope="row"><a href="{{ "/framework/" | relative_url }}">P-SSCRM</a></th>
-        {% assign all_total = 0 %}
         {% for g in count_groups %}
           {% assign gn = 0 %}
           {% assign gp = site.practices | where: "group", g.slug %}
           {% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% assign gn = gn | plus: pc.size %}{% endfor %}
-          {% assign all_total = all_total | plus: gn %}
           <td class="counts-num">{{ gn }}</td>
         {% endfor %}
-        <td class="counts-num counts-total">{{ all_total }}</td>
+        <td class="counts-total">{{ all_total }} controls in total</td>
       </tr>
       {% for key in fw_order %}{% assign fw = site.data.frameworks[key] %}{% if fw %}
       {% assign tot_n = 0 %}{% assign tot_u = 0 %}
       <tr class="counts-row">
         <th scope="row"><a href="#{{ key }}" title="{{ fw.full_name }}">{{ fw.name }}</a></th>
         {% for g in count_groups %}
-          {% assign n = 0 %}{% assign u = 0 %}
+          {% assign n = 0 %}{% assign u = 0 %}{% assign gn = 0 %}
           {% assign gp = site.practices | where: "group", g.slug %}
           {% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}
+            {% assign gn = gn | plus: pc.size %}
             {% for c in pc %}{% if c.frameworks[key] %}{% assign n = n | plus: 1 %}{% if c.frameworks.size == 1 %}{% assign u = u | plus: 1 %}{% endif %}{% endif %}{% endfor %}
           {% endfor %}
           {% assign tot_n = tot_n | plus: n %}{% assign tot_u = tot_u | plus: u %}
-          <td class="counts-num">{{ n }}{% if u > 0 %} <span class="counts-unique">[{{ u }}]</span>{% endif %}</td>
+          {% assign pct = 0 %}{% if gn > 0 %}{% assign pct = n | times: 100 | divided_by: gn %}{% endif %}
+          <td class="counts-num counts-cell" data-level="{% if n == 0 %}0{% else %}{{ pct | plus: 19 | divided_by: 20 }}{% endif %}" title="{{ fw.name }} covers {{ n }} of {{ gn }} {{ g.title }} controls ({{ pct }}%){% if u > 0 %}; {{ u }} of them are covered by no other standard{% endif %}">
+            {{ n }}{% if u > 0 %} <span class="counts-unique">[{{ u }}]</span>{% endif %}
+          </td>
         {% endfor %}
-        <td class="counts-num counts-total">{{ tot_n }}{% if tot_u > 0 %} <span class="counts-unique">[{{ tot_u }}]</span>{% endif %}</td>
+        {% assign tot_pct = 0 %}{% if all_total > 0 %}{% assign tot_pct = tot_n | times: 100 | divided_by: all_total %}{% endif %}
+        <td class="counts-total" title="{{ fw.name }} covers {{ tot_n }} of {{ all_total }} P-SSCRM controls{% if tot_u > 0 %}; {{ tot_u }} of them are covered by no other standard{% endif %}">
+          <span class="counts-meter">
+            <span class="counts-pct">{{ tot_pct }}%</span>
+            <span class="counts-bar" aria-hidden="true"><span style="width: {{ tot_pct }}%;"></span></span>
+            <span class="counts-of">{{ tot_n }} of {{ all_total }}</span>
+          </span>
+        </td>
       </tr>
       {% endif %}{% endfor %}
     </tbody>
   </table>
 </div>
+<div class="counts-legend" aria-hidden="true">
+  <span>Covers fewer of the group</span>
+  <span class="counts-legend-scale"><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><i data-level="5"></i></span>
+  <span>Covers more of the group</span>
+</div>
 
 ## Which controls cite each standard
 
-Expand a standard to see the P-SSCRM controls that map to it, grouped by
-Practice; each links to its full entry on
-[The Framework]({{ "/framework/" | relative_url }}). Search below to narrow
-every standard down to the matching controls.
+Click a standard to see the P-SSCRM controls that draw on it. Each control
+links to its full description on [The Framework]({{ "/framework/" | relative_url }}).
+Use the search box to find a specific control or topic.
 
 {% assign ordered_controls = "" | split: "" %}
 {% assign _groups = site.groups | sort: "weight" %}

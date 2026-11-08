@@ -11,16 +11,20 @@
    P-SSCRM — Design tokens
    ========================================================================== */
 :root {
-  --bg: #FAFAF8;
+  --bg: #F2F3F4;
   --surface: #FFFFFF;
-  --text: #1B2430;
-  --text-muted: #5B6472;
-  --border: #E1E4E9;
-  --accent: #2557A7;
-  --accent-dark: #17396B;
-  --accent-soft: #EAF1FB;
-  --accent-fill: #2557A7;        /* solid backgrounds carrying white text */
-  --accent-fill-hover: #17396B;
+  --text: #3D4144;
+  --text-muted: #656D74;
+  --border: #DADDE0;
+  --accent: #2B7790;
+  --accent-dark: #235E70;
+  --accent-soft: #E3EFF3;
+  --accent-fill: #2B7790;        /* solid backgrounds carrying white text */
+  --accent-fill-hover: #235E70;
+  /* Coverage heatmap: yellow-green to deep blue */
+  --heat-0: transparent;
+  --heat-1: #E8F1FF; --heat-2: #C8DDFC; --heat-3: #9CC1F7; --heat-4: #5B94E8; --heat-5: #2A5FB8;
+  --heat-ink-1: #17233A; --heat-ink-2: #0B1626; --heat-ink-3: #FFFFFF;
   --on-accent: #fff;              /* text on --accent-fill and group colours */
   --code: #0F6E5C;
   --code-soft: #E6F5F1;
@@ -61,16 +65,18 @@
 /* Dark colours. Used when the visitor's system is dark (unless they picked light
    with the toggle), or when they picked dark with the toggle. */
 @mixin dark-palette {
-  --bg: #0F141B;
-  --surface: #171E28;
-  --text: #E6EAF0;
-  --text-muted: #9AA5B4;
-  --border: #2A3441;
-  --accent: #8DB4F2;
-  --accent-dark: #B9D0F7;
-  --accent-soft: #16233A;
-  --accent-fill: #2A55A0;
-  --accent-fill-hover: #3766BA;
+  --bg: #0F1419;
+  --surface: #161D24;
+  --text: #E6EAEE;
+  --text-muted: #9AA5AE;
+  --border: #2A343D;
+  --accent: #6FB8CE;
+  --accent-dark: #A5D6E4;
+  --accent-soft: #13262E;
+  --accent-fill: #2A6F86;
+  --accent-fill-hover: #35849D;
+  --heat-1: #15233D; --heat-2: #1A3866; --heat-3: #1F4E96; --heat-4: #2D66C0; --heat-5: #4C86E0;
+  --heat-ink-1: #E6EEFA; --heat-ink-2: #F4F8FF; --heat-ink-3: #06101E;
   --code: #5FD0B6;
   --code-soft: #12302A;
   --group-g-ink: #8DB4F2;
@@ -160,7 +166,7 @@ button:focus-visible {
   padding: 0 1.5rem;
 }
 
-.site-banner { display: block; background: var(--accent-fill); color: var(--on-accent); }
+.site-banner { display: block; background: var(--surface); color: var(--text); border-bottom: 3px solid var(--accent); }
 .site-wordmark {
   display: flex;
   align-items: center;
@@ -168,7 +174,7 @@ button:focus-visible {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.1rem 1.5rem 1rem;
-  color: var(--on-accent);
+  color: var(--text);
   text-decoration: none;
 }
 .site-logo {
@@ -176,13 +182,18 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  padding: 4px;
-  background: #fff;
-  border-radius: var(--radius);
+  width: 60px;
+  height: 60px;
 }
 .site-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* Two logo files: dark artwork for the light theme, light artwork for the dark theme. */
+.site-logo .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-logo .logo-light { display: none; }
+  :root:not([data-theme="light"]) .site-logo .logo-dark { display: block; }
+}
+:root[data-theme="dark"] .site-logo .logo-light { display: none; }
+:root[data-theme="dark"] .site-logo .logo-dark { display: block; }
 .site-wordmark-text { min-width: 0; }
 .site-wordmark-name {
   display: block;
@@ -197,7 +208,7 @@ button:focus-visible {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  opacity: 0.85;
+  color: var(--text-muted);
   margin-top: 0.25rem;
 }
 .site-wordmark:hover .site-wordmark-name { text-decoration: underline; }
@@ -827,7 +838,7 @@ h1 code,
   border: 0;
 }
 .counts-table-wrap {
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 0.6rem;
   overflow-x: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -835,45 +846,74 @@ h1 code,
 }
 .counts-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 3px;
   font-size: 0.9rem;
 }
 .counts-table th,
-.counts-table td {
-  padding: 0.4rem 0.45rem;
-  border-bottom: 1px solid var(--border);
-}
+.counts-table td { padding: 0.5rem 0.6rem; }
 .counts-table thead th {
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   text-align: left;
   vertical-align: bottom;
-  background: var(--bg);
+  color: var(--text-muted);
 }
-.counts-table thead th.counts-num { text-align: right; }
-.counts-table thead th:first-child { width: 22%; }
-.counts-table tbody th,
-.counts-table tfoot th {
-  text-align: left;
-  font-weight: 500;
-}
+.counts-table thead th.counts-num { text-align: center; }
+.counts-table { table-layout: fixed; }
+.counts-table thead th:first-child { width: 17%; }
+.counts-table thead th.counts-num { width: 13%; }
+.counts-table thead th.counts-total-head { width: 31%; }
+.counts-table tbody th { text-align: left; font-weight: 600; white-space: nowrap; }
 .counts-table tbody th a { color: var(--text); }
 .counts-table tbody th a:hover { color: var(--accent); }
-.counts-table .counts-num { text-align: right; font-variant-numeric: tabular-nums; }
-.counts-table .counts-total { font-weight: 600; border-left: 1px solid var(--border); }
-.counts-table .counts-unique { color: var(--accent); font-weight: 600; }
-.counts-table .counts-pssrm th,
-.counts-table .counts-pssrm td { font-weight: 700; background: var(--bg); }
-.counts-table .counts-zero { color: var(--text-muted); opacity: 0.6; }
-.counts-table tfoot th,
-.counts-table tfoot td {
-  font-weight: 600;
-  border-top: 2px solid var(--border);
-  border-bottom: 0;
+.counts-table .counts-num { text-align: center; font-variant-numeric: tabular-nums; }
+/* Heat cells: five steps, pale to deep, by the share of the group's controls the standard covers. */
+.counts-table .counts-cell { border-radius: 4px; font-size: 1.05rem; font-weight: 700; background: var(--heat-0); }
+.counts-table [data-level="1"] { background: var(--heat-1); color: var(--heat-ink-1); }
+.counts-table [data-level="2"] { background: var(--heat-2); color: var(--heat-ink-1); }
+.counts-table [data-level="3"] { background: var(--heat-3); color: var(--heat-ink-1); }
+.counts-table [data-level="4"] { background: var(--heat-4); color: var(--heat-ink-2); }
+.counts-table [data-level="5"] { background: var(--heat-5); color: var(--heat-ink-3); }
+.counts-table [data-level="0"] { background: transparent; color: var(--text-muted); font-weight: 500; opacity: 0.6; }
+.counts-table .counts-total-head { text-align: left; }
+.counts-table .counts-total { text-align: left; min-width: 15rem; padding-left: 0.9rem; }
+.counts-table .counts-meter { display: flex; align-items: center; gap: 0.6rem; }
+.counts-table .counts-pct { flex: 0 0 2.8rem; font-size: 1.1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.counts-table .counts-bar {
+  flex: 1;
+  height: 14px;
+  border-radius: 7px;
+  background: var(--border);
+  overflow: hidden;
 }
-.counts-table tbody tr:last-child th,
-.counts-table tbody tr:last-child td { border-bottom: 0; }
-.counts-table tbody tr:hover { background: var(--bg); }
+.counts-table .counts-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 7px;
+  background: linear-gradient(90deg, var(--heat-4), var(--heat-5));
+}
+.counts-table .counts-unique { margin-left: 0.15rem; color: inherit; opacity: 0.8; font-weight: 600; }
+.counts-table .counts-of { flex: 0 0 5rem; color: var(--text-muted); font-size: 0.78rem; white-space: nowrap; }
+.counts-table .counts-pssrm th,
+.counts-table .counts-pssrm td { font-weight: 700; background: var(--bg); border-radius: 4px; }
+.counts-table .counts-pssrm .counts-total { font-weight: 600; color: var(--text-muted); font-size: 0.85rem; padding-left: 0.9rem; }
+.counts-table tbody tr:not(.counts-pssrm):hover th { color: var(--accent); }
+.counts-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 2rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.counts-legend-scale { display: inline-flex; gap: 2px; }
+.counts-legend-scale i { width: 1.8rem; height: 0.8rem; border-radius: 3px; }
+.counts-legend-scale [data-level="1"] { background: var(--heat-1); }
+.counts-legend-scale [data-level="2"] { background: var(--heat-2); }
+.counts-legend-scale [data-level="3"] { background: var(--heat-3); }
+.counts-legend-scale [data-level="4"] { background: var(--heat-4); }
+.counts-legend-scale [data-level="5"] { background: var(--heat-5); }
 .counts-table .code-badge { font-size: 0.8em; margin-right: 0.3rem; }
 
 /* ==========================================================================
