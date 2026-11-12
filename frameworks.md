@@ -24,72 +24,69 @@ keeps you in line with these standards.
 
 ## Control coverage by group and standard
 
-Each row is one standard. Each number is how many P-SSCRM controls draw on that
-standard, split by Practice Group (the four columns). **The stronger the color, the more
-of that group the standard covers.** The last column shows the share of all
-P-SSCRM controls the standard covers. A number in brackets, such as
-<span class="counts-unique">[5]</span>, is how many of those controls cite this standard
-and no other. The rest are also cited by at least one other standard.
+Each row is one standard. Each cell shows how many of a group's controls draw on
+that standard, written as "13 of 23", with a bar that fills to match. The bar uses
+the group's color, so a fuller bar means the standard covers more of that group.
+A **★ unique** line means that many of those controls are cited by this standard
+alone, so dropping it would leave them uncovered. **Overall coverage** is the same
+count across all P-SSCRM controls. **Click any number** to list the controls behind it.
 
 {% assign count_groups = site.groups | where_exp: "g", "g.slug != 'u'" | sort: "weight" %}
-{% assign all_total = 0 %}
-{% for g in count_groups %}{% assign gp = site.practices | where: "group", g.slug %}{% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% assign all_total = all_total | plus: pc.size %}{% endfor %}{% endfor %}
+{% assign all_total = 0 %}{% assign gt = "" %}
+{% for g in count_groups %}{% assign gn = 0 %}{% assign gp = site.practices | where: "group", g.slug %}{% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% assign gn = gn | plus: pc.size %}{% endfor %}{% assign all_total = all_total | plus: gn %}{% assign gt = gt | append: gn | append: "," %}{% endfor %}
+{% assign gt_arr = gt | split: "," %}
 <div class="counts-table-wrap">
-  <table class="counts-table">
-    <caption class="visually-hidden">Number of P-SSCRM controls per practice group that draw on each standard, shaded by the share of the group covered, plus overall coverage and how many controls come from that standard alone</caption>
+  <table class="counts-table" id="counts-table">
+    <caption class="visually-hidden">For each standard, how many P-SSCRM controls in each group draw on it, how many of those only that standard cites, and the overall coverage across all {{ all_total }} controls. Each number can be opened to list the controls.</caption>
     <thead>
       <tr>
         <th scope="col">Standard</th>
-        {% for g in count_groups %}<th scope="col" class="counts-num counts-g-{{ g.slug }}">{{ g.title }}</th>{% endfor %}
-        <th scope="col" class="counts-total-head">Overall coverage</th>
+        {% for g in count_groups %}<th scope="col" class="counts-num counts-g-{{ g.slug }}"><span class="counts-head-name">{{ g.title }}</span> <span class="counts-head-sub">{{ gt_arr[forloop.index0] }} controls</span></th>{% endfor %}
+        <th scope="col" class="counts-total-head"><span class="counts-head-name">Overall coverage</span> <span class="counts-head-sub">of all {{ all_total }} controls</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr class="counts-row counts-pssrm">
-        <th scope="row"><a href="{{ "/framework/" | relative_url }}">P-SSCRM</a></th>
-        {% for g in count_groups %}
-          {% assign gn = 0 %}
-          {% assign gp = site.practices | where: "group", g.slug %}
-          {% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}{% assign gn = gn | plus: pc.size %}{% endfor %}
-          <td class="counts-num">{{ gn }}</td>
-        {% endfor %}
-        <td class="counts-total">{{ all_total }} controls in total</td>
-      </tr>
       {% for key in fw_order %}{% assign fw = site.data.frameworks[key] %}{% if fw %}
-      {% assign tot_n = 0 %}{% assign tot_u = 0 %}
+      {% assign tot_n = 0 %}{% assign tot_u = 0 %}{% assign all_chips = "" %}
       <tr class="counts-row">
         <th scope="row"><a href="#{{ key }}" title="{{ fw.full_name }}">{{ fw.name }}</a></th>
         {% for g in count_groups %}
-          {% assign n = 0 %}{% assign u = 0 %}{% assign gn = 0 %}
-          {% assign gp = site.practices | where: "group", g.slug %}
-          {% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug %}
-            {% assign gn = gn | plus: pc.size %}
-            {% for c in pc %}{% if c.frameworks[key] %}{% assign n = n | plus: 1 %}{% if c.frameworks.size == 1 %}{% assign u = u | plus: 1 %}{% endif %}{% endif %}{% endfor %}
+          {% assign n = 0 %}{% assign u = 0 %}{% assign chips = "" %}
+          {% assign gn = gt_arr[forloop.index0] | plus: 0 %}
+          {% assign gp = site.practices | where: "group", g.slug | sort: "weight" %}
+          {% for p in gp %}{% assign pc = site.controls | where: "practice", p.slug | sort: "weight" %}
+            {% for c in pc %}{% if c.frameworks[key] %}
+              {% assign n = n | plus: 1 %}
+              {% capture chip %}<a class="counts-chip counts-g-{{ g.slug }}{% if c.frameworks.size == 1 %} is-unique{% endif %}" href="{{ "/framework/" | relative_url }}#{{ c.slug }}" title="{{ c.title | escape }}{% if c.frameworks.size == 1 %} (only {{ fw.name }} cites this){% endif %}">{% if c.frameworks.size == 1 %}&#9733; {% endif %}{{ c.code }}</a>{% endcapture %}
+              {% assign chips = chips | append: chip %}
+              {% if c.frameworks.size == 1 %}{% assign u = u | plus: 1 %}{% endif %}
+            {% endif %}{% endfor %}
           {% endfor %}
-          {% assign tot_n = tot_n | plus: n %}{% assign tot_u = tot_u | plus: u %}
+          {% assign tot_n = tot_n | plus: n %}{% assign tot_u = tot_u | plus: u %}{% assign all_chips = all_chips | append: chips %}
           {% assign pct = 0 %}{% if gn > 0 %}{% assign pct = n | times: 100 | divided_by: gn %}{% endif %}
-          <td class="counts-num counts-cell" data-level="{% if n == 0 %}0{% else %}{{ pct | plus: 19 | divided_by: 20 }}{% endif %}" title="{{ fw.name }} covers {{ n }} of {{ gn }} {{ g.title }} controls ({{ pct }}%){% if u > 0 %}; {{ u }} of them are covered by no other standard{% endif %}">
-            {{ n }}{% if u > 0 %} <span class="counts-unique">[{{ u }}]</span>{% endif %}
+          <td class="counts-num counts-cell counts-g-{{ g.slug }}{% if n == 0 %} is-zero{% endif %}">
+            {% if n > 0 %}<button type="button" class="counts-btn" aria-expanded="false" data-label="{{ fw.name }} covers {{ n }} of {{ gn }} {{ g.title }} controls" title="{{ fw.name }} covers {{ n }} of {{ gn }} {{ g.title }} controls ({{ pct }}%){% if u > 0 %}; {{ u }} of them are cited by no other standard{% endif %}">{% else %}<span class="counts-btn" title="{{ fw.name }} covers none of the {{ gn }} {{ g.title }} controls">{% endif %}
+              <span class="counts-n">{{ n }}</span><span class="counts-of-group"> of {{ gn }}</span>
+              <span class="counts-cell-bar" aria-hidden="true"><span style="width: {{ pct }}%;"></span></span>
+              <span class="counts-uniq">{% if u > 0 %}&#9733; {{ u }} unique{% else %}&nbsp;{% endif %}</span>
+            {% if n > 0 %}</button><div class="counts-list" hidden>{{ chips }}</div>{% else %}</span>{% endif %}
           </td>
         {% endfor %}
         {% assign tot_pct = 0 %}{% if all_total > 0 %}{% assign tot_pct = tot_n | times: 100 | divided_by: all_total %}{% endif %}
-        <td class="counts-total" title="{{ fw.name }} covers {{ tot_n }} of {{ all_total }} P-SSCRM controls{% if tot_u > 0 %}; {{ tot_u }} of them are covered by no other standard{% endif %}">
-          <span class="counts-meter">
-            <span class="counts-pct">{{ tot_pct }}%</span>
+        <td class="counts-total counts-cell counts-g-all">
+          <button type="button" class="counts-btn" aria-expanded="false" data-label="{{ fw.name }} covers {{ tot_n }} of {{ all_total }} P-SSCRM controls" title="{{ fw.name }} covers {{ tot_n }} of {{ all_total }} P-SSCRM controls ({{ tot_pct }}%){% if tot_u > 0 %}; {{ tot_u }} of them are cited by no other standard{% endif %}">
+            <span class="counts-total-line"><strong>{{ tot_n }}</strong> of {{ all_total }} <span class="counts-pct">{{ tot_pct }}%</span></span>
             <span class="counts-bar" aria-hidden="true"><span style="width: {{ tot_pct }}%;"></span></span>
-            <span class="counts-of">{{ tot_n }} of {{ all_total }}</span>
-          </span>
+            <span class="counts-uniq">{% if tot_u > 0 %}&#9733; {{ tot_u }} unique{% else %}&nbsp;{% endif %}</span>
+          </button>
+          <div class="counts-list" hidden>{{ all_chips }}</div>
         </td>
       </tr>
       {% endif %}{% endfor %}
     </tbody>
   </table>
 </div>
-<div class="counts-legend" aria-hidden="true">
-  <span>Covers fewer of the group</span>
-  <span class="counts-legend-scale"><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><i data-level="5"></i></span>
-  <span>Covers more of the group</span>
-</div>
+<script src="{{ "/static/js/counts-detail.js" | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
 ## Which controls cite each standard
 

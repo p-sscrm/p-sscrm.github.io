@@ -844,74 +844,91 @@ h1 code,
 }
 .counts-table {
   width: 100%;
+  min-width: 52rem;
   border-collapse: separate;
-  border-spacing: 3px;
+  border-spacing: 0;
+  table-layout: fixed;
   font-size: 0.9rem;
 }
 .counts-table th,
-.counts-table td { padding: 0.5rem 0.6rem; }
+.counts-table td { padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); }
+.counts-table tbody tr:last-child th,
+.counts-table tbody tr:last-child td { border-bottom: 0; }
 .counts-table thead th {
   font-family: var(--font-display);
-  font-size: 0.78rem;
   text-align: left;
   vertical-align: bottom;
   color: var(--text-muted);
+  border-bottom: 2px solid var(--border);
 }
-.counts-table thead th.counts-num { text-align: center; }
-.counts-table { table-layout: fixed; }
-.counts-table thead th:first-child { width: 17%; }
-.counts-table thead th.counts-num { width: 13%; }
-.counts-table thead th.counts-total-head { width: 31%; }
+.counts-table thead th:first-child { width: 14%; }
+.counts-table thead th.counts-num { width: 16%; text-align: center; }
+.counts-table thead th.counts-total-head { width: 22%; }
+.counts-head-name { display: block; font-size: 0.82rem; font-weight: 700; }
+.counts-head-sub { display: block; font-size: 0.72rem; font-weight: 400; color: var(--text-muted); }
+.counts-table thead th.counts-g-g { color: var(--group-g-ink); border-bottom-color: var(--group-g); }
+.counts-table thead th.counts-g-p { color: var(--group-p-ink); border-bottom-color: var(--group-p); }
+.counts-table thead th.counts-g-e { color: var(--group-e-ink); border-bottom-color: var(--group-e); }
+.counts-table thead th.counts-g-d { color: var(--group-d-ink); border-bottom-color: var(--group-d); }
+.counts-table thead th.counts-g-g .counts-head-sub,
+.counts-table thead th.counts-g-p .counts-head-sub,
+.counts-table thead th.counts-g-e .counts-head-sub,
+.counts-table thead th.counts-g-d .counts-head-sub { color: var(--text-muted); }
 .counts-table tbody th { text-align: left; font-weight: 600; white-space: nowrap; }
 .counts-table tbody th a { color: var(--text); }
-.counts-table tbody th a:hover { color: var(--accent); }
+.counts-table tbody tr:hover th a { color: var(--accent); }
+.counts-table tbody tr:hover > * { background: var(--bg); }
 .counts-table .counts-num { text-align: center; font-variant-numeric: tabular-nums; }
-/* Heat cells: five steps, pale to deep, by the share of the group's controls the standard covers. */
-.counts-table .counts-cell { border-radius: 4px; font-size: 1.05rem; font-weight: 700; background: var(--heat-0); }
-.counts-table [data-level="1"] { background: var(--heat-1); color: var(--heat-ink-1); }
-.counts-table [data-level="2"] { background: var(--heat-2); color: var(--heat-ink-1); }
-.counts-table [data-level="3"] { background: var(--heat-3); color: var(--heat-ink-1); }
-.counts-table [data-level="4"] { background: var(--heat-4); color: var(--heat-ink-2); }
-.counts-table [data-level="5"] { background: var(--heat-5); color: var(--heat-ink-3); }
-.counts-table [data-level="0"] { background: transparent; color: var(--text-muted); font-weight: 500; opacity: 0.6; }
-.counts-table .counts-total-head { text-align: left; }
-.counts-table .counts-total { text-align: left; min-width: 15rem; padding-left: 0.9rem; }
-.counts-table .counts-meter { display: flex; align-items: center; gap: 0.6rem; }
-.counts-table .counts-pct { flex: 0 0 2.8rem; font-size: 1.1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+/* Group cells: "n of total" plus a bar in the group's colour. */
+.counts-cell { --cg: var(--group-u); --cg-tint: var(--group-u-tint); --cg-ink: var(--group-u-ink); }
+.counts-cell.counts-g-g { --cg: var(--group-g); --cg-tint: var(--group-g-tint); --cg-ink: var(--group-g-ink); }
+.counts-cell.counts-g-p { --cg: var(--group-p); --cg-tint: var(--group-p-tint); --cg-ink: var(--group-p-ink); }
+.counts-cell.counts-g-e { --cg: var(--group-e); --cg-tint: var(--group-e-tint); --cg-ink: var(--group-e-ink); }
+.counts-cell.counts-g-d { --cg: var(--group-d); --cg-tint: var(--group-d-tint); --cg-ink: var(--group-d-ink); }
+.counts-table .counts-n { font-size: 1.1rem; font-weight: 700; color: var(--cg-ink); }
+.counts-table .counts-of-group { font-size: 0.78rem; color: var(--text-muted); }
+.counts-cell-bar,
 .counts-table .counts-bar {
-  flex: 1;
-  height: 14px;
-  border-radius: 7px;
-  background: var(--border);
+  display: block;
+  height: 6px;
+  margin-top: 0.3rem;
+  border-radius: 3px;
+  background: var(--cg-tint, var(--border));
   overflow: hidden;
 }
-.counts-table .counts-bar span {
-  display: block;
-  height: 100%;
-  border-radius: 7px;
-  background: linear-gradient(90deg, var(--heat-4), var(--heat-5));
+.counts-cell-bar span { display: block; height: 100%; border-radius: 3px; background: var(--cg); }
+.counts-table .counts-cell.is-zero .counts-n { color: var(--text-muted); font-weight: 500; }
+.counts-table .counts-cell.is-zero { opacity: 0.7; }
+.counts-table .counts-total { text-align: left; }
+.counts-table .counts-cell.counts-g-all { --cg: var(--accent); --cg-ink: var(--accent); }
+.counts-btn {
+  display: block; width: 100%; padding: 0.15rem 0.2rem; margin: 0;
+  font: inherit; color: inherit; text-align: inherit;
+  background: none; border: 0; border-radius: 4px;
 }
-.counts-table .counts-unique { margin-left: 0.15rem; color: inherit; opacity: 0.8; font-weight: 600; }
-.counts-table .counts-of { flex: 0 0 5rem; color: var(--text-muted); font-size: 0.78rem; white-space: nowrap; }
-.counts-table .counts-pssrm th,
-.counts-table .counts-pssrm td { font-weight: 700; background: var(--bg); border-radius: 4px; }
-.counts-table .counts-pssrm .counts-total { font-weight: 600; color: var(--text-muted); font-size: 0.85rem; padding-left: 0.9rem; }
-.counts-table tbody tr:not(.counts-pssrm):hover th { color: var(--accent); }
-.counts-legend {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 2rem;
-  font-size: 0.78rem;
-  color: var(--text-muted);
+button.counts-btn { cursor: pointer; }
+button.counts-btn:hover { background: var(--bg); }
+button.counts-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.counts-cell.is-open > .counts-btn { background: var(--bg); box-shadow: inset 0 0 0 2px var(--cg); }
+.counts-uniq { display: block; min-height: 1.1rem; margin-top: 0.2rem; font-size: 0.72rem; font-weight: 700; color: var(--cg-ink); }
+.counts-table .counts-detail td { padding: 0.8rem 1rem; background: var(--bg); text-align: left; }
+.counts-detail-head { margin: 0 0 0.4rem; font-size: 0.85rem; color: var(--text-muted); }
+.counts-chip {
+  display: inline-block; margin: 0.15rem 0.25rem 0.15rem 0; padding: 0.1rem 0.45rem;
+  font: 600 0.78rem var(--font-mono); color: var(--on-accent); text-decoration: none;
+  border-radius: 4px; background: var(--group-u);
 }
-.counts-legend-scale { display: inline-flex; gap: 2px; }
-.counts-legend-scale i { width: 1.8rem; height: 0.8rem; border-radius: 3px; }
-.counts-legend-scale [data-level="1"] { background: var(--heat-1); }
-.counts-legend-scale [data-level="2"] { background: var(--heat-2); }
-.counts-legend-scale [data-level="3"] { background: var(--heat-3); }
-.counts-legend-scale [data-level="4"] { background: var(--heat-4); }
-.counts-legend-scale [data-level="5"] { background: var(--heat-5); }
+.counts-chip.counts-g-g { background: var(--group-g); }
+.counts-chip.counts-g-p { background: var(--group-p); }
+.counts-chip.counts-g-e { background: var(--group-e); }
+.counts-chip.counts-g-d { background: var(--group-d); }
+.counts-chip.is-unique { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--text); margin-right: 0.45rem; }
+.counts-chip:hover { filter: brightness(1.15); text-decoration: none; }
+.counts-table .counts-total-line { font-size: 0.85rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.counts-table .counts-total-line strong { font-size: 1.1rem; color: var(--text); }
+.counts-table .counts-pct { margin-left: 0.35rem; font-weight: 600; color: var(--text); }
+.counts-table .counts-bar { --cg-tint: var(--border); }
+.counts-table .counts-bar span { display: block; height: 100%; border-radius: 3px; background: var(--accent); }
 .counts-table .code-badge { font-size: 0.8em; margin-right: 0.3rem; }
 
 /* ==========================================================================
