@@ -2,6 +2,14 @@
 title: "Self-assessment"
 permalink: /self-assessment/
 description: "Privately score your own use of each P-SSCRM control, add notes, and see a radar chart. Everything stays in your browser."
+# Score meanings. Edit the labels and examples here and the legend, the tooltips
+# and the screen-reader labels all follow.
+scale:
+  - { value: "0",    short: "0",    label: "Not started",  examples: ["We haven’t started doing that (yet)", "We plan to work on that next year", "This control is not a priority for us."] }
+  - { value: "0.25", short: ".25",  label: "Emerging",  examples: ["We have one team piloting this control", "We have started to train the security champions on this control."] }
+  - { value: "0.5",  short: ".5",   label: "Progress being made",  examples: ["We purchased a tool, and several engineers have been using it", "We are getting the kinks out of our use of this control."] }
+  - { value: "0.75", short: ".75",  label: "Close to implementing",  examples: ["This control is fully adopted by two teams, and we’re spreading it to more teams now", "We are refining our implementation of all aspects of this control."] }
+  - { value: "1",    short: "1",    label: "Task implemented",  examples: ["We’ve been doing that for years", "We have focused on implementing this control over this past year, and all teams are doing that now."] }
 ---
 
 Score how well your organization follows each control, add your own notes, and
@@ -10,9 +18,14 @@ browser, so nothing is shared or sent anywhere. This is an informal, qualitative
 exercise with no official score; for a formal, interview-based assessment see
 [Measure and Improve]({{ "/participate/" | relative_url }}).
 
-{% assign sa_scale = "0,0.25,0.5,0.75,1" | split: "," %}
 {% assign sa_groups = site.groups | where_exp: "g", "g.slug != 'u'" | sort: "weight" %}
 <div class="sa" id="sa">
+  <div class="sa-legend" aria-label="What each score means">
+    <p class="sa-legend-title">What the scores mean</p>
+    <ul class="sa-legend-list">
+      {% for step in page.scale %}<li><span class="sa-legend-head"><span class="sa-legend-val">{{ step.short }}</span><strong>{{ step.label }}</strong></span><ul class="sa-legend-examples">{% for ex in step.examples %}<li>&ldquo;{{ ex }}&rdquo;</li>{% endfor %}</ul></li>{% endfor %}
+    </ul>
+  </div>
   <noscript><p class="sa-notice">Self-assessment needs JavaScript to save your scores in this browser.</p></noscript>
   <p class="sa-notice" id="sa-storage-warning" hidden>This browser is blocking storage, so your scores will be lost when you leave the page. Use <strong>Your data &rarr; Export</strong> to keep a copy.</p>
 
@@ -76,8 +89,8 @@ exercise with no official score; for a formal, interview-based assessment see
                 <span class="sa-control-title">{{ control.title }}</span>
                 <fieldset class="sa-scale">
                   <legend class="visually-hidden">Your score for {{ control.code }} {{ control.title }}</legend>
-                  {% for v in sa_scale %}
-                    <label><input type="radio" name="sa-s-{{ control.slug }}" value="{{ v }}"><span>{% case v %}{% when "0.25" %}.25{% when "0.5" %}.5{% when "0.75" %}.75{% else %}{{ v }}{% endcase %}</span></label>
+                  {% for step in page.scale %}
+                    <label data-tip="{{ step.label | escape }}: {{ step.examples | join: " / " | escape }}"><input type="radio" name="sa-s-{{ control.slug }}" value="{{ step.value }}" aria-label="{{ step.value }}, {{ step.label | escape }}"><span>{{ step.short }}</span></label>
                   {% endfor %}
                 </fieldset>
                 <button type="button" class="sa-icon-btn" data-toggle-note="control" aria-expanded="false" aria-label="Note on {{ control.code }}" title="Note">{% include icon.html name="note" %}</button>

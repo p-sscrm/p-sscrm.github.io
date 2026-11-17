@@ -1508,7 +1508,7 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  /* No overflow clipping: the score tooltips must be able to stick out of the panel. */
   scroll-margin-top: 4rem;
 }
 .sa-panel[hidden] { display: none; }
@@ -1519,6 +1519,7 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
   padding: 0.55rem 0.8rem;
   background: var(--sa-tint, var(--accent-soft));
   border-bottom: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 .sa-panel-head h2 { margin: 0; font-size: 1rem; flex-shrink: 1; min-width: 0; }
 .sa-panel-head h2 .code-badge { font-size: 0.75em; margin-right: 0.25rem; }
@@ -1590,7 +1591,7 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
 .fw-group-e .sa-control-row .code-badge,
 .fw-group-d .sa-control-row .code-badge { white-space: nowrap; }
 .sa-control-title { flex: 1; min-width: 10rem; font-size: 0.9rem; }
-.sa-scale { display: inline-flex; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: 5px; overflow: hidden; min-width: 0; }
+.sa-scale { display: inline-flex; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: 5px; min-width: 0; }
 .sa-scale label { display: block; position: relative; border-right: 1px solid var(--border); }
 .sa-scale label:last-child { border-right: 0; }
 .sa-scale input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
@@ -1602,8 +1603,36 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
   color: var(--text-muted);
   background: var(--surface);
 }
+.sa-scale label:first-of-type span { border-radius: 4px 0 0 4px; }
+.sa-scale label:last-of-type span { border-radius: 0 4px 4px 0; }
 .sa-scale label:hover span { background: var(--sa-tint, var(--accent-soft)); color: var(--sa-ink, var(--accent)); }
 .sa-scale input:checked + span { background: var(--sa-c, var(--accent-fill)); color: var(--on-accent); }
+/* Score tooltip: shown on hover and keyboard focus, above the score. */
+.sa-scale label[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute; z-index: 5; bottom: calc(100% + 6px); right: 0;
+  width: max-content; max-width: min(22rem, 80vw); padding: 0.35rem 0.55rem;
+  font: 400 0.78rem/1.35 var(--font-body); text-align: left;
+  color: var(--bg); background: var(--text); border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  opacity: 0; visibility: hidden; transform: translateY(2px);
+  transition: opacity 0.12s, transform 0.12s; pointer-events: none;
+}
+.sa-scale label[data-tip]:hover::after,
+.sa-scale label[data-tip]:focus-within::after { opacity: 1; visibility: visible; transform: none; }
+@media (prefers-reduced-motion: reduce) { .sa-scale label[data-tip]::after { transition: none; } }
+.sa-legend { margin: 0 0 1rem; padding: 0.7rem 0.9rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.sa-legend-title { margin: 0 0 0.4rem; font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); }
+.sa-legend-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; margin: 0; padding: 0; list-style: none; font-size: 0.85rem; }
+.sa-legend-list > li { padding: 0.6rem 0.7rem 0.7rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); }
+.sa-legend-head { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; line-height: 1.2; }
+.sa-legend-head strong { font-family: var(--font-display); }
+.sa-legend-val { display: inline-block; flex-shrink: 0; min-width: 2.1rem; padding: 0.1rem 0.35rem; text-align: center; font: 600 0.75rem var(--font-mono); color: var(--on-accent); background: var(--accent-fill); border-radius: 4px; }
+.sa-legend-examples { margin: 0; padding: 0; list-style: none; }
+.sa-legend-examples li { margin: 0 0 0.4rem; padding: 0 0 0 0.6rem; border-left: 2px solid var(--accent-fill); color: var(--text-muted); font-size: 0.76rem; font-style: italic; line-height: 1.45; }
+.sa-legend-examples li:last-child { margin-bottom: 0; }
+@media (max-width: 1100px) { .sa-legend-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .sa-legend-list { grid-template-columns: 1fr; } }
 .sa-more { padding: 0.2rem 0.8rem 0.8rem 0.8rem; font-size: 0.86rem; }
 .sa-more[hidden] { display: none; }
 .sa-more ul { margin: 0.2rem 0 0.6rem 1.1rem; padding: 0; }
