@@ -182,14 +182,15 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 108px;
+  height: 108px;
   /* White tile keeps the navy artwork legible on the dark theme; invisible on the light one. */
   box-sizing: border-box;
   padding: 4px;
   background: #fff;
   border-radius: var(--radius);
 }
+@media (min-width: 900px) { .site-logo { width: 132px; height: 132px; } }
 .site-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
 /* One logo in every theme: it uses the S3C2 color scheme. */
 .site-wordmark-text { min-width: 0; }
@@ -1492,6 +1493,11 @@ a.attck-flow-node:hover { box-shadow: inset 0 0 0 1px var(--accent); }
 .sa-pips i.on { background: var(--sa-c, var(--accent)); border-color: var(--sa-c, var(--accent)); opacity: 1; }
 .sa-tile-score { flex-shrink: 0; min-width: 2.3rem; font-variant-numeric: tabular-nums; text-align: right; font-family: var(--font-mono); font-weight: 600; font-size: 0.85rem; color: var(--text-muted); opacity: 0.6; }
 .sa-tile.is-scored .sa-tile-score { color: var(--sa-ink, var(--accent)); opacity: 1; }
+/* Partly scored: the average is provisional, so it stays plain and italic. */
+.sa-tile.is-scored:not(.is-complete) .sa-tile-score { font-style: italic; font-weight: 500; }
+/* Every control scored: the average is final, shown as a filled pill with a check. */
+.sa-tile.is-complete .sa-tile-score { padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--sa-c, var(--accent-fill)); color: #fff; font-weight: 700; }
+.sa-tile.is-complete .sa-tile-score::before { content: "\2713\00a0"; }
 .fw-col-g .sa-col-head + .sa-tile,
 .fw-col-p .sa-col-head + .sa-tile,
 .fw-col-e .sa-col-head + .sa-tile,
