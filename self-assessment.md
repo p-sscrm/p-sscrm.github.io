@@ -2,14 +2,14 @@
 title: "Self-assessment"
 permalink: /self-assessment/
 description: "Privately score your own use of each P-SSCRM control, add notes, and see a radar chart. Everything stays in your browser."
-# Score meanings. Placeholder wording: edit the labels and text here and the
-# legend, the tooltips and the screen-reader labels all follow.
+# Score meanings. Edit the labels and examples here and the legend, the tooltips
+# and the screen-reader labels all follow.
 scale:
-  - { value: "0",    short: "0",    label: "Nothing done",  text: "No work has started on this control." }
-  - { value: "0.25", short: ".25",  label: "Emerging",      text: "First steps taken, but not consistent." }
-  - { value: "0.5",  short: ".5",   label: "In progress",   text: "Progress is being made; about half in place." }
-  - { value: "0.75", short: ".75",  label: "Almost done",   text: "Mostly in place, with gaps left to close." }
-  - { value: "1",    short: "1",    label: "Done",          text: "Fully in place and routinely followed." }
+  - { value: "0",    short: "0",    label: "Not started",  examples: ["We haven’t started doing that (yet)", "We plan to work on that next year", "This control is not a priority for us."] }
+  - { value: "0.25", short: ".25",  label: "Emerging",  examples: ["We have one team piloting this control", "We have started to train the security champions on this control."] }
+  - { value: "0.5",  short: ".5",   label: "Progress being made",  examples: ["We purchased a tool, and several engineers have been using it", "We are getting the kinks out of our use of this control."] }
+  - { value: "0.75", short: ".75",  label: "Close to implementing",  examples: ["This control is fully adopted by two teams, and we’re spreading it to more teams now", "We are refining our implementation of all aspects of this control."] }
+  - { value: "1",    short: "1",    label: "Task implemented",  examples: ["We’ve been doing that for years", "We have focused on implementing this control over this past year, and all teams are doing that now."] }
 ---
 
 Score how well your organization follows each control, add your own notes, and
@@ -23,7 +23,7 @@ exercise with no official score; for a formal, interview-based assessment see
   <div class="sa-legend" aria-label="What each score means">
     <p class="sa-legend-title">What the scores mean</p>
     <ul class="sa-legend-list">
-      {% for step in page.scale %}<li><span class="sa-legend-val">{{ step.short }}</span> <strong>{{ step.label }}</strong> <span class="sa-legend-text">{{ step.text }}</span></li>{% endfor %}
+      {% for step in page.scale %}<li><span class="sa-legend-head"><span class="sa-legend-val">{{ step.short }}</span><strong>{{ step.label }}</strong></span><ul class="sa-legend-examples">{% for ex in step.examples %}<li>&ldquo;{{ ex }}&rdquo;</li>{% endfor %}</ul></li>{% endfor %}
     </ul>
   </div>
   <noscript><p class="sa-notice">Self-assessment needs JavaScript to save your scores in this browser.</p></noscript>
@@ -90,7 +90,7 @@ exercise with no official score; for a formal, interview-based assessment see
                 <fieldset class="sa-scale">
                   <legend class="visually-hidden">Your score for {{ control.code }} {{ control.title }}</legend>
                   {% for step in page.scale %}
-                    <label data-tip="{{ step.label | escape }}: {{ step.text | escape }}"><input type="radio" name="sa-s-{{ control.slug }}" value="{{ step.value }}" aria-label="{{ step.value }}, {{ step.label | escape }}"><span>{{ step.short }}</span></label>
+                    <label data-tip="{{ step.label | escape }}: {{ step.examples | join: " / " | escape }}"><input type="radio" name="sa-s-{{ control.slug }}" value="{{ step.value }}" aria-label="{{ step.value }}, {{ step.label | escape }}"><span>{{ step.short }}</span></label>
                   {% endfor %}
                 </fieldset>
                 <button type="button" class="sa-icon-btn" data-toggle-note="control" aria-expanded="false" aria-label="Note on {{ control.code }}" title="Note">{% include icon.html name="note" %}</button>
