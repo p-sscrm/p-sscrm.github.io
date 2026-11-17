@@ -131,11 +131,13 @@
     var st = practiceStats(slug);
     tile.querySelector("[data-score]").textContent = st.avg === null ? "–" : fmt(st.avg);
     tile.classList.toggle("is-scored", st.avg !== null);
+    // Complete = every control scored; the number is then a final average, not a partial one.
+    tile.classList.toggle("is-complete", st.total > 0 && st.scored === st.total);
     [].forEach.call(tile.querySelectorAll(".sa-pips i"), function (pip, i) {
       pip.classList.toggle("on", !!st.flags[i]);
     });
     tile.setAttribute("aria-label", tile.getAttribute("data-title") + ": " +
-      (st.avg === null ? "not scored" : "average " + fmt(st.avg)) + ", " + st.scored + " of " + st.total + " controls scored");
+      (st.avg === null ? "not scored" : (st.scored === st.total ? "complete, average " : "partial average ") + fmt(st.avg)) + ", " + st.scored + " of " + st.total + " controls scored");
   }
 
   function renderPanelSummary(slug) {
